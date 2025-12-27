@@ -1,0 +1,44 @@
+@font-face {
+  font-family: 'generalSansMedium';
+  src: url('./assets/fonts/GeneralSans-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'General Sans';
+  src: url('./assets/fonts/GeneralSans-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ppEditorial';
+  src: url('./assets/fonts/PPEditorial-UltralightItlaic.otf') format('opentype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'General Sans', system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  background-color: #EFEBE7;
+
+  --background-dark: #1A1A1A;
+  --button-color: #E47249;
+  --button-highlight-color: #EAF9C0;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

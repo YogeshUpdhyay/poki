@@ -1,0 +1,26 @@
+.projects {
+    padding-top: 180px;
+    padding-bottom: 180px;
+    position: relative;
+}
+
+.projectBg {
+    position: absolute;
+    z-index: -10;
+}
+
+.projectCarousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    z-index: 20;
+    padding-top: 140px;
+}
+
+.projectButtonContainer {
+    display: flex;
+    justify-content: center;
+    padding-top: 70px;
+}
+

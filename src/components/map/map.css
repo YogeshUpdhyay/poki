@@ -1,0 +1,10 @@
+#worldMap path {
+    fill: #414141;
+    stroke: #414141;
+}
+
+#worldMap path:hover {
+    fill: #EAF9C0 !important;
+    stroke: #EAF9C0 !important;
+    cursor: pointer;
+}

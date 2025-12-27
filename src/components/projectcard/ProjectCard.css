@@ -1,0 +1,28 @@
+.projectCard {
+    min-height: 376px;
+    min-width: 300px;
+    border-radius: 12px;
+    position: relative;
+}
+
+.projectCardImage {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.projectCardTitle {
+    padding: 12px;
+    border-radius: 18px 18px 18px 0px;
+    background-color: #EFEBE7;
+    color: black;
+    position: absolute;
+    bottom: 0px;
+    z-index: 10;
+    display: flex;
+    width: fit-content;
+    margin: 24px;
+    font-family: 'generalSansMedium';
+}

@@ -1,0 +1,19 @@
+.cta-btn-background {
+    background-color: var(--button-color);
+    border-radius: 100px;
+    padding: 6px; /* outer border thickness */
+    width: fit-content;
+    cursor: pointer;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 8px 22px;
+    border-radius: 100px;
+    background: var(--button-color);
+    color: var(--button-highlight-color);
+    border: 2px solid var(--button-highlight-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
