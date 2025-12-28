@@ -1,0 +1,12 @@
+/* Minimal placeholder styles for ReviewCard. Main project CSS provides layout.
+   Add or adjust styles here if component-specific overrides are needed. */
+
+.reviewCard { }
+.reviewCardContent { }
+.reviewCardReviewer { display:flex; gap:0.75rem; align-items:center }
+.reviewCardReviewerAvatar { width:48px; height:48px; border-radius:50%; background:#ddd }
+.reviewCardReviewerInfo { }
+.reviewCardReviewerName { font-weight:600 }
+.reviewCardReviewerLocation { margin:0; color: #999 }
+.reviewCardReview { margin-top:1rem }
+.reviewCardImage { width:120px; height:120px; background:#eee }

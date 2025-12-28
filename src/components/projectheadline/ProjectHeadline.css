@@ -26,3 +26,8 @@
     background-color: pink;
     color: black;
 }
+
+.tooltip.yellow {
+    background-color: #EAF9C0;
+    color: black;
+}

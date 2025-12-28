@@ -1,0 +1,80 @@
+.brandNeeds {
+    background-color: var(--background-light);
+    border-radius: 40px 40px 0px 0px;
+    padding-top: 140px;
+    padding-bottom: 140px;
+    position: relative;
+    overflow: hidden;
+    margin-top: -40px;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+}
+
+.brandNeedsCartoon {
+    position: absolute;
+    left: 93%;
+    top: 0;
+    z-index: 20;
+}
+
+.offerings {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    padding-top: 140px;
+}
+
+.offeringCard {
+    padding: 55px 28px 48px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    height: 376px;
+    width: 300px;
+    position: relative;
+    border-radius: 12px;
+}
+
+.offeringCard.green {
+    background-color: #427665;
+    color: white;
+}
+
+.offeringCard.pink {
+    background-color: #EFB5D4;
+}
+
+.offeringCard.blue {
+    background-color: #86C9FF;
+}
+
+.offeringCardTitle {
+    font-size: 24px;
+    line-height: 99%;
+}
+
+.offeringDesc {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.offeringDescLine {
+    font-size: 16px;
+    font-weight: lighter;
+    display: flex;
+    align-items: center;
+    font-family: generalSansMedium;
+    gap: 10px
+}
+
+.offeringCardSvg {
+    position: absolute;
+    top: -35px;
+    left: 140px;
+}
+
+.brandNeedsButton {
+    margin-top: 64px;
+}

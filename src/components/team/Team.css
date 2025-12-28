@@ -1,0 +1,80 @@
+.team {
+    background-color: var(--background-dark);
+    border-radius: 40px 40px 0px 0px;
+    padding-top: 140px;
+    position: relative;
+    overflow: hidden;
+}
+
+.map {
+   display: flex;
+   justify-content: center;
+}
+
+.teamHeadline {
+    padding-top: 120px;
+}
+
+.teamCartoon {
+    position: absolute;
+    right: 100%;
+}
+
+.teamUnderline {
+    position: absolute;
+    bottom: -30px;
+    left: 55%
+}
+
+.teammates {
+    position: relative;
+    padding-top: 64px;
+    padding-left: 64px;
+    padding-right: 64px;
+    padding-bottom: 180px;
+}
+
+.teammateGreenBlob {
+    position: absolute;
+    right: 64px;
+}
+
+.teammatePinkBlob {
+    position: absolute;
+    left: -150px;
+    bottom: 5%;
+}
+
+
+.teamCols {
+    display: flex;
+    padding-top: 64px;
+    padding-bottom: 64px;
+    overflow-x: hidden;
+}
+
+.teamRow {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 188px;
+}
+
+.teamRow:nth-child(2) {
+    padding-top: 188px;
+}
+
+.teammateCard {
+    position: relative;
+    display: flex;
+    border-radius: 12;
+    height: 376px;
+    width: 300px;
+    margin-left: calc((100% - 30%) * var(--r));
+}
+
+.teammateCardImage {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+}

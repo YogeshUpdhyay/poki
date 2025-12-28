@@ -1,36 +1,97 @@
-.team {
-    background-color: var(--background-dark);
-    border-radius: 40px 40px 0px 0px;
+.reviews {
     padding-top: 140px;
+    padding-bottom: 180px;
     position: relative;
+    overflow: hidden;
+    border-radius: 40px 40px 0px 0px;
+    background-color: var(--background-dark);
+    color: #EFEBE7;
 }
 
-.map {
-   display: flex;
-   justify-content: center;
-}
-
-.teamHeadline {
-    padding-top: 120px;
-}
-
-.teamCartoon {
+.reviewsCartoon {
     position: absolute;
-    right: 100%;
+    right: 85%;
+    bottom: 20%
 }
 
-.teammates {
+.reviewUnderlinePosition {
+    position: absolute;
+    bottom: -30px;
+    left: 38%;
+}
+
+.reviewsBg {
+    position: absolute;
+    left: 75%;
+    top: 100px;
+    z-index: 10;
+}
+
+.reviewsCarousel {
+    padding-top: 96px;
+    display: flex;
+    gap: 26px;
+    overflow-x: auto;
+}
+
+.reviewCard {
+    width: 360px;
+    height: 630px;
     position: relative;
-    padding-top: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
 }
 
-.teammateGreenBlob {
-    position: absolute;
-    left: 100%;
+.reviewCardContent {
+    background-color: var(--color-yellow);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    border-radius: 12px;
+    color: black;
+    padding: 28px;
 }
 
-.teammatePinkBlob {
-    position: absolute;
-    right: 100%;
-    bottom: 0px;
+.reviewCardReviewer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.reviewCardReviewerAvatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.reviewCardReviewerInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.reviewCardReviewerName {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.reviewCardReviewerLocation {
+    font-size: 14px;
+    font-family: generalSansMedium;
+}
+
+.reviewCardReview {
+    font-size: 14px;
+    flex-grow: 1;
+    font-family: generalSansMedium;
+    line-height: 140%;
+    font-weight: lighter !important;
+}
+
+.reviewCardImage {
+    border-radius: 12px;
+    width: 100%;
+    background-color: var(--color-yellow);
+    flex-grow: 1;
 }

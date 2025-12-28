@@ -1,7 +1,8 @@
 import './HeadlineContainer.css'
 import headlineCartoon from '../../assets/imgs/heroCartoon.svg'
 import Star from '../star/star'
-import HeadlineUnderline from '../headlineunderline/headlineUnderline'
+import AnimatedSvgLine from '../common/animatedSvgLine/animatedSvgLine'
+import HeroUnderline from "../../assets/underlines/heroUnderline.svg?react";
 
 function HeadlineContainer() {
   return (
@@ -21,7 +22,7 @@ function HeadlineContainer() {
             <Star />
           </div>
           <div className="headlineUnderlinePosition">
-            <HeadlineUnderline />
+            <AnimatedSvgLine Svg={HeroUnderline} />
           </div>
         </span>
       </h1>

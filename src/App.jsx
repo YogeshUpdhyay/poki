@@ -1,8 +1,10 @@
 
 import './App.css'
 import Hero from './components/hero/Hero'
-import Map from './components/map/map'
 import Projects from './components/projects/Projects'
+import Team from './components/team/Team'
+import BrandNeeds from './components/brandNeeds/BrandNeeds'
+
 import {
   useFloating,
   useClientPoint,
@@ -10,11 +12,36 @@ import {
   autoUpdate,
   useInteractions,
 } from "@floating-ui/react";
-import teamCartoon from "./assets/imgs/teamCartoon.svg";
+import HeroUnderline from "./assets/underlines/heroUnderline.svg?react";
+import AnimatedSvgLine from './components/common/animatedSvgLine/animatedSvgLine'
 import { useState } from 'react';
+import reviewsBg from './assets/imgs/reviewsBg.svg'
+import reviewsCartoon from './assets/imgs/reviewsCartoon.svg'
+import ReviewCard from './components/reviews/ReviewCard'
 
 function App() {
+  return (
+    <>
+      <Hero />
+      <Projects />
+      <Team />
+      <BrandNeeds />
+      <section className="reviews">
+        <ReviewHeadline />
+        <img 
+          src={reviewsBg} 
+          alt="reviewsBg" 
+          className="reviewsBg" 
+        />
+        <div className="reviewsCarousel">
+          <ReviewCard />
+        </div>
+      </section>
+    </>
+  )
+}
 
+function ReviewHeadline() {
   const [open, setOpen] = useState(false);
   const { refs, floatingStyles, context } = useFloating({
     open,
@@ -30,53 +57,43 @@ function App() {
   ]);
 
   return (
-    <>
-      <Hero />
-      <Projects />
-      <section className="team">
-        <div className="map">
-          <Map />
-        </div>
-        <div className="teamHeadline">
-          <h1 className="headlineText white">
-            <span
-              className="headlineWrapper"
-              ref={refs.setReference}
-              {...getReferenceProps({
-                onMouseEnter: () => setOpen(true),
-                onMouseLeave: () => setOpen(false),
-              })}
-            >
-              a crew of 6 <br />
-              <span className="headlineHighlight">dominating</span> the <br />
-              whole world
+    <h1 className="headlineText">
+      <span 
+        className="headlineWrapper" 
+        ref={refs.setReference}
+        {...getReferenceProps({
+          onMouseEnter: () => setOpen(true),
+          onMouseLeave: () => setOpen(false),
+        })}
+      >
+        <span className="headlineHighlight">word</span> on <br />
+        the street <br />
 
-              <img
-                src={teamCartoon}
-                alt="teamCartoon"
-                className="teamCartoon"
-              />
-
-            </span>
-
-            {open && (
-              <div
-                ref={refs.setFloating}
-                style={floatingStyles}
-                {...getFloatingProps({
-                  className: "tooltip pink",
-                })}
-              >
-                born digital - raised on chai
-              </div>)}
-          </h1>
+        <img
+          src={reviewsCartoon}
+          alt="reviewsCartoon"
+          className="reviewsCartoon"
+        />
+        
+        <div className="reviewUnderlinePosition">
+          <AnimatedSvgLine Svg={HeroUnderline} />
         </div>
-        <div className="teammates">
-          
-        </div>
-      </section>
-    </>
+      
+      </span>
+
+      {open && (
+        <div
+          ref={refs.setFloating}
+          style={floatingStyles}
+          {...getFloatingProps({
+            className: "tooltip blue",
+          })}
+        >
+            no shadows, only shine
+        </div>)}
+    </h1>
   )
 }
+
 
 export default App
