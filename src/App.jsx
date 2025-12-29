@@ -18,10 +18,11 @@ import { useState } from 'react';
 import reviewsBg from './assets/imgs/reviewsBg.svg'
 import reviewsCartoon from './assets/imgs/reviewsCartoon.svg'
 import ReviewCard from './components/reviews/ReviewCard'
+import { CmsProvider } from './utils/context'
 
 function App() {
   return (
-    <>
+    <CmsProvider>
       <Hero />
       <Projects />
       <Team />
@@ -37,7 +38,7 @@ function App() {
           <ReviewCard />
         </div>
       </section>
-    </>
+    </CmsProvider>
   )
 }
 

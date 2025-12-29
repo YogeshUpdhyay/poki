@@ -1,12 +1,61 @@
-/* Minimal placeholder styles for ReviewCard. Main project CSS provides layout.
-   Add or adjust styles here if component-specific overrides are needed. */
+.reviewCard {
+   width: 360px;
+   height: 630px;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   gap: 26px;
+}
 
-.reviewCard { }
-.reviewCardContent { }
-.reviewCardReviewer { display:flex; gap:0.75rem; align-items:center }
-.reviewCardReviewerAvatar { width:48px; height:48px; border-radius:50%; background:#ddd }
-.reviewCardReviewerInfo { }
-.reviewCardReviewerName { font-weight:600 }
-.reviewCardReviewerLocation { margin:0; color: #999 }
-.reviewCardReview { margin-top:1rem }
-.reviewCardImage { width:120px; height:120px; background:#eee }
+.reviewCardContent {
+   background-color: var(--color-yellow);
+   display: flex;
+   flex-direction: column;
+   gap: 24px;
+   border-radius: 12px;
+   color: black;
+   padding: 28px;
+}
+
+.reviewCardReviewer {
+   display: flex;
+   align-items: center;
+   gap: 16px;
+}
+
+.reviewCardReviewerAvatar {
+   width: 48px;
+   height: 48px;
+   border-radius: 50%;
+   object-fit: cover;
+}
+
+.reviewCardReviewerInfo {
+   display: flex;
+   flex-direction: column;
+}
+
+.reviewCardReviewerName {
+   font-weight: bold;
+   font-size: 16px;
+}
+
+.reviewCardReviewerLocation {
+   font-size: 14px;
+   font-family: generalSansMedium;
+}
+
+.reviewCardReview {
+   font-size: 14px;
+   flex-grow: 1;
+   font-family: generalSansMedium;
+   line-height: 140%;
+   font-weight: lighter !important;
+}
+
+.reviewCardImage {
+   border-radius: 12px;
+   width: 100%;
+   background-color: var(--color-yellow);
+   flex-grow: 1;
+}

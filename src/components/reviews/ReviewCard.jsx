@@ -1,4 +1,5 @@
 import './ReviewCard.css'
+import avatarImgSrc from '../../assets/imgs/avatar.png'
 
 export default function ReviewCard({
   reviewerName = 'Nikolas Gregory',
@@ -6,7 +7,7 @@ export default function ReviewCard({
   reviewText = `Poki Design Studio transformed our brand with a stunning logo and
   cohesive design elements that truly represent our vision. Their
   creativity and professionalism exceeded our expectations!`,
-  avatarSrc = '',
+  avatarSrc = avatarImgSrc,
 }) {
   return (
     <div className="reviewCard">

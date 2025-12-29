@@ -1,0 +1,90 @@
+import { createContext, useContext, useEffect, useState } from "react";
+import OfferingText1 from '../assets/imgs/offeringText1.svg';
+import OfferingText2 from '../assets/imgs/offeringText2.svg';
+import OfferingText3 from '../assets/imgs/offeringText3.svg';
+
+const CmsContext = createContext(null);
+
+const tempCMSData = {
+        brandNeedsSection: {
+            offerings: [
+                {
+                    color: 'green',
+                    title: ['logo', 'design'],
+                    lines: [
+                        'ideation & moodboarding',
+                        'custom logo creation',
+                        'scalable systems',
+                        'brand-ready formats',
+                        'vector deliverables'
+                    ],
+                    svg: OfferingText1
+                },
+                {
+                    color: 'pink',
+                    title: ['brand identity', 'development'],
+                    lines: [
+                        'color & typography systems',
+                        'identity guidelines',
+                        'visual toolkit',
+                        'presentation decks',
+                        'collateral design'
+                    ],
+                    svg: OfferingText2
+                },
+                {
+                    color: 'blue',
+                    title: ['website and', 'ui design'],
+                    lines: [
+                        'cro landing pages',
+                        'responsive websites',
+                        'mobile applications',
+                        'web applications',
+                        'wireframes & flows'
+                    ],
+                    svg: OfferingText3
+                }
+            ]
+        },
+    }
+
+export function CmsProvider({ children }) {
+  const [data, setData] = useState(tempCMSData);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    // async function load() {
+    //   try {
+    //     setLoading(true);
+    //     // replace with your CMS fetch
+    //     const res = await fetch("/api/cms/home");
+    //     if (!res.ok) throw new Error("Failed to fetch CMS");
+    //     const json = await res.json();
+    //     if (!cancelled) setData(json);
+    //   } catch (e) {
+    //     if (!cancelled) setError(e);
+    //   } finally {
+    //     if (!cancelled) setLoading(false);
+    //   }
+    // }
+
+    // load();
+    console.log("CMS data loaded", data);
+    return () => { cancelled = true; };
+  }, []);
+
+  return (
+    <CmsContext.Provider value={{ data, loading, error }}>
+      {children}
+    </CmsContext.Provider>
+  );
+}
+
+export function useCms() {
+  const ctx = useContext(CmsContext);
+  if (!ctx) throw new Error("useCms must be used inside <CmsProvider />");
+  return ctx;
+}

@@ -26,8 +26,8 @@
 
 .headlineCartoon {
     position: absolute;
-    bottom: 25px; 
-    right: 95%;
+    right: 94%;
+    top: -10px;
     z-index: 20;
 }
 
