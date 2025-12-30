@@ -11,7 +11,7 @@
     pointer-events: none; 
     width: fit-content;
     font-size: 12px;
-    font-family: 'generalSansMedium';
+    font-family: generalSansMedium;
     letter-spacing: normal;
     white-space: nowrap;
     line-height: normal;
@@ -30,4 +30,9 @@
 .tooltip.yellow {
     background-color: #EAF9C0;
     color: black;
+}
+
+.tooltip.green {
+    background-color: var(--color-green);
+    color: white;
 }

@@ -1,0 +1,40 @@
+.letsCollab {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: -40px;
+    border-radius: 40px 40px 0px 0px;
+    background-color: var(--background-light);
+}
+
+.collabHeadline {
+    padding-top: 200px;
+}
+
+.collaborateCartoon {
+    position: absolute;
+    bottom: 58%;
+    left: 61%;
+}
+
+.collabText {
+    padding-top: 64px;
+    font-family: generalSansMedium;
+    line-height: 150%;
+    letter-spacing: 98%;
+    font-size: 16px;
+    max-width: 460px;
+    text-align: center;
+}
+
+.collabButtons {
+    padding-top: 48px;
+    padding-bottom: 160px;
+    
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}

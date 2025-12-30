@@ -1,6 +1,6 @@
 import './Navbar.css'
 import logo from '../../assets/imgs/logo.svg'
-import Button from '../button/Button'
+import Button from '../common/button/Button'
 
 function Navbar() {
   return (

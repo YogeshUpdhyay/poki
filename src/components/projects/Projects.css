@@ -16,6 +16,7 @@
     gap: 18px;
     z-index: 20;
     padding-top: 140px;
+    overflow-x: auto;
 }
 
 .projectButtonContainer {

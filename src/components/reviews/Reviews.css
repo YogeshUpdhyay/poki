@@ -1,0 +1,51 @@
+.reviews {
+    padding-top: 140px;
+    padding-bottom: 220px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 40px 40px 0px 0px;
+    background-color: var(--background-dark);
+    color: #EFEBE7;
+}
+
+.reviewsCartoon {
+    position: absolute;
+    right: 85%;
+    bottom: 20%
+}
+
+.reviewUnderlinePosition {
+    position: absolute;
+    bottom: -30px;
+    left: 38%;
+}
+
+.reviewsBg {
+    position: absolute;
+    left: 75%;
+    top: 100px;
+    z-index: 10;
+}
+
+.reviewsCarousel {
+    padding-top: 96px;
+    display: flex;
+    gap: 26px;
+    overflow-x: auto;
+}
+
+@keyframes scale-in {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.scaleInAnimation {
+  animation-name: scale-in;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}

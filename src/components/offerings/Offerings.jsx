@@ -23,9 +23,12 @@ export default function Offerings() {
   )
 }
 
-const OfferingCard = ({idx, cardColor, offerCardSvg, title, offeringDescLines}) => {
+const OfferingCard = ({idx, cardColor, offerCardSvg, title, offeringDescLines, rotation}) => {
   return (
-    <div className={`offeringCard ${cardColor}`} key={idx}>
+    <div 
+      className={`offeringCard ${cardColor}`} 
+      key={idx}
+    >
       <img
         src={offerCardSvg}
         alt={`offeringCardSvg-${idx}`}

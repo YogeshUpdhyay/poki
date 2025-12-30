@@ -34,12 +34,14 @@
 
   --background-light: #EFEBE7;
   --background-dark: #1A1A1A;
+  --background-violet:  #5168E8;
   --button-color: #E47249;
   --button-highlight-color: #EAF9C0;
   --color-yellow: #EAF9C0;
   --color-orange: #E47249;
   --color-blue: #86C9FF;
   --color-pink: #EFB5D4;
+  --color-green: #427665;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

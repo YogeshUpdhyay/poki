@@ -10,7 +10,9 @@ import {
 import brandNeedsCartoon from '../../assets/imgs/brandNeedsCartoon.svg'
 import Offerings from '../offerings/Offerings'
 import offeringCardSvg1 from '../../assets/imgs/offeringText1.svg'
-import Button from '../button/Button'
+import Button from '../common/button/Button'
+import { useInView } from "react-intersection-observer";
+import orangeStar from '../../assets/imgs/stars/orange.svg'
 
 export default function BrandNeeds() {
   return (
@@ -47,6 +49,11 @@ function BrandNeedsHeadline() {
     clientPoint,
   ]);
 
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    threshold: 0.5,
+  });
+
   return (
     <h1 className="headlineText">
       <span
@@ -63,9 +70,16 @@ function BrandNeedsHeadline() {
         <img
           src={brandNeedsCartoon}
           alt="brandNeedsCartoon"
-          className="brandNeedsCartoon"
+          className={`brandNeedsCartoon ${inView ? 'scaleInAnimation' : ''}`}
+          ref={ref}
         />
 
+      
+        <img
+          src={orangeStar}
+          alt="brandNeedsStar"
+          className='brandNeedsStar star'
+        />
       </span>
 
       {open && (

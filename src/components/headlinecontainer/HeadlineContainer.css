@@ -16,6 +16,10 @@
     line-height: 95%;
 }
 
+.headlineText.large {
+    font-size: 160px;
+}
+
 .headlineText.white {
     color: white;
 }
