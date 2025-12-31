@@ -1,4 +1,8 @@
 .animated-underline {
+    visibility: hidden;
+}
+.animated-underline.animated {
+    visibility: visible;
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
     animation: draw 3s ease-in-out forwards;

@@ -1,72 +1,32 @@
-footer {
-    background-color: var(--background-violet);
+.tooltip {
+    display: inline-block;
+    padding: 12px;
+    border-radius: 100px 100px 100px 0px;
+    pointer-events: none; 
+    width: fit-content;
+    font-size: 12px;
+    font-family: generalSansMedium;
+    letter-spacing: normal;
+    white-space: nowrap;
+    line-height: normal;
+}
+
+.tooltip.blue {
+    background-color: #86C9FF;
+    color: black;
+}
+
+.tooltip.pink {
+    background-color: pink;
+    color: black;
+}
+
+.tooltip.yellow {
+    background-color: #EAF9C0;
+    color: black;
+}
+
+.tooltip.green {
+    background-color: var(--color-green);
     color: white;
-    border-radius: 40px 40px 0px 0px;
-    display: flex;
-    justify-content: center;
-    padding: 64px;
-
-    position: relative;
-    overflow: hidden;
-}
-
-.footerContainer {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    margin-bottom: 500px;
-    z-index: 20;
-}
-
-
-.footerItemsList {
-    display: flex;
-    flex-direction: column;
-    padding-top: 36px;
-    gap: 32px;
-}
-
-.footerItem {
-    display: flex;
-    flex-direction: column;
-    font-size: 24px;
-    letter-spacing: 99%;
-}
-
-.socials {
-    display: flex;
-    gap: 16px;
-}
-
-.pokifooter {
-    position: absolute;
-    bottom: -20%;
-    width: 90%;
-}
-
-.footerText {
-    position: absolute;
-    top: 52%;
-    left: 40%;
-}
-
-.footerCartoon1 {
-    position: absolute;
-    left: 10%;
-    top: 40%;
-}
-
-.footerCartoon2 {
-    position: absolute;
-    right: 23%;
-    top: 40%;
-}
-
-.footerSvg {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    z-index: 10;
 }

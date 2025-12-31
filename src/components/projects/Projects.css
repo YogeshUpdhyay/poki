@@ -11,17 +11,54 @@
 
 .projectCarousel {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 18px;
     z-index: 20;
     padding-top: 140px;
-    overflow-x: auto;
+    padding-bottom: 140px;
+    overflow-x: hidden;
+    align-items: center; /* vertically center carousel items */
 }
+
 
 .projectButtonContainer {
     display: flex;
     justify-content: center;
-    padding-top: 70px;
+    margin-top: -40px;
 }
 
+.projectsCartoon {
+    position: absolute;
+    left: 78%;
+    top: 50%;
+}
+
+.projectCard {
+    min-height: 376px;
+    min-width: 300px;
+    border-radius: 12px;
+    position: relative;
+    margin-left: 26px;
+    z-index: 30; /* ensure cards can overlap elements below */
+}
+
+.projectCardImage {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.projectCardTitle {
+    padding: 12px;
+    border-radius: 18px 18px 18px 0px;
+    background-color: #EFEBE7;
+    font-size: 14px;
+    position: absolute;
+    bottom: 0px;
+    color: black;
+    z-index: 10;
+    display: flex;
+    width: fit-content;
+    margin: 24px;
+    font-family: 'generalSansMedium';
+}

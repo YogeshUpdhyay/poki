@@ -8,4 +8,7 @@ export default defineConfig({
     react(),
     svgr()
   ],
+  server: {
+    allowedHosts: ['localhost', 'e1131c4bf1b9.ngrok-free.app'],
+  },
 })

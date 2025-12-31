@@ -1,0 +1,28 @@
+.headlineContainer {
+    z-index: 10;
+    width: 100%;
+}
+
+.headlineText {
+    font-size: 96px;
+    text-align: center;
+    letter-spacing: -5px;
+    line-height: 95%;
+}
+
+.headlineText.large {
+    font-size: 160px;
+}
+
+.headlineText.white {
+    color: white;
+}
+
+.headlineHighlight {
+    font-family: ppEditorial;
+}
+
+.headlineWrapper {
+    position: relative; /* anchor for image */
+    display: inline-block;
+}

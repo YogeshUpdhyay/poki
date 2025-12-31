@@ -7,6 +7,7 @@ import projectCardImg2 from '../assets/imgs/projects/projectImg2.png';
 import projectCardImg3 from '../assets/imgs/projects/projectImg3.png';
 import projectCardImg4 from '../assets/imgs/projects/projectImg4.png';
 import projectCardImg5 from '../assets/imgs/projects/projectImg5.png';
+import heroBackgroundMedia from '../assets/imgs/heroBackground.png';
 
 const CmsContext = createContext(null);
 
@@ -58,6 +59,12 @@ const tempCMSData = {
     { title: 'zenith', image: projectCardImg4 },
     { title: 'orbit', image: projectCardImg5 },
   ],
+  hero: {
+    backgroundMedia: heroBackgroundMedia,
+    countMeInUrl: 'https://example.com/contact',
+    lines: ['we make your brand,', 'sharper and louder'],
+    highlight: 'sharper'
+  }
 }
 
 export function CmsProvider({ children }) {

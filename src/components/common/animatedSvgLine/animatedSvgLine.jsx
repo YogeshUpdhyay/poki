@@ -1,7 +1,11 @@
+import { useInView } from "react-intersection-observer";
 import "./animatedSvgLine.css"
 
 function AnimatedSvgLine({ Svg }) {
-  return <Svg className="animated-underline" />;
+  const {ref, inView, entry} = useInView({
+    threshold: 0,
+  })
+  return <Svg ref={ref} className={inView ? "animated-underline animated" : "animated-underline"} />;
 }
   
 export default AnimatedSvgLine;
