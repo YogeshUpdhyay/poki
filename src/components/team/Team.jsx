@@ -38,14 +38,14 @@ export default function Team() {
   });
   const lines = ['a crew of 6', 'dominating', 'the whole world']
   const highlight = 'dominating'
-  const teammates = [
-    { imageSrc: TeammateOneIamge, tooltipText: 'Robin | Co-founder' },
-    { imageSrc: TeammateTwoImage, tooltipText: 'Asha | Product' },
-    { imageSrc: TeammateThreeImage, tooltipText: 'Kunal | Engineering' },
-    { imageSrc: TeammateFourImage, tooltipText: 'Meera | Design' },
-    { imageSrc: TeammateFiveImage, tooltipText: 'Sahil | Growth' },
-    { imageSrc: TeammateSixImage, tooltipText: 'Nisha | Ops' },
-  ]
+  const teammates = {
+    1: { image: TeammateOneIamge, tooltip: 'Robin | Co-founder' },
+    2: { image: TeammateTwoImage, tooltip: 'Asha | Product' },
+    3: { image: TeammateThreeImage, tooltip: 'Kunal | Engineering' },
+    4: { image: TeammateFourImage, tooltip: 'Meera | Design' },
+    5: { image: TeammateFiveImage, tooltip: 'Sahil | Growth' },
+    6: { image: TeammateSixImage, tooltip: 'Nisha | Ops' },
+  }
 
   return (
     <section className="team">
@@ -168,7 +168,7 @@ const Map = () => {
   )
 }
 
-const Teammates = ({ teammates = [] }) => {
+const Teammates = ({ teammates = {} }) => {
   const svgList = [
     TeammateOneSvg,
     TeammateTwoSvg,
@@ -178,7 +178,10 @@ const Teammates = ({ teammates = [] }) => {
     Teammate6Svg,
   ]
 
-  const rOverrides = [undefined, 0.3, 0.4, undefined, undefined, undefined]
+  const rOverrides = [0.3, 0.8, 0.55, 0.5, 0.3, 0.55]
+
+  // Ensure we have exactly six items; read numeric keys 1..6 from the object
+  const items = [1,2,3,4,5,6].map(i => teammates[i] || { image: undefined, tooltip: '' });
 
   return(
     <div className="teammates">
@@ -186,24 +189,75 @@ const Teammates = ({ teammates = [] }) => {
       <img src={TeamPinkBlob} alt="" className="teammatePinkBlob" />
 
       <div className="teamCols">
-        {[0, 1].map((rowIdx) => (
-          <div className="teamRow" key={rowIdx}>
-            {teammates.slice(rowIdx * 3, rowIdx * 3 + 3).map((t, i) => {
-              const idx = rowIdx * 3 + i
-              return (
-                <TeamMateCard
-                  key={idx}
-                  svgSrc={svgList[idx]}
-                  imageSrc={t.imageSrc}
-                  tooltipText={t.tooltipText}
-                  svgLeft='80%'
-                  svgTop='20%'
-                  r={rOverrides[idx]}
-                />
-              )
-            })}
-          </div>
-        ))}
+        <div className="teamRow">
+          <TeamMateCard
+            svgSrc={svgList[0]}
+            imageSrc={items[0].image}
+            tooltipText={items[0].tooltip}
+            svgLeft='80%'
+            svgTop='20%'
+            r={rOverrides[0]}
+            calloutLeft='90%'
+            calloutTop='80%'
+          />
+
+          <TeamMateCard
+            svgSrc={svgList[1]}
+            imageSrc={items[1].image}
+            tooltipText={items[1].tooltip}
+            svgRight='80%'
+            svgTop='50%'
+            r={rOverrides[1]}
+            calloutLeft='90%'
+            calloutTop='20%'
+          />
+
+          <TeamMateCard
+            svgSrc={svgList[2]}
+            imageSrc={items[2].image}
+            tooltipText={items[2].tooltip}
+            svgLeft='80%'
+            svgTop='90%'
+            calloutLeft='90%'
+            calloutTop='10%'
+            r={rOverrides[2]}
+          />
+        </div>
+
+        <div className="teamRow">
+          <TeamMateCard
+            svgSrc={svgList[3]}
+            imageSrc={items[3].image}
+            tooltipText={items[3].tooltip}
+            svgLeft='80%'
+            svgTop='5%'
+            r={rOverrides[3]}
+            calloutRight='80%'
+            calloutBottom='10%'
+          />
+
+          <TeamMateCard
+            svgSrc={svgList[4]}
+            imageSrc={items[4].image}
+            tooltipText={items[4].tooltip}
+            svgRight='80%'
+            svgBottom='20%'
+            r={rOverrides[4]}
+            calloutLeft='90%'
+            calloutBottom='20%'
+          />
+
+          <TeamMateCard
+            svgSrc={svgList[5]}
+            imageSrc={items[5].image}
+            tooltipText={items[5].tooltip}
+            svgLeft='70%'
+            svgTop='-33%'
+            r={rOverrides[5]}
+            calloutRight='80%'
+            calloutBottom='20%'
+          />
+        </div>
       </div>
     </div>
   )
@@ -219,7 +273,7 @@ const TeamMateCard = ({
   svgTop = 'auto',
   svgBottom = 'auto',
   r = 0.6,
-  calloutLeft = '100%',
+  calloutLeft = 'auto',
   calloutRight = 'auto',
   calloutTop = 'auto',
   calloutBottom = 'auto',

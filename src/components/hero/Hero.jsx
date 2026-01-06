@@ -1,6 +1,4 @@
 import './Hero.css'
-import logo from '../../assets/imgs/logo.svg'
-import Button from '../common/button/Button'
 import heroBackgroundMedia from '../../assets/imgs/heroBackground.png'
 import heroCartoon from '../../assets/imgs/heroCartoon.svg'
 import Star from '../star/star'
@@ -25,7 +23,6 @@ function Hero() {
         src={backgroundSrc} 
         alt="heroBackgroundMedia" 
       />
-      <Navbar countMeInUrl={countMeInUrl} />
       <div className='heroHeadline'>
         <HeroHeadline lines={lines} highlight={highlight}/>
       </div>
@@ -33,19 +30,7 @@ function Hero() {
   )
 }
 
-function Navbar({ countMeInUrl }) {
-  return (
-    <nav className="navbar">
-      <div className="navLinks">
-        <a>work</a>
-        <a>about</a>
-        <a>i'm an agency</a>
-      </div>
-      <img src={logo} alt="logo" className="logo" />
-      <Button text="count me in" href={countMeInUrl} />
-    </nav>
-  )
-}
+// Navbar moved to App.jsx so it sits above the page content
 
 function HeroHeadline({lines, highlight}) {
   const { ref, inView, entry } = useInView({

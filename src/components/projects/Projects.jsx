@@ -28,7 +28,7 @@ function Projects() {
     amoount: 0.5,
   });
   return (
-    <section className="projects">
+    <section className="projects" data-navbar="dark">
       <Headline lines={lines} highlight={highlight} tooltip={tooltipText} tooltipColor={tooltipColor}>
         <img
           src={projectsCartoon}

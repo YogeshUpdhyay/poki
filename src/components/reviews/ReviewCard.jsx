@@ -8,9 +8,11 @@ export default function ReviewCard({
   cohesive design elements that truly represent our vision. Their
   creativity and professionalism exceeded our expectations!`,
   avatarSrc = avatarImgSrc,
+  color = 'yellow',
+  reverse = false,
 }) {
   return (
-    <div className="reviewCard">
+    <div className={`reviewCard ${color} ${reverse ? 'reverse' : ''}`}>
       <div className="reviewCardContent">
         <div className="reviewCardReviewer">
           {avatarSrc ? (

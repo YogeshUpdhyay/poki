@@ -5,6 +5,11 @@
    display: flex;
    flex-direction: column;
    gap: 26px;
+   padding-left: 26px;
+}
+
+.reviewCard.reverse {
+   flex-direction: column-reverse;
 }
 
 .reviewCardContent {
@@ -59,3 +64,21 @@
    background-color: var(--color-yellow);
    flex-grow: 1;
 }
+
+/* Per-color variants for the card (use `color` prop to set class on root)
+   green: dark background -> white text
+   pink/blue/yellow: light backgrounds -> black text */
+.reviewCard.green .reviewCardContent { background-color: var(--color-green); color: var(--color-white); }
+.reviewCard.green .reviewCardImage   { background-color: var(--color-green); }
+
+.reviewCard.pink  .reviewCardContent { background-color: var(--color-pink); color: var(--color-black); }
+.reviewCard.pink  .reviewCardImage   { background-color: var(--color-pink); }
+
+.reviewCard.blue  .reviewCardContent { background-color: var(--color-blue); color: var(--color-black); }
+.reviewCard.blue  .reviewCardImage   { background-color: var(--color-blue); }
+
+.reviewCard.yellow  .reviewCardContent { background-color: var(--color-yellow); color: var(--color-black); }
+.reviewCard.yellow  .reviewCardImage   { background-color: var(--color-yellow); }
+
+.reviewCard.orange  .reviewCardContent { background-color: var(--color-orange); color: var(--color-white); }
+.reviewCard.orange  .reviewCardImage   { background-color: var(--color-orange); }

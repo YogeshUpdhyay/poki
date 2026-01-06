@@ -4,6 +4,7 @@ import reviewsBg from '../../assets/imgs/reviewsBg.svg'
 import reviewsCartoon from '../../assets/imgs/reviewsCartoon.svg'
 import HeroUnderline from '../../assets/underlines/heroUnderline.svg?react'
 import AnimatedSvgLine from '../common/animatedSvgLine/animatedSvgLine'
+import avatarImgSrc from '../../assets/imgs/avatar.png'
 import { useState } from 'react'
 import {
   useFloating,
@@ -14,6 +15,24 @@ import {
 } from "@floating-ui/react";
 
 export default function Reviews() {
+  const colors = ['yellow', 'pink', 'blue', 'green', 'orange']
+  const sampleNames = ['Jordan Lee', 'Aisha Khan', 'Mateo Silva', 'Priya Patel', 'Liam Ochoa', 'Sofia Rossi', 'Noah Kim', 'Camila Cruz']
+  const sampleLocations = ['United States', 'India', 'Brazil', 'United Kingdom', 'Canada', 'Australia']
+  const sampleReviews = [
+    `Poki Design Studio transformed our brand with a stunning logo and cohesive design elements.`,
+    `Great to work with — delivered on time and exceeded expectations.`,
+    `Creative team, excellent communication, highly recommended!`,
+    `Their attention to detail made our product shine visually.`,
+  ]
+
+  const reviewsData = Array.from({ length: 8 }).map((_, i) => ({
+    reviewerName: sampleNames[i % sampleNames.length],
+    location: sampleLocations[i % sampleLocations.length],
+    reviewText: sampleReviews[i % sampleReviews.length],
+    color: colors[i % colors.length],
+    avatarSrc: avatarImgSrc,
+  }))
+
   return (
     <section className="reviews">
       <ReviewHeadline />
@@ -23,7 +42,19 @@ export default function Reviews() {
         className="reviewsBg" 
       />
       <div className="reviewsCarousel">
-        <ReviewCard />
+        <div className="reviewsCarouselInner">
+          {reviewsData.map((r, idx) => (
+            <ReviewCard
+              key={idx}
+              reviewerName={r.reviewerName}
+              location={r.location}
+              reviewText={r.reviewText}
+              color={r.color}
+              avatarSrc={r.avatarSrc}
+              reverse={idx % 2 === 1}
+            />
+          ))}
+        </div>
       </div>
     </section>
   )

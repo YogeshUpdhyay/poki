@@ -29,3 +29,131 @@
 .brandNeedsButton {
     margin-top: 64px;
 }
+
+.offerings {
+   display: flex;
+   justify-content: center;
+   gap: 32px;
+   padding-top: 140px;
+}
+
+.offeringCard {
+   padding: 55px 28px 48px 28px;
+   display: flex;
+   flex-direction: column;
+   gap: 28px;
+   height: 376px;
+   width: 300px;
+   position: relative;
+   border-radius: 12px;
+   transform-origin: center center;
+   transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+}
+
+.offeringCard.green {
+   background-color: #427665;
+   color: white;
+   transform: translate(10%, 7%) rotate(8deg);
+}
+
+/* Smoothly scale the blue card on hover while preserving its translate/rotate */
+.offeringCard.green:hover {
+   transform: scale(1.1);
+}
+
+.offerings:has(.offeringCard.green:hover) .offeringCard.pink {
+  transform: translate(49%, 3%) rotate(-3deg);
+}
+
+.offerings:has(.offeringCard.green:hover) .offeringCard.blue {
+   transform: translate(10%, 20%) rotate(15deg);
+}
+
+.offeringCard.pink {
+   background-color: #EFB5D4;
+   transform: translate(-1%, 3%) rotate(-3deg);
+}
+
+/* Smoothly scale the blue card on hover while preserving its translate/rotate */
+.offeringCard.pink:hover {
+   transform: scale(1.1);
+}
+
+.offerings:has(.offeringCard.pink:hover) .offeringCard.blue {
+  transform: translate(30%, 20%) rotate(15deg);
+}
+
+.offerings:has(.offeringCard.pink:hover) .offeringCard.green {
+   transform: translate(-35%, 7%) rotate(8deg);
+}
+
+.offeringCard.blue {
+   background-color: #86C9FF;
+   transform: translate(-15%, 20%) rotate(15deg);
+}
+
+/* Smoothly scale the blue card on hover while preserving its translate/rotate */
+.offeringCard.blue:hover {
+   transform: scale(1.1);
+}
+
+.offerings:has(.offeringCard.blue:hover) .offeringCard.pink {
+  transform: translate(-51%, 3%) rotate(-3deg);
+}
+
+.offerings:has(.offeringCard.blue:hover) .offeringCard.green {
+   transform: translate(-15%, 7%) rotate(8deg);
+}
+
+.offeringCardTitle {
+   font-size: 24px;
+   line-height: 99%;
+}
+
+.offeringDesc {
+   display: flex;
+   flex-direction: column;
+   gap: 16px;
+}
+
+.offeringDescLine {
+   font-size: 16px;
+   font-weight: lighter;
+   display: flex;
+   align-items: center;
+   font-family: generalSansMedium;
+   gap: 10px
+}
+
+.offeringCardSvg {
+   position: absolute;
+   top: -35px;
+   left: 140px;
+}
+
+.offeringCardSeprator {
+   width: 100%;
+   object-fit: contain;
+   color: inherit;
+}
+
+/* Explicit per-card-color rules (set stroke color via currentColor) */
+.offeringCardSeprator.green { color: var(--color-white); }
+.offeringCardSeprator.pink  { color: var(--color-black); }
+.offeringCardSeprator.blue  { color: var(--color-black); }
+
+/* Ensure the inline path picks up the color and is visible */
+.offeringCardSeprator svg,
+.offeringCardSeprator svg * {
+  color: inherit;
+}
+.offeringCardSeprator path {
+   stroke: currentColor !important;
+   fill: none !important;
+}
+
+/* Small bullet svg color in offeringDescLine: white for green card, black for pink/blue */
+.offeringCard.green .offeringDescLine svg { color: var(--color-white); }
+.offeringCard.pink  .offeringDescLine svg { color: var(--color-black); }
+.offeringCard.blue  .offeringDescLine svg { color: var(--color-black); }
+.offeringCard .offeringDescLine svg path { fill: currentColor !important; }

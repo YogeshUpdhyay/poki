@@ -13,6 +13,7 @@
     "@floating-ui/react": "^0.27.16",
     "framer-motion": "^12.23.26",
     "motion": "^12.23.26",
+    "picomatch": "^4.0.3",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-intersection-observer": "^10.0.0",

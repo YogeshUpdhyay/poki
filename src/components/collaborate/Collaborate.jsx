@@ -12,7 +12,7 @@ import {
 
 export default function Collaborate() {
   return (
-    <section className="letsCollab">
+    <section className="letsCollab" data-navbar="dark">
       <div className="collabHeadline">
         <CollabHeadline />
       </div>
