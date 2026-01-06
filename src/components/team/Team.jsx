@@ -14,12 +14,18 @@ import TeamGreenBlob from '../../assets/imgs/teammateGreen.svg'
 import TeamPinkBlob from '../../assets/imgs/teammatePink.svg'
 
 import TeammateOneIamge from '../../assets/imgs/teammateOne.png'
+import TeammateTwoImage from '../../assets/imgs/teammateTwo.png'
+import TeammateThreeImage from '../../assets/imgs/teammateThree.png'
+import TeammateFourImage from '../../assets/imgs/teammateFour.png'
+import TeammateFiveImage from '../../assets/imgs/teammateFive.png'
+import TeammateSixImage from '../../assets/imgs/teammateSix.png'
 import TeammateOneSvg from '../../assets/imgs/teammateOne.svg'
 import TeammateTwoSvg from '../../assets/imgs/teammateTwo.svg'
 import Teammate3Svg from '../../assets/imgs/teammate3.svg'
 import Teammate4Svg from '../../assets/imgs/teammate4.svg'
 import Teammate5Svg from '../../assets/imgs/teammate5.svg'
 import Teammate6Svg from '../../assets/imgs/teammate6.svg'
+
 import WorldMap from '../../assets/world.svg?react'
 
 import { Headline } from '../common/headline/Headline';
@@ -32,6 +38,14 @@ export default function Team() {
   });
   const lines = ['a crew of 6', 'dominating', 'the whole world']
   const highlight = 'dominating'
+  const teammates = [
+    { imageSrc: TeammateOneIamge, tooltipText: 'Robin | Co-founder' },
+    { imageSrc: TeammateTwoImage, tooltipText: 'Asha | Product' },
+    { imageSrc: TeammateThreeImage, tooltipText: 'Kunal | Engineering' },
+    { imageSrc: TeammateFourImage, tooltipText: 'Meera | Design' },
+    { imageSrc: TeammateFiveImage, tooltipText: 'Sahil | Growth' },
+    { imageSrc: TeammateSixImage, tooltipText: 'Nisha | Ops' },
+  ]
 
   return (
     <section className="team">
@@ -57,7 +71,7 @@ export default function Team() {
           </div>
         </Headline>
       </div>
-      <Teammates />
+      <Teammates teammates={teammates} />
     </section>
   )
 }
@@ -154,23 +168,42 @@ const Map = () => {
   )
 }
 
-const Teammates = () => {
+const Teammates = ({ teammates = [] }) => {
+  const svgList = [
+    TeammateOneSvg,
+    TeammateTwoSvg,
+    Teammate3Svg,
+    Teammate4Svg,
+    Teammate5Svg,
+    Teammate6Svg,
+  ]
+
+  const rOverrides = [undefined, 0.3, 0.4, undefined, undefined, undefined]
+
   return(
     <div className="teammates">
       <img src={TeamGreenBlob} alt="" className="teammateGreenBlob" />
       <img src={TeamPinkBlob} alt="" className="teammatePinkBlob" />
 
       <div className="teamCols">
-        <div className="teamRow">
-          <TeamMateCard svgSrc={TeammateOneSvg} svgLeft='80%' svgTop='20%' />
-          <TeamMateCard svgSrc={TeammateTwoSvg} svgLeft='80%' svgTop='20%' r={0.3}/>
-          <TeamMateCard svgSrc={Teammate3Svg} svgLeft='80%' svgTop='20%' r={0.4}/>
-        </div>
-        <div className="teamRow">
-          <TeamMateCard svgSrc={Teammate4Svg} svgLeft='80%' svgTop='20%'/>
-          <TeamMateCard svgSrc={Teammate5Svg} svgLeft='80%' svgTop='20%'/>
-          <TeamMateCard svgSrc={Teammate6Svg} svgLeft='80%' svgTop='20%'/>
-        </div>
+        {[0, 1].map((rowIdx) => (
+          <div className="teamRow" key={rowIdx}>
+            {teammates.slice(rowIdx * 3, rowIdx * 3 + 3).map((t, i) => {
+              const idx = rowIdx * 3 + i
+              return (
+                <TeamMateCard
+                  key={idx}
+                  svgSrc={svgList[idx]}
+                  imageSrc={t.imageSrc}
+                  tooltipText={t.tooltipText}
+                  svgLeft='80%'
+                  svgTop='20%'
+                  r={rOverrides[idx]}
+                />
+              )
+            })}
+          </div>
+        ))}
       </div>
     </div>
   )
@@ -186,57 +219,44 @@ const TeamMateCard = ({
   svgTop = 'auto',
   svgBottom = 'auto',
   r = 0.6,
+  calloutLeft = '100%',
+  calloutRight = 'auto',
+  calloutTop = 'auto',
+  calloutBottom = 'auto',
 }) => {
-  const [open, setOpen] = useState(false);
-  const { refs, floatingStyles, context } = useFloating({
-    open,
-    onOpenChange: setOpen,
-    middleware: [offset(8)], // optional offset
-    whileElementsMounted: autoUpdate,
-  });
-
-  const clientPoint = useClientPoint(context);
-
-  const { getReferenceProps, getFloatingProps } = useInteractions([
-    clientPoint,
-  ]);
 
   return (
     <>
       <div
         className="teammateCard"
-        ref={refs.setReference}
-        {...getReferenceProps({
-          onMouseEnter: () => setOpen(true),
-          onMouseLeave: () => setOpen(false),
-        })}
         style={{ '--r': r }}
       >
-        <img src={imageSrc} alt="teammateImage" className="teammateCardImage" />
-        <img
-          src={svgSrc}
-          alt="teammateSvg"
-          style={{
-            position: 'absolute',
-            left: svgLeft ?? 'auto',
-            right: svgRight ?? 'auto',
-            top: svgTop ?? 'auto',
-            bottom: svgBottom ?? 'auto',
-          }}
-        />
-      </div>
-
-      {open && (
-        <div
-          ref={refs.setFloating}
-          style={floatingStyles}
-          {...getFloatingProps({
-            className: 'tooltip yellow',
-          })}
-        >
-          {tooltipText}
+        <div className="teammateImageWrap">
+          <img src={imageSrc} alt="teammateImage" className="teammateCardImage" />
+          <img
+            src={svgSrc}
+            alt="teammateSvg"
+            style={{
+              position: 'absolute',
+              left: svgLeft ?? 'auto',
+              right: svgRight ?? 'auto',
+              top: svgTop ?? 'auto',
+              bottom: svgBottom ?? 'auto',
+            }}
+          />
+          <div 
+            className='teammateCallout'
+            style={{
+              left: calloutLeft ?? 'auto',
+              right: calloutRight ?? 'auto',
+              top: calloutTop ?? 'auto',
+              bottom: calloutBottom ?? 'auto',
+            }}
+          >
+            {tooltipText}
+          </div>
         </div>
-      )}
+      </div>
     </>
   )
 }
