@@ -5,7 +5,7 @@ import reviewsCartoon from '../../assets/imgs/reviewsCartoon.svg'
 import HeroUnderline from '../../assets/underlines/heroUnderline.svg?react'
 import AnimatedSvgLine from '../common/animatedSvgLine/animatedSvgLine'
 import avatarImgSrc from '../../assets/imgs/avatar.png'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import {
   useFloating,
   useClientPoint,
@@ -13,6 +13,7 @@ import {
   autoUpdate,
   useInteractions,
 } from "@floating-ui/react";
+import { motion } from "framer-motion";
 
 export default function Reviews() {
   const colors = ['yellow', 'pink', 'blue', 'green', 'orange']
@@ -33,6 +34,15 @@ export default function Reviews() {
     avatarSrc: avatarImgSrc,
   }))
 
+  const reviewsRef = useRef();
+  const [reviewsWidth, setReviewsWidth] = useState(0);
+
+  useEffect(() => {
+    setReviewsWidth(
+      reviewsRef.current.scrollWidth - reviewsRef.current.offsetWidth
+    );
+  }, []);
+
   return (
     <section className="reviews">
       <ReviewHeadline />
@@ -41,8 +51,12 @@ export default function Reviews() {
         alt="reviewsBg" 
         className="reviewsBg" 
       />
-      <div className="reviewsCarousel">
-        <div className="reviewsCarouselInner">
+      <motion.div className="reviewsCarousel" ref={reviewsRef}>
+        <motion.div 
+          className="reviewsCarouselInner"
+          drag="x"
+          dragConstraints={{ right: 0, left: -reviewsWidth }}
+        >
           {reviewsData.map((r, idx) => (
             <ReviewCard
               key={idx}
@@ -54,8 +68,8 @@ export default function Reviews() {
               reverse={idx % 2 === 1}
             />
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   )
 }

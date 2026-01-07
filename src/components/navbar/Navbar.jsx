@@ -1,5 +1,5 @@
 import './Navbar.css'
-import logo from '../../assets/imgs/logo.svg'
+import PokiLogo from '../../assets/imgs/logo.svg?react'
 import Button from '../common/button/Button'
 import { useCms } from '../../utils/context'
 import { useEffect, useRef, useState } from 'react'
@@ -45,7 +45,8 @@ export default function Navbar() {
         <a>about</a>
         <a>i'm an agency</a>
       </div>
-      <img src={logo} alt="logo" className="logo" />
+      {/* <img src={logo} alt="logo" className="logo" /> */}
+      <PokiLogo className="logo" />
       <Button text="count me in" href={countMeInUrl} />
     </nav>
   )

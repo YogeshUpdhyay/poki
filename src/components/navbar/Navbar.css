@@ -14,7 +14,7 @@
     width: 100%;
 }
 
-.navbar { color: white; }
+.navbar { color: var(--color-white) }
 .navbar.dark { color: var(--color-black); }
 
 .navLinks {
@@ -25,7 +25,6 @@
 }
 
 .navbar .navLinks a { color: inherit; }
-.navbar .cta-btn { color: inherit; border-color: currentColor; }
 
 .logo {
     justify-self: center;
