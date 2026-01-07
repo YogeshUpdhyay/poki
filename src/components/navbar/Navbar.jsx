@@ -46,7 +46,7 @@ export default function Navbar() {
         <a>i'm an agency</a>
       </div>
       {/* <img src={logo} alt="logo" className="logo" /> */}
-      <PokiLogo className="logo" />
+      <PokiLogo className={`logo ${dark ? 'dark' : ''}`} />
       <Button text="count me in" href={countMeInUrl} />
     </nav>
   )

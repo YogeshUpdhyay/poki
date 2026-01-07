@@ -1,7 +1,7 @@
 import './Hero.css'
 import heroBackgroundMedia from '../../assets/imgs/heroBackground.png'
 import heroCartoon from '../../assets/imgs/heroCartoon.svg'
-import Star from '../star/star'
+import yellowStar from '../../assets/imgs/stars/yellow.svg'
 import AnimatedSvgLine from '../common/animatedSvgLine/animatedSvgLine'
 import HeroUnderline from "../../assets/underlines/heroUnderline.svg?react";
 import { Headline } from '../common/headline/Headline';
@@ -48,7 +48,7 @@ function HeroHeadline({lines, highlight}) {
       />
 
       <div className="heroStar">
-        <Star />
+        <img src={yellowStar} alt="yellowStar" className='star'/>
       </div>
 
       <div className="heroUnderlinePosition">

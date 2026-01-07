@@ -31,6 +31,10 @@
     display: block;
 }
 
+.logo.dark {
+    color: var(--background-violet);
+}
+
 .navbar .cta-btn-background {
     justify-self: end;
 }

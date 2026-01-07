@@ -1,0 +1,27 @@
+.about {
+  width: 100%;
+}
+
+.aboutHero {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.aboutHeroCartoon {
+    position: absolute;
+    bottom: 100%;
+    right: 20%;
+}
+
+.aboutHeadline {
+    padding-top: 120px;
+}
+
+.aboutHeroButton {
+    align-self: center;
+    padding-top: 64px;
+    padding-bottom: 120px;
+}

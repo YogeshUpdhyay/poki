@@ -1,28 +1,27 @@
 
 import './App.css'
-import Hero from './components/hero/Hero'
-import Navbar from './components/navbar/Navbar'
-import Projects from './components/projects/Projects'
-import Team from './components/team/Team'
-import BrandNeeds from './components/brandNeeds/BrandNeeds'
-
-import Reviews from './components/reviews/Reviews'
-import Collaborate from './components/collaborate/Collaborate'
 import { CmsProvider } from './utils/context'
-import Footer from './components/footer/Footer'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Homepage from './pages/homepage/Homepage';
+import About from './pages/about/About';
 
 
 function App() {
   return (
     <CmsProvider>
-      <Navbar />
-      <Hero />
-      <Projects />
-      <Team />
-      <BrandNeeds />
-      <Reviews />
-      <Collaborate />
-      <Footer />
+      <Router>
+        <Routes>
+          {/* Define your routes here */}
+          <Route
+            path="/"
+            element={<Homepage />}
+          ></Route>
+          <Route
+            path="/about"
+            element={<About />}
+          ></Route>
+        </Routes>
+      </Router>
     </CmsProvider>
   )
 }
