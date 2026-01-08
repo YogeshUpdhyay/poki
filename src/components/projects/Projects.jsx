@@ -27,6 +27,7 @@ function Projects() {
   const projectCartoonInView = useInView(projectsCartoonRef, {
     amoount: 0.5,
   });
+
   return (
     <section className="projects" data-navbar="dark">
       <Headline lines={lines} highlight={highlight} tooltip={tooltipText} tooltipColor={tooltipColor}>
