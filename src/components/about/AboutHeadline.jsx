@@ -1,5 +1,5 @@
-import { Headline } from '../../common/headline/Headline'
-import aboutHeroCartoon from '../../../assets/svgs/about/heroCartoon.svg'
+import { Headline } from '../common/headline/Headline'
+import aboutHeroCartoon from '../../assets/svgs/about/heroCartoon.svg'
 import { useInView } from 'react-intersection-observer'
 
 function AboutHeadline() {

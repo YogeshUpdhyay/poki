@@ -1,4 +1,4 @@
-import Button from '../../common/button/Button'
+import Button from '../common/button/Button'
 import AboutHeadline from './AboutHeadline'
 
 function AboutHero() {

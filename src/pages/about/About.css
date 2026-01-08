@@ -48,6 +48,7 @@
     line-height: 140%;
     padding-bottom: 140px;
 }
+
 .aboutFlex {
     display: flex;
     justify-content: space-between;
@@ -80,4 +81,117 @@
     padding-bottom: 64px;
     width: 100%;
     height: auto;
+}
+
+.carouselItem {
+    height: 376px;
+    width: 300px;
+    border-radius: 12px;
+    position: relative;
+    margin-left: 26px;
+    z-index: 30; /* ensure cards can overlap elements below */
+}
+
+.carouselImage {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.carouselTitle {
+    padding: 12px;
+    border-radius: 18px 18px 18px 0px;
+    background-color: #EFEBE7;
+    font-size: 14px;
+    position: absolute;
+    bottom: 0px;
+    color: black;
+    z-index: 10;
+    display: flex;
+    width: fit-content;
+    margin: 24px;
+    font-family: 'generalSansMedium';
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.innerCarousel {
+    display: flex;
+    animation: scroll 40s infinite linear;  
+}
+
+@keyframes scroll {
+    from {translate: 0;}
+    to {translate: -100%;}
+}
+
+.studio {
+    background-color: var(--background-light);
+    border-radius: 40px 40px 0px 0px;
+    margin-top: -40px;
+}
+
+.studioCarousel {
+    padding: 160px 0px;
+}
+
+.studioCartoon {
+    position: absolute;
+    left: 100%;
+    top: 20%;
+}
+
+.studioStar {
+    position: absolute;
+    right: 90%;
+}
+
+.companies {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 26px;
+    padding: 80px 64px;
+}
+
+.companyCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+    background-color: #E6E2DE;
+    width: 100%;
+    padding: 0px 42px 48px;
+    margin-top: 68px;
+}
+
+.companyName {
+    font-size: 16px;
+    padding-top: 48px;
+}
+
+.companyWorks {
+    font-family: 'generalSansMedium';
+    font-size: 14px;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.companyLogo {
+    transform: translateY(-50%);
+}
+
+.studioButtons {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    padding-bottom: 160px;
 }
