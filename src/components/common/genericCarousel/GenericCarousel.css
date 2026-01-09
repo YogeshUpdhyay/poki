@@ -1,0 +1,50 @@
+.carouselItem {
+    height: 376px;
+    width: 300px;
+    border-radius: 12px;
+    position: relative;
+    margin-left: 26px;
+    z-index: 30; /* ensure cards can overlap elements below */
+}
+
+.carouselImage {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.carouselTitle {
+    padding: 12px;
+    border-radius: 18px 18px 18px 0px;
+    background-color: #EFEBE7;
+    font-size: 14px;
+    position: absolute;
+    bottom: 0px;
+    color: black;
+    z-index: 10;
+    display: flex;
+    width: fit-content;
+    margin: 24px;
+    font-family: 'generalSansMedium';
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.innerCarousel {
+    display: flex;
+    animation: scroll 40s infinite linear;  
+}
+
+@keyframes scroll {
+    from {translate: 0;}
+    to {translate: -100%;}
+}

@@ -20,6 +20,10 @@ function App() {
             path="/about"
             element={<About />}
           ></Route>
+          <Route
+            path="/agency"
+            element={<About />}
+          ></Route>
         </Routes>
       </Router>
     </CmsProvider>
