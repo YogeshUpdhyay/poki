@@ -1,0 +1,151 @@
+.agencyHero {
+    display: flex;
+    height: 100vh;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+}
+
+.agencyCartoon {
+    right: 50%;
+    top: 0;
+    transform: translateY(-90%);
+    position: absolute;
+}
+
+.agencyButtons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 64px;
+    padding-bottom: 160px;
+}
+
+.partnerWith {
+    background-color: var(--background-dark);
+    color: var(--color-white);
+    border-radius: 40px 40px 0px 0px;
+    padding: 160px 64px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.agencyHeroUnderline {
+    position: absolute;
+    top: 100%;
+    left: 45%;
+}
+
+.agencyHeroStar {
+    position: absolute;
+    top: -20%;
+    right: 100%;
+}
+
+.partnerCardsGroup {
+    display: flex;
+    padding-top: 120px;
+    padding-bottom: 80px;
+}
+
+.partnerCard {
+    height: 220px;
+    width: 320px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: start;
+}
+
+.partnerCard.green {
+    background-color: var(--color-green);
+}
+
+.partnerCard.orange {
+    background-color: var(--color-orange);
+}
+
+.partnerCard.yellow {
+    background-color: var(--color-yellow);
+}
+
+.partnerCard.blue {
+    background-color: var(--color-blue);
+    color: var(--color-black);
+}
+
+.partnerCard.pink {
+    background-color: var(--color-pink);
+    color: var(--color-black);
+}
+
+.partnerCardText {
+    width: 90%;
+    padding: 28px;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: 98%;
+}
+
+.advantage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 160px 64px;
+    position: relative;
+    overflow: hidden;
+}
+
+.advCartoon {
+    position: absolute;
+    right: 95%;
+    transform: translateY(-20%);
+}
+
+.advList {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-top: 96px;
+    padding-bottom: 64px;
+    align-items: center;
+    justify-content: center;
+}
+
+.advListItem {
+    font-size: 20px;
+    padding: 24px;
+    background-color: var(--color-pink);
+    display: flex;
+    border-radius: 100px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: fit-content;
+}
+
+.agencyBg {
+    position: absolute;
+    top: 60%;
+    left: 78%;
+}
+
+.partnerships {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 160px 64px;
+    position: relative;
+    background-color: var(--background-dark);
+    margin-top: -40px;
+    border-radius: 40px 40px 0px 0px;
+    color: var(--color-white);
+}
+
+.partnerReview {
+    padding: 64px;
+}

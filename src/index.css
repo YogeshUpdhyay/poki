@@ -21,6 +21,21 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Milk Cursive W00 Regular";
+  src: url("https://db.onlinewebfonts.com/t/6051c488e9a1c4bddecd81110c24421e.eot");
+  src: url("https://db.onlinewebfonts.com/t/6051c488e9a1c4bddecd81110c24421e.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/6051c488e9a1c4bddecd81110c24421e.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/6051c488e9a1c4bddecd81110c24421e.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/6051c488e9a1c4bddecd81110c24421e.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/6051c488e9a1c4bddecd81110c24421e.svg#Milk Cursive W00 Regular")
+      format("svg");
+}
+
 * {
   margin: 0;
   padding: 0;

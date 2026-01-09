@@ -4,6 +4,7 @@ import { CmsProvider } from './utils/context'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Homepage from './pages/homepage/Homepage';
 import About from './pages/about/About';
+import Agency from './pages/agency/Agency';
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
           ></Route>
           <Route
             path="/agency"
-            element={<About />}
+            element={<Agency />}
           ></Route>
         </Routes>
       </Router>
