@@ -32,9 +32,71 @@ const AgencyPartnerShips = () => {
                 lines={['partnerships that paid off']}
                 highlight={'partnerships'}
             >
-                <img src="" alt="" />
+                <img 
+                    src={agencyHeroStar} 
+                    alt="agencyHeroStar" 
+                    className='agencyPartnerStar'
+                />
             </Headline>
-            <div className="partnerReview"></div>
+            <div className="partnerReview">
+                <div className="partnerReviewCard">
+                    <div className="outlineTextWrapper">
+                        <OutlinedSvgText
+                            lines={['scale without', 'hiring']}
+                            fill='green'
+                            stroke='white'
+                            rotate='0deg'
+                            translateY='0%'
+                        />
+                    </div>
+                    <div className="partnerReviewText">
+                        In just 6 months, this branding studio increased their 
+                        project capacity by  <strong>180%</strong> by partnering with us 
+                        for white-label UI and web design. Instead of hiring additional designers, 
+                        they outsourced <strong>12 full website projects</strong> to our team, 
+                        reducing internal workload while improving delivery speed. 
+                        <br/> <br />
+                        The result: <strong>42% higher</strong> profit margins and zero missed 
+                        deadlines during peak periods.
+                    </div>
+                    <div className="partnerName">
+                        Visionary Brand Partners
+                    </div>
+                    <div className="partnerLocation">
+                        California, USA
+                    </div>
+                </div>
+                <div className="partnerReviewCard">
+                    <div className="outlineTextWrapper">
+                        <OutlinedSvgText
+                            lines={['when two', 'teams win']}
+                            fill='violet'
+                            stroke='white'
+                            rotate='0deg'
+                            translateY='0%'
+                        /> 
+                    </div>
+                      
+                    <div className="partnerReviewText">
+                        A development-only agency wanted to improve project 
+                        outcomes by offering custom website design before 
+                        jumping into build and deployment. By partnering with us, 
+                        they introduced full UI & web design services to their 
+                        workflow without hiring a design team. 
+                        <br /> <br />
+                        In the first 5 months, they increased average project 
+                        value by 38%, reduced revisions during development by 
+                        60%, and booked 10 new end-to-end website projects 
+                        with stronger client satisfaction and smoother launches.
+                    </div>
+                    <div className="partnerName">
+                        Untangled Web Services
+                    </div>
+                    <div className="partnerLocation">
+                        London, UK
+                    </div>
+                </div>
+            </div>
             <Button text="i want these results" />
         </section>
     )

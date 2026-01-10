@@ -10,8 +10,7 @@ function OutlinedSvgText({
   return (
     <svg 
         width="100%" 
-        height={size * 1.4} 
-        viewBox={`0 0 800 ${size * 1.4}`}
+        viewBox={`0 0 auto auto`}
         style={{
             transform: `translateY(${translateY})`,
             rotate: rotate

@@ -48,6 +48,7 @@
     display: flex;
     padding-top: 120px;
     padding-bottom: 80px;
+    gap: 10px
 }
 
 .partnerCard {
@@ -98,6 +99,9 @@
     padding: 160px 64px;
     position: relative;
     overflow: hidden;
+    border-radius: 40px 40px 0px 0px;
+    margin-top: -40px;
+    background-color: var(--background-light);
 }
 
 .advCartoon {
@@ -147,5 +151,56 @@
 }
 
 .partnerReview {
-    padding: 64px;
+    padding-top: 96px;
+    padding-bottom: 64px;
+    display: flex;
+    gap: 26px;
+}
+
+.agencyPartnerStar {
+    position: absolute;
+    top: -20%;
+    right: 100%;
+    gap: 26px;
+}
+
+.partnerReviewCard {
+    background-color: var(--background-light);
+    border-radius: 12px;
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    align-items: start;
+    position: relative;
+    height: 400px;
+}
+
+.partnerReviewText {
+    font-size: 16px;
+    font-family: generalSansMedium, sans-serif;
+    line-height: 150%;
+    letter-spacing: 98%;
+    flex-grow: 1;
+    margin-top: -64px;
+}
+
+.partnerName {
+    line-height: 140%;
+    letter-spacing: 98%;
+    font-size: 16px;
+    font-family: generalSansMedium, sans-serif;
+    filter: blur(4px);
+}
+
+.partnerLocation {
+    font-size: 16px;
+    line-height: 110%;
+    letter-spacing: 98%;
+    font-family: generalSansMedium, sans-serif;
+}
+
+.outlineTextWrapper {
+    margin-top: -36px;
+    transform: translateY(-20%);
 }
