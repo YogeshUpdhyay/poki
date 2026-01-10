@@ -1,0 +1,18 @@
+.work {
+    background-color: var(--background-dark);
+    padding: 180px 0px;
+}
+
+.skewedTapContainer {
+    padding: 180px 0px;
+}
+
+.skewedTapeContent {
+    display: flex;
+    gap: 28px;
+    color: var(--color-white);
+    font-size: 96px;
+    letter-spacing: 97%;
+    align-items: center;
+    justify-content: center;
+}
