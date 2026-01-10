@@ -41,9 +41,9 @@ export default function Navbar() {
   return (
     <nav ref={navRef} className={`navbar ${dark ? 'dark' : ''}`}>
       <div className="navLinks">
-        <a>work</a>
-        <a>about</a>
-        <a>i'm an agency</a>
+        <a href="/work">work</a>
+        <a href="/about">about</a>
+        <a href="/agency">i'm an agency</a>
       </div>
       {/* <img src={logo} alt="logo" className="logo" /> */}
       <PokiLogo className={`logo ${dark ? 'dark' : ''}`} />

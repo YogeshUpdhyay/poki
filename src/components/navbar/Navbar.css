@@ -24,7 +24,10 @@
     justify-self: start;
 }
 
-.navbar .navLinks a { color: inherit; }
+.navbar .navLinks a { 
+    color: inherit;
+    text-decoration: none;
+}
 
 .logo {
     justify-self: center;
