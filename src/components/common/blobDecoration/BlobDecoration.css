@@ -1,0 +1,16 @@
+.blob-decoration {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.blob-decoration svg {
+  filter: blur(2px);
+}
+
+@media (max-width: 768px) {
+  .blob-decoration {
+    display: none;
+  }
+}

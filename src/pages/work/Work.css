@@ -1,18 +1,340 @@
 .work {
     background-color: var(--background-dark);
-    padding: 180px 0px;
+    padding: 120px 0px 0px;
+    position: relative;
+    min-height: 100vh;
 }
 
+/* Hero Marquee Section */
 .skewedTapContainer {
-    padding: 180px 0px;
+    background-color: var(--background-dark);
+    min-height: 100vh;
+    padding-top: 200px;
+    overflow-x: hidden;
 }
 
 .skewedTapeContent {
-    display: flex;
-    gap: 28px;
+    display: inline-flex;
+    gap: 40px;
     color: var(--color-white);
     font-size: 96px;
-    letter-spacing: 97%;
+    font-weight: 700;
+    letter-spacing: -0.03em;
     align-items: center;
+    font-family: 'General Sans', sans-serif;
+    line-height: 1;
+}
+
+.skewedTapeContent svg {
+    vertical-align: middle;
+}
+
+/* Category Menu Section */
+.categoryMenu {
+    background-color: var(--background-dark);
+    padding: clamp(80px, 12vh, 120px) clamp(20px, 5vw, 40px) clamp(80px, 12vh, 120px);
+    text-align: center;
+}
+
+.categoryMenu h3 {
+    color: var(--color-white);
+    font-size: clamp(18px, 2.5vw, 24px);
+    font-weight: 600;
+    margin-bottom: 32px;
+    letter-spacing: -0.01em;
+}
+
+.categoryPills {
+    display: flex;
+    gap: 10px;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.categoryPill {
+    padding: 12px 14px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    letter-spacing: -0.01em;
+}
+
+.categoryPill.active {
+    background-color: var(--color-pink);
+    color: var(--background-dark);
+}
+
+.categoryPill:not(.active) {
+    background-color: rgba(239, 235, 231, 0.1);
+    color: var(--color-white);
+}
+
+.categoryPill:not(.active):hover {
+    background-color: rgba(239, 235, 231, 0.2);
+}
+
+/* Project Showcase Grid */
+.projectShowcase {
+    padding: 80px 0px 100px;
+    background-color: var(--background-dark);
+    position: relative;
+    width: 100%;
+}
+
+.projectRow {
+    position: relative;
+    margin-bottom: 80px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 clamp(20px, 3vw, 40px);
+}
+
+.projectGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Phone Mockup Cards */
+.phoneMockupCard {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    min-width: 260px;
+    height: auto;
+    aspect-ratio: 360 / 500;
+    translate: 0 0;
+    scale: 1;
+    transition: translate 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.3s;
+    cursor: pointer;
+    flex: 0 1 calc(33.333% - 8px);
+}
+
+/* Middle card in each row positioned lower */
+.phoneMockupCard:nth-child(3n+2) {
+    margin-top: 60px;
+    margin-left: -20px;
+    margin-right: -20px;
+    z-index: 2;
+}
+
+/* Hover Effects - Sibling Push Animation */
+.phoneMockupCard:hover {
+    z-index: 20;
+    transform: rotate(0deg) scale(1.08) !important;
+}
+
+/* First card (left) hover - push others right */
+.projectRow:has(.phoneMockupCard:nth-child(1):hover) .phoneMockupCard:nth-child(2) {
+    translate: 60px 0;
+}
+
+.projectRow:has(.phoneMockupCard:nth-child(1):hover) .phoneMockupCard:nth-child(3) {
+    translate: 60px 0;
+}
+
+/* Second card (middle) hover - push left card left, right card right */
+.projectRow:has(.phoneMockupCard:nth-child(2):hover) .phoneMockupCard:nth-child(1) {
+    translate: -60px 0;
+}
+
+.projectRow:has(.phoneMockupCard:nth-child(2):hover) .phoneMockupCard:nth-child(3) {
+    translate: 60px 0;
+}
+
+/* Third card (right) hover - push others left */
+.projectRow:has(.phoneMockupCard:nth-child(3):hover) .phoneMockupCard:nth-child(1) {
+    translate: -60px 0;
+}
+
+.projectRow:has(.phoneMockupCard:nth-child(3):hover) .phoneMockupCard:nth-child(2) {
+    translate: -60px 0;
+}
+
+.phoneMockupImage {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    border: 6px solid var(--color-white);
+    background-color: #D9D9D9;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+}
+
+.phoneMockupImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 6px;
+}
+
+.phoneMockupLabel {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-white);
+    color: var(--background-dark);
+    padding: 12px;
+    border-radius: 18px 18px 18px 0px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 3;
+}
+
+/* Flower Decorations */
+.flowerDecoration {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    width: clamp(250px, 30vw, 350px);
+    height: auto;
+    opacity: 0.8;
+}
+
+.flower-left {
+    left: -50px;
+    bottom: -150px;
+    top: auto;
+    transform: none;
+}
+
+.flower-right {
+    right: -50px;
+    bottom: -150px;
+    top: auto;
+    transform: none;
+}
+
+/* Responsive Design */
+/* Hide flowers on screens smaller than 1024px */
+@media (max-width: 1024px) {
+    .flowerDecoration {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    /* Disable rotations for better UX on smaller screens */
+    .phoneMockupCard {
+        transform: rotate(0deg) !important;
+    }
+
+    .skewedTapeContent {
+        font-size: 72px;
+        gap: 30px;
+    }
+
+    .phoneMockupCard {
+        max-width: 300px;
+        height: 420px;
+    }
+
+    .projectRow {
+        margin-bottom: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .work {
+        padding: 80px 0px 0px;
+    }
+
+    .projectGrid {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .projectShowcase {
+        padding: 40px 0px 60px;
+    }
+
+    .projectRow {
+        margin-bottom: 50px;
+    }
+
+    .skewedTapContainer {
+        padding: 60px 0px 100px;
+        min-height: 400px;
+    }
+
+    .skewedTapeContent {
+        font-size: clamp(32px, 8vw, 48px);
+        gap: 16px;
+    }
+
+    .phoneMockupCard {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+
+    /* Reset middle card offset on mobile */
+    .phoneMockupCard:nth-child(3n+2) {
+        margin-top: 0;
+    }
+
+    .phoneMockupLabel {
+        bottom: -12px;
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    /* Hide flower decorations on mobile */
+    .flowerDecoration {
+        display: none;
+    }
+
+    /* Category menu responsive */
+    .categoryMenu {
+        padding: 60px 20px 80px;
+    }
+
+    .categoryMenu h3 {
+        font-size: 20px;
+        margin-bottom: 24px;
+    }
+
+    .categoryPills {
+        gap: 8px;
+    }
+
+    .categoryPill {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .skewedTapeContent {
+        font-size: 36px;
+        gap: 16px;
+    }
+
+    .categoryMenu h3 {
+        font-size: 18px;
+    }
+
+    .categoryMenu {
+        padding: 40px 20px 60px;
+    }
+
+    .projectShowcase {
+        padding: 30px 0px 40px;
+    }
+
+    .projectRow {
+        margin-bottom: 40px;
+    }
 }
