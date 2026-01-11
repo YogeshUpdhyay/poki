@@ -177,20 +177,20 @@ function ProjectCard({ title, image, alt, wrapTick }) {
   }, [wrapTick]);
 
   return (
-      <motion.div 
-        className="projectCard"
-        ref={ref}
-        initial={false}
-        animate={inView ? "in" : "out"}
-        variants={{
-          out: { y: 140, opacity: 1 },
-          in: { y: 0, opacity: 1 },
-        }}
-         transition={
-          suppress
-            ? { duration: 0 } // kills the “everyone re-animates” moment
-            : { type: 'tween', ease: 'easeOut', duration: 1 } // your normal speed
-        }
+    <motion.div 
+      className="projectCard"
+      ref={ref}
+      initial={false}
+      animate={inView ? "in" : "out"}
+      variants={{
+        out: { y: 140, opacity: 1 },
+        in: { y: 0, opacity: 1 },
+      }}
+        transition={
+        suppress
+          ? { duration: 0 } // kills the “everyone re-animates” moment
+          : { type: 'tween', ease: 'easeOut', duration: 1 } // your normal speed
+      }
     >
       <img src={image} alt={alt || "projectCardImage"} className="projectCardImage" />
       <div className="projectCardTitle">
