@@ -98,7 +98,7 @@
 .aboutImages {
     display: flex;
     gap: 28px;
-    padding-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 .websiteAboutSvg {
@@ -108,7 +108,7 @@
 }
 
 .whiteContainer {
-    padding: 160px 0px;
+    padding: 160px 64px;
     background-color: var(--background-light);
     border-radius: 40px 40px 0px 0px;
     margin-top: -40px;
@@ -202,3 +202,18 @@
     font-family: generalSansMedium;
 }
 
+#fonts {
+    z-index: 50;
+}
+
+.fontsGroup {
+    display: flex;
+    gap: 26px;
+    width: 100%;
+    height: 360px;
+    margin-top: 96px;
+}
+
+#brandInAction {
+    z-index: 60;
+}
