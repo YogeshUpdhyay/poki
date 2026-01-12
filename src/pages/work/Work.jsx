@@ -123,12 +123,13 @@ const WorkMenu = () => {
             </div>
             <div className="menuCardsLayout">
                 {cardRows.map((row, rowIndex) => (
-                    <div key={rowIndex} className="menuCardsRow">
+                    <div key={rowIndex} className={`menuCardsRow ${rowIndex % 2 === 1 ? 'left' : ''}`}>
                         {row.map((card, cardIndex) => (
                             <Card
                                 key={cardIndex}
                                 image={card.image}
                                 title={card.title}
+                                border={true}
                             />
                         ))}
                     </div>

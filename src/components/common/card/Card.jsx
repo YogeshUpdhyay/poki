@@ -1,6 +1,6 @@
 import "./Card.css"
 
-const Card = ({ image, title, alt, style, className }) => {
+const Card = ({ image, title, alt, style, border }) => {
     const containerStyle = style || {};
     const imgStyle = { width: '100%', objectFit: 'cover' };
     if (containerStyle.height) {
@@ -8,13 +8,24 @@ const Card = ({ image, title, alt, style, className }) => {
     } else {
         imgStyle.height = 'auto';
     }
+    
+    if (border) {
+        imgStyle.border = `4px solid var(--color-white)`;
+    }
 
     return (
         <div className="card">
-            <img src={image} alt={alt || title || "projectCardImage"} className="cardImage" style={imgStyle} />
-            <div className="cardTitle">
-                {title}
-            </div>
+            <img 
+                src={image} 
+                alt="cardImage" 
+                className="cardImage" 
+                style={imgStyle} 
+            />
+            {title && (
+                <div className="cardTitle">
+                    {title}
+                </div>
+            )}
         </div>
     )
 }
