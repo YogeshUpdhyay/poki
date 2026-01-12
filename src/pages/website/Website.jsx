@@ -13,10 +13,56 @@ const Website = () => {
             <WebsiteImage />
             <WebsiteAbout />
             <LogoVariations />
+            <Colors />
         </>
     )
 }
 
+const Colors = () => {
+    return (
+        <section className="blackContainer" id="colors">
+            <Headline 
+                lines={['colors that move']}
+                highlight='colors'
+            >
+                <svg 
+                    className='colorStar'
+                    width="64" height="64" 
+                    viewBox="0 0 64 64" fill="none" 
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path d="M32 0L35.6204 28.3796L64 32L35.6204 35.6204L32 64L28.3796 35.6204L0 32L28.3796 28.3796L32 0Z" fill="#EFB5D4"/>
+                </svg>
+            </Headline>
+            <div className="colorsLayout">
+                <div className="twoColorBoxes">
+                    <div className='colorBox' style={{'--boxColor': '#FDFDF5', '--contentColor': 'black'}}>
+                        <p className='colorBoxTitle'>soft ivory</p>
+                        <p className='colorBoxHex'>#FDFDF5</p>
+                    </div>
+                    <div className='colorBox' style={{'--boxColor': '#CEEDB2', '--contentColor': 'black'}}>
+                        <p className='colorBoxTitle'>fresh mint</p>
+                        <p className='colorBoxHex'>#CEEDB2</p>
+                    </div>
+                </div>
+                <div className='colorBox' style={{'--boxColor': '#CEF17B', '--contentColor': 'black'}}>
+                    <p className='colorBoxTitle'>lime glow</p>
+                    <p className='colorBoxHex'>#CEF17B</p>
+                </div>
+                <div className='twoColorBoxes reverse'>
+                    <div className='colorBox' style={{'--boxColor': '#084735'}}>
+                        <p className='colorBoxTitle'>deep forest</p>
+                        <p className='colorBoxHex'>#084735</p>
+                    </div>
+                    <div className='colorBox' style={{'--boxColor': '#1D1D1D'}}>
+                        <p className='colorBoxTitle'>charcoal</p>
+                        <p className='colorBoxHex'>#1D1D1D</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
 
 const LogoVariations = () => {
     return (
@@ -42,7 +88,6 @@ const LogoVariations = () => {
         </section>
     )
 }
-
 
 const WebsiteAbout = () => {
     return (
@@ -102,7 +147,6 @@ const WebsiteAbout = () => {
         </section>
     )
 }
-
 
 const WebsiteImage = () => {
     return (
