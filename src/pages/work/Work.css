@@ -1,6 +1,7 @@
 .work {
     background-color: var(--background-dark);
     padding: 180px 0px;
+    overflow: hidden;
 }
 
 .skewedTapContainer {
@@ -15,4 +16,71 @@
     letter-spacing: 97%;
     align-items: center;
     justify-content: center;
+    margin-left: 28px;
+}
+
+.menu {
+    padding: 200px 64px 180px 64px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+.menuTitle {
+    font-size: 24px;
+    padding: 24px;
+}
+
+.menuList {
+    display: flex;
+    gap: 10px;
+}
+
+.menuPill {
+    padding: 12px 14px;
+    border-radius: 100px;
+    font-family: generalSansMedium;
+    background-color: #EFEBE71A;
+}
+
+.menuPill.active {
+    background-color: var(--color-pink);
+    color: var(--color-black)
+}
+
+.menuCardsLayout {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 64px 0px 64px;
+    gap: 64px;
+}
+
+.menuCardsRow {
+    display: flex;
+    margin: 120px 0px;
+}
+
+.menuCardsRow > :nth-child(1) {
+    transform: rotate(-5deg);
+}
+
+.menuCardsRow > :nth-child(2) {
+    transform: rotate(2deg) translateY(10%);
+}
+
+.menuCardsRow > :nth-child(3) {
+    transform: rotate(-5deg);
+}
+
+.menuCardsRow.left > :nth-child(1) {
+    transform: rotate(2deg);
+}
+
+.menuCardsRow.left > :nth-child(2) {
+    transform: rotate(-3deg) translateY(10%);
+}
+
+.menuCardsRow.left > :nth-child(3) {
+    transform: rotate(3deg);
 }
