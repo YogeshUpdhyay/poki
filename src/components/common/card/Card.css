@@ -1,0 +1,30 @@
+.card {
+    border-radius: 12px;
+    position: relative;
+    z-index: 30; /* ensure cards can overlap elements below */
+    overflow: hidden;
+    display: inline-block;
+}
+
+.cardImage {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.cardTitle {
+    border-radius: 18px 18px 18px 0px;
+    background-color: #EFEBE7;
+    font-size: 14px;
+    position: absolute;
+    bottom: 0px;
+    color: black;
+    z-index: 10;
+    display: flex;
+    width: fit-content;
+    margin: 24px;
+    font-family: 'generalSansMedium';
+    padding: 12px;
+}
