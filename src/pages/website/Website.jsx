@@ -14,7 +14,42 @@ const Website = () => {
             <WebsiteAbout />
             <LogoVariations />
             <Colors />
+            <Fonts />
+            <section className="blackContainer" id="brandInAction">
+                <Headline 
+                    lines={['brand in action']}
+                    highlight='action'
+                />
+            </section>
         </>
+    )
+}
+
+
+const Fonts = () => {
+    return (
+        <section className="whiteContainer" id='fonts'>
+            <Headline 
+                lines={['what the type']}
+                highlight='type'
+                tooltip='gilroy | plus jakarta sans'
+                tooltipColor='orange'
+            />
+            <div className="fontsGroup">
+                <Card 
+                    image='https://placehold.co/800' 
+                    svgText='primary'
+                    svgTop='-12%'
+                    style={{height: '360px'}}
+                />
+                <Card 
+                    image='https://placehold.co/800'
+                    svgText='alternative'
+                    svgTop='-12%' 
+                    style={{height: '360px'}}
+                />
+            </div>
+        </section>
     )
 }
 
