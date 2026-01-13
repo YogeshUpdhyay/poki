@@ -4,13 +4,12 @@
     z-index: 30; /* ensure cards can overlap elements below */
     /* overflow: hidden; */
     display: inline-block;
-    flex-grow: 1;
 }
 
 .cardImage {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
     border-radius: 12px;
 }
