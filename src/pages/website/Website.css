@@ -5,6 +5,8 @@
     align-items: center;
     justify-content: flex-end;
     padding-bottom: 60px;
+    overflow: hidden;
+    position: relative;
 }
 
 .websiteHeroButtonWrapper {
@@ -255,4 +257,8 @@
 .buttonsGroup {
     display: flex;
     gap: 10px
+}
+
+#moreWork > p {
+    font-size: 26px;
 }
