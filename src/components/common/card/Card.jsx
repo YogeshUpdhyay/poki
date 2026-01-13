@@ -1,7 +1,11 @@
 import "./Card.css"
 import OutlinedSvgText from '../outlineSvgText/OutlineSvgText'
 
-const Card = ({ image, title, style, border, svgTop, svgBottom, svgLeft, svgRight, svgTransform, svgText }) => {
+const Card = ({ 
+    image, title, style, border, 
+    svgTop, svgBottom, svgLeft, svgRight, 
+    svgTransform, svgText, svgFill
+}) => {
     const containerStyle = style || {};
     const imgStyle = { flexGrow: 1 };
     if (containerStyle.height) {
@@ -21,7 +25,19 @@ const Card = ({ image, title, style, border, svgTop, svgBottom, svgLeft, svgRigh
     }
 
     return (
-        <div className="card" style={imgStyle}>
+        <div className="cardWrapper" style={imgStyle}>
+            <div className="card">
+                <img 
+                    src={image} 
+                    alt="cardImage" 
+                    className="cardImage"
+                />
+                {title && (
+                    <div className="cardTitle">
+                        {title}
+                    </div>
+                )}
+            </div>
             {svgText && <div style={{
                 position: 'absolute',
                 top: svgTop == '' ? 'auto': svgTop,
@@ -29,23 +45,14 @@ const Card = ({ image, title, style, border, svgTop, svgBottom, svgLeft, svgRigh
                 left: svgLeft == '' ? 'auto': svgLeft,
                 right: svgRight == '' ? 'auto': svgRight,
                 transform: svgTransform== '' ? '': svgTransform,
+                zIndex: 60,
             }}>
                 <OutlinedSvgText 
                     lines={[svgText]}
-                    fill="black"
+                    fill={svgFill == '' ? 'black' : svgFill}
                     stroke="offwhite"
                 />
             </div>}
-            <img 
-                src={image} 
-                alt="cardImage" 
-                className="cardImage"
-            />
-            {title && (
-                <div className="cardTitle">
-                    {title}
-                </div>
-            )}
         </div>
     )
 }
