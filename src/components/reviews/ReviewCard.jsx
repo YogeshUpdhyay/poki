@@ -10,6 +10,7 @@ export default function ReviewCard({
   avatarSrc = avatarImgSrc,
   color = 'yellow',
   reverse = false,
+  projectImage = null,
 }) {
   return (
     <div className={`reviewCard ${color} ${reverse ? 'reverse' : ''}`}>
@@ -27,7 +28,20 @@ export default function ReviewCard({
         </div>
         <div className="reviewCardReview">{reviewText}</div>
       </div>
-      <div className="reviewCardImage" />
+      <div className="reviewCardImage">
+        {projectImage && (
+          <img 
+            src={projectImage} 
+            alt="project work" 
+            style={{
+              width: '100%', 
+              height: '100%', 
+              objectFit: 'cover', 
+              borderRadius: '12px'
+            }} 
+          />
+        )}
+      </div>
     </div>
   )
 }
