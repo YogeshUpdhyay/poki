@@ -6,6 +6,8 @@ import Homepage from './pages/homepage/Homepage';
 import About from './pages/about/About';
 import Agency from './pages/agency/Agency';
 import Work from './pages/work/Work';
+import Website from './pages/website/Website';
+import Project from './pages/project/Project';
 
 
 function App() {
@@ -29,6 +31,14 @@ function App() {
           <Route
             path="/work"
             element={<Work />}
+          ></Route>
+          <Route
+            path="/website"
+            element={<Website />}
+          ></Route>
+          <Route
+            path="/project"
+            element={<Project />}
           ></Route>
         </Routes>
       </Router>

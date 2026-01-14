@@ -9,7 +9,7 @@
     left: 0;
     right: 0;
     height: var(--navbar-height);
-    z-index: 60;
+    z-index: 100;
     background: transparent;
     width: 100%;
 }
