@@ -178,9 +178,9 @@ const Work = () => {
                                 >
                                     <div className="phoneMockupImage">
                                         <img src={project.image} alt={project.title} />
-                                    </div>
-                                    <div className="phoneMockupLabel">
-                                        {project.title}
+                                        <div className="phoneMockupLabel">
+                                            {project.title}
+                                        </div>
                                     </div>
                                 </div>
                             ))}
