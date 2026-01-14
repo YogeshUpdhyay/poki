@@ -7,6 +7,7 @@
 .projectBg {
     position: absolute;
     z-index: -10;
+    background-color: #EFEBE7;
 }
 
 .projectCarousel {
@@ -31,6 +32,25 @@
     top: 50%;
 }
 
+.projectsPill {
+    position: absolute;
+    left: 10%;
+    top: 58%;
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: 100px 100px 100px 0px;
+    pointer-events: none;
+    width: fit-content;
+    font-size: 13px;
+    font-family: generalSansMedium;
+    letter-spacing: normal;
+    white-space: nowrap;
+    line-height: normal;
+    background-color: #86C9FF;
+    color: black;
+    z-index: 20;
+}
+
 .projectCard {
     min-height: 376px;
     min-width: 300px;
@@ -49,7 +69,7 @@
 }
 
 .projectCardTitle {
-    padding: 12px;
+    padding: 10px 14px;
     border-radius: 18px 18px 18px 0px;
     background-color: #EFEBE7;
     font-size: 14px;
