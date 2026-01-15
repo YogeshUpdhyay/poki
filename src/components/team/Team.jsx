@@ -36,7 +36,7 @@ export default function Team() {
   const teamCartoonInView = useInView(teamCartoonRef, {
     amoount: 0.3,
   });
-  const lines = ['a crew of 6', 'dominating', 'the whole world']
+  const lines = ['a crew of 6', 'dominating the', 'whole world']
   const highlight = 'dominating'
   const teammates = {
     1: { image: TeammateOneIamge, tooltip: 'Robin | Co-founder' },
@@ -55,9 +55,7 @@ export default function Team() {
       <div className="teamHeadline">
         <Headline 
           lines={lines} 
-          highlight={highlight} 
-          tooltip="born digital - raised on chai"
-          tooltipColor="pink"
+          highlight={highlight}
         >
           <img
             src={teamCartoon}
@@ -65,6 +63,10 @@ export default function Team() {
             className={`teamCartoon ${teamCartoonInView ? 'scaleInAnimation' : ''}`}
             ref={teamCartoonRef}
           />
+
+          <div className="teamPill">
+            born digital - raised on chai
+          </div>
 
           <div className="teamUnderline">
             <AnimatedSvgLine Svg={TeamUnderline} />

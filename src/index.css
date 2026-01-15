@@ -60,9 +60,25 @@
   --color-white: #EFEBE7;
   --color-black: #1A1A1A;
   --color-violet: #5168E8;
+  --color-offwhite: #E6E2DE;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Cursors */
+* {
+  cursor: url('/cursor.svg'), auto;
+}
+
+a, button, 
+[role="button"],
+.projectCard,
+.projectCardTitle,
+.categoryPill,
+input[type="submit"],
+input[type="button"] {
+  cursor: url('/tooltip.svg'), pointer;
 }

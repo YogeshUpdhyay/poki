@@ -1,6 +1,14 @@
 import './Footer.css'
 import EdgeBubble from '../common/edgeBubble/edgeBubble'
 import footerSvg from '../../assets/svgs/footer/footer.svg'
+import { useState } from 'react'
+import {
+  useFloating,
+  useClientPoint,
+  offset,
+  autoUpdate,
+  useInteractions,
+} from "@floating-ui/react";
 
 function Footer() {
   return (
@@ -20,12 +28,7 @@ function Footer() {
             Vandana CHSL, Gorai 1 <br />
             Borivali West, Mumbai 400091
           </div>
-          <a className="footerItem">
-            visit us
-            <svg width="86" height="6" viewBox="0 0 86 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1.50015 3.34053C31.1592 -0.211095 110.651 2.04784 75.8509 4.5" stroke="#EFEBE7" stroke-width="3" stroke-linecap="round"/>
-            </svg>
-          </a>
+          <VisitUsLink />
         </div>
       </div>
       <div className="footerContainer">
@@ -69,6 +72,55 @@ function Footer() {
       <img src={footerSvg} alt="footerSvg" className='footerSvg' />
 
     </footer>
+  )
+}
+
+function VisitUsLink() {
+  const [open, setOpen] = useState(false);
+  const { refs, floatingStyles, context } = useFloating({
+    open,
+    onOpenChange: setOpen,
+    middleware: [offset({
+      mainAxis: -40,
+      crossAxis: 70
+    })],
+    whileElementsMounted: autoUpdate,
+  });
+
+  const clientPoint = useClientPoint(context);
+
+  const { getReferenceProps, getFloatingProps } = useInteractions([
+    clientPoint,
+  ]);
+
+  return (
+    <>
+      <a 
+        className="footerItem visitUsLink"
+        ref={refs.setReference}
+        {...getReferenceProps({
+          onMouseEnter: () => setOpen(true),
+          onMouseLeave: () => setOpen(false),
+        })}
+      >
+        visit us
+        <svg width="86" height="6" viewBox="0 0 86 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.50015 3.34053C31.1592 -0.211095 110.651 2.04784 75.8509 4.5" stroke="#EFEBE7" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </a>
+
+      {open && (
+        <div
+          ref={refs.setFloating}
+          style={floatingStyles}
+          {...getFloatingProps({
+            className: "tooltip pink",
+          })}
+        >
+          google maps
+        </div>
+      )}
+    </>
   )
 }
 

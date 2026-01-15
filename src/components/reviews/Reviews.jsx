@@ -16,32 +16,46 @@ import {
 import { motion } from "framer-motion";
 
 export default function Reviews() {
-  const colors = ['yellow', 'pink', 'blue', 'green', 'orange']
-  const sampleNames = ['Jordan Lee', 'Aisha Khan', 'Mateo Silva', 'Priya Patel', 'Liam Ochoa', 'Sofia Rossi', 'Noah Kim', 'Camila Cruz']
-  const sampleLocations = ['United States', 'India', 'Brazil', 'United Kingdom', 'Canada', 'Australia']
-  const sampleReviews = [
-    `Poki Design Studio transformed our brand with a stunning logo and cohesive design elements.`,
-    `Great to work with — delivered on time and exceeded expectations.`,
-    `Creative team, excellent communication, highly recommended!`,
-    `Their attention to detail made our product shine visually.`,
+  // Real reviews data - replace with your actual reviews
+  const realReviews = [
+    {
+      reviewerName: 'Nikolas Gregory',
+      location: 'United States',
+      reviewText: 'Amazing work all around. An excellent understanding of my ask and delivered an amazing website design paying attention to every little detail that I had asked for. Super polite and professional from start to finish. Thank you Poki Studios!',
+      color: 'yellow',
+      avatarSrc: avatarImgSrc,
+      projectImage: null, // Add your project image path here
+    },
+    {
+      reviewerName: 'Gaurav Anand',
+      location: 'NY, United States',
+      reviewText: 'Beyond expectations! Delivered a design that aligns with our brand vision. Took feedback and suggestions with a very open mindset and WOWED me! I rarely write reviews but Poki Studios totally deserves it! It’s a but pricey but 100% worth it.',
+      color: 'pink',
+      avatarSrc: avatarImgSrc,
+      projectImage: null, // Add your project image path here
+    },
+    {
+      reviewerName: 'Devon McPherson',
+      location: 'California, United States',
+      reviewText: 'Poki was exceptional in their work and delivery of the Figma project. The team can operate with very little information provided, letting their creativity take over. They are easy to work with and reliable when it comes to quality and meeting delivery timelines.',
+      color: 'blue',
+      avatarSrc: avatarImgSrc,
+      projectImage: null, // Add your project image path here
+    },
+    {
+      reviewerName: 'Darac',
+      location: 'United Arab Emirates',
+      reviewText: 'I now view these guys as long-term partners for all of my creative needs - their work is exceptional, and they are a joy to work with. True Creatives! I will come back again and again and have no need to ever use anyone else. You guys rock!',
+      color: 'green',
+      avatarSrc: avatarImgSrc,
+      projectImage: null, // Add your project image path here
+    },
   ]
 
-  const reviewsData = Array.from({ length: 8 }).map((_, i) => ({
-    reviewerName: sampleNames[i % sampleNames.length],
-    location: sampleLocations[i % sampleLocations.length],
-    reviewText: sampleReviews[i % sampleReviews.length],
-    color: colors[i % colors.length],
-    avatarSrc: avatarImgSrc,
-  }))
+  // Duplicate reviews for infinite scroll effect
+  const reviewsData = [...realReviews, ...realReviews, ...realReviews]
 
-  const reviewsRef = useRef();
-  const [reviewsWidth, setReviewsWidth] = useState(0);
-
-  useEffect(() => {
-    setReviewsWidth(
-      reviewsRef.current.scrollWidth - reviewsRef.current.offsetWidth
-    );
-  }, []);
+  const [isHovered, setIsHovered] = useState(false)
 
   return (
     <section className="reviews">
@@ -51,11 +65,24 @@ export default function Reviews() {
         alt="reviewsBg" 
         className="reviewsBg" 
       />
-      <motion.div className="reviewsCarousel" ref={reviewsRef}>
+      <div 
+        className="reviewsCarousel"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <motion.div 
           className="reviewsCarouselInner"
-          drag="x"
-          dragConstraints={{ right: 0, left: -reviewsWidth }}
+          animate={{
+            x: [0, -reviewsData.length * 386 / 3], // 360px card + 26px gap
+          }}
+          transition={{
+            x: {
+              repeat: Infinity,
+              repeatType: "loop",
+              duration: isHovered ? 60 : 30, // Slow down on hover
+              ease: "linear",
+            },
+          }}
         >
           {reviewsData.map((r, idx) => (
             <ReviewCard
@@ -65,40 +92,20 @@ export default function Reviews() {
               reviewText={r.reviewText}
               color={r.color}
               avatarSrc={r.avatarSrc}
+              projectImage={r.projectImage}
               reverse={idx % 2 === 1}
             />
           ))}
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   )
 }
 
 function ReviewHeadline() {
-  const [open, setOpen] = useState(false);
-  const { refs, floatingStyles, context } = useFloating({
-    open,
-    onOpenChange: setOpen,
-    middleware: [offset(8)],
-    whileElementsMounted: autoUpdate,
-  });
-
-  const clientPoint = useClientPoint(context);
-
-  const { getReferenceProps, getFloatingProps } = useInteractions([
-    clientPoint,
-  ]);
-
   return (
     <h1 className="headlineText">
-      <span 
-        className="headlineWrapper" 
-        ref={refs.setReference}
-        {...getReferenceProps({
-          onMouseEnter: () => setOpen(true),
-          onMouseLeave: () => setOpen(false),
-        })}
-      >
+      <span className="headlineWrapper">
         <span className="headlineHighlight">word</span> on <br />
         the street <br />
 
@@ -113,17 +120,6 @@ function ReviewHeadline() {
         </div>
       
       </span>
-
-      {open && (
-        <div
-          ref={refs.setFloating}
-          style={floatingStyles}
-          {...getFloatingProps({
-            className: "tooltip blue",
-          })}
-        >
-            no shadows, only shine
-        </div>)}
     </h1>
   )
 }

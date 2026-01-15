@@ -1,6 +1,6 @@
 .reviewCard {
    width: 360px;
-   height: 630px;
+   height: 360px;
    position: relative;
    display: flex;
    flex-direction: column;

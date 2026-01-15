@@ -20,8 +20,12 @@
     left: 61%;
 }
 
+.collabHeadline .headlineWrapper {
+    cursor: url('/tooltip.svg'), pointer;
+}
+
 .collabText {
-    padding-top: 64px;
+    padding-top: 40px;
     font-family: generalSansMedium;
     line-height: 150%;
     letter-spacing: 98%;

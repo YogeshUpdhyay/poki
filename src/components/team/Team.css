@@ -23,6 +23,25 @@
     left: 62%
 }
 
+.teamPill {
+    position: absolute;
+    left: 88%;
+    transform: translateX(-50%);
+    top: 26%;
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: 18px 18px 18px 0px;
+    pointer-events: none;
+    font-size: 12px;
+    font-family: generalSansMedium;
+    letter-spacing: normal;
+    white-space: nowrap;
+    line-height: normal;
+    background-color: #EFB5D4;
+    color: black;
+    z-index: 20;
+}
+
 .teammates {
     position: relative;
     padding-top: 64px;

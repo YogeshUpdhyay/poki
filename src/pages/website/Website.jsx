@@ -1,5 +1,6 @@
 import './Website.css'
 import Navbar from "@/components/navbar/Navbar"
+import Footer from "@/components/footer/Footer"
 import {Headline} from "@/components/common/headline/Headline"
 import Button from "@/components/common/button/Button"
 import Card from "@/components/common/card/Card"
@@ -13,10 +14,155 @@ const Website = () => {
             <WebsiteImage />
             <WebsiteAbout />
             <LogoVariations />
+            <Colors />
+            <Fonts />
+            <BrandInAction />
+            <section className="whiteContainer" id="moreWork" data-navbar='dark'>
+                <p>some more work</p>
+                <div className="menuCardsRow">
+                    <Card 
+                        image='https://placehold.co/800'
+                        title='biotech'
+                        border={true} 
+                        style={{width: '33%', height: '60vh'}}
+                    />
+                    <Card 
+                        image='https://placehold.co/800'
+                        title='biotech'
+                        border={true} 
+                        style={{width: '33%', height: '60vh'}}
+                    />
+                    <Card 
+                        image='https://placehold.co/800'
+                        title='biotech'
+                        border={true} 
+                        style={{width: '33%', height: '60vh'}}
+                    />
+                </div>
+                <div className='buttonsGroup'>
+                    <Button text='start a project' />
+                    <Button text="i'm an agency" color='green' />
+                </div>
+            </section>
+            <Footer />
         </>
     )
 }
 
+const BrandInAction = () => {
+    return (
+        <section className="blackContainer" id="brandInAction">
+            <Headline 
+                lines={['brand in action']}
+                highlight='action'
+            >
+                <svg 
+                    className='brandInActionStar'
+                    width="61" height="61" 
+                    viewBox="0 0 61 61" fill="none" 
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path d="M20.3818 -2.86102e-05L32.6995 25.8221L60.787 20.3817L34.9649 32.6994L40.4053 60.787L28.0876 34.9648L2.86102e-05 40.4052L25.8222 28.0875L20.3818 -2.86102e-05Z" fill="#EAF9C0"/>
+                </svg>
+            </Headline>
+            <div className="brandInActionGroup">
+                <div className="brandInActionColumn">
+                    <Card image='https://placehold.co/800' style={{height: '33%'}} />
+                    <Card image='https://placehold.co/800' />
+                </div>
+                <div className="brandInActionColumn reverse">
+                    <Card image='https://placehold.co/800' style={{height: '33%'}} />
+                    <Card image='https://placehold.co/800' />
+                </div>
+                <div className="brandInActionColumn">
+                    <Card image='https://placehold.co/800' style={{height: '50%'}} />
+                    <Card image='https://placehold.co/800' style={{height: '50%'}} />
+                </div>
+            </div>
+            <svg 
+                className='brandInActionBg'
+                width="424" height="368" 
+                viewBox="0 0 424 368" fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path d="M392.783 168.253C385.636 159.15 377.601 151.268 369.05 144.357C409.174 100.465 418.128 43.2373 388.667 15.248C358.623 -13.2964 300.091 -0.599214 257.938 43.5981C251.403 50.4533 245.731 57.683 240.781 65.0793C221.748 32.6078 182.292 11.2376 137.649 13.3191C76.5735 16.1638 29.081 61.7489 31.5835 115.119C32.9877 144.968 49.7269 170.917 74.8913 187.5C67.4532 191.552 60.1402 196.256 53.1053 201.765C2.33168 241.522 -15.0748 303.995 14.2327 341.282C43.5401 378.582 108.467 376.584 159.254 336.813C175.146 324.366 187.769 309.698 196.709 294.281C200.268 300.456 204.189 306.52 208.749 312.321C254.017 369.923 331.915 384.355 382.731 344.57C433.546 304.786 438.064 225.855 392.783 168.253Z" fill="#86C9FF"/>
+            </svg>
+        </section>
+    )
+}
+
+const Fonts = () => {
+    return (
+        <section className="whiteContainer" id='fonts' data-navbar='dark'>
+            <Headline 
+                lines={['what the type']}
+                highlight='type'
+                tooltip='gilroy | plus jakarta sans'
+                tooltipColor='orange'
+            />
+            <div className="fontsGroup">
+                <Card 
+                    image='https://placehold.co/800' 
+                    svgText='primary'
+                    svgTop='-12%'
+                    style={{height: '360px'}}
+                />
+                <Card 
+                    image='https://placehold.co/800'
+                    svgText='alternative'
+                    svgTop='-12%' 
+                    style={{height: '360px'}}
+                />
+            </div>
+        </section>
+    )
+}
+
+const Colors = () => {
+    return (
+        <section className="blackContainer" id="colors">
+            <Headline 
+                lines={['colors that move']}
+                highlight='colors'
+            >
+                <svg 
+                    className='colorStar'
+                    width="64" height="64" 
+                    viewBox="0 0 64 64" fill="none" 
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path d="M32 0L35.6204 28.3796L64 32L35.6204 35.6204L32 64L28.3796 35.6204L0 32L28.3796 28.3796L32 0Z" fill="#EFB5D4"/>
+                </svg>
+            </Headline>
+            <div className="colorsLayout">
+                <div className="twoColorBoxes">
+                    <div className='colorBox' style={{'--boxColor': '#FDFDF5', '--contentColor': 'black'}}>
+                        <p className='colorBoxTitle'>soft ivory</p>
+                        <p className='colorBoxHex'>#FDFDF5</p>
+                    </div>
+                    <div className='colorBox' style={{'--boxColor': '#CEEDB2', '--contentColor': 'black'}}>
+                        <p className='colorBoxTitle'>fresh mint</p>
+                        <p className='colorBoxHex'>#CEEDB2</p>
+                    </div>
+                </div>
+                <div className='colorBox' style={{'--boxColor': '#CEF17B', '--contentColor': 'black'}}>
+                    <p className='colorBoxTitle'>lime glow</p>
+                    <p className='colorBoxHex'>#CEF17B</p>
+                </div>
+                <div className='twoColorBoxes reverse'>
+                    <div className='colorBox' style={{'--boxColor': '#084735'}}>
+                        <p className='colorBoxTitle'>deep forest</p>
+                        <p className='colorBoxHex'>#084735</p>
+                    </div>
+                    <div className='colorBox' style={{'--boxColor': '#1D1D1D'}}>
+                        <p className='colorBoxTitle'>charcoal</p>
+                        <p className='colorBoxHex'>#1D1D1D</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
 
 const LogoVariations = () => {
     return (
@@ -42,7 +188,6 @@ const LogoVariations = () => {
         </section>
     )
 }
-
 
 const WebsiteAbout = () => {
     return (
@@ -102,7 +247,6 @@ const WebsiteAbout = () => {
         </section>
     )
 }
-
 
 const WebsiteImage = () => {
     return (

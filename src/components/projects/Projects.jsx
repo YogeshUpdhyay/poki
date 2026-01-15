@@ -30,13 +30,16 @@ function Projects() {
 
   return (
     <section className="projects" data-navbar="dark">
-      <Headline lines={lines} highlight={highlight} tooltip={tooltipText} tooltipColor={tooltipColor}>
+      <Headline lines={lines} highlight={highlight}>
         <img
           src={projectsCartoon}
           alt="projectsCartoon"
           className={`projectsCartoon ${projectCartoonInView ? 'scaleInAnimation' : ''}`}
           ref={projectsCartoonRef}
         />
+        <div className="projectsPill">
+          {tooltipText}
+        </div>
       </Headline>
       <img 
         src={projectBackground} 
