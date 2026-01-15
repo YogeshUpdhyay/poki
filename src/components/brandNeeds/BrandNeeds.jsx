@@ -36,20 +36,6 @@ export default function BrandNeeds() {
 }
 
 function BrandNeedsHeadline() {
-  const [open, setOpen] = useState(false);
-  const { refs, floatingStyles, context } = useFloating({
-    open,
-    onOpenChange: setOpen,
-    middleware: [offset(8)], // optional offset
-    whileElementsMounted: autoUpdate,
-  });
-
-  const clientPoint = useClientPoint(context);
-
-  const { getReferenceProps, getFloatingProps } = useInteractions([
-    clientPoint,
-  ]);
-
   const { ref, inView, entry } = useInView({
     /* Optional options */
     threshold: 0.5,
@@ -57,14 +43,7 @@ function BrandNeedsHeadline() {
 
   return (
     <h1 className="headlineText">
-      <span
-        className="headlineWrapper"
-        ref={refs.setReference}
-        {...getReferenceProps({
-          onMouseEnter: () => setOpen(true),
-          onMouseLeave: () => setOpen(false),
-        })}
-      >
+      <span className="headlineWrapper">
         <span className="headlineHighlight">everything</span> your <br />
         brand needs
 
@@ -82,17 +61,6 @@ function BrandNeedsHeadline() {
           className='brandNeedsStar star'
         />
       </span>
-
-      {open && (
-        <div
-          ref={refs.setFloating}
-          style={floatingStyles}
-          {...getFloatingProps({
-            className: "tooltip blue",
-          })}
-        >
-          no shadows, only shine
-        </div>)}
     </h1>
   )
 }
@@ -144,7 +112,7 @@ const OfferingCard = ({idx, cardColor, offerCardSvg, title, offeringDescLines, r
 
       <div className={`offeringCardSeprator ${cardColor}`}>
         <svg width="100%" height="12" viewBox="0 0 303 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M1.50012 6.95328C113.144 -3.91082 375.855 3.68784 281.375 10.5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          <path d="M1.50012 6.95328C113.144 -3.91082 375.855 3.68784 281.375 10.5" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
         </svg>
       </div>
       

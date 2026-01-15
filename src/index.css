@@ -67,3 +67,18 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* Custom Cursors */
+* {
+  cursor: url('/cursor.svg'), auto;
+}
+
+a, button, 
+[role="button"],
+.projectCard,
+.projectCardTitle,
+.categoryPill,
+input[type="submit"],
+input[type="button"] {
+  cursor: url('/tooltip.svg'), pointer;
+}

@@ -15,7 +15,7 @@ function App() {
     <CmsProvider>
       <Router>
         <Routes>
-          {/* Define your routes here */}
+          {/* Define */}
           <Route
             path="/"
             element={<Homepage />}

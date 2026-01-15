@@ -35,7 +35,10 @@ function CollabHeadline() {
   const { refs, floatingStyles, context } = useFloating({
     open,
     onOpenChange: setOpen,
-    middleware: [offset(8)], // optional offset
+    middleware: [offset({
+      mainAxis: -40,
+      crossAxis: 70
+    })],
     whileElementsMounted: autoUpdate,
   });
 

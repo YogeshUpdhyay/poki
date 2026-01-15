@@ -12,6 +12,11 @@ const Project = () => {
             <ProjectHero />
             <ProjectBeforeAfter/>
             <ProjectAbout />
+            <ProjectColorPalette />
+            <ProjectResults />
+            <ProjectBuiltToBeSeen />
+            <ProjectMore />
+            <Footer />
         </>
     )
 }
@@ -68,15 +73,28 @@ const ProjectAbout = () => {
                 style={{'--bg': '#4A4E00'}}
             >
                 <img 
-                    src="https://placehold.co/800" 
+                    src={about1Image}
                     alt="" 
                     className="wireframe" 
                 />
             </div>
 
             <div className="miscContainer">
-                <Card image='https://placehold.co/800' />
-                <Card image='https://placehold.co/800' />
+                <div className="layeredCard">
+                    <img 
+                        src={about2BgImage}
+                        alt="background" 
+                        className="layeredCardBackground" 
+                    />
+                    <img 
+                        src={about2Image}
+                        alt="foreground" 
+                        className="layeredCardForeground" 
+                    />
+                </div>
+                <div className="miscCard">
+                    <Card image={about3Image} />
+                </div>
             </div>
             <svg 
                 className="projectAboutBg"
@@ -95,7 +113,7 @@ const ProjectBeforeAfter = () => {
     return (
         <section className="blackContainer" id="beforeAfter">
             <Card 
-                image='https://placehold.co/800' 
+                image={beforeImage}
                 style={{height: '80vh'}}
                 border={true}
                 svgText='before'
@@ -105,7 +123,7 @@ const ProjectBeforeAfter = () => {
                 svgFill='black'
             />
             <Card
-                image='https://placehold.co/800' 
+                image={afterImage}
                 style={{height: '80vh'}}
                 border={true}
                 svgText='after'
@@ -194,6 +212,169 @@ const ProjectHero = () => {
                 <svg width="486" height="422" viewBox="0 0 486 422" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M450.218 192.942C442.027 182.503 432.816 173.465 423.015 165.54C469.006 115.207 479.269 49.5819 445.501 17.4854C411.063 -15.2476 343.973 -0.687142 295.655 49.9957C288.165 57.8567 281.663 66.1474 275.99 74.629C254.174 37.3926 208.947 12.8866 157.777 15.2735C87.7706 18.5357 33.3334 70.8099 36.2019 132.011C37.8114 166.24 56.9983 195.997 85.8424 215.013C77.3167 219.66 68.9343 225.054 60.8707 231.372C2.67263 276.963 -17.2791 348.603 16.3139 391.361C49.9068 434.135 124.328 431.844 182.542 386.237C200.756 371.963 215.226 355.143 225.473 337.464C229.553 344.545 234.047 351.499 239.274 358.151C291.161 424.205 380.45 440.755 438.696 395.132C496.942 349.51 502.121 258.997 450.218 192.942Z" fill="#86C9FF"/>
                 </svg>
+            </div>
+        </section>
+    )
+}
+
+const ProjectColorPalette = () => {
+    return (
+        <section className="blackContainer" id="takeYourPick">
+            <Headline
+                lines={['take your pick']}
+                highlight='pick'
+            >
+                <svg 
+                    className='colorPaletteStar'
+                    width="56" height="56" 
+                    viewBox="0 0 56 56" 
+                    fill="none" 
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path d="M43.7128 0L32.6584 26.3877L55.4256 43.7128L29.038 32.6584L11.7128 55.4256L22.7673 29.038L0 11.7128L26.3877 22.7673L43.7128 0Z" fill="var(--color-orange)"/>
+                </svg>
+            </Headline>
+
+            <p className="websiteText">
+                arcu vulputate elementum feugiat posuere gravida sit. arcu vitae vivamus
+                dolor id arcu lacus. leo fermentum enim volutpat faucibus. consectetur
+                neque mauris ultrices diam urna enim.
+            </p>
+
+            <div className="colorPaletteGrid">
+                <div className="versionCard">
+                    <img src={version1Svg} alt="Version 1" className="versionLabel" />
+                    <div className="versionFrame" style={{backgroundColor: '#B4751D'}}>
+                        <img src={pick1Image} alt="Mockup 1" className="mockupImage" />
+                    </div>
+                </div>
+                <div className="versionCard">
+                    <img src={version2Svg} alt="Version 2" className="versionLabel" />
+                    <div className="versionFrame" style={{backgroundColor: '#B4751D'}}>
+                        <img src={pick2Image} alt="Mockup 2" className="mockupImage" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
+
+const ProjectResults = () => {
+    return (
+        <section className="whiteContainer" id="projectResults" data-navbar='dark'>
+            <div className="resultsGrid">
+                <div className="resultItem">
+                    <h2 className="resultNumber">30,000</h2>
+                    <p className="resultLabel">monthly visitors</p>
+                </div>
+                <div className="resultItem">
+                    <h2 className="resultNumber">1000x</h2>
+                    <p className="resultLabel">increase in website traffic</p>
+                </div>
+                <div className="resultItem">
+                    <h2 className="resultNumber">900</h2>
+                    <p className="resultLabel">monthly table bookings</p>
+                </div>
+            </div>
+            <div className="resultsCta">
+                <Button 
+                    text={"i want these results"} 
+                    color='orange'
+                />
+            </div>
+            <div className="resultsBg">
+                 <img src={pinkSvg} alt="" />
+            </div>
+        </section>
+    )
+}
+
+const ProjectBuiltToBeSeen = () => {
+    return (
+        <section className="blackContainer" id="builtToBeSeen">
+            <div className="builtToBeSeenContent">
+                <Headline
+                    lines={['built to be seen']}
+                    highlight='seen'
+                >
+                    <svg 
+                        className='builtToBeSeenStar'
+                        width="56" height="56" 
+                        viewBox="0 0 56 56" 
+                        fill="none" 
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path d="M43.7128 0L32.6584 26.3877L55.4256 43.7128L29.038 32.6584L11.7128 55.4256L22.7673 29.038L0 11.7128L26.3877 22.7673L43.7128 0Z" fill="var(--color-yellow)"/>
+                    </svg>
+                    <img 
+                        src={underseenSvg} 
+                        alt="" 
+                        className='builtToBeSeenUnderline'
+                    />
+                </Headline>
+                
+                <div className="builtToBeSeenGrid">
+                    <div className="builtTop">
+                        <Card 
+                            image={built1Image} 
+                            style={{width: '100%', height: '80vh'}}
+                        />
+                    </div>
+                    <div className="builtBottom">
+                        <Card 
+                            image={built2Image} 
+                            style={{width: '100%', height: '60vh'}}
+                        />
+                        <Card 
+                            image={built3Image} 
+                            style={{width: '100%', height: '60vh'}}
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
+
+
+
+const ProjectMore = () => {
+    const moreProjects = [
+        { id: 1, image: posterImg, title: "biddlee", rotation: -8 },
+        { id: 2, image: makeupImg, title: "sweatmate", rotation: 5 },
+        { id: 3, image: phoneImg, title: "ether", rotation: -4 },
+    ];
+
+    return (
+        <section className="whiteContainer" id="projectMore" data-navbar='dark'>
+            <div className="moreWorkTitle">
+                some more work
+            </div>
+
+            <div className="moreWorkGrid">
+                {moreProjects.map((project) => (
+                    <div 
+                        key={project.id} 
+                        className="phoneMockupCard"
+                        style={{ transform: `rotate(${project.rotation}deg)` }}
+                    >
+                        <div className="phoneMockupImage">
+                            <img src={project.image} alt={project.title} />
+                            <div className="phoneMockupLabel">
+                                {project.title}
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+            <div className="moreWorkCta">
+                <Button text="start a project" color="orange" />
+                <Button text="I'm an agency" color="green" />
+            </div>
+
+            <div className="moreWorkBg">
+                <img src={workSvg} alt="" />
             </div>
         </section>
     )

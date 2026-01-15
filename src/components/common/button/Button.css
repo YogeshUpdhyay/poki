@@ -3,7 +3,6 @@
     border-radius: 100px;
     padding: 6px; /* outer border thickness */
     width: fit-content;
-    cursor: pointer;
 }
 
 .cta-btn-background.green {
@@ -18,7 +17,6 @@
     color: var(--button-highlight-color);
     border: 2px solid var(--button-highlight-color);
     text-decoration: none;
-    cursor: pointer;
 }
 
 .cta-btn.green {
