@@ -132,3 +132,195 @@
     line-height: normal;
     background-color: var(--color-yellow);
 }
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS - TEAM SECTION
+   ======================================== */
+
+@media (max-width: 1200px) {
+    .team {
+        padding-top: 100px;
+        overflow-x: hidden;
+    }
+
+    .teamHeadline {
+        padding-top: 80px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    .teammates {
+        padding: 48px 32px 140px;
+    }
+
+    .teammateGreenBlob {
+        right: 32px;
+        transform: scale(0.85);
+    }
+
+    .teammatePinkBlob {
+        left: -100px;
+        transform: scale(0.85);
+    }
+
+    .teamPill {
+        left: 85%;
+        top: 24%;
+        font-size: 11px;
+    }
+
+    .teamCols {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    .teamRow {
+        gap: 140px;
+    }
+
+    .teamRow:nth-child(2) {
+        padding-top: 140px;
+    }
+
+    .teammateCard {
+        height: 340px;
+        width: 280px;
+    }
+
+    .mapContainer {
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    #worldMap {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 992px) {
+    .team {
+        padding-top: 80px;
+    }
+
+    .teamHeadline {
+        padding-top: 60px;
+    }
+
+    .teammates {
+        padding: 40px 24px 120px;
+    }
+
+    .teammateGreenBlob,
+    .teammatePinkBlob {
+        display: none;
+    }
+
+    .teamPill {
+        left: 80%;
+        top: 22%;
+    }
+
+    .teamRow {
+        gap: 120px;
+    }
+
+    .teamRow:nth-child(2) {
+        padding-top: 120px;
+    }
+
+    .teammateCard {
+        height: 320px;
+        width: 260px;
+    }
+}
+
+@media (max-width: 768px) {
+    .team {
+        padding-top: 60px;
+        border-radius: 32px 32px 0px 0px;
+    }
+
+    .teamHeadline {
+        padding-top: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .teammates {
+        padding: 32px 20px 100px;
+    }
+
+    .teamPill {
+        display: none;
+    }
+
+    .teamCols {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .teamRow {
+        width: 100%;
+        gap: 80px;
+    }
+
+    .teamRow:nth-child(2) {
+        padding-top: 80px;
+        display: none;
+    }
+
+    .teammateCard {
+        height: 300px;
+        width: 240px;
+        margin-left: calc((100% - 50%) * var(--r));
+    }
+
+    .mapContainer {
+        padding: 0 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .team {
+        padding-top: 48px;
+        border-radius: 24px 24px 0px 0px;
+    }
+
+    .teamHeadline {
+        padding-top: 32px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .teammates {
+        padding: 24px 16px 80px;
+    }
+
+    .teamCols {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+
+    .teamRow {
+        gap: 60px;
+    }
+
+    .teamRow:nth-child(2) {
+        padding-top: 60px;
+    }
+
+    .teammateCard {
+        height: 260px;
+        width: 220px;
+    }
+
+    .mapContainer {
+        padding: 0 12px;
+    }
+
+    .teammateCallout {
+        font-size: 10px;
+        padding: 8px 10px;
+    }
+}
