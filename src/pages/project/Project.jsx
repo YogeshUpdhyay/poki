@@ -4,31 +4,6 @@ import Button from "@/components/common/button/Button"
 import Card from "@/components/common/card/Card"
 import Marquee from "react-fast-marquee";
 import "./Project.css"
-import beforeImage from "@/assets/imgs/projects/before.png";
-import afterImage from "@/assets/imgs/projects/after.png";
-import about1Image from "@/assets/imgs/projects/about1.png";
-import about2Image from "@/assets/imgs/projects/about2.png";
-import about2BgImage from "@/assets/imgs/projects/about2_background.png";
-import about3Image from "@/assets/imgs/projects/about3.png";
-import version1Svg from "@/assets/imgs/projects/version1.svg";
-import version2Svg from "@/assets/imgs/projects/version2.svg";
-import pick1Image from "@/assets/imgs/projects/pick1.png";
-import pick2Image from "@/assets/imgs/projects/pick2.png";
-import underseenSvg from "@/assets/imgs/projects/underseen.svg";
-import pinkSvg from "@/assets/imgs/projects/pink.svg";
-import built1Image from "@/assets/imgs/projects/built1.png";
-import built2Image from "@/assets/imgs/projects/built2.png";
-import built3Image from "@/assets/imgs/projects/built3.png";
-import workSvg from "@/assets/imgs/projects/work.svg";
-import Footer from "@/components/footer/Footer";
-
-// Import images for Some More Work
-import watchImg from '@/assets/images/projects/watch.png';
-import makeupImg from '@/assets/images/projects/makeup.png';
-import phoneImg from '@/assets/images/projects/phone.png';
-import posterImg from '@/assets/images/projects/poster.png';
-import brandingImg from '@/assets/images/projects/branding.png';
-import magazineImg from '@/assets/images/projects/magazine.png';
 
 const Project = () => {
     return (
