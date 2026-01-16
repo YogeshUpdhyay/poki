@@ -1,7 +1,7 @@
 import './Collaborate.css'
 import Button from '../common/button/Button'
 import collaborateCartoon from '../../assets/svgs/collaborate/collaborateCartoon.svg'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {
   useFloating,
   useClientPoint,
@@ -32,6 +32,19 @@ export default function Collaborate() {
 
 function CollabHeadline() {
   const [open, setOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check screen size for responsive line breaks
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const { refs, floatingStyles, context } = useFloating({
     open,
     onOpenChange: setOpen,
@@ -58,7 +71,7 @@ function CollabHeadline() {
           onMouseLeave: () => setOpen(false),
         })}
       >
-        <span className="headlineHighlight">let's</span> collaborate 
+        <span className="headlineHighlight">let's</span>{isMobile ? <br /> : ' '}collaborate 
         <img
           src={collaborateCartoon}
           alt="collaborateCartoon"

@@ -16,8 +16,8 @@
 
 .collaborateCartoon {
     position: absolute;
-    bottom: 58%;
-    left: 61%;
+    bottom: 57.5%;
+    left: 61.5%;
 }
 
 .collabHeadline .headlineWrapper {
@@ -74,7 +74,9 @@
     }
 
     .collaborateCartoon {
-        display: none;
+        bottom: 54%;
+        left: 56%;
+        transform: scale(0.7);
     }
 
     .collabText {
@@ -95,6 +97,13 @@
 
     .collabHeadline {
         padding-top: 100px;
+    }
+
+    .collaborateCartoon {
+        bottom: 50%;
+        left: 52%;
+        width: 60px;
+        height: auto;
     }
 
     .collabText {
@@ -119,6 +128,13 @@
 
     .collabHeadline {
         padding-top: 80px;
+    }
+
+    .collaborateCartoon {
+        bottom: 15%;
+        left: -6%;
+        width: 75px;
+        height: auto;
     }
 
     .collabText {
