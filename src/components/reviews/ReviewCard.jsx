@@ -1,5 +1,6 @@
 import './ReviewCard.css'
 import avatarImgSrc from '../../assets/imgs/avatar.png'
+import reviewImgPlaceholder from '../../assets/imgs/reviewimg.png'
 
 export default function ReviewCard({
   reviewerName = 'Nikolas Gregory',
@@ -29,18 +30,16 @@ export default function ReviewCard({
         <div className="reviewCardReview">{reviewText}</div>
       </div>
       <div className="reviewCardImage">
-        {projectImage && (
-          <img 
-            src={projectImage} 
-            alt="project work" 
-            style={{
-              width: '100%', 
-              height: '100%', 
-              objectFit: 'cover', 
-              borderRadius: '12px'
-            }} 
-          />
-        )}
+        <img 
+          src={projectImage || reviewImgPlaceholder}
+          alt="project work" 
+          style={{
+            width: '100%', 
+            height: '100%', 
+            objectFit: 'cover', 
+            borderRadius: '12px'
+          }} 
+        />
       </div>
     </div>
   )
