@@ -471,6 +471,114 @@
         height: 96px !important;  /* Adjust height (e.g., 80px, 120px, or use auto) */
     }
 
+    /* ========================================
+       CUSTOMIZE ALL TEAM CARD SVGs FOR MOBILE
+       ======================================== */
+
+    /* Card 1 SVG (Row 1, Card 1) */
+    .teamRow:nth-child(1) .teammateCard:nth-child(1) img[alt="teammateSvg"] {
+        left: 74% !important;
+        right: auto !important;
+        top: 20% !important;
+        bottom: auto !important;
+        width: 86px !important;
+        height: 48px !important;
+    }
+
+    /* Card 2 SVG (Row 1, Card 2) */
+    .teamRow:nth-child(1) .teammateCard:nth-child(2) img[alt="teammateSvg"] {
+        left: auto !important;
+        right: 90% !important;
+        top: 160% !important;
+        bottom: auto !important;
+        width: 108px !important;
+        height: 58px !important;
+        z-index: 10 !important;
+    }
+
+    /* Card 3 SVG (Row 1, Card 3) */
+    .teamRow:nth-child(1) .teammateCard:nth-child(3) img[alt="teammateSvg"] {
+        left: 80% !important;
+        right: auto !important;
+        top: 380% !important;
+        bottom: auto !important;
+        width: 86px !important;
+        height: 48px !important;
+        z-index: 10 !important;
+    }
+
+    /* Card 4 SVG (Row 2, Card 1) */
+    .teamRow:nth-child(2) .teammateCard:nth-child(1) img[alt="teammateSvg"] {
+        left: 80% !important;
+        right: auto !important;
+        top: -284% !important;
+        bottom: auto !important;
+        width: 49px !important;
+        height: 26px !important;
+    }
+
+    /* Card 5 SVG (Row 2, Card 2) */
+    .teamRow:nth-child(2) .teammateCard:nth-child(2) img[alt="teammateSvg"] {
+        left: auto !important;
+        right: 35% !important;
+        top: auto !important;
+        bottom: 205% !important;
+        width: auto !important;
+        height: 90px !important;
+    }
+
+    /* ========================================
+       CUSTOMIZE ALL TEAM CARD CALLOUTS FOR MOBILE
+       ======================================== */
+
+    /* Card 1 Callout (Row 1, Card 1) */
+    .teamRow:nth-child(1) .teammateCard:nth-child(1) .teammateCallout {
+        left: 68% !important;
+        right: auto !important;
+        top: 80% !important;
+        bottom: auto !important;
+    }
+
+    /* Card 2 Callout (Row 1, Card 2) */
+    .teamRow:nth-child(1) .teammateCard:nth-child(2) .teammateCallout {
+        left: -19% !important;
+        right: auto !important;
+        top: 77% !important;
+        bottom: auto !important;
+    }
+
+    /* Card 3 Callout (Row 1, Card 3) */
+    .teamRow:nth-child(1) .teammateCard:nth-child(3) .teammateCallout {
+        left: 65% !important;
+        right: auto !important;
+        top: 35% !important;
+        bottom: auto !important;
+    }
+
+    /* Card 4 Callout (Row 2, Card 1) */
+    .teamRow:nth-child(2) .teammateCard:nth-child(1) .teammateCallout {
+        left: auto !important;
+        right: 80% !important;
+        top: auto !important;
+        bottom: 10% !important;
+    }
+
+    /* Card 5 Callout (Row 2, Card 2) */
+    .teamRow:nth-child(2) .teammateCard:nth-child(2) .teammateCallout {
+        left: 40% !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: 82% !important;
+    }
+
+    /* Card 6 Callout (Row 2, Card 3) */
+    .teamRow:nth-child(2) .teammateCard:nth-child(3) .teammateCallout {
+        left: auto !important;
+        right: 80% !important;
+        top: auto !important;
+        bottom: 20% !important;
+    }
+
     .mapContainer {
         width: 100%; /* Increased from 60% - adjust this to make map bigger/smaller */
         max-width: 100%;
