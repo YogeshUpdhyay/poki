@@ -75,6 +75,11 @@ footer {
     z-index: 10;
 }
 
+/* Show desktop SVG by default, hide mobile SVG */
+.footerSvgMobile {
+    display: none;
+}
+
 /* ========================================
    RESPONSIVE BREAKPOINTS - FOOTER
    ======================================== */
@@ -181,6 +186,16 @@ footer {
         width: 100%;
         grid-column: 1 / -1;
     }
+
+    /* Switch to mobile SVG on tablet/mobile */
+    .footerSvgDesktop {
+        display: none;
+    }
+
+    .footerSvgMobile {
+        bottom: 10%;
+        display: block;
+    }
 }
 
 @media (max-width: 576px) {
@@ -210,6 +225,6 @@ footer {
 
     .footerSvg {
         width: 105%;
-        bottom: 20%;
+        bottom: 10%;
     }   
 }
