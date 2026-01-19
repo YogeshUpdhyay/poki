@@ -1,6 +1,7 @@
 import './Footer.css'
 import EdgeBubble from '../common/edgeBubble/edgeBubble'
 import footerSvg from '../../assets/svgs/footer/footer.svg'
+import footer1Svg from '../../assets/svgs/footer/footer1.svg'
 import { useState } from 'react'
 import {
   useFloating,
@@ -69,7 +70,12 @@ function Footer() {
       <img src={star} alt="star" className='star' />
       <img src={footerCartoon1} alt="footerCartoon1" className='footerCartoon1' />
       <img src={footerCartoon2} alt="footerCartoon2" className='footerCartoon2' /> */}
-      <img src={footerSvg} alt="footerSvg" className='footerSvg' />
+      
+      {/* Desktop footer SVG */}
+      <img src={footerSvg} alt="footerSvg" className='footerSvg footerSvgDesktop' />
+      
+      {/* Mobile footer SVG */}
+      <img src={footer1Svg} alt="footer1Svg" className='footerSvg footerSvgMobile' />
 
     </footer>
   )

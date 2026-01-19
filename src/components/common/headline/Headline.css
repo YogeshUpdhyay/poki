@@ -27,3 +27,51 @@
     position: relative; /* anchor for image */
     display: inline-block;
 }
+
+/* ========================================
+   RESPONSIVE HEADLINE SIZES
+   ======================================== */
+
+@media (max-width: 1200px) {
+    .headlineText {
+        font-size: 80px;
+        letter-spacing: -3px;
+    }
+    
+    .headlineText.large {
+        font-size: 130px;
+    }
+}
+
+@media (max-width: 992px) {
+    .headlineText {
+        font-size: 64px;
+        letter-spacing: -2px;
+    }
+    
+    .headlineText.large {
+        font-size: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .headlineText {
+        font-size: 48px;
+        letter-spacing: -1.5px;
+    }
+    
+    .headlineText.large {
+        font-size: 72px;
+    }
+}
+
+@media (max-width: 576px) {
+    .headlineText {
+        font-size: 55px;
+        letter-spacing: -1px;
+    }
+    
+    .headlineText.large {
+        font-size: 52px;
+    }
+}

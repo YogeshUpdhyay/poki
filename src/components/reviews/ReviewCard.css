@@ -1,6 +1,5 @@
 .reviewCard {
    width: 360px;
-   height: 360px;
    position: relative;
    display: flex;
    flex-direction: column;
@@ -20,6 +19,8 @@
    border-radius: 12px;
    color: black;
    padding: 28px;
+   width: 360px;
+   flex-shrink: 0;
 }
 
 .reviewCardReviewer {
@@ -60,9 +61,10 @@
 
 .reviewCardImage {
    border-radius: 12px;
-   width: 100%;
+   width: 360px;
    background-color: var(--color-yellow);
-   flex-grow: 1;
+   flex-shrink: 0;
+   overflow: hidden;
 }
 
 /* Per-color variants for the card (use `color` prop to set class on root)
@@ -82,3 +84,63 @@
 
 .reviewCard.orange  .reviewCardContent { background-color: var(--color-orange); color: var(--color-white); }
 .reviewCard.orange  .reviewCardImage   { background-color: var(--color-orange); }
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS - REVIEW CARDS
+   ======================================== */
+
+@media (max-width: 1200px) {
+   .reviewCard {
+      width: 340px;
+   }
+
+   .reviewCardContent {
+      width: 340px;
+   }
+
+   .reviewCardImage {
+      width: 340px;
+   }
+}
+
+@media (max-width: 992px) {
+   .reviewCard {
+      width: 320px;
+   }
+
+   .reviewCardContent {
+      width: 320px;
+   }
+
+   .reviewCardImage {
+      width: 320px;
+   }
+}
+
+@media (max-width: 768px) {
+   .reviewCard {
+      width: 300px;
+   }
+
+   .reviewCardContent {
+      width: 300px;
+   }
+
+   .reviewCardImage {
+      width: 300px;
+   }
+}
+
+@media (max-width: 576px) {
+   .reviewCard {
+      width: 280px;
+   }
+
+   .reviewCardContent {
+      width: 280px;
+   }
+
+   .reviewCardImage {
+      width: 280px;
+   }
+}

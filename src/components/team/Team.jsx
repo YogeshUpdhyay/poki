@@ -153,7 +153,9 @@ const Map = () => {
           onMouseLeave: onMouseLeave,
         })}
         className="mapSVG" 
-        id='worldMap' 
+        id='worldMap'
+        viewBox="0 0 1009.6727 665.96301"
+        preserveAspectRatio="xMidYMid meet"
       />
       {open && hoveredInfo && (
         <div

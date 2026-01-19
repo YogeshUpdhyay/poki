@@ -19,6 +19,8 @@
     border-radius: 0px 0px 40px 40px;
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .heroCartoon {
@@ -26,7 +28,7 @@
     right: 94%;
     top: -10px;
     z-index: 20;
-    transform: scale(0);
+    transform: scale(1);
 }
 
 .heroStar {
@@ -43,3 +45,94 @@
     z-index: 20;
 }
 
+/* ========================================
+   RESPONSIVE BREAKPOINTS - HERO SECTION
+   ======================================== */
+
+@media (max-width: 1200px) {
+    .heroCartoon {
+        right: 92%;
+        transform: scale(0.85);
+    }
+
+    .heroStar {
+        left: 100%;
+        top: 0px;
+        transform: scale(0.85);
+    }
+
+    .heroUnderlinePosition {
+        left: 5%;
+        bottom: -20px;
+        transform: scale(0.9);
+    }
+}
+
+@media (max-width: 992px) {
+    .heroCartoon {
+        right: 90%;
+        transform: scale(0.7);
+    }
+
+    .heroStar {
+        left: 100%;
+        top: 0px;
+        transform: scale(0.7);
+    }
+
+    .heroUnderlinePosition {
+        left: 5%;
+        bottom: -20px;
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 768px) {
+    .heroCartoon {
+        right: 88%;
+        transform: scale(0.5);
+    }
+
+    .heroStar {
+        left: 100%;
+        top: 0px;
+        transform: scale(0.5);
+    }
+
+    .heroHeadline {
+        margin-bottom: 60px;
+    }
+
+    .heroUnderlinePosition {
+        left: 5%;
+        bottom: -20px;
+        transform: scale(0.7);
+    }
+}
+
+@media (max-width: 576px) {
+    .heroCartoon {
+        right: 85%;
+        top: 125px;
+        width: 88.35px;
+        height: 96;
+        transform: none;
+    }
+
+    .heroStar {
+        left: 94%;
+        top: 65px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .heroHeadline {
+        margin-bottom: 50px;
+    }
+
+    .heroUnderlinePosition {
+        left: -5%;
+        bottom: -28px;
+        transform: scale(0.6);
+    }
+}

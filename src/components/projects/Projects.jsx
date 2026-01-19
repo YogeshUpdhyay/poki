@@ -16,12 +16,34 @@ import { useRef, useState, useLayoutEffect, useEffect } from 'react';
 
 function Projects() {
   const { data } = useCms();
-  // read projects from CMS data, fallback to a single sample
-  const lines = ['an agency that', 'puts your brand in', 'the spotlight']
-  const highlight = 'spotlight'
-  const tooltipText = 'no shadows, only shine'
-  const tooltipColor='blue'
-  const projects = (data && data.projects && data.projects.length) ? data.projects : [{ title: 'begun', image: projectBackground }]
+  const [isMobile, setIsMobile] = useState(false);
+  
+  // Check screen size and update isMobile state
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    // Check on mount
+    checkMobile();
+    
+    // Add resize listener
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  
+  // Original desktop lines (unchanged)
+  const originalLines = ['an agency that', 'puts your brand in', 'the spotlight'];
+  // Mobile-only 4-line split
+  const mobileLines = ['an agency', 'that puts', 'your brand in', 'the spotlight'];
+  // Use mobile lines only on mobile, otherwise keep original
+  const lines = isMobile ? mobileLines : originalLines;
+  
+  const highlight = 'spotlight';
+  const tooltipText = 'no shadows, only shine';
+  const tooltipColor = 'blue';
+  const projects = (data && data.projects && data.projects.length) ? data.projects : [{ title: 'begun', image: projectBackground }];
   
   const projectsCartoonRef = useRef(null);
   const projectCartoonInView = useInView(projectsCartoonRef, {

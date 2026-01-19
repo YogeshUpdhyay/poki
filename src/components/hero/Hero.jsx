@@ -7,11 +7,33 @@ import HeroUnderline from "../../assets/underlines/heroUnderline.svg?react";
 import { Headline } from '../common/headline/Headline';
 import { useCms } from '../../utils/context'
 import { useInView } from "react-intersection-observer";
+import { useState, useEffect } from 'react'
 
 function Hero() {
   const { data } = useCms()
   const heroData = data?.hero || {}
-  const lines = heroData.lines || ['we make your brand,', 'sharper and louder']
+  const [isMobile, setIsMobile] = useState(false)
+  
+  // Check screen size and update isMobile state
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+    
+    // Check on mount
+    checkMobile()
+    
+    // Add resize listener
+    window.addEventListener('resize', checkMobile)
+    
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+  
+  // Use different line breaks based on screen size
+  const desktopLines = heroData.lines || ['we make your brand,', 'sharper and louder']
+  const mobileLines = ['we make', 'your brand,', 'sharper and', 'louder']
+  const lines = isMobile ? mobileLines : desktopLines
+  
   const highlight = heroData.highlight || 'sharper'
   const backgroundSrc = heroData.backgroundMedia || heroBackgroundMedia
   const countMeInUrl = heroData.countMeInUrl || '#'

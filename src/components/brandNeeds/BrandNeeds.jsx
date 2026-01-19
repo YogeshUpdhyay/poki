@@ -44,8 +44,10 @@ function BrandNeedsHeadline() {
   return (
     <h1 className="headlineText">
       <span className="headlineWrapper">
-        <span className="headlineHighlight">everything</span> your <br />
-        brand needs
+        <span className="headlineHighlight">everything</span><span className="brandNeedsBreak1"> </span>
+        <span className="brandNeedsYour">your</span><span className="brandNeedsBreak2"> </span>
+        <span className="brandNeedsBrand">brand</span><span className="brandNeedsBreak3"> </span>
+        <span className="brandNeedsNeeds">needs</span>
 
         <img
           src={brandNeedsCartoon}

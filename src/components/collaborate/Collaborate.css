@@ -16,8 +16,8 @@
 
 .collaborateCartoon {
     position: absolute;
-    bottom: 58%;
-    left: 61%;
+    bottom: 57.5%;
+    left: 61.5%;
 }
 
 .collabHeadline .headlineWrapper {
@@ -41,4 +41,110 @@
     display: flex;
     justify-content: center;
     gap: 16px;
+}
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+@media (max-width: 1200px) {
+    .collabHeadline {
+        padding-top: 160px;
+    }
+
+    .collaborateCartoon {
+        bottom: 56%;
+        left: 58%;
+        transform: scale(0.85);
+    }
+
+    .collabText {
+        font-size: 15px;
+        max-width: 420px;
+    }
+
+    .collabButtons {
+        padding-bottom: 140px;
+    }
+}
+
+@media (max-width: 992px) {
+    .collabHeadline {
+        padding-top: 120px;
+    }
+
+    .collaborateCartoon {
+        bottom: 54%;
+        left: 56%;
+        transform: scale(0.7);
+    }
+
+    .collabText {
+        font-size: 14px;
+        max-width: 380px;
+    }
+
+    .collabButtons {
+        padding-top: 40px;
+        padding-bottom: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .letsCollab {
+        border-radius: 32px 32px 0px 0px;
+    }
+
+    .collabHeadline {
+        padding-top: 100px;
+    }
+
+    .collaborateCartoon {
+        bottom: 50%;
+        left: 52%;
+        width: 60px;
+        height: auto;
+    }
+
+    .collabText {
+        font-size: 14px;
+        max-width: 340px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .collabButtons {
+        padding-top: 36px;
+        padding-bottom: 100px;
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .letsCollab {
+        border-radius: 24px 24px 0px 0px;
+    }
+
+    .collabHeadline {
+        padding-top: 80px;
+    }
+
+    .collaborateCartoon {
+        bottom: 15%;
+        left: -6%;
+        width: 75px;
+        height: auto;
+    }
+
+    .collabText {
+        font-size: 13px;
+        max-width: 300px;
+        padding-top: 32px;
+    }
+
+    .collabButtons {
+        padding-top: 32px;
+        padding-bottom: 80px;
+    }
 }
