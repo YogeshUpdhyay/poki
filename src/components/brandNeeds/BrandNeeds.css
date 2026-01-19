@@ -158,3 +158,257 @@
 .offeringCard.pink  .offeringDescLine svg { color: var(--color-black); }
 .offeringCard.blue  .offeringDescLine svg { color: var(--color-black); }
 .offeringCard .offeringDescLine svg path { fill: currentColor !important; }
+
+/* ========================================
+   DESKTOP DEFAULT - 2 LINE LAYOUT
+   "everything your" / "brand needs"
+   ======================================== */
+
+/* Break after "your" on desktop to create 2 lines */
+.brandNeedsBreak2::after {
+    content: "\A";
+    white-space: pre;
+}
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS - BRANDNEEDS SECTION
+   ======================================== */
+
+@media (max-width: 1200px) {
+    .brandNeeds {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .offerings {
+        padding-top: 100px;
+        gap: 24px;
+    }
+
+    .offeringCard {
+        width: 280px;
+        height: 370px;
+        padding: 50px 24px 44px 24px;
+    }
+}
+
+@media (max-width: 992px) {
+    .brandNeeds {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .offerings {
+        padding-top: 80px;
+        gap: 20px;
+    }
+
+    .offeringCard {
+        width: 260px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .brandNeeds {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 32px 32px 0px 0px;
+    }
+
+    /* Mobile: 3 line layout - "everything" / "your brand" / "needs" */
+    /* Remove desktop break after "your" */
+    .brandNeedsBreak2::after {
+        content: none;
+    }
+
+    /* Add break after "everything" */
+    .brandNeedsBreak1::after {
+        content: "\A";
+        white-space: pre;
+    }
+
+    /* Add break after "brand" */
+    .brandNeedsBreak3::after {
+        content: "\A";
+        white-space: pre;
+    }
+
+    .brandNeedsCartoon {
+        left: auto;
+        right: 10px;
+        top: 20px;
+        transform: scale(0.6);
+    }
+
+    .brandNeedsStar {
+        left: 20px;
+        right: auto;
+        top: 15%;
+        transform: scale(0.7);
+    }
+
+    .offerings {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 60px;
+        gap: 40px;
+    }
+
+    /* Keep desktop transforms and sizing - just stack vertically */
+    .offeringCard {
+        width: 300px;
+        height: 390px;
+        padding: 55px 28px 48px 28px;
+        /* Transforms are preserved from desktop - no override */
+    }
+
+    /* Keep the desktop rotation transforms on mobile */
+    .offeringCard.green {
+        transform: translate(0%, 7%) rotate(8deg);
+    }
+
+    .offeringCard.pink {
+        transform: translate(0%, 3%) rotate(-3deg);
+    }
+
+    .offeringCard.blue {
+        transform: translate(0%, 20%) rotate(15deg);
+    }
+
+    /* Keep hover effects on tablet */
+    .offeringCard.green:hover {
+        transform: scale(1.1);
+    }
+
+    .offeringCard.pink:hover {
+        transform: scale(1.1);
+    }
+
+    .offeringCard.blue:hover {
+        transform: scale(1.1);
+    }
+
+    .offerings:has(.offeringCard.green:hover) .offeringCard.pink {
+        transform: translate(49%, 3%) rotate(-3deg);
+    }
+
+    .offerings:has(.offeringCard.green:hover) .offeringCard.blue {
+        transform: translate(10%, 20%) rotate(15deg);
+    }
+
+    .offerings:has(.offeringCard.pink:hover) .offeringCard.blue {
+        transform: translate(30%, 20%) rotate(15deg);
+    }
+
+    .offerings:has(.offeringCard.pink:hover) .offeringCard.green {
+        transform: translate(-35%, 7%) rotate(8deg);
+    }
+
+    .offerings:has(.offeringCard.blue:hover) .offeringCard.pink {
+        transform: translate(-51%, 3%) rotate(-3deg);
+    }
+
+    .offerings:has(.offeringCard.blue:hover) .offeringCard.green {
+        transform: translate(-15%, 7%) rotate(8deg);
+    }
+
+    .offeringCardSvg {
+        left: auto;
+        right: 20px;
+        top: -25px;
+        max-width: 120px;
+    }
+
+    .brandNeedsButton {
+        margin-top: 48px;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Scope headlineWrapper to brandNeeds section only */
+    .brandNeeds .headlineWrapper {
+        padding-bottom: 45px;
+        font-size: 48px;
+    }
+    .brandNeeds {
+        padding-top: 48px;
+        padding-bottom: 48px;
+        padding-left: 16px;
+        padding-right: 16px;
+        border-radius: 24px 24px 0px 0px;
+    }
+
+    .brandNeedsCartoon {
+        right: -7px;
+        top: 100px;
+        width: 71.19px;
+        height: 97.06px;
+    }
+
+    .brandNeedsStar {
+        left: -22px;
+        top: -3%;
+        transform: scale(0.6);
+    }
+
+    .offerings {
+        padding-top: 40px;
+        gap: 32px;
+    }
+
+    /* Keep desktop sizing and transforms even on small mobile */
+    .offeringCard {
+        width: 300px;
+        height: 390px;
+        padding: 55px 28px 48px 28px;
+        gap: 28px;
+    }
+
+    /* Desktop transforms preserved */
+    .offeringCard.green {
+        transform: translate(0%, 7%) rotate(0deg);
+    }
+
+    .offeringCard.pink {
+        transform: translate(1%, -2%) rotate(-6.52deg);
+    }
+
+    .offeringCard.blue {
+        transform: translate(0%, -10%) rotate(6deg);
+    }
+
+    .offeringCardTitle {
+        font-size: 24px;
+    }
+
+    .offeringCardSvg {
+        left: 140px;
+        transform: rotate(-11deg);
+    }
+
+    /* Mobile-specific styles for offeringtext1 (green card - index 0) */
+    img[alt="offeringCardSvg-0"] {
+        left: 140px;
+        transform: rotate(7deg);
+    }
+
+    
+
+    .offeringDescLine {
+        font-size: 16px;
+        gap: 10px;
+    }
+
+    .offeringDescLine svg {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+    }
+
+    .brandNeedsButton {
+        margin-top: 40px;
+    }
+}

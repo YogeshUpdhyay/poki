@@ -35,3 +35,18 @@
     background-color: var(--color-orange);
     color: white;
 }
+
+/* ========================================
+   SECTION OVERFLOW PREVENTION
+   ======================================== */
+
+section {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: border-box;
+}

@@ -132,3 +132,468 @@
     line-height: normal;
     background-color: var(--color-yellow);
 }
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS - TEAM SECTION
+   ======================================== */
+
+@media (max-width: 1200px) {
+    .team {
+        padding-top: 100px;
+        overflow-x: hidden;
+    }
+
+    .teamHeadline {
+        padding-top: 80px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    .teammates {
+        padding: 48px 32px 140px;
+    }
+
+    .teammateGreenBlob {
+        right: 32px;
+        transform: scale(0.85);
+    }
+
+    .teammatePinkBlob {
+        left: -100px;
+        transform: scale(0.85);
+    }
+
+    .teamPill {
+        left: 85%;
+        top: 24%;
+        font-size: 11px;
+    }
+
+    .teamCols {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    .teamRow {
+        gap: 140px;
+    }
+
+    .teamRow:nth-child(2) {
+        padding-top: 140px;
+    }
+
+    .teammateCard {
+        height: 340px;
+        width: 280px;
+    }
+
+    .mapContainer {
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    #worldMap {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 992px) {
+    .team {
+        padding-top: 80px;
+    }
+
+    .teamHeadline {
+        padding-top: 60px;
+    }
+
+    .teammates {
+        padding: 40px 24px 120px;
+    }
+
+    .teammateGreenBlob,
+    .teammatePinkBlob {
+        display: none;
+    }
+
+    .teamPill {
+        left: 80%;
+        top: 22%;
+    }
+
+    .teamRow {
+        gap: 120px;
+    }
+
+    .teamRow:nth-child(2) {
+        padding-top: 120px;
+    }
+
+    .teammateCard {
+        height: 320px;
+        width: 260px;
+    }
+}
+
+@media (max-width: 768px) {
+    .team {
+        padding-top: 60px;
+        border-radius: 32px 32px 0px 0px;
+        overflow-x: hidden;
+    }
+
+    /* Add space between map and headline */
+    .map {
+        margin-bottom: 80px; /* Adjust this value to increase/decrease space */
+    }
+
+    .teamHeadline {
+        padding-top: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .teamCartoon {
+        /* Position teamCartoon in the space between map and headline */
+        right: auto;
+        left: 50%; /* Horizontal center - change to left: 20px for left alignment, or left: auto; right: 20px for right alignment */
+        top: -120px; /* Negative value pulls it up into the space - adjust to move up/down */
+        transform: scale(0.7) translateX(-50%); /* First value controls size (0.7 = 70% size), adjust as needed */
+        /* If you change left alignment, also adjust translateX:
+           - For center: translateX(-50%)
+           - For left align: translateX(0)
+           - For right align: translateX(-100%) or remove translateX */
+    }
+
+    /* Control teamUnderline SVG size */
+    .teamUnderline {
+        width: 60%; /* Adjust this percentage to make underline bigger/smaller */
+        max-width: 200px; /* Optional: set a maximum pixel width */
+    }
+
+    .teamUnderline svg {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .teammates {
+        padding: 32px 20px 100px;
+        overflow-x: hidden;
+    }
+
+    .teamPill {
+        display: none;
+    }
+
+    .teamCols {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .teamRow {
+        width: 100%;
+        gap: 60px;
+    }
+
+    .teamRow:nth-child(1) .teammateCard:nth-child(1) {
+        margin-left: 0;
+    }
+
+    .teamRow:nth-child(1) .teammateCard:nth-child(2) {
+        margin-left: 15%;
+    }
+
+    .teamRow:nth-child(1) .teammateCard:nth-child(3) {
+        margin-left: 5%;
+    }
+
+    .teamRow:nth-child(2) {
+        padding-top: 0;
+        display: flex;
+    }
+
+    .teamRow:nth-child(2) .teammateCard:nth-child(1) {
+        margin-left: 10%;
+    }
+
+    .teamRow:nth-child(2) .teammateCard:nth-child(2) {
+        margin-left: 0;
+    }
+
+    .teamRow:nth-child(2) .teammateCard:nth-child(3) {
+        margin-left: 12%;
+    }
+
+    .teammateCard {
+        height: 280px;
+        width: 220px;
+    }
+
+    .mapContainer {
+        padding: 0 16px;
+        max-width: 100%;
+    }
+
+    .mapContainer {
+        width: 50%;
+        max-width: 50%;
+    }
+
+    #worldMap {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .team {
+        padding-top: 48px;
+        border-radius: 24px 24px 0px 0px;
+        overflow-x: hidden;
+    }
+
+    .teamHeadline {
+        padding-top: 50px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .teamCartoon {
+        left: 29%;
+        top: -53%;
+        width: 148.82px;
+        height: 96px;
+        transform: scale(0.5) translateX(-50%);
+    }
+
+    /* Control teamUnderline SVG size on mobile */
+    .teamUnderline {
+        left: 53%;
+        top: 78%;
+        width: 50%; /* Adjust this percentage to make underline bigger/smaller */
+        max-width: 150px; /* Optional: set a maximum pixel width */
+    }
+
+    .teamUnderline svg {
+        width: 126px !important;
+        height: 7px !important;
+    }
+
+    .teammates {
+        padding: 24px 16px 80px;
+        overflow-x: hidden;
+    }
+
+    /* Green blob - visible on mobile, customize below */
+    .teammateGreenBlob {
+        display: block;
+        position: absolute;
+        top: 7%; /* Adjust vertical position */
+        right: -50px; /* Adjust horizontal position */
+        transform: scale(0.7); /* Adjust size (0.5 = 50% size) */
+    }
+
+    /* Pink blob - visible on mobile, customize below */
+    .teammatePinkBlob {
+        display: block;
+        position: absolute;
+        bottom: 6%; /* Adjust vertical position */
+        left: -295px; /* Adjust horizontal position */
+        transform: scale(0.7); /* Adjust size (0.5 = 50% size) */
+    }
+
+    .teamCols {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+
+    .teamRow {
+        gap: 112px; /* Padding between all cards */
+        padding-left: 42px;
+        padding-right: 42px;
+    }
+
+    /* Card 1 - Left aligned */
+    .teamRow:nth-child(1) .teammateCard:nth-child(1) {
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    /* Card 2 - Right aligned */
+    .teamRow:nth-child(1) .teammateCard:nth-child(2) {
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    /* Card 3 - Left aligned */
+    .teamRow:nth-child(1) .teammateCard:nth-child(3) {
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    .teamRow:nth-child(2) {
+        padding-left: 42px;
+        padding-right: 42px;
+        padding-top: 112px; /* Match the gap value above for consistent spacing */
+    }
+
+    /* Card 4 - Right aligned */
+    .teamRow:nth-child(2) .teammateCard:nth-child(1) {
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    /* Card 5 - Left aligned */
+    .teamRow:nth-child(2) .teammateCard:nth-child(2) {
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    /* Card 6 - Right aligned */
+    .teamRow:nth-child(2) .teammateCard:nth-child(3) {
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .teammateCard {
+        height: 240px;
+        width: 200px;
+    }
+
+    /* Control teammate6.svg position and size on mobile */
+    .teamRow:nth-child(2) .teammateCard:nth-child(3) img[alt="teammateSvg"] {
+        left: 20% !important;  /* Adjust horizontal position (lower % = more left) */
+        top: -39.5% !important;  /* Adjust vertical position (negative % = moves up) */
+        width: 71.16px !important;   /* Adjust width (e.g., 100px, 150px, or use auto) */
+        height: 96px !important;  /* Adjust height (e.g., 80px, 120px, or use auto) */
+    }
+
+    /* ========================================
+       CUSTOMIZE ALL TEAM CARD SVGs FOR MOBILE
+       ======================================== */
+
+    /* Card 1 SVG (Row 1, Card 1) */
+    .teamRow:nth-child(1) .teammateCard:nth-child(1) img[alt="teammateSvg"] {
+        left: 74% !important;
+        right: auto !important;
+        top: 20% !important;
+        bottom: auto !important;
+        width: 86px !important;
+        height: 48px !important;
+    }
+
+    /* Card 2 SVG (Row 1, Card 2) */
+    .teamRow:nth-child(1) .teammateCard:nth-child(2) img[alt="teammateSvg"] {
+        left: auto !important;
+        right: 90% !important;
+        top: 160% !important;
+        bottom: auto !important;
+        width: 108px !important;
+        height: 58px !important;
+        z-index: 10 !important;
+    }
+
+    /* Card 3 SVG (Row 1, Card 3) */
+    .teamRow:nth-child(1) .teammateCard:nth-child(3) img[alt="teammateSvg"] {
+        left: 80% !important;
+        right: auto !important;
+        top: 380% !important;
+        bottom: auto !important;
+        width: 86px !important;
+        height: 48px !important;
+        z-index: 10 !important;
+    }
+
+    /* Card 4 SVG (Row 2, Card 1) */
+    .teamRow:nth-child(2) .teammateCard:nth-child(1) img[alt="teammateSvg"] {
+        left: 80% !important;
+        right: auto !important;
+        top: -284% !important;
+        bottom: auto !important;
+        width: 49px !important;
+        height: 26px !important;
+    }
+
+    /* Card 5 SVG (Row 2, Card 2) */
+    .teamRow:nth-child(2) .teammateCard:nth-child(2) img[alt="teammateSvg"] {
+        left: auto !important;
+        right: 35% !important;
+        top: auto !important;
+        bottom: 205% !important;
+        width: auto !important;
+        height: 90px !important;
+    }
+
+    /* ========================================
+       CUSTOMIZE ALL TEAM CARD CALLOUTS FOR MOBILE
+       ======================================== */
+
+    /* Card 1 Callout (Row 1, Card 1) */
+    .teamRow:nth-child(1) .teammateCard:nth-child(1) .teammateCallout {
+        left: 68% !important;
+        right: auto !important;
+        top: 80% !important;
+        bottom: auto !important;
+    }
+
+    /* Card 2 Callout (Row 1, Card 2) */
+    .teamRow:nth-child(1) .teammateCard:nth-child(2) .teammateCallout {
+        left: -19% !important;
+        right: auto !important;
+        top: 77% !important;
+        bottom: auto !important;
+    }
+
+    /* Card 3 Callout (Row 1, Card 3) */
+    .teamRow:nth-child(1) .teammateCard:nth-child(3) .teammateCallout {
+        left: 65% !important;
+        right: auto !important;
+        top: 35% !important;
+        bottom: auto !important;
+    }
+
+    /* Card 4 Callout (Row 2, Card 1) */
+    .teamRow:nth-child(2) .teammateCard:nth-child(1) .teammateCallout {
+        left: auto !important;
+        right: 80% !important;
+        top: auto !important;
+        bottom: 10% !important;
+    }
+
+    /* Card 5 Callout (Row 2, Card 2) */
+    .teamRow:nth-child(2) .teammateCard:nth-child(2) .teammateCallout {
+        left: 40% !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: 82% !important;
+    }
+
+    /* Card 6 Callout (Row 2, Card 3) */
+    .teamRow:nth-child(2) .teammateCard:nth-child(3) .teammateCallout {
+        left: auto !important;
+        right: 80% !important;
+        top: auto !important;
+        bottom: 20% !important;
+    }
+
+    .mapContainer {
+        width: 100%; /* Increased from 60% - adjust this to make map bigger/smaller */
+        max-width: 100%;
+        padding: 0 12px;
+        box-sizing: border-box;
+    }
+
+    #worldMap {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .teammateCallout {
+        font-size: 10px;
+        padding: 8px 10px;
+    }
+}

@@ -30,11 +30,24 @@
     padding-top: 96px;
     display: flex;
     overflow-x: hidden;
+    overflow-y: visible;
     z-index: 40;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.reviewsCarousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.reviewsCarousel {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
 .reviewsCarouselInner {
     display: flex;
+    gap: 26px;
 }
 
 @keyframes scale-in {
@@ -51,4 +64,91 @@
   animation-duration: 1s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
+}
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS - REVIEWS SECTION
+   ======================================== */
+
+@media (max-width: 1200px) {
+    .reviewsCartoon {
+        right: 82%;
+        bottom: 18%;
+        transform: scale(0.85);
+    }
+
+    .reviewUnderlinePosition {
+        bottom: -28px;
+        left: 36%;
+        transform: scale(0.9);
+    }
+
+    .reviewsBg {
+        left: 72%;
+        top: 90px;
+        transform: scale(0.85);
+    }
+}
+
+@media (max-width: 992px) {
+    .reviewsCartoon {
+        right: 80%;
+        bottom: 16%;
+        transform: scale(0.7);
+    }
+
+    .reviewUnderlinePosition {
+        bottom: -26px;
+        left: 34%;
+        transform: scale(0.8);
+    }
+
+    .reviewsBg {
+        left: 70%;
+        top: 80px;
+        transform: scale(0.7);
+    }
+}
+
+@media (max-width: 768px) {
+    .reviewsCartoon {
+        right: 78%;
+        bottom: 14%;
+        transform: scale(0.6);
+    }
+
+    .reviewUnderlinePosition {
+        bottom: -24px;
+        left: 32%;
+        transform: scale(0.7);
+    }
+
+    .reviewsBg {
+        left: 68%;
+        top: 70px;
+        transform: scale(0.6);
+    }
+}
+
+@media (max-width: 576px) {
+    .reviewsCartoon {
+        right: 75%;
+        bottom: 70%;
+        width: 92.45px;
+        height: 86px;
+    }
+
+    .reviewUnderlinePosition {
+        bottom: -22px;
+        left: 30%;
+        width: 10px;
+        height: auto;
+    }
+
+    .reviewsBg {
+        left: -35%;
+        top: 775px;
+        width: 311.33px;
+        height: 312.5px;
+    }
 }
