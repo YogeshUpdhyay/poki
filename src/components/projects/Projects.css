@@ -124,10 +124,16 @@
 }
 
 @media (max-width: 768px) {
+    .headlineText {
+        font-size: 48px;
+    }
+
     .projectsCartoon {
-        left: 70%;
-        top: 42%;
-        transform: scale(0.6);
+        left: 33%;
+        top: -30.5%;
+        width: 101.9px;
+        height: 96px;
+        rotate: 7deg;
     }
 
     .projectsPill {
@@ -139,15 +145,26 @@
 }
 
 @media (max-width: 576px) {
+    .headlineText {
+        font-size: 48px;
+        padding-bottom: 50px;
+    }
+
+    .projectBg{
+        width: 406px;
+        height: 378.66px;
+    }
+
     .projectsCartoon {
-        left: 30%;
-        top: -32.5%;
-        width: 101.96px;
+        left: 30.5%;
+        top: -35.5%;
+        width: 101.9px;
         height: 96px;
+        rotate: 7deg;
     }
 
     .projectsPill {
-        left: 6%;
+        left: -1%;
         top: 44%;
         font-size: 14px;
         padding: 6px 10px;
