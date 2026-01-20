@@ -63,7 +63,6 @@ export default function Navbar() {
         >
           <span></span>
           <span></span>
-          <span></span>
         </button>
 
         {/* Desktop Nav Links */}
