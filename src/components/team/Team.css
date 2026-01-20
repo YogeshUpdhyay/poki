@@ -107,7 +107,7 @@
 #worldMap path:hover {
     fill: #EAF9C0 !important;
     stroke: #EAF9C0 !important;
-    cursor: pointer;
+    cursor: url('/tooltip.svg'), pointer;
 }
 
 .mapContainer {

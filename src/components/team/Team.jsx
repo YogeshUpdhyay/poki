@@ -86,7 +86,7 @@ const Map = () => {
   const { refs, floatingStyles, context } = useFloating({
     open,
     onOpenChange: setOpen,
-    middleware: [offset(8)], // optional offset
+    middleware: [offset({ crossAxis: 90, mainAxis: -40 })], // optional offset
     whileElementsMounted: autoUpdate,
   });
 
