@@ -25,10 +25,11 @@
 
 .heroCartoon {
     position: absolute;
-    right: 94%;
-    top: -10px;
+    right: 95%;
+    top: 15px;
     z-index: 20;
-    transform: scale(1);
+    width: 165.09px;
+    height: 179.39px;
 }
 
 .heroStar {
@@ -112,8 +113,8 @@
 
 @media (max-width: 576px) {
     .heroCartoon {
-        right: 85%;
-        top: 125px;
+        right: 86%;
+        top: 90px;
         width: 88.35px;
         height: 96;
         transform: none;
