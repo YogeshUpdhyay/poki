@@ -91,6 +91,10 @@
 }
 
 @media (max-width: 768px) {
+
+    .headlineText{
+        font-size: 56px;
+    }
     .letsCollab {
         border-radius: 32px 32px 0px 0px;
     }
@@ -104,6 +108,7 @@
         left: 52%;
         width: 60px;
         height: auto;
+        transform: none;
     }
 
     .collabText {
@@ -116,7 +121,6 @@
     .collabButtons {
         padding-top: 36px;
         padding-bottom: 100px;
-        flex-direction: column;
         gap: 12px;
     }
 }
@@ -131,10 +135,11 @@
     }
 
     .collaborateCartoon {
-        bottom: 15%;
-        left: -6%;
-        width: 75px;
-        height: auto;
+        bottom: 26%;
+        left: -4%;
+        width: 69.66px;
+        height: 78.26px;
+        transform: none;
     }
 
     .collabText {

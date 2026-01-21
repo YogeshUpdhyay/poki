@@ -11,7 +11,9 @@
 .reviewsCartoon {
     position: absolute;
     right: 85%;
-    bottom: 20%
+    bottom: 30%;
+    width: 222.05px;
+    height: 217.79px;
 }
 
 .reviewUnderlinePosition {
@@ -131,11 +133,20 @@
 }
 
 @media (max-width: 576px) {
+
+    .reviews{
+        padding-top: 80px ;
+    }
+
+    .headlineText{
+        padding-bottom: 0%;
+    }
     .reviewsCartoon {
-        right: 75%;
-        bottom: 70%;
+        right: 69%;
+        bottom: 75%;
         width: 92.45px;
         height: 86px;
+        transform: none;
     }
 
     .reviewUnderlinePosition {
@@ -146,9 +157,10 @@
     }
 
     .reviewsBg {
-        left: -35%;
-        top: 775px;
+        left: -30%;
+        top: 650px;
         width: 311.33px;
         height: 312.5px;
+        transform: none;
     }
 }

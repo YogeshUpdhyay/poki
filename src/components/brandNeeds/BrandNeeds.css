@@ -13,10 +13,11 @@
 
 .brandNeedsCartoon {
     position: absolute;
-    left: 93%;
-    top: 0;
+    left: 96.5%;
+    top: 65px;
     z-index: 20;
-    transform: scale(0); 
+    width: 151px;
+    height: 206.3px;
 }
 
 .brandNeedsStar {
@@ -35,6 +36,7 @@
    justify-content: center;
    gap: 32px;
    padding-top: 140px;
+   padding-bottom: 70px;
 }
 
 .offeringCard {
@@ -182,6 +184,7 @@
 
     .offerings {
         padding-top: 100px;
+        padding-bottom: 70px;
         gap: 24px;
     }
 
@@ -342,14 +345,14 @@
     }
 
     .brandNeedsCartoon {
-        right: -7px;
+        right: -20px;
         top: 100px;
         width: 71.19px;
         height: 97.06px;
     }
 
     .brandNeedsStar {
-        left: -22px;
+        left: -25px;
         top: -3%;
         transform: scale(0.6);
     }

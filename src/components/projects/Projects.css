@@ -35,20 +35,22 @@
 .projectsPill {
     position: absolute;
     left: 10%;
-    top: 58%;
+    top: 60%;
     display: inline-block;
     padding: 10px 14px;
     border-radius: 100px 100px 100px 0px;
     pointer-events: none;
     width: fit-content;
-    font-size: 13px;
+    font-size: 14px;
     font-family: generalSansMedium;
-    letter-spacing: normal;
+    letter-spacing: -0.01em;
     white-space: nowrap;
-    line-height: normal;
+    line-height: 100%;
     background-color: #86C9FF;
     color: black;
     z-index: 20;
+    font-weight: 500;
+    text-align: center;
 }
 
 .projectCard {
@@ -81,6 +83,10 @@
     width: fit-content;
     margin: 24px;
     font-family: 'generalSansMedium';
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.01em;
+    text-align: center;
 }
 
 /* ========================================
@@ -96,7 +102,7 @@
 
     .projectsPill {
         left: 8%;
-        top: 56%;
+        top: 60%;
         font-size: 12px;
         padding: 9px 13px;
     }
@@ -118,10 +124,16 @@
 }
 
 @media (max-width: 768px) {
+    .headlineText {
+        font-size: 48px;
+    }
+
     .projectsCartoon {
-        left: 70%;
-        top: 42%;
-        transform: scale(0.6);
+        left: 33%;
+        top: -30.5%;
+        width: 101.9px;
+        height: 96px;
+        rotate: 7deg;
     }
 
     .projectsPill {
@@ -133,15 +145,26 @@
 }
 
 @media (max-width: 576px) {
+    .headlineText {
+        font-size: 48px;
+        padding-bottom: 50px;
+    }
+
+    .projectBg{
+        width: 406px;
+        height: 378.66px;
+    }
+
     .projectsCartoon {
-        left: 30%;
-        top: -32.5%;
-        width: 101.96px;
+        left: 30.5%;
+        top: -35.5%;
+        width: 101.9px;
         height: 96px;
+        rotate: 7deg;
     }
 
     .projectsPill {
-        left: 6%;
+        left: -1%;
         top: 44%;
         font-size: 14px;
         padding: 6px 10px;

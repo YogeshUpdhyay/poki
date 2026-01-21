@@ -70,7 +70,7 @@ function HeroHeadline({lines, highlight}) {
       />
 
       <div className="heroStar">
-        <img src={yellowStar} alt="yellowStar" className='star'/>
+        <img src={yellowStar} alt="yellowStar"/>
       </div>
 
       <div className="heroUnderlinePosition">
