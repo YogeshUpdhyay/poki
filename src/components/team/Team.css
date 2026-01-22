@@ -415,7 +415,7 @@
     }
 
     .teamRow {
-        gap: 112px; /* Padding between all cards */
+        gap: 0px; /* Padding between all cards */
         padding-left: 42px;
         padding-right: 42px;
     }
@@ -441,7 +441,6 @@
     .teamRow:nth-child(2) {
         padding-left: 42px;
         padding-right: 42px;
-        padding-top: 112px; /* Match the gap value above for consistent spacing */
     }
 
     /* Card 4 - Right aligned */
@@ -460,9 +459,10 @@
     .teamRow:nth-child(2) .teammateCard:nth-child(3) {
         margin-left: auto;
         margin-right: 0;
+        padding-top: 80px;
     }
 
-    .teammateCard {
+    .teammateCardImage {
         height: 240px;
         width: 200px;
     }
