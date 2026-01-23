@@ -60,9 +60,12 @@
     cursor: pointer;
     transition: all 0.3s ease;
     border: 2px solid transparent;
-    letter-spacing: -0.01em;
+    letter-spacing: 99%;
     line-height: 100%;
     text-align: center;
+    font-family: generalSansMedium;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
 }
 
 .categoryPill.active {
