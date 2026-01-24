@@ -3,11 +3,13 @@ import studioCartoon from '../../assets/svgs/about/studioCartoon.svg'
 import orangeStar from '../../assets/imgs/stars/orange.svg'
 import Button from '../../components/common/button/Button'
 import { GenericCarousel, GenericCarouselItem } from '../../components/common/genericCarousel/GenericCarousel'
+import TeamPinkBlob from '../../assets/imgs/teammatePink.svg'
 
 const AboutStudio = ({studioImages}) => {
     return (
         <section className="studio" data-navbar="dark">
           <div className="studioCarousel">
+            <img src={TeamPinkBlob} alt="" className="studioPinkBlob" />
             <GenericCarousel>
             {studioImages.map((image, index) => (
               <GenericCarouselItem 

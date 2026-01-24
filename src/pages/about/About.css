@@ -107,6 +107,17 @@
 
 .studioCarousel {
     padding: 160px 0px;
+    position: relative;
+    overflow: visible; /* Allow blob to overflow */
+}
+
+.studioPinkBlob {
+    transform: rotate(15deg);
+    position: absolute;
+    bottom: -7%;
+    left: -17%;
+    width: 666.95px;
+    z-index: 1; /* Ensure it stays behind some things but above container level if needed */
 }
 
 .studioCartoon {
@@ -286,11 +297,32 @@
         box-sizing: border-box;
     }
 
+    .studioCarousel{
+        padding-top: 160px;
+        padding-bottom: 80px;
+    }
+
+    .carouselImage{
+        width: 224px !important;
+        height: 280px !important;
+    }
+
+    .carouselItem{
+        margin-left: -60px !important;
+    }
+
     .studioCartoon{
         position: absolute;
         left: 85%;
         top: 45%;
         width: 56.6px;
+    }
+
+    .studioPinkBlob {
+        width: 496.33px;
+        bottom: 0%;
+        left: -55%;
+        transform: rotate(15deg);
     }
 
     .studioStar{

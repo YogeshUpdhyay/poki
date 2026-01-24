@@ -42,6 +42,7 @@
 .innerCarousel {
     display: flex;
     animation: scroll 40s infinite linear;  
+    z-index: 10;
 }
 
 @keyframes scroll {
