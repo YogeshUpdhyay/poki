@@ -105,6 +105,7 @@ const Fonts = () => {
                     image='https://placehold.co/800' 
                     svgText='primary'
                     svgTop='-12%'
+                    svgFill="black"
                     style={{height: '360px'}}
                 />
                 <Card 

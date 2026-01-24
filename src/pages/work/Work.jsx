@@ -52,7 +52,7 @@ const Work = () => {
     return (
         <>
             <Navbar />
-            <section className="work" data-navbar="dark">
+            <section className="work">
                 {/* Hero Marquee Section */}
                 <div className="skewedTapContainer">
                     <SkewedTape angle="10deg" backgroundColor='black' borderColor='white'>

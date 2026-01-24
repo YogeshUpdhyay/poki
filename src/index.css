@@ -3,6 +3,7 @@
   src: url('./assets/fonts/GeneralSans-Medium.otf') format('opentype');
   font-style: normal;
   font-display: swap;
+  font-weight: 500;
 }
 
 @font-face {
