@@ -26,6 +26,13 @@
     color: black;
 }
 
+.tooltip.pink-pill {
+    padding: 12px;
+    font-size: 14px;
+    background-color: #EFB5D4;
+    color: black;
+}
+
 .tooltip.yellow {
     background-color: #EAF9C0;
     color: black;

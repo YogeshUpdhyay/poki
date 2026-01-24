@@ -17,6 +17,9 @@ function AboutContent() {
         <br/>
         We don't just think outside the box — we redesign the box, the logo on 
         it, and the unboxing experience.
+        <div className="tooltip pink-pill">
+          ^ and fun
+        </div>
       </div>
       <AboutFlexItem 
         title="6+ years"
