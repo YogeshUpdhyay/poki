@@ -1,7 +1,7 @@
-function AboutFlexItem({ title, svg, r, text }) {
+function AboutFlexItem({ title, svg, r, text, extraClass }) {
   return (
     <>
-      <div className="aboutFlex">
+      <div className={`aboutFlex ${extraClass || ''}`}>
         <div className="aboutFlexTitle">
           {title}
           <img 

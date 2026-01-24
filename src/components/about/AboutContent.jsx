@@ -23,6 +23,7 @@ function AboutContent() {
         svg={warmingUpFlex}
         r="-50%"
         text="With 6 years behind us, we've mastered the processes and skills to create designs that work anywhere in the world."
+        extraClass="yearsItem"
       />
       <img 
         src={seprator} 
@@ -34,6 +35,7 @@ function AboutContent() {
         svg={aFullHomeFlex}
         r="-70%"
         text="Over 400 brands, each with a story we brought to life, turning bold ideas into designs that move people and markets."
+        extraClass="brandsItem"
       />
       <img 
         src={seprator} 
@@ -45,6 +47,7 @@ function AboutContent() {
         svg={nailedItFlex}
         r="-100%"
         text="A collection of problems solved, dreams designed, and visions brought to life."
+        extraClass="projectsItem"
       />
     </section>
   )

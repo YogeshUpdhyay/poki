@@ -8,7 +8,7 @@ import {
   useInteractions,
 } from "@floating-ui/react";
 
-export function Headline({children, tooltip, tooltipColor, lines, highlight}) {
+export function Headline({children, tooltip, tooltipColor, lines, highlight, forceOpen}) {
   const [open, setOpen] = useState(false);
   const hasTooltip = typeof tooltip === 'string' && tooltip.trim().length > 0
   const colorClass = typeof tooltipColor === 'string' && tooltipColor.trim().length > 0 ? tooltipColor.trim() : 'blue'
@@ -25,6 +25,8 @@ export function Headline({children, tooltip, tooltipColor, lines, highlight}) {
   const { getReferenceProps, getFloatingProps } = useInteractions([
     clientPoint,
   ]);
+
+  const isTooltipVisible = forceOpen || open;
 
   return (
     <div className="headlineContainer">
@@ -60,7 +62,7 @@ export function Headline({children, tooltip, tooltipColor, lines, highlight}) {
           )}
           {children}
         </div>
-        {hasTooltip && open && (
+        {hasTooltip && isTooltipVisible && (
         <div
           ref={refs.setFloating}
           style={floatingStyles}
