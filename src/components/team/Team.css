@@ -14,8 +14,8 @@
 .teamCartoon {
     position: absolute;
     right: 100%;
-    transform: scale(0); 
-    bottom: 0;
+    top: 170px;
+    transform: scale(0);
 }
 
 .teamUnderline {
