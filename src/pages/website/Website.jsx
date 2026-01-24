@@ -5,6 +5,7 @@ import {Headline} from "@/components/common/headline/Headline"
 import Button from "@/components/common/button/Button"
 import Card from "@/components/common/card/Card"
 import Marquee from "react-fast-marquee"
+import blueFlower from '@/assets/svgs/work/blueFlower.svg'
 
 const Website = () => {
     return (
@@ -264,10 +265,16 @@ const WebsiteImage = () => {
 const WebsiteHero = () => {
     return (
         <section className="websiteHero" data-navbar='dark'>
+            <img 
+                src={blueFlower} 
+                alt="blue flower decoration" 
+                className="websiteHeroFlower"
+            />
             <Headline
                 lines={['begun']}
                 tooltip='brand identity | logo design'
                 tooltipColor='pink'
+                forceOpen={true}
             >
                 <div className="websiteHeroCartoon">
                     <svg width="200" height="239" viewBox="0 0 200 239" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -1,16 +1,16 @@
 .websiteHero {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    padding-bottom: 60px;
+    padding-bottom: 30px;
+    padding-top: 190px;
     overflow: hidden;
     position: relative;
 }
 
 .websiteHeroButtonWrapper {
-    padding: 48px 0px 160px 0px;
+    padding: 48px 0px 96px 0px;
 }
 
 .websiteHeroCartoon {
@@ -18,6 +18,16 @@
     right: 80%;
     top: 50%;
     transform: translateY(-50%);
+}
+
+.websiteHeroFlower {
+    position: absolute;
+    width: 592.74px;
+    height: 553.41px;
+    top: 414px;
+    left: 1060px;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .websiteHeroText {
@@ -257,6 +267,14 @@
 .buttonsGroup {
     display: flex;
     gap: 10px
+}
+
+/* Fixed Tooltip Position for Hero Section */
+.websiteHero .tooltip {
+    position: absolute !important;
+    top: 195px !important;
+    left: 780px !important;
+    transform: none !important;
 }
 
 #moreWork > p {
