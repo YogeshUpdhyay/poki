@@ -132,15 +132,31 @@
 }
 
 @media (max-width: 576px) {
+   .reviewsCarouselInner{
+      align-items: center;
+   }
    .reviewCard {
-      width: 280px;
+      width: 260px;
+      padding-left: 0px;
+      gap: 20px;
    }
 
    .reviewCardContent {
-      width: 280px;
+      width: 260px;
+      padding: 24px;
+   }
+
+   .reviewCardReview {
+      font-size: 12px;
+      line-height: 140%;
+      font-family: generalSansMedium;
+      font-weight: 500;
    }
 
    .reviewCardImage {
-      width: 280px;
+      width: 260px;
+      height: 296px;
+      border-radius: 12px;
+      overflow: hidden;
    }
 }
