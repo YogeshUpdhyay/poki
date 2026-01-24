@@ -195,10 +195,14 @@
     font-size: 14px;
     font-weight: 500;
     font-family: 'generalSansMedium';
-    letter-spacing: -0.01em;
+    letter-spacing: normal;
     white-space: nowrap;
     box-shadow: none;
     z-index: 3;
+    line-height: 100%;
+    text-align: center;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
 }
 
 /* Flower Decorations */

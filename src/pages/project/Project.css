@@ -433,6 +433,12 @@
     display: flex;
     width: fit-content;
     box-shadow: none;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: normal;
+    text-align: center;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
 }
 
 .moreWorkCta {

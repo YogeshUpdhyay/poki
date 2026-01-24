@@ -27,7 +27,7 @@
     position: absolute;
     left: 88%;
     transform: translateX(-50%);
-    top: 27%;
+    top: 28%;
     display: inline-block;
     padding: 10px 14px;
     border-radius: 18px 18px 18px 0px;
@@ -290,7 +290,13 @@
     }
 
     .teamPill {
-        display: none;
+        display: inline-block;
+        left: 73%;
+        top: 25%; /* Adjust height as needed */
+        transform: translateX(-50%);
+        font-size: 14px;
+        padding: 8px 12px;
+        text-box-edge: auto;
     }
 
     .teamCols {
@@ -601,7 +607,7 @@
     }
 
     .teammateCallout {
-        font-size: 10px;
-        padding: 8px 10px;
+        font-size: 14px;
+        padding: 8px 12px;
     }
 }
