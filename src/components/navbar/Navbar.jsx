@@ -4,6 +4,7 @@ import Button from '../common/button/Button'
 import buttonImg from '../../assets/imgs/button.png'
 import { useCms } from '../../utils/context'
 import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Navbar() {
   const { data } = useCms()
@@ -73,7 +74,9 @@ export default function Navbar() {
         </div>
 
         {/* Logo */}
-        <PokiLogo className={`logo ${dark ? 'dark' : ''}`} />
+        <Link to="/" className="logo-link">
+          <PokiLogo className={`logo ${dark ? 'dark' : ''}`} />
+        </Link>
 
         {/* Desktop Button - Full text button */}
         <div className="navbar-cta-desktop">
