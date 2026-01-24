@@ -22,7 +22,8 @@
     letter-spacing: -0.03em;
     align-items: center;
     font-family: 'General Sans', sans-serif;
-    line-height: 1;
+    line-height: -3;
+    overflow: hidden;
 }
 
 .skewedTapeContent svg {
