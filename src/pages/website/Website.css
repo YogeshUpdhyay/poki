@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: flex-end;
     padding-bottom: 30px;
-    padding-top: 190px;
+    padding-top: 220px;
     overflow: hidden;
     position: relative;
 }
@@ -24,7 +24,7 @@
     position: absolute;
     width: 592.74px;
     height: 553.41px;
-    top: 414px;
+    top: 455px;
     left: 1060px;
     z-index: 0;
     pointer-events: none;
@@ -272,7 +272,7 @@
 /* Fixed Tooltip Position for Hero Section */
 .websiteHero .tooltip {
     position: absolute !important;
-    top: 195px !important;
+    top: 225px !important;
     left: 780px !important;
     transform: none !important;
 }
