@@ -10,7 +10,7 @@ import {
 
 export function Headline({children, tooltip, tooltipColor, lines, highlight, forceOpen}) {
   const [open, setOpen] = useState(false);
-  const hasTooltip = typeof tooltip === 'string' && tooltip.trim().length > 0
+  const hasTooltip = tooltip && (typeof tooltip === 'string' ? tooltip.trim().length > 0 : true)
   const colorClass = typeof tooltipColor === 'string' && tooltipColor.trim().length > 0 ? tooltipColor.trim() : 'blue'
   const hasLines = Array.isArray(lines) && lines.length > 0
   const { refs, floatingStyles, context } = useFloating({

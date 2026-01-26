@@ -98,7 +98,7 @@
 
 .websiteText {
     line-height: 150%;
-    letter-spacing: 98%;
+    letter-spacing: -0.02em;
     font-family: generalSansMedium;
     font-size: 16px;
     width: 576px;
@@ -277,6 +277,146 @@
     transform: none !important;
 }
 
+/* Fixed Tooltip Position for Logo Variations */
+#logoVariations .tooltip {
+    position: absolute !important;
+    top: 195px !important;
+    left: 790px !important;
+    transform: none !important;
+}
+
+/* Fixed Tooltip Position for Fonts Section */
+#fonts .tooltip {
+    position: absolute !important;
+    top: 165px !important;
+    left: 580px !important;
+    transform: none !important;
+}
+
 #moreWork > p {
     font-size: 26px;
+}/* More Work Section - Similar to Work Page Project Rows */
+
+/* Pink SVG Decoration */
+.moreWorkPinkSvg {
+    position: absolute;
+    top: 41%;
+    right: -5%;
+    width: 592.74px;
+    height: 553.41px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.moreWorkShowcase {
+    padding: 40px 0px 100px;
+    position: relative;
+    width: 100%;
+}
+
+.moreWorkRow {
+    position: relative;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 clamp(20px, 3vw, 40px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Card styling similar to phoneMockupCard from Work page */
+.moreWorkCard {
+    position: relative;
+    width: 360px;
+    height: 500px;
+    max-width: 360px;
+    min-width: 360px;
+    translate: 0 0;
+    scale: 1;
+    transition: translate 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.3s;
+    cursor: pointer;
+    flex: none;
+}
+
+/* Middle card positioned lower */
+.moreWorkCard:nth-child(2) {
+    margin-top: 60px;
+    margin-left: -20px;
+    margin-right: -20px;
+    z-index: 2;
+}
+
+/* Hover Effects */
+.moreWorkCard:hover {
+    z-index: 20;
+    transform: rotate(0deg) scale(1.08) !important;
+}
+
+/* First card hover - push others right */
+.moreWorkRow:has(.moreWorkCard:nth-child(1):hover) .moreWorkCard:nth-child(2) {
+    translate: 60px 0;
+}
+
+.moreWorkRow:has(.moreWorkCard:nth-child(1):hover) .moreWorkCard:nth-child(3) {
+    translate: 60px 0;
+}
+
+/* Second card hover - push left card left, right card right */
+.moreWorkRow:has(.moreWorkCard:nth-child(2):hover) .moreWorkCard:nth-child(1) {
+    translate: -60px 0;
+}
+
+.moreWorkRow:has(.moreWorkCard:nth-child(2):hover) .moreWorkCard:nth-child(3) {
+    translate: 60px 0;
+}
+
+/* Third card hover - push others left */
+.moreWorkRow:has(.moreWorkCard:nth-child(3):hover) .moreWorkCard:nth-child(1) {
+    translate: -60px 0;
+}
+
+.moreWorkRow:has(.moreWorkCard:nth-child(3):hover) .moreWorkCard:nth-child(2) {
+    translate: -60px 0;
+}
+
+.moreWorkCardImage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    border: 6px solid var(--color-white);
+    background-color: #D9D9D9;
+    overflow: hidden;
+}
+
+.moreWorkCardImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 6px;
+}
+
+.moreWorkCardLabel {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: #EFEBE7;
+    color: var(--background-dark);
+    padding: 10px 14px;
+    border-radius: 18px 18px 18px 0px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'generalSansMedium';
+    letter-spacing: normal;
+    white-space: nowrap;
+    box-shadow: none;
+    z-index: 3;
+    line-height: 100%;
+    text-align: center;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
 }
