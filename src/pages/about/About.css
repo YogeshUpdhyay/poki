@@ -170,6 +170,8 @@
     position: absolute;
     left: 96%;
     top: 17%;
+    width: 99.62px;
+    height: 177.78px;
 }
 
 .studioStar {
@@ -211,10 +213,24 @@
     transform: translateY(-50%);
 }
 
+.companyCardTooltip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 100px 100px 100px 0px;
+    background-color: #427665;
+    color: #EFEBE7;
+    font-family: 'generalSansMedium';
+    font-size: 14px;
+    pointer-events: none;
+    z-index: 1000;
+}
+
 .studioButtons {
     display: flex;
     justify-content: center;
-    gap: 24px;
+    gap: 10px;
     padding-bottom: 160px;
 }
 
@@ -360,11 +376,20 @@
         margin-left: -60px !important;
     }
 
+    .companyCardTooltip{
+        display: none;
+    }
+
+    .about .studioCarousel .tooltip {
+        display: none;
+    }
+
     .studioCartoon{
         position: absolute;
         left: 85%;
         top: 45%;
         width: 56.6px;
+        height: 101px;
     }
 
     .studioPinkBlob {

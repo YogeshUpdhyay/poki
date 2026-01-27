@@ -79,6 +79,7 @@ a, button,
 .projectCard,
 .projectCardTitle,
 .categoryPill,
+.companyCard,
 input[type="submit"],
 input[type="button"] {
   cursor: url('/tooltip.svg'), pointer;

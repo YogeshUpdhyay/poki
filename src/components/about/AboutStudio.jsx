@@ -141,8 +141,25 @@ const AboutStudio = ({studioImages}) => {
 }
 
 const CompanyCard = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const { refs, floatingStyles, context } = useFloating({
+    open: isOpen,
+    onOpenChange: setIsOpen,
+    middleware: [offset({ mainAxis: -40, crossAxis: 70 })],
+    whileElementsMounted: autoUpdate,
+  });
+  const clientPoint = useClientPoint(context);
+  const { getReferenceProps, getFloatingProps } = useInteractions([clientPoint]);
+
   return (
-    <div className="companyCard">
+    <>
+      <div 
+        className="companyCard"
+        ref={refs.setReference}
+        {...getReferenceProps({
+          onMouseEnter: () => setIsOpen(true),
+          onMouseLeave: () => setIsOpen(false),
+        })}>
       <svg className="companyLogo" width="155" height="39" viewBox="0 0 155 39" fill="none" xmlns="http://www.w3.org/2000/svg">
         <mask id="path-1-outside-1_1_1014" maskUnits="userSpaceOnUse" x="-0.998169" y="-0.999756" width="156" height="40" fill="black">
         <rect fill="white" x="-0.998169" y="-0.999756" width="156" height="40"/>
@@ -155,7 +172,19 @@ const CompanyCard = () => {
       <div className="companyWorks">
         Product, Website Design, Brand Collaterals
       </div>
-    </div>
+      </div>
+
+      {isOpen && (
+        <div
+          ref={refs.setFloating}
+          style={floatingStyles}
+          {...getFloatingProps()}
+          className="companyCardTooltip"
+        >
+          view project
+        </div>
+      )}
+    </>
   )
 }
 
