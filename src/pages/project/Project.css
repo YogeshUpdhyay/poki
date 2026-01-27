@@ -4,9 +4,19 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 120px 60px 0px 60px;
-    overflow: hidden;
+    padding: 250px 0px 50px 0px;
+    overflow: visible;
     position: relative;
+}
+
+.projectHero .tooltip {
+    position: absolute !important;
+    /* Custom positioning - adjust these values as needed */
+    top: 33% !important;
+    left: 55.5% !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: translateX(-50%) !important;
 }
 
 
@@ -19,14 +29,15 @@
 }
 
 .projectHeroButtonWrapper {
-    padding: 48px 0px 60px 0px;
+    padding: 60px 0px 120px 0px;
+    font-size: 20px;
 }
 
 
 .projectHeroCartoon {
     position: absolute;
-    right: 80%;
-    bottom: 100%;
+    right: 95%;
+    bottom: 65%;
     transform: translateY(30%);
 }
 
@@ -132,21 +143,22 @@
 .projectAboutBg {
     position: absolute;
     right: 100%;
-    top: 100%;
+    top: 92%;
     transform: translate(70%, -50%);
 }
 
 /* Take Your Pick Section */
 #takeYourPick {
     padding: 120px 60px;
+    z-index: 100;
 }
 
 .colorPaletteStar {
     position: absolute;
-    right: -20px;
-    top: -30px;
+    right: -60px;
+    top: -10px;
     /* User can customize these properties */
-    transform: rotate(15deg); 
+    transform: rotate(60deg); 
 }
 
 .colorPaletteGrid {
@@ -224,7 +236,7 @@
     align-items: center;
     position: relative;
     overflow: hidden;
-    min-height: 80vh;
+    min-height: 90vh;
     justify-content: center;
 }
 
@@ -246,7 +258,7 @@
 }
 
 .resultNumber {
-    font-family: serif; 
+    font-family: 'ppEditorial'; 
     font-size: 120px;
     font-style: italic;
     color: var(--color-black);
@@ -255,9 +267,9 @@
 
 .resultLabel {
     font-family: generalSansMedium;
-    font-size: 18px;
+    font-size: 16px;
     color: var(--color-black);
-    max-width: 200px;
+    max-width: 250px;
 }
 
 .resultsCta {
@@ -267,10 +279,11 @@
 
 .resultsBg {
     position: absolute;
-    bottom: -100px;
-    right: -100px;
-    opacity: 0.6;
+    bottom: -280px;
+    right: -130px;
     pointer-events: none;
+    width: 592.74px;
+    height: 553.41px;
 }
 
 .resultsBg svg {
@@ -294,15 +307,16 @@
 
 .builtToBeSeenStar {
     position: absolute;
-    left: -80px;
-    top: -40px;
+    left: -45px;
+    top: -35px;
+    rotate: 35deg;
 }
 
 .builtToBeSeenUnderline {
     position: absolute;
     bottom: -15px;
     right: 0;
-    width: 280px;
+    width: 216px;
 }
 
 .builtToBeSeenGrid {
@@ -337,10 +351,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 100;
 }
 
 .moreWorkTitle {
-    font-family: generalSansBold;
+    /* font-family: generalSansBold; */
     font-size: 24px;
     color: var(--color-black);
     margin-bottom: 80px;
@@ -443,7 +458,7 @@
 
 .moreWorkCta {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     margin-top: 100px;
     z-index: 10;
 }

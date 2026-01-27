@@ -167,6 +167,7 @@ const ProjectHero = () => {
                 lines={['dilli dilli']}
                 tooltip='webiste design'
                 tooltipColor='blue'
+                forceOpen
             >
                 <div className="projectHeroCartoon">
                     <svg 
@@ -319,7 +320,7 @@ const ProjectBuiltToBeSeen = () => {
             <div className="builtToBeSeenContent">
                 <Headline
                     lines={['built to be seen']}
-                    highlight='seen'
+                    highlight='built'
                 >
                     <svg 
                         className='builtToBeSeenStar'
