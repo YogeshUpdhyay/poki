@@ -2,6 +2,27 @@
   width: 100%;
 }
 
+/* Disable hover effect on about page headline pill */
+.aboutHeadline .tooltip {
+  /* Add your custom styles here */
+  position: absolute !important;
+  top: 385px !important;
+  left: 545px !important;
+  transform: none !important;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+/* Make hamburger button black on about page */
+.about .hamburger span {
+  background-color: black !important;
+}
+
+/* Ensure hamburger menu links are visible */
+.about .navLinks a {
+  color: white !important;
+}
+
 .aboutHero {
     width: 100%;
     height: 100vh;
@@ -202,8 +223,10 @@
 
     /* Tooltip positioning override for mobile */
     .aboutHeadline .tooltip.blue {
-        margin-top: 17px; 
-        margin-left: 30px;
+        position: absolute !important;
+        top: 327px !important;
+        left: 20px !important;
+        transform: none !important;
     }
 
     .aboutImage {
@@ -216,7 +239,7 @@
 
     .aboutHeroImg {
         width: 100%;
-        height: 100%;
+        height: 532px;
         object-fit: cover;
         object-position: center;
     }

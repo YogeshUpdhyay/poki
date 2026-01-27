@@ -19,8 +19,8 @@ function AboutHeadline() {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  const desktopLines = ['agile design', 'agency born to', 'make brands shine']
-  const mobileLines = ['agile design', 'agency born', 'to make', 'brands shine']
+  const desktopLines = ['agile design', 'agency. born to', 'make brands shine']
+  const mobileLines = ['agile design', 'agency. born', 'to make', 'brands shine']
 
   return (
     <div className="aboutHeadline">
@@ -29,7 +29,7 @@ function AboutHeadline() {
             highlight="shine"
             tooltip="we put the 'fun' in functional design"
             tooltipColor="blue"
-            forceOpen={isMobile}
+            forceOpen={true}
         >
         <img 
             src={aboutHeroCartoon} 
