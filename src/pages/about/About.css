@@ -337,6 +337,7 @@
     .aboutFlexText {
         width: 100%;
         font-size: 12px;
+        max-width: 275px;
     }
 
     .studio {
