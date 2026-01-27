@@ -2,8 +2,64 @@ import { Headline } from '../../components/common/headline/Headline'
 import studioCartoon from '../../assets/svgs/about/studioCartoon.svg'
 import orangeStar from '../../assets/imgs/stars/orange.svg'
 import Button from '../../components/common/button/Button'
-import { GenericCarousel, GenericCarouselItem } from '../../components/common/genericCarousel/GenericCarousel'
+import { GenericCarousel } from '../../components/common/genericCarousel/GenericCarousel'
 import TeamPinkBlob from '../../assets/imgs/teammatePink.svg'
+import { useState } from 'react'
+import {
+  useFloating,
+  useClientPoint,
+  offset,
+  autoUpdate,
+  useInteractions,
+} from "@floating-ui/react"
+
+// Carousel item with cursor-following tooltip (same pattern as VisitUsLink in Footer)
+function StudioCarouselItem({keyNumber, image}) {
+  const [open, setOpen] = useState(false);
+  const { refs, floatingStyles, context } = useFloating({
+    open,
+    onOpenChange: setOpen,
+    middleware: [offset({
+      mainAxis: -40,
+      crossAxis: 70
+    })],
+    whileElementsMounted: autoUpdate,
+  });
+
+  const clientPoint = useClientPoint(context);
+
+  const { getReferenceProps, getFloatingProps } = useInteractions([
+    clientPoint,
+  ]);
+
+  return (
+    <>
+      <div 
+        className="carouselItem studioCarouselItem"
+        key={keyNumber}
+        ref={refs.setReference}
+        {...getReferenceProps({
+          onMouseEnter: () => setOpen(true),
+          onMouseLeave: () => setOpen(false),
+        })}
+      >
+        <img src={image} alt='studioCarouselImage' className='carouselImage'/>
+      </div>
+
+      {open && (
+        <div
+          ref={refs.setFloating}
+          style={floatingStyles}
+          {...getFloatingProps({
+            className: "tooltip blue",
+          })}
+        >
+          visit our studio
+        </div>
+      )}
+    </>
+  )
+}
 
 const AboutStudio = ({studioImages}) => {
     return (
@@ -12,7 +68,7 @@ const AboutStudio = ({studioImages}) => {
             <img src={TeamPinkBlob} alt="" className="studioPinkBlob" />
             <GenericCarousel>
             {studioImages.map((image, index) => (
-              <GenericCarouselItem 
+              <StudioCarouselItem 
                 keyNumber={index} 
                 image={image} 
               />
