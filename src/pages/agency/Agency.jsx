@@ -84,9 +84,9 @@ const AgencyPartnerShips = () => {
                         they introduced full UI & web design services to their 
                         workflow without hiring a design team. 
                         <br /> <br />
-                        In the first 5 months, they increased average project 
-                        value by 38%, reduced revisions during development by 
-                        60%, and booked 10 new end-to-end website projects 
+                        In the first 5 months, they increased average <strong>project 
+                        value by 38%,</strong> reduced revisions during development by 
+                        <strong> 60%,</strong> and <strong> booked 10 new end-to-end website projects </strong> 
                         with stronger client satisfaction and smoother launches.
                     </div>
                     <div className="partnerName">
@@ -110,6 +110,7 @@ const AgencyAdv = () => {
                     highlight={'poki'}
                     tooltipColor='blue'
                     tooltip='good things happen here'
+                    forceOpen
                 >
                     <img 
                         src={agencyAdvCartoon} 
@@ -244,7 +245,8 @@ const AgencyHero = () => {
                 lines={['your creative', 'muscle, without', 'the headcount']}
                 highlight={"headcount"}
                 tooltipColor='pink'
-                tooltipText='because great work isn' t built alone
+                tooltip="because great work isn't built alone"
+                forceOpen
             >
                 <img
                     src={agencyCartoon}

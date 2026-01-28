@@ -6,9 +6,31 @@
     flex-direction: column;
 }
 
+/* Tooltip positioning for AgencyHero */
+.agencyHero .tooltip {
+    position: absolute !important;
+    /* Custom positioning - adjust these values as needed */
+    top: 7% !important;
+    left: 65.6% !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: translateX(-50%) !important;
+}
+
+/* Tooltip positioning for Advantage section */
+.advantage .tooltip {
+    position: absolute !important;
+    /* Custom positioning - adjust these values as needed */
+    top: 17.9% !important;
+    left: 62.3% !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: translateX(-50%) !important;
+}
+
 .agencyCartoon {
-    right: 50%;
-    top: 0;
+    right: 51%;
+    top: 20px;
     transform: translateY(-90%);
     position: absolute;
 }
@@ -132,6 +154,27 @@
     width: fit-content;
 }
 
+/* Custom rotate values for each advListItem - adjust as needed */
+.advListItem:nth-child(1) {
+    transform: rotate(1deg);
+}
+
+.advListItem:nth-child(2) {
+    transform: rotate(-1deg);
+}
+
+.advListItem:nth-child(3) {
+    transform: rotate(1deg);
+}
+
+.advListItem:nth-child(4) {
+    transform: rotate(0deg);
+}
+
+.advListItem:nth-child(5) {
+    transform: rotate(-2deg);
+}
+
 .agencyBg {
     position: absolute;
     top: 60%;
@@ -160,8 +203,9 @@
 .agencyPartnerStar {
     position: absolute;
     top: -20%;
-    right: 100%;
+    right: 98%;
     gap: 26px;
+    rotate: -15deg;
 }
 
 .partnerReviewCard {
@@ -176,13 +220,28 @@
     height: 400px;
 }
 
+.partnerReviewCard:nth-child(1) .outlineTextWrapper {
+    margin-top: -60px;
+    transform: translateY(-20%);
+}
+
+.partnerReviewCard:nth-child(2) .outlineTextWrapper {
+    margin-top: -60px;
+    transform: translateY(-20%);
+}
+
 .partnerReviewText {
     font-size: 16px;
     font-family: generalSansMedium, sans-serif;
     line-height: 150%;
     letter-spacing: 98%;
     flex-grow: 1;
-    margin-top: -64px;
+    margin-top: -15px;
+}
+
+.partnerReviewText strong {
+    font-family: 'General Sans', sans-serif;
+    font-weight: bold;
 }
 
 .partnerName {
