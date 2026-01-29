@@ -22,7 +22,8 @@
     letter-spacing: -0.03em;
     align-items: center;
     font-family: 'General Sans', sans-serif;
-    line-height: 1;
+    line-height: -3;
+    overflow: hidden;
 }
 
 .skewedTapeContent svg {
@@ -60,9 +61,12 @@
     cursor: pointer;
     transition: all 0.3s ease;
     border: 2px solid transparent;
-    letter-spacing: -0.01em;
+    letter-spacing: 99%;
     line-height: 100%;
     text-align: center;
+    font-family: generalSansMedium;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
 }
 
 .categoryPill.active {
@@ -81,7 +85,7 @@
 
 /* Project Showcase Grid */
 .projectShowcase {
-    padding: 80px 0px 100px;
+    padding: 80px 0px 200px;
     background-color: var(--background-dark);
     position: relative;
     width: 100%;
@@ -104,21 +108,21 @@
     gap: 12px;
     position: relative;
     z-index: 2;
+    padding-bottom: 200px;
 }
 
 /* Phone Mockup Cards */
 .phoneMockupCard {
     position: relative;
-    width: 100%;
-    max-width: 320px;
-    min-width: 260px;
-    height: auto;
-    aspect-ratio: 360 / 500;
+    width: 360px;
+    height: 500px;
+    max-width: 360px;
+    min-width: 360px;
     translate: 0 0;
     scale: 1;
     transition: translate 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.3s;
     cursor: pointer;
-    flex: 0 1 calc(33.333% - 8px);
+    flex: none;
 }
 
 /* Middle card in each row positioned lower */
@@ -192,10 +196,14 @@
     font-size: 14px;
     font-weight: 500;
     font-family: 'generalSansMedium';
-    letter-spacing: -0.01em;
+    letter-spacing: normal;
     white-space: nowrap;
     box-shadow: none;
     z-index: 3;
+    line-height: 100%;
+    text-align: center;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
 }
 
 /* Flower Decorations */
@@ -210,16 +218,39 @@
 
 .flower-left {
     left: -50px;
-    bottom: -150px;
+    bottom: 55px;
     top: auto;
     transform: none;
+    width: 424px;
+    height: 368px;
 }
 
+
 .flower-right {
-    right: -50px;
-    bottom: -150px;
+    right: -190px;
+    bottom: -15px;
     top: auto;
     transform: none;
+    width: 592.72px;
+    height: 553.41px;
+}
+
+.flower-pink {
+    left: -270px;
+    bottom: -15px;
+    top: auto;
+    transform: none;
+    width: 509.2px;
+    height: 511.14px;
+}
+
+.flower-yellow {
+    right: -336px;
+    bottom: -137px;
+    top: auto;
+    transform: none;
+    width: 666.95px;
+    height: 655.2px;
 }
 
 /* Responsive Design */

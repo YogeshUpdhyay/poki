@@ -1,14 +1,16 @@
 .edgeBubble {
-    padding: 12px;
+    padding: 8px 12px;
     border-radius: 18px 18px 18px 0px;
     background-color: #EFEBE7;
     font-size: 14px;
     color: black;
     display: flex;
     width: fit-content;
-    font-family: 'generalSansMedium';
+    font-family: generalSansMedium;
     font-weight: 500;
     line-height: 100%;
-    letter-spacing: 0.01em;
+    letter-spacing: normal;
     text-align: center;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
 }

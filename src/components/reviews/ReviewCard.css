@@ -5,6 +5,8 @@
    flex-direction: column;
    gap: 26px;
    padding-left: 26px;
+   height: 100%;
+   overflow: hidden;
 }
 
 .reviewCard.reverse {
@@ -19,8 +21,8 @@
    border-radius: 12px;
    color: black;
    padding: 28px;
-   width: 360px;
-   flex-shrink: 0;
+   flex-grow: 1;
+   width: 100%;
 }
 
 .reviewCardReviewer {
@@ -61,7 +63,7 @@
 
 .reviewCardImage {
    border-radius: 12px;
-   width: 360px;
+   width: 100%;
    background-color: var(--color-yellow);
    flex-shrink: 0;
    overflow: hidden;
@@ -91,28 +93,12 @@
 
 @media (max-width: 1200px) {
    .reviewCard {
-      width: 340px;
-   }
-
-   .reviewCardContent {
-      width: 340px;
-   }
-
-   .reviewCardImage {
-      width: 340px;
+      width: 320px;
    }
 }
 
 @media (max-width: 992px) {
    .reviewCard {
-      width: 320px;
-   }
-
-   .reviewCardContent {
-      width: 320px;
-   }
-
-   .reviewCardImage {
       width: 320px;
    }
 }
@@ -121,26 +107,34 @@
    .reviewCard {
       width: 300px;
    }
-
-   .reviewCardContent {
-      width: 300px;
-   }
-
-   .reviewCardImage {
-      width: 300px;
-   }
 }
 
 @media (max-width: 576px) {
+   .reviewsCarouselInner{
+      align-items: center;
+   }
    .reviewCard {
-      width: 280px;
+      width: 260px;
+      padding-left: 0px;
+      gap: 20px;
    }
 
    .reviewCardContent {
-      width: 280px;
+      width: 260px;
+      padding: 24px;
+   }
+
+   .reviewCardReview {
+      font-size: 12px;
+      line-height: 140%;
+      font-family: generalSansMedium;
+      font-weight: 500;
    }
 
    .reviewCardImage {
-      width: 280px;
+      width: 260px;
+      height: 296px;
+      border-radius: 12px;
+      overflow: hidden;
    }
 }

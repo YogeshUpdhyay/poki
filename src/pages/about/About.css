@@ -2,6 +2,52 @@
   width: 100%;
 }
 
+/* Disable hover effect on about page headline pill */
+.aboutHeadline .tooltip {
+  /* Add your custom styles here */
+  position: absolute !important;
+  top: 385px !important;
+  left: 545px !important;
+  transform: none !important;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+/* Make hamburger button black on about page */
+.about .hamburger span {
+  background-color: black !important;
+}
+
+/* Desktop navbar links should be black */
+.about .navLinks a {
+  color: black !important;
+}
+
+/* Hamburger menu links should be white (when menu is open) */
+.about .navLinks.open a {
+  color: white !important;
+}
+
+/* Studio carousel custom cursor (same as visitUsLink in Footer) */
+.about .studioCarouselItem {
+  cursor: url('/tooltip.svg'), pointer;
+}
+
+.about .studioCarouselItem .carouselImage {
+  cursor: url('/tooltip.svg'), pointer;
+}
+
+/* Ensure studio tooltip appears above carousel images */
+/* Customize position with margin, and color with background-color */
+.about .studioCarousel .tooltip {
+  z-index: 1000;
+  /* Customize position offset here */
+  margin-top: 0px;
+  margin-left: 5px;
+  /* Customize pill color here (overrides the class color) */
+  background-color: #5168E8;
+}
+
 .aboutHero {
     width: 100%;
     height: 100vh;
@@ -54,6 +100,13 @@
     letter-spacing: 99%;
     line-height: 140%;
     padding-bottom: 140px;
+    position: relative;
+}
+
+.pink-pill {
+    position: absolute;
+    top: 35px;
+    left: 745px;
 }
 
 .aboutFlex {
@@ -100,12 +153,25 @@
 
 .studioCarousel {
     padding: 160px 0px;
+    position: relative;
+    overflow: visible; /* Allow blob to overflow */
+}
+
+.studioPinkBlob {
+    transform: rotate(15deg);
+    position: absolute;
+    bottom: -7%;
+    left: -17%;
+    width: 666.95px;
+    z-index: 1; /* Ensure it stays behind some things but above container level if needed */
 }
 
 .studioCartoon {
     position: absolute;
-    left: 100%;
-    top: 20%;
+    left: 96%;
+    top: 17%;
+    width: 99.62px;
+    height: 177.78px;
 }
 
 .studioStar {
@@ -147,19 +213,194 @@
     transform: translateY(-50%);
 }
 
+.companyCardTooltip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 100px 100px 100px 0px;
+    background-color: #427665;
+    color: #EFEBE7;
+    font-family: 'generalSansMedium';
+    font-size: 14px;
+    pointer-events: none;
+    z-index: 1000;
+}
+
 .studioButtons {
     display: flex;
     justify-content: center;
-    gap: 24px;
+    gap: 10px;
     padding-bottom: 160px;
 }
 
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
+    .aboutHero {
+        height: auto;
+        padding-top: 100px; /* To make room for the cartoon */
+        justify-content: flex-start;
+    }
+
+    .aboutHeroCartoon {
+        width: 106.97px;
+        height: 96px;
+        right: 10%;
+        bottom: 100%;
+    }
+
+    .aboutHeadline {
+        padding-top: 145px;
+    }
+
+    .headlineText {
+        font-size: 48px !important;
+    }
+
+    .aboutHeroButton {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    /* Tooltip positioning override for mobile */
+    .aboutHeadline .tooltip.blue {
+        position: absolute !important;
+        top: 327px !important;
+        left: 20px !important;
+        transform: none !important;
+    }
+
+    .aboutImage {
+        width: auto;
+        height: 532px;
+        overflow: hidden;
+        margin: 0 auto;
+        border-radius: 40px;
+    }
+
+    .aboutHeroImg {
+        width: 100%;
+        height: 532px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .aboutContent {
+        padding-top: 100px;
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-bottom: 100px;
+    }
+
+    .aboutContentText {
+        font-size: 26px;
+        width: 100%;
+        padding-bottom: 80px;
+        position: relative;
+    }
+
+    .pink-pill {
+        position: absolute;
+        top: 58px;
+        left: 75%;
+    }
+
+    .aboutFlex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .aboutFlexTitle {
+        font-size: 48px;
+        width: 101%;
+        position: relative; /* For absolute positioning of SVG */
+        padding-bottom: 20px;
+    }
+
+    .aboutSeprator{
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+
+    .aboutFlexSvg {
+        position: absolute;
+        left: auto;
+        transform: none;
+        z-index: 10;
+        height: auto;
+    }
+
+    /* Individual SVG customization */
+    .yearsItem .aboutFlexSvg {
+        top: 45%;
+        right: 3%;
+        width: 238px;
+    }
+
+    .brandsItem .aboutFlexSvg {
+        top: 45%;
+        right: -3%;
+        width: 250px; 
+    }
+
+    .projectsItem .aboutFlexSvg {
+        top: 45%;
+        right: -3%;
+        width: 134px;
+    }
+
+    .aboutFlexText {
+        width: 100%;
+        font-size: 12px;
+        max-width: 275px;
+    }
+
     .studio {
         width: 100%;
         overflow-x: hidden;
         box-sizing: border-box;
+    }
+
+    .studioCarousel{
+        padding-top: 160px;
+        padding-bottom: 80px;
+    }
+
+    .carouselImage{
+        width: 224px !important;
+        height: 280px !important;
+    }
+
+    .carouselItem{
+        margin-left: -60px !important;
+    }
+
+    .companyCardTooltip{
+        display: none;
+    }
+
+    .about .studioCarousel .tooltip {
+        display: none;
+    }
+
+    .studioCartoon{
+        position: absolute;
+        left: 85%;
+        top: 45%;
+        width: 56.6px;
+        height: 101px;
+    }
+
+    .studioPinkBlob {
+        width: 496.33px;
+        bottom: 0%;
+        left: -55%;
+        transform: rotate(15deg);
+    }
+
+    .studioStar{
+        width: 36px;
     }
 
     .companies {

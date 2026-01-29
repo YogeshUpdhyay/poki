@@ -3,6 +3,7 @@
   src: url('./assets/fonts/GeneralSans-Medium.otf') format('opentype');
   font-style: normal;
   font-display: swap;
+  font-weight: 500;
 }
 
 @font-face {
@@ -78,6 +79,7 @@ a, button,
 .projectCard,
 .projectCardTitle,
 .categoryPill,
+.companyCard,
 input[type="submit"],
 input[type="button"] {
   cursor: url('/tooltip.svg'), pointer;

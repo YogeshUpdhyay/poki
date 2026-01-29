@@ -52,7 +52,7 @@ const Work = () => {
     return (
         <>
             <Navbar />
-            <section className="work" data-navbar="dark">
+            <section className="work">
                 {/* Hero Marquee Section */}
                 <div className="skewedTapContainer">
                     <SkewedTape angle="10deg" backgroundColor='black' borderColor='white'>
@@ -158,14 +158,14 @@ const Work = () => {
                             <img 
                                 src={pinkFlower} 
                                 alt="pink flower decoration" 
-                                className="flowerDecoration flower-left"
+                                className="flowerDecoration flower-pink"
                             />
                         )}
                         {rowIndex === 3 && (
                             <img 
                                 src={pistaFlower} 
                                 alt="pista flower decoration" 
-                                className="flowerDecoration flower-right"
+                                className="flowerDecoration flower-yellow"
                             />
                         )}
                         

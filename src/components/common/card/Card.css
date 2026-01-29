@@ -33,6 +33,12 @@
     display: flex;
     width: fit-content;
     margin: 24px;
-    font-family: 'generalSansMedium';
+    font-family: generalSansMedium;
     padding: 12px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: normal;
+    text-align: center;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
 }

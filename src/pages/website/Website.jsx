@@ -5,6 +5,8 @@ import {Headline} from "@/components/common/headline/Headline"
 import Button from "@/components/common/button/Button"
 import Card from "@/components/common/card/Card"
 import Marquee from "react-fast-marquee"
+import blueFlower from '@/assets/svgs/work/blueFlower.svg'
+import pinkSvg from '@/assets/imgs/projects/pink.svg'
 
 const Website = () => {
     return (
@@ -18,26 +20,33 @@ const Website = () => {
             <Fonts />
             <BrandInAction />
             <section className="whiteContainer" id="moreWork" data-navbar='dark'>
+                <img 
+                    src={pinkSvg} 
+                    alt="pink decoration" 
+                    className="moreWorkPinkSvg"
+                />
                 <p>some more work</p>
-                <div className="menuCardsRow">
-                    <Card 
-                        image='https://placehold.co/800'
-                        title='biotech'
-                        border={true} 
-                        style={{width: '33%', height: '60vh'}}
-                    />
-                    <Card 
-                        image='https://placehold.co/800'
-                        title='biotech'
-                        border={true} 
-                        style={{width: '33%', height: '60vh'}}
-                    />
-                    <Card 
-                        image='https://placehold.co/800'
-                        title='biotech'
-                        border={true} 
-                        style={{width: '33%', height: '60vh'}}
-                    />
+                <div className="moreWorkShowcase">
+                    <div className="moreWorkRow">
+                        <div className="moreWorkCard" style={{ transform: 'rotate(-5deg)' }}>
+                            <div className="moreWorkCardImage">
+                                <img src='https://placehold.co/800' alt="project" />
+                                <div className="moreWorkCardLabel">biotech</div>
+                            </div>
+                        </div>
+                        <div className="moreWorkCard" style={{ transform: 'rotate(2deg)' }}>
+                            <div className="moreWorkCardImage">
+                                <img src='https://placehold.co/800' alt="project" />
+                                <div className="moreWorkCardLabel">biotech</div>
+                            </div>
+                        </div>
+                        <div className="moreWorkCard" style={{ transform: 'rotate(-4deg)' }}>
+                            <div className="moreWorkCardImage">
+                                <img src='https://placehold.co/800' alt="project" />
+                                <div className="moreWorkCardLabel">biotech</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div className='buttonsGroup'>
                     <Button text='start a project' />
@@ -97,20 +106,31 @@ const Fonts = () => {
             <Headline 
                 lines={['what the type']}
                 highlight='type'
-                tooltip='gilroy | plus jakarta sans'
+                tooltip={
+                    <>
+                        gilroy{'  '}
+                        <svg style={{margin: '0 3px 0 3px'}} width="2" height="10" viewBox="0 0 2 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="1.5" width="10" height="1.5" rx="0.75" transform="rotate(90 1.5 0)" fill="#ffffffff"/>
+                        </svg>
+                        {'  '}plus jakarta sans
+                    </>
+                }
                 tooltipColor='orange'
+                forceOpen={true}
             />
             <div className="fontsGroup">
                 <Card 
                     image='https://placehold.co/800' 
                     svgText='primary'
                     svgTop='-12%'
+                    svgFill="black"
                     style={{height: '360px'}}
                 />
                 <Card 
                     image='https://placehold.co/800'
                     svgText='alternative'
                     svgTop='-12%' 
+                    svgFill="black"
                     style={{height: '360px'}}
                 />
             </div>
@@ -170,8 +190,22 @@ const LogoVariations = () => {
             <Headline 
                 lines={['logo variations']}
                 highlight='logo'
-                tooltip='wordmark | icon mark | devnagri logo'
+                tooltip={
+                    <>
+                        wordmark {' '}
+                        <svg style={{margin: '0 3px 0 3px'}} width="2" height="10" viewBox="0 0 2 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="1.5" width="10" height="1.5" rx="0.75" transform="rotate(90 1.5 0)" fill="#000000ff"/>
+                        </svg>
+                        {' '}
+                        icon mark{' '}
+                        <svg style={{margin: '0 3px 0 3px'}} width="2" height="10" viewBox="0 0 2 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="1.5" width="10" height="1.5" rx="0.75" transform="rotate(90 1.5 0)" fill="#000000ff"/>
+                        </svg>
+                        {' '}devnagri logo
+                    </>
+                }
                 tooltipColor='blue'
+                forceOpen={true}
             />
             <div className="logoVariationsGroup">
                 <Card image='https://placehold.co/400' />
@@ -263,10 +297,24 @@ const WebsiteImage = () => {
 const WebsiteHero = () => {
     return (
         <section className="websiteHero" data-navbar='dark'>
+            <img 
+                src={blueFlower} 
+                alt="blue flower decoration" 
+                className="websiteHeroFlower"
+            />
             <Headline
                 lines={['begun']}
-                tooltip='brand identity | logo design'
+                tooltip={
+                    <>
+                    brand identity{'  '}
+                    <svg style={{margin: '0 3px 0 3px'}} width="2" height="10" viewBox="0 0 2 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="1.5" width="10" height="1.5" rx="0.75" transform="rotate(90 1.5 0)" fill="#000000ff"/>
+                    </svg>
+                    {'  '}logo design
+                    </>
+                }
                 tooltipColor='pink'
+                forceOpen={true}
             >
                 <div className="websiteHeroCartoon">
                     <svg width="200" height="239" viewBox="0 0 200 239" fill="none" xmlns="http://www.w3.org/2000/svg">

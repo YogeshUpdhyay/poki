@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const SkewedTapeContainer = styled.div`
     position: absolute;
-    width: 100%;
+    width: 140px;
     height: 80px;
     z-index: 2;
 `;
@@ -22,7 +22,7 @@ const SkewedTapeBgContainer = styled.div`
 
 const SkewedTapeContentContainer = styled.div`
     width: 100%;
-    height: 100%;
+    height: 140px;
     transform: rotate(${(props) => props.angle})
         skewY(${(props) => props.angle * -1});
     transform-origin: ${(props) => props.tranformOrigin || "50% 50% 0"};

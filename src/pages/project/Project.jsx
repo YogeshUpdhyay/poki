@@ -96,15 +96,24 @@ const ProjectAbout = () => {
                 className="wireframeContainer" 
                 style={{'--bg': '#4A4E00'}}
             >
-                <img 
+                {/* <img 
                     src={about1Image}
                     alt="" 
                     className="wireframe" 
-                />
+                /> */}
+                {/* 
+                    📁 IMAGE LOCATION: src/assets/imgs/projects/
+                    To add image: Uncomment the <img> above and update src={yourImageVariable}
+                    Import at top: import yourImage from "@/assets/imgs/projects/your-image.png"
+                */}
+                <div className="wireframePlaceholder">
+                    <span className="placeholderText">100% × 80vh</span>
+                </div>
             </div>
 
             <div className="miscContainer">
                 <div className="layeredCard">
+                    {/* OLD: 2-layer approach - commented out
                     <img 
                         src={about2BgImage}
                         alt="background" 
@@ -115,6 +124,16 @@ const ProjectAbout = () => {
                         alt="foreground" 
                         className="layeredCardForeground" 
                     />
+                    */}
+                    {/* 
+                        📁 IMAGE LOCATION: src/assets/imgs/projects/
+                        To add image: Replace placeholder with:
+                        <img src={yourImageVariable} alt="" className="layeredCardImage" />
+                        Import at top: import yourImage from "@/assets/imgs/projects/your-image.png"
+                    */}
+                    <div className="layeredCardPlaceholder">
+                        <span className="placeholderText">50% × 80vh</span>
+                    </div>
                 </div>
                 <div className="miscCard">
                     <Card image={about3Image} />
@@ -136,7 +155,7 @@ const ProjectAbout = () => {
 const ProjectBeforeAfter = () => {
     return (
         <section className="blackContainer" id="beforeAfter">
-            <Card 
+            {/* <Card 
                 image={beforeImage}
                 style={{height: '80vh'}}
                 border={true}
@@ -155,7 +174,17 @@ const ProjectBeforeAfter = () => {
                 svgLeft='80%'
                 svgTransform='translateX(-100%)'
                 svgFill='orange'
-            />
+            /> */}
+            {/* 
+                📁 IMAGE LOCATION: src/assets/imgs/projects/
+                To add image: Replace this placeholder with:
+                <img src={yourImageVariable} alt="" className="beforeAfterImage" />
+                Import at top: import yourImage from "@/assets/imgs/projects/your-image.png"
+                Then add .beforeAfterImage CSS class for styling
+            */}
+            <div className="beforeAfterPlaceholder">
+                <span className="placeholderText">100% × 100vh</span>
+            </div>
         </section>
     )
 }
@@ -167,6 +196,7 @@ const ProjectHero = () => {
                 lines={['dilli dilli']}
                 tooltip='webiste design'
                 tooltipColor='blue'
+                forceOpen
             >
                 <div className="projectHeroCartoon">
                     <svg 
@@ -266,6 +296,7 @@ const ProjectColorPalette = () => {
             </p>
 
             <div className="colorPaletteGrid">
+                {/* OLD: Version card with label + mockup - commented out
                 <div className="versionCard">
                     <img src={version1Svg} alt="Version 1" className="versionLabel" />
                     <div className="versionFrame" style={{backgroundColor: '#B4751D'}}>
@@ -276,6 +307,24 @@ const ProjectColorPalette = () => {
                     <img src={version2Svg} alt="Version 2" className="versionLabel" />
                     <div className="versionFrame" style={{backgroundColor: '#B4751D'}}>
                         <img src={pick2Image} alt="Mockup 2" className="mockupImage" />
+                    </div>
+                </div>
+                */}
+                
+                {/* 
+                    📁 IMAGE LOCATION: src/assets/imgs/projects/
+                    To add image: Replace placeholder with:
+                    <img src={yourImageVariable} alt="" className="versionFrameImage" />
+                    Import at top: import yourImage from "@/assets/imgs/projects/your-image.png"
+                */}
+                <div className="versionFrame">
+                    <div className="versionFramePlaceholder">
+                        <span className="placeholderText">50% × 91vh</span>
+                    </div>
+                </div>
+                <div className="versionFrame">
+                    <div className="versionFramePlaceholder">
+                        <span className="placeholderText">50% × 91vh</span>
                     </div>
                 </div>
             </div>
@@ -319,7 +368,7 @@ const ProjectBuiltToBeSeen = () => {
             <div className="builtToBeSeenContent">
                 <Headline
                     lines={['built to be seen']}
-                    highlight='seen'
+                    highlight='built'
                 >
                     <svg 
                         className='builtToBeSeenStar'

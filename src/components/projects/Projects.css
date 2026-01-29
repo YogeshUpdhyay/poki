@@ -35,7 +35,7 @@
 .projectsPill {
     position: absolute;
     left: 10%;
-    top: 60%;
+    top: 61%;
     display: inline-block;
     padding: 10px 14px;
     border-radius: 100px 100px 100px 0px;
@@ -43,7 +43,7 @@
     width: fit-content;
     font-size: 14px;
     font-family: generalSansMedium;
-    letter-spacing: -0.01em;
+    letter-spacing: normal;
     white-space: nowrap;
     line-height: 100%;
     background-color: #86C9FF;
@@ -51,6 +51,8 @@
     z-index: 20;
     font-weight: 500;
     text-align: center;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
 }
 
 .projectCard {
@@ -71,7 +73,7 @@
 }
 
 .projectCardTitle {
-    padding: 10px 14px;
+    padding: 8px 12px;
     border-radius: 18px 18px 18px 0px;
     background-color: #EFEBE7;
     font-size: 14px;
@@ -82,11 +84,13 @@
     display: flex;
     width: fit-content;
     margin: 24px;
-    font-family: 'generalSansMedium';
+    font-family: generalSansMedium;
     font-weight: 500;
     line-height: 100%;
-    letter-spacing: -0.01em;
+    letter-spacing: normal;
     text-align: center;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
 }
 
 /* ========================================
@@ -165,8 +169,9 @@
 
     .projectsPill {
         left: -1%;
-        top: 44%;
+        top: 42.5%;
         font-size: 14px;
-        padding: 6px 10px;
+        padding: 8px 12px;
+        text-box-edge: auto;
     }
 }
