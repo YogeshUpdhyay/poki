@@ -38,13 +38,18 @@ export default function Team() {
   });
   const lines = ['a crew of 6', 'dominating the', 'whole world']
   const highlight = 'dominating'
+  const Separator = (
+    <svg style={{margin: '0 3px 0 3px'}} width="2" height="10" viewBox="0 0 2 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1.5" width="10" height="1.5" rx="0.75" transform="rotate(90 1.5 0)" fill="#000000ff"/>
+    </svg>
+  );
   const teammates = {
-    1: { image: TeammateOneIamge, tooltip: 'Robin | Co-founder' },
-    2: { image: TeammateTwoImage, tooltip: 'Asha | Product' },
-    3: { image: TeammateThreeImage, tooltip: 'Kunal | Engineering' },
-    4: { image: TeammateFourImage, tooltip: 'Meera | Design' },
-    5: { image: TeammateFiveImage, tooltip: 'Sahil | Growth' },
-    6: { image: TeammateSixImage, tooltip: 'Nisha | Ops' },
+    1: { image: TeammateOneIamge, tooltip: <>Robin{Separator}Co-founder</>, },
+    2: { image: TeammateTwoImage, tooltip: <>Asha{Separator}Product</>, },
+    3: { image: TeammateThreeImage, tooltip: <>Kunal{Separator}Engineering</>, },
+    4: { image: TeammateFourImage, tooltip: <>Meera{Separator}Design</>, },
+    5: { image: TeammateFiveImage, tooltip: <>Sahil{Separator}Growth</>, },
+    6: { image: TeammateSixImage, tooltip: <>Nisha{Separator}Ops</>, },
   }
 
   return (
@@ -165,7 +170,11 @@ const Map = () => {
             className: 'tooltip orange',
           })}
         >
-          {`${hoveredInfo?.dataName || ''} | 320 projects`}
+          {hoveredInfo?.dataName || ''} 
+          <svg style={{margin: '0 3px 0 3px'}} width="2" height="10" viewBox="0 0 2 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1.5" width="10" height="1.5" rx="0.75" transform="rotate(90 1.5 0)" fill="#ffffffff"/>
+          </svg>
+          320 projects
         </div>
       )}
     </div>
@@ -271,7 +280,9 @@ const Teammates = ({ teammates = {} }) => {
 const TeamMateCard = ({
   svgSrc = TeammateOneSvg,
   imageSrc = TeammateOneIamge,
-  tooltipText = 'Robin | Co-founder',
+  tooltipText = 'Robin' + <svg style={{margin: '0 3px 0 3px'}} width="2" height="10" viewBox="0 0 2 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1.5" width="10" height="1.5" rx="0.75" transform="rotate(90 1.5 0)" fill="#ffffffff"/>
+          </svg> + 'Co-founder',
   svgLeft = 'auto',
   svgRight = 'auto',
   svgTop = 'auto',
