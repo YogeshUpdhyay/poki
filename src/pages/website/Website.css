@@ -1,4 +1,5 @@
 .websiteHero {
+    height: 110vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -272,8 +273,8 @@
 /* Fixed Tooltip Position for Hero Section */
 .websiteHero .tooltip {
     position: absolute !important;
-    top: 225px !important;
-    left: 780px !important;
+    top: 265px !important;
+    left: 775px !important;
     transform: none !important;
 }
 

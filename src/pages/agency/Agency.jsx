@@ -244,8 +244,8 @@ const AgencyHero = () => {
             <Headline
                 lines={['your creative', 'muscle, without', 'the headcount']}
                 highlight={"headcount"}
-                tooltipColor='pink'
-                tooltip="because great work isn't built alone"
+                // tooltipColor='pink'
+                // tooltip="because great work isn't built alone"
                 forceOpen
             >
                 <img
@@ -253,6 +253,11 @@ const AgencyHero = () => {
                     alt="agencyCartoon"
                     className="agencyCartoon"
                 />
+                <div className='agencyHeroTooltip'>
+                    <div className={`tooltip pink`}>
+                        because great work isn't built alone
+                    </div>
+                </div>
             </Headline>
             <div className="agencyButtons">
                 <Button text="let's team up" />

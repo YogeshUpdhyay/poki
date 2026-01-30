@@ -27,9 +27,8 @@ function AboutHeadline() {
         <Headline 
             lines={isMobile ? mobileLines : desktopLines}
             highlight="shine"
-            tooltip="we put the 'fun' in functional design"
-            tooltipColor="blue"
-            forceOpen={true}
+            // tooltip="we put the 'fun' in functional design"
+            // tooltipColor="blue"
         >
         <img 
             src={aboutHeroCartoon} 
@@ -37,6 +36,11 @@ function AboutHeadline() {
             className={`aboutHeroCartoon ${inView ? 'scaleInAnimation' : ''}`}
             ref={ref}
         />
+        <div className='aboutHeroTooltip'>
+          <div className={`tooltip blue`}>
+          we put the 'fun' in functional design
+        </div>
+        </div>
         </Headline>
     </div>
   )

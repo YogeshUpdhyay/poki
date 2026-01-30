@@ -1,20 +1,25 @@
 .agencyHero {
     display: flex;
-    height: 100vh;
+    height: 110vh;
     justify-content: flex-end;
     align-items: center;
     flex-direction: column;
 }
 
 /* Tooltip positioning for AgencyHero */
-.agencyHero .tooltip {
+/* .agencyHero .tooltip {
     position: absolute !important;
-    /* Custom positioning - adjust these values as needed */
     top: 7% !important;
     left: 65.6% !important;
     right: auto !important;
     bottom: auto !important;
     transform: translateX(-50%) !important;
+} */
+
+.agencyHeroTooltip {
+    position: absolute;
+    top: 6%;
+    left: 64%;
 }
 
 /* Tooltip positioning for Advantage section */
