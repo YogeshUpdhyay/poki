@@ -44,12 +44,12 @@ export default function Team() {
     </svg>
   );
   const teammates = {
-    1: { image: TeammateOneIamge, tooltip: <>Robin{Separator}Co-founder</>, },
-    2: { image: TeammateTwoImage, tooltip: <>Asha{Separator}Product</>, },
-    3: { image: TeammateThreeImage, tooltip: <>Kunal{Separator}Engineering</>, },
-    4: { image: TeammateFourImage, tooltip: <>Meera{Separator}Design</>, },
-    5: { image: TeammateFiveImage, tooltip: <>Sahil{Separator}Growth</>, },
-    6: { image: TeammateSixImage, tooltip: <>Nisha{Separator}Ops</>, },
+    1: { image: TeammateOneIamge, tooltip: <>Robin{Separator}Co-founder</>, borderRadius: '18px 18px 18px 0px' },
+    2: { image: TeammateTwoImage, tooltip: <>Asha{Separator}Product</>, borderRadius: '100px 100px 100px 0px' },
+    3: { image: TeammateThreeImage, tooltip: <>Kunal{Separator}Engineering</>, borderRadius: '18px 18px 18px 0px' },
+    4: { image: TeammateFourImage, tooltip: <>Meera{Separator}Design</>, borderRadius: '100px 100px 0px 100px' },
+    5: { image: TeammateFiveImage, tooltip: <>Sahil{Separator}Growth</>, borderRadius: '18px 18px 18px 0px' },
+    6: { image: TeammateSixImage, tooltip: <>Nisha{Separator}Ops</>, borderRadius: '100px 100px 0px 100px' },
   }
 
   return (
@@ -194,7 +194,7 @@ const Teammates = ({ teammates = {} }) => {
   const rOverrides = [0.3, 0.8, 0.55, 0.5, 0.3, 0.55]
 
   // Ensure we have exactly six items; read numeric keys 1..6 from the object
-  const items = [1,2,3,4,5,6].map(i => teammates[i] || { image: undefined, tooltip: '' });
+  const items = [1,2,3,4,5,6].map(i => teammates[i] || { image: undefined, tooltip: '', borderRadius: undefined });
 
   return(
     <div className="teammates">
@@ -207,6 +207,7 @@ const Teammates = ({ teammates = {} }) => {
             svgSrc={svgList[0]}
             imageSrc={items[0].image}
             tooltipText={items[0].tooltip}
+            borderRadius={items[0].borderRadius}
             svgLeft='80%'
             svgTop='20%'
             r={rOverrides[0]}
@@ -218,6 +219,7 @@ const Teammates = ({ teammates = {} }) => {
             svgSrc={svgList[1]}
             imageSrc={items[1].image}
             tooltipText={items[1].tooltip}
+            borderRadius={items[1].borderRadius}
             svgRight='80%'
             svgTop='50%'
             r={rOverrides[1]}
@@ -229,6 +231,7 @@ const Teammates = ({ teammates = {} }) => {
             svgSrc={svgList[2]}
             imageSrc={items[2].image}
             tooltipText={items[2].tooltip}
+            borderRadius={items[2].borderRadius}
             svgLeft='80%'
             svgTop='90%'
             calloutLeft='90%'
@@ -242,6 +245,7 @@ const Teammates = ({ teammates = {} }) => {
             svgSrc={svgList[3]}
             imageSrc={items[3].image}
             tooltipText={items[3].tooltip}
+            borderRadius={items[3].borderRadius}
             svgLeft='80%'
             svgTop='5%'
             r={rOverrides[3]}
@@ -253,6 +257,7 @@ const Teammates = ({ teammates = {} }) => {
             svgSrc={svgList[4]}
             imageSrc={items[4].image}
             tooltipText={items[4].tooltip}
+            borderRadius={items[4].borderRadius}
             svgRight='80%'
             svgBottom='20%'
             r={rOverrides[4]}
@@ -264,6 +269,7 @@ const Teammates = ({ teammates = {} }) => {
             svgSrc={svgList[5]}
             imageSrc={items[5].image}
             tooltipText={items[5].tooltip}
+            borderRadius={items[5].borderRadius}
             svgLeft='70%'
             svgTop='-33%'
             r={rOverrides[5]}
@@ -280,9 +286,8 @@ const Teammates = ({ teammates = {} }) => {
 const TeamMateCard = ({
   svgSrc = TeammateOneSvg,
   imageSrc = TeammateOneIamge,
-  tooltipText = 'Robin' + <svg style={{margin: '0 3px 0 3px'}} width="2" height="10" viewBox="0 0 2 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="1.5" width="10" height="1.5" rx="0.75" transform="rotate(90 1.5 0)" fill="#ffffffff"/>
-          </svg> + 'Co-founder',
+  tooltipText = 'Robin',
+  borderRadius = '100px 100px 100px 0px',
   svgLeft = 'auto',
   svgRight = 'auto',
   svgTop = 'auto',
@@ -320,6 +325,7 @@ const TeamMateCard = ({
               right: calloutRight ?? 'auto',
               top: calloutTop ?? 'auto',
               bottom: calloutBottom ?? 'auto',
+              borderRadius: borderRadius,
             }}
           >
             {tooltipText}
