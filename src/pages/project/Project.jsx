@@ -7,7 +7,8 @@ import Marquee from "react-fast-marquee";
 import "./Project.css"
 
 // Project images
-import beforeImage from "@/assets/imgs/projects/before.png"
+import mobileImage from "@/assets/imgs/projects/mobile-preview.png";
+import desktopImage from "@/assets/imgs/projects/desktop.png"
 import afterImage from "@/assets/imgs/projects/after.png"
 import about1Image from "@/assets/imgs/projects/about1.png"
 import about2Image from "@/assets/imgs/projects/about2.png"
@@ -182,9 +183,13 @@ const ProjectBeforeAfter = () => {
                 Import at top: import yourImage from "@/assets/imgs/projects/your-image.png"
                 Then add .beforeAfterImage CSS class for styling
             */}
-            <div className="beforeAfterPlaceholder">
+            <picture className="beforeAfterImage">
+                <source media="(max-width: 768px)" srcset={mobileImage} />
+                <img src={desktopImage} alt="Project Preview" />
+            </picture>
+            {/* <div className="beforeAfterPlaceholder">
                 <span className="placeholderText">100% × 100vh</span>
-            </div>
+            </div> */}
         </section>
     )
 }
