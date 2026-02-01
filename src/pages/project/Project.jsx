@@ -54,7 +54,7 @@ const ProjectAbout = () => {
             data-navbar='dark'
         >
             <Headline
-                lines={['about the project']}
+                lines={['about', 'the project']}
                 highlight='about'
             >
                 <svg 

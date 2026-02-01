@@ -615,6 +615,37 @@
         display: block;
     }
 
+    .websiteAboutStar{
+        width: 36px;
+        height: 36px;
+        top: 35%;
+    }
+
+    .websiteAboutUnderline{
+        display: none;
+    }
+
+    .websiteText{
+        font-size: 14px;
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .wireframeContainer{
+        width: 320px;
+        height: 338px;
+    }
+
+    .layeredCard{
+        width: 320px;
+        height: 338px;
+    }
+
+    .projectAboutBg{
+        display: none;
+    }
+
     .colorPaletteGrid {
         grid-template-columns: 1fr;
         gap: 24px;
