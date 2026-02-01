@@ -268,3 +268,107 @@
     margin-top: -36px;
     transform: translateY(-20%);
 }
+
+@media (max-width: 768px) {
+    .agencyHero {
+        height: 100vh;
+    }
+
+    .agencyCartoon{
+        width: 128px;
+        height: 82.57px;
+        top: 10px;
+        right: 48%;
+    }
+
+    .agencyHeroTooltip{
+        position: absolute;
+        top: 9%;
+        left: 25%;
+    }
+
+    .partnerWith{
+        padding: 100px 30px;
+    }
+
+    .agencyHeroUnderline{
+        width:115px;
+        top:100%;
+        left: 55%;
+    }
+
+    .agencyHeroStar{
+        top: -17%;
+        right: 77%;
+        width: 36px;
+        height: 36px;
+    }
+
+    .partnerCardsGroup {
+        flex-direction: column;
+        align-items: center;
+        gap: 45px;
+        padding-top: 60px;
+    }
+
+    .partnerCard {
+        width: 300px;
+        height: 180px;
+        position: relative;
+        margin-top: -30px; /* Base negative margin for overlap */
+    }
+
+    .partnerCard:first-child {
+        margin-top: 0;
+    }
+
+    /* Individual Card Adjustments (Rotation & Stagger) */
+    .partnerCard:nth-child(1) {
+        transform: rotate(0deg) translateX(-10px);
+        z-index: 1;
+    }
+
+    .partnerCard:nth-child(2) {
+        transform: rotate(-3.82deg) translateX(15px);
+        z-index: 2;
+    }
+
+    .partnerCard:nth-child(3) {
+        transform: rotate(8.64deg) translateX(-15px);
+        z-index: 3;
+    }
+
+    .partnerCard:nth-child(4) {
+        transform: rotate(-4.51deg) translateX(10px);
+        z-index: 4;
+    }
+
+    /* Inside @media (max-width: 768px) */
+
+    .partnerCard:nth-child(1) svg {
+        /* Adjust values for 'referrals & collaborators' */
+        transform: translateY(25%) rotate(-4deg) !important;
+    }
+
+    .partnerCard:nth-child(2) svg {
+        /* Adjust values for 'white-label allies' */
+        transform: translateY(20%) rotate(-0.84deg) !important;
+
+    }
+
+    .partnerCard:nth-child(3) svg {
+        /* Adjust values for 'overflow rescuers' */
+        transform: translateY(20%) rotate(5.84deg) !important;
+    }
+
+    .partnerCard:nth-child(4) svg {
+        /* Adjust values for 'full-stack friends' */
+        transform: translateY(20%) rotate(3.02deg) !important;
+    }
+
+    .partnerCardText {
+        font-size: 18px;
+        padding: 34px;
+        width: 80%;
+    }
+}
