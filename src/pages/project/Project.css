@@ -736,6 +736,52 @@
         height: auto;
     }
 
+    #builtToBeSeen {
+        padding: 120px 60px;
+    }
+
+    .builtToBeSeenStar {
+        position: absolute;
+        width: 36px;
+        height: 36px;
+        left: -15px;
+        top: -30px;
+        rotate: 131.77deg;
+    }
+
+    .builtToBeSeenUnderline {
+        position: absolute;
+        bottom: -10px;
+        right: 60px;
+        width: 114px;
+    }
+
+    .builtToBeSeenGrid{
+        margin-left: -35px;
+    }
+
+    .builtBottom{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .cardWrapper{
+        height: 100% !important;
+        width: 100%;
+    }
+
+    .card{
+        width: 320px;
+        height: 116px;
+    }
+
+    .builtBottom .card{
+        width: 320px;
+        height: 338px;
+    }
+
+
     #colorPalette,
     #typography,
     #takeYourCut,
