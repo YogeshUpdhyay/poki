@@ -459,4 +459,9 @@
     .partnerReviewCard:nth-child(2){
         height: 500px;
     }
+
+    /* Scoped Navbar Styles for Agency Page */
+    .agency-page .hamburger span {
+        background-color: var(--color-violet) !important;
+    }
 }

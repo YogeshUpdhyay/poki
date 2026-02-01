@@ -822,4 +822,8 @@
     #projectAbout {
         padding: 60px 20px;
     }
+
+    .project-page .hamburger span {
+        background-color: var(--color-violet) !important;
+    }
 }

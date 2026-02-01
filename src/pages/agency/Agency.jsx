@@ -13,7 +13,7 @@ import OutlinedSvgText from '../../components/common/outlineSvgText/OutlineSvgTe
 
 const Agency = () => {
     return (
-        <>
+        <div className="agency-page">
             <Navbar />
             <AgencyHero />
             <AgencyPartnerWith />
@@ -21,7 +21,7 @@ const Agency = () => {
             <AgencyPartnerShips />
             <Collaborate />
             <Footer />
-        </>
+        </div>
     )
 }
 

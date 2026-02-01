@@ -32,7 +32,7 @@ import workSvg from "@/assets/imgs/projects/work.svg"
 
 const Project = () => {
     return (
-        <>
+        <div className="project-page">
             <Navbar />
             <ProjectHero />
             <ProjectBeforeAfter/>
@@ -42,7 +42,7 @@ const Project = () => {
             <ProjectBuiltToBeSeen />
             <ProjectMore />
             <Footer />
-        </>
+        </div>
     )
 }
 
