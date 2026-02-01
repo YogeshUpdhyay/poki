@@ -781,6 +781,36 @@
         height: 338px;
     }
 
+    .moreWorkGrid{
+        gap: 50px;
+    }
+
+    .moreWorkTitle{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 18px;
+    }
+
+    #projectMore .phoneMockupCard {
+        width: 312px !important;
+        height: 433px !important;
+        min-width: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    .moreWorkBg{
+        position: absolute;
+        top: 900px;
+        left: 80px;
+        width: 400px;
+        height: 373px;
+        z-index: -1;
+    }
+
+    .moreWorkCta{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
     #colorPalette,
     #typography,

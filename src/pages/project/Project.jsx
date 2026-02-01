@@ -457,7 +457,10 @@ const ProjectMore = () => {
             </div>
 
             <div className="moreWorkBg">
-                <img src={workSvg} alt="" />
+                <picture>
+                    <source media="(max-width: 768px)" srcSet={pinkSvg} />
+                    <img src={workSvg} alt="" />
+                </picture>
             </div>
         </section>
     )
