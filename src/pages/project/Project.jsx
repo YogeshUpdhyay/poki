@@ -194,13 +194,18 @@ const ProjectHero = () => {
         <section className="projectHero" data-navbar='dark'>
             <Headline
                 lines={['dilli dilli']}
-                tooltip='webiste design'
-                tooltipColor='blue'
+                //tooltip='webiste design'
+                //tooltipColor='blue'
                 forceOpen
             >
+                <div className="projectHeroTooltip">
+                    <div className="tooltip blue">
+                        website design
+                    </div>
+                </div>
                 <div className="projectHeroCartoon">
                     <svg 
-                        width="175" height="157" 
+                        width="auto" height="auto" 
                         viewBox="0 0 175 157" fill="none" 
                         xmlns="http://www.w3.org/2000/svg"
                     >

@@ -9,14 +9,11 @@
     position: relative;
 }
 
-.projectHero .tooltip {
-    position: absolute !important;
-    /* Custom positioning - adjust these values as needed */
-    top: 33% !important;
-    left: 55.5% !important;
-    right: auto !important;
-    bottom: auto !important;
-    transform: translateX(-50%) !important;
+
+.projectHeroTooltip{
+    position: absolute;
+    top: -55%;
+    left: 57%;
 }
 
 
@@ -26,6 +23,7 @@
     left: 100%;
     top: 100%;
     transform: translate(-80%, -70%);
+    z-index: -1;
 }
 
 .projectHeroButtonWrapper {
@@ -39,6 +37,8 @@
     right: 95%;
     bottom: 65%;
     transform: translateY(30%);
+    width: 174.23px;
+    height: 156.35px;
 }
 
 .projectHeroText {
@@ -570,6 +570,39 @@
 }
 
 @media (max-width: 768px) {
+
+    .projectHeroCartoon{
+        height: 96px !important;
+        width: 106.7px !important;
+        top: -240%;
+        left: -45%;
+    }
+
+    .projectHeroTooltip{
+        top: -95%;
+        left: -3%;
+    }
+
+    .websiteHeroBold{
+        font-size: 48px;
+    }
+
+    .websiteHeroItalic{
+        font-size: 48px;
+    }
+
+    .projectHeroBg{
+        top: 85%;
+        left: 85%;
+        width: 304px;
+        height: 264px;
+        z-index: -1;
+    }
+
+    .projectHeroButtonWrapper{
+        padding: 60px 0px 200px 0px;
+    }
+
     .projectHeroText {
         width: 90%;
         font-size: 12px;
@@ -578,6 +611,10 @@
     .colorPaletteGrid {
         grid-template-columns: 1fr;
         gap: 24px;
+    }
+
+    .headlineWrapper{
+        font-size: 48px;
     }
 
     .colorSwatch {
@@ -618,20 +655,5 @@
 
     #projectAbout {
         padding: 60px 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .colorName {
-        font-size: 20px;
-    }
-
-    .colorHex,
-    .colorRgb {
-        font-size: 14px;
-    }
-
-    .typographyDisplay {
-        font-size: 48px !important;
     }
 }
