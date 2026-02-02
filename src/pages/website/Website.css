@@ -462,7 +462,40 @@
         transform: translate(-50%, -50%);
     }
 
+    .websiteImage{
+        height: 392px;
+    }
     
+    #websiteAbout{
+        padding: 55px 9px;
+    }
 
+    #websiteAbout .headlineHighlight{
+        display: block;
+    }
+
+    .websiteAboutStar{
+        top: 3% !important;
+        right: 3%;
+    }
+
+    .aboutImages{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 90px;
+    }
+
+    .aboutImages .cardImage{
+        width: 320px !important;
+        height: 338px !important;
+    }
+
+    .websiteAboutSvg{
+        width: 350px;
+        height: 344px;
+        top: 70%;
+        right: 40%;
+    }
 
 }
