@@ -525,4 +525,60 @@
         width: 100%;
     }
 
+    #colors{
+        padding: 100px 30px;
+    }
+    #colors .headlineHighlight{
+        display: block;
+    }
+    .colorStar{
+        width: 36px;
+        height: 36px;
+        bottom: 50%;
+    }
+
+    .colorsLayout {
+        flex-direction: column;
+        height: auto;
+        gap: 16px;
+        align-items: center;
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .twoColorBoxes, 
+    .twoColorBoxes.reverse {
+        flex-direction: row !important;
+        width: 324px !important; 
+        height: 120px !important;
+        gap: 16px !important;
+        flex-grow: 0 !important;
+    }
+
+    .twoColorBoxes:not(.reverse) > :nth-child(1) { width: 120px !important; flex: none !important; height: 120px !important; }
+    .twoColorBoxes:not(.reverse) > :nth-child(2) { width: 188px !important; flex: none !important; height: 120px !important; }
+
+    .twoColorBoxes.reverse > :nth-child(1) { width: 188px !important; flex: none !important; height: 120px !important; }
+    .twoColorBoxes.reverse > :nth-child(2) { width: 120px !important; flex: none !important; height: 120px !important; }
+
+    .colorsLayout > .colorBox {
+        width: 324px !important;
+        height: 320px !important;
+        flex: none !important;
+    }
+
+    .colorBox {
+        padding: 20px !important;
+    }
+
+    .colorBoxTitle {
+        font-size: 18px !important;
+    }
+
+    .colorBoxHex {
+        font-size: 14px !important;
+    }
+
+
 }
+
