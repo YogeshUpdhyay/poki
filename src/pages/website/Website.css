@@ -498,4 +498,31 @@
         right: 40%;
     }
 
+    #logoVariations{
+        padding: 100px 30px;
+    }
+
+    #logoVariations .tooltip{
+        display: block;
+        position: absolute !important;
+        top: 12.5% !important;
+        left: 18% !important;
+        transform: translateX(-50%) !important;
+    }
+
+    .logoVariationsGroup{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .logoVariationsGroup .cardImage .cardWrapper{
+        width: 320px !important;
+        height: 320px !important;
+    }
+
+    .logoVariationsText{
+        width: 100%;
+    }
+
 }
