@@ -19,6 +19,14 @@
     right: 80%;
     top: 50%;
     transform: translateY(-50%);
+    width: 200px;
+    height: 239px;
+}
+
+.websiteHeroCartoon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 .websiteHeroFlower {
@@ -420,4 +428,41 @@
     text-align: center;
     text-box-trim: trim-both;
     text-box-edge: cap alphabetic;
+}
+
+@media (max-width: 768px) {
+
+    .websiteHero{
+        height: 100vh;
+    }
+    .websiteHeroCartoon{
+        width: 70.39px;
+        height: 96px;
+        right: 90%;
+        top: 20%;
+    }
+
+    .websiteHero .tooltip{
+        display: block;
+        position: absolute !important;
+        top: 34% !important;
+        left: 65% !important;
+        transform: translateX(-50%) !important;
+    }
+
+    .websiteHeroButtonWrapper{
+        padding: 48px 0px 120px 0px;
+    }
+
+    .websiteHeroFlower{
+        width: 349px;
+        height: 326px;
+        left: 75%;
+        top: 97%;
+        transform: translate(-50%, -50%);
+    }
+
+    
+
+
 }
