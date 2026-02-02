@@ -89,6 +89,7 @@
     background-color: var(--background-dark);
     position: relative;
     width: 100%;
+    opacity: 10;
 }
 
 .projectRow {
@@ -171,7 +172,7 @@
     width: 100%;
     height: 100%;
     border-radius: 12px;
-    border: 6px solid var(--color-white);
+    border: 3px solid var(--color-white);
     background-color: #D9D9D9;
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
     overflow: hidden;
@@ -213,7 +214,7 @@
     pointer-events: none;
     width: clamp(250px, 30vw, 350px);
     height: auto;
-    opacity: 0.8;
+    /* opacity: 0.8; */
 }
 
 .flower-left {
@@ -290,6 +291,7 @@
     .projectGrid {
         flex-direction: column;
         gap: 40px;
+        padding-bottom: 0px;
     }
 
     .projectShowcase {
@@ -301,13 +303,22 @@
     }
 
     .skewedTapContainer {
-        padding: 60px 0px 100px;
+        padding: 150px 0px 100px;
         min-height: 400px;
     }
 
+    .skewedTapContainer > div {
+        height: 100px !important;
+    }
+
     .skewedTapeContent {
-        font-size: clamp(32px, 8vw, 48px);
-        gap: 16px;
+        font-size: 40px;
+        gap: 20px;
+    }
+
+    .phoneMockupImage {
+        width: 311.76px;
+        height: 433px;
     }
 
     .phoneMockupCard {
@@ -321,14 +332,14 @@
     }
 
     .phoneMockupLabel {
-        bottom: -12px;
-        font-size: 13px;
+        bottom: 15px;
+        font-size: 14px;
         padding: 10px;
     }
 
     /* Hide flower decorations on mobile */
     .flowerDecoration {
-        display: none;
+        display: absolute;
     }
 
     /* Category menu responsive */
@@ -351,7 +362,7 @@
     }
 }
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
     .skewedTapeContent {
         font-size: 36px;
         gap: 16px;
@@ -372,4 +383,4 @@
     .projectRow {
         margin-bottom: 40px;
     }
-}
+} */

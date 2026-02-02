@@ -1,20 +1,25 @@
 .agencyHero {
     display: flex;
-    height: 100vh;
+    height: 110vh;
     justify-content: flex-end;
     align-items: center;
     flex-direction: column;
 }
 
 /* Tooltip positioning for AgencyHero */
-.agencyHero .tooltip {
+/* .agencyHero .tooltip {
     position: absolute !important;
-    /* Custom positioning - adjust these values as needed */
     top: 7% !important;
     left: 65.6% !important;
     right: auto !important;
     bottom: auto !important;
     transform: translateX(-50%) !important;
+} */
+
+.agencyHeroTooltip {
+    position: absolute;
+    top: 6%;
+    left: 64%;
 }
 
 /* Tooltip positioning for Advantage section */
@@ -127,8 +132,10 @@
 }
 
 .advCartoon {
+    width: 151.26px;
+    height: 206.3px;
     position: absolute;
-    right: 95%;
+    right: 96%;
     transform: translateY(-20%);
 }
 
@@ -144,7 +151,7 @@
 
 .advListItem {
     font-size: 20px;
-    padding: 24px;
+    padding: 18px;
     background-color: var(--color-pink);
     display: flex;
     border-radius: 100px;
@@ -262,4 +269,201 @@
 .outlineTextWrapper {
     margin-top: -36px;
     transform: translateY(-20%);
+}
+
+@media (max-width: 768px) {
+    .agencyHero {
+        height: 100vh;
+    }
+
+    .agencyCartoon{
+        width: 128px;
+        height: 82.57px;
+        top: 10px;
+        right: 48%;
+    }
+
+    .agencyHeroTooltip{
+        position: absolute;
+        top: 9%;
+        left: 25%;
+    }
+
+    .partnerWith{
+        padding: 100px 30px;
+    }
+
+    .agencyHeroUnderline{
+        width:115px;
+        top:100%;
+        left: 55%;
+    }
+
+    .agencyHeroStar{
+        top: -17%;
+        right: 77%;
+        width: 36px;
+        height: 36px;
+    }
+
+    .partnerCardsGroup {
+        flex-direction: column;
+        align-items: center;
+        gap: 45px;
+        padding-top: 60px;
+    }
+
+    .partnerCard {
+        width: 300px;
+        height: 180px;
+        position: relative;
+        margin-top: -30px; /* Base negative margin for overlap */
+    }
+
+    .partnerCard:first-child {
+        margin-top: 0;
+    }
+
+    /* Individual Card Adjustments (Rotation & Stagger) */
+    .partnerCard:nth-child(1) {
+        transform: rotate(0deg) translateX(-10px);
+        z-index: 1;
+    }
+
+    .partnerCard:nth-child(2) {
+        transform: rotate(-3.82deg) translateX(15px);
+        z-index: 2;
+    }
+
+    .partnerCard:nth-child(3) {
+        transform: rotate(8.64deg) translateX(-15px);
+        z-index: 3;
+    }
+
+    .partnerCard:nth-child(4) {
+        transform: rotate(-4.51deg) translateX(10px);
+        z-index: 4;
+    }
+
+    /* Inside @media (max-width: 768px) */
+
+    .partnerCard:nth-child(1) svg {
+        /* Adjust values for 'referrals & collaborators' */
+        transform: translateY(25%) rotate(-4deg) !important;
+    }
+
+    .partnerCard:nth-child(2) svg {
+        /* Adjust values for 'white-label allies' */
+        transform: translateY(20%) rotate(-0.84deg) !important;
+
+    }
+
+    .partnerCard:nth-child(3) svg {
+        /* Adjust values for 'overflow rescuers' */
+        transform: translateY(20%) rotate(5.84deg) !important;
+    }
+
+    .partnerCard:nth-child(4) svg {
+        /* Adjust values for 'full-stack friends' */
+        transform: translateY(20%) rotate(3.02deg) !important;
+    }
+
+    .partnerCardText {
+        font-size: 18px;
+        padding: 34px;
+        width: 80%;
+    }
+
+    .advCartoon{
+        width: 70.39px;
+        height: 96px;
+        top: -20px;
+        right: 75%;
+    }
+
+    .advantage .tooltip{
+        top: 25.5% !important;
+        left: 35% !important;
+    }
+
+    .advList{
+        padding-top: 60px;
+        gap: 20px;
+    }
+
+    .advList svg{
+        width: 48px;
+        height: 16px;
+    }
+
+    .advListItem{
+        width: 124%;
+        padding: 20px;
+        font-size: 14px;
+    }
+
+    .advListItem:nth-child(1) {
+        transform: rotate(3deg);
+    }
+
+    .advListItem:nth-child(2) {
+        transform: rotate(-2deg);
+    }
+
+    .advListItem:nth-child(3) {
+        transform: rotate(5deg);
+    }
+
+    .advListItem:nth-child(4) {
+        transform: rotate(0deg);
+    }
+
+    .advListItem:nth-child(5) {
+        transform: rotate(-3deg);
+    }
+
+    .agencyBg{
+        width: 279px;
+        height: 280px;
+        top: 80%;
+        left: 58%;
+    }
+
+    .partnerships{
+        padding: 100px 30px;
+    }
+
+    .agencyPartnerStar{
+        width: 36px;
+        height: 36px;
+        top: -17%;
+        right: 85%;
+    }
+
+    .partnerReview{
+        flex-direction: column;
+        gap: 45px;
+    }
+
+    .outlineTextWrapper text{
+        font-size: 24px;
+    }
+
+    .partnerReviewText{
+        font-size: 14px;
+        margin-top: -40px;
+    }
+
+    .partnerReviewCard:nth-child(1){
+        height: 410px;
+    }
+
+    .partnerReviewCard:nth-child(2){
+        height: 500px;
+    }
+
+    /* Scoped Navbar Styles for Agency Page */
+    .agency-page .hamburger span {
+        background-color: var(--color-violet) !important;
+    }
 }

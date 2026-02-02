@@ -9,14 +9,11 @@
     position: relative;
 }
 
-.projectHero .tooltip {
-    position: absolute !important;
-    /* Custom positioning - adjust these values as needed */
-    top: 33% !important;
-    left: 55.5% !important;
-    right: auto !important;
-    bottom: auto !important;
-    transform: translateX(-50%) !important;
+
+.projectHeroTooltip{
+    position: absolute;
+    top: -55%;
+    left: 57%;
 }
 
 
@@ -26,6 +23,7 @@
     left: 100%;
     top: 100%;
     transform: translate(-80%, -70%);
+    z-index: -1;
 }
 
 .projectHeroButtonWrapper {
@@ -39,6 +37,8 @@
     right: 95%;
     bottom: 65%;
     transform: translateY(30%);
+    width: 174.23px;
+    height: 156.35px;
 }
 
 .projectHeroText {
@@ -335,6 +335,12 @@
     height: 553.41px;
 }
 
+.resultsBg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .resultsBg svg {
     width: 600px;
     height: auto;
@@ -570,14 +576,135 @@
 }
 
 @media (max-width: 768px) {
+
+    .projectHeroCartoon{
+        height: 96px !important;
+        width: 106.7px !important;
+        top: -240%;
+        left: -45%;
+    }
+
+    .projectHeroTooltip{
+        top: -95%;
+        left: -3%;
+    }
+
+    .websiteHeroBold{
+        font-size: 48px;
+    }
+
+    .websiteHeroItalic{
+        font-size: 48px;
+    }
+
+    .projectHeroBg{
+        top: 85%;
+        left: 85%;
+        width: 304px;
+        height: 264px;
+        z-index: -1;
+    }
+
+    .projectHeroButtonWrapper{
+        padding: 60px 0px 200px 0px;
+    }
+
     .projectHeroText {
         width: 90%;
         font-size: 12px;
     }
 
+    .beforeAfterImage img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .websiteAboutStar{
+        width: 36px;
+        height: 36px;
+        top: 35%;
+    }
+
+    .websiteAboutUnderline{
+        display: none;
+    }
+
+    .websiteText{
+        font-size: 14px;
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .wireframeContainer{
+        width: 320px;
+        height: 338px;
+    }
+
+    .layeredCard{
+        width: 320px;
+        height: 338px;
+    }
+
+    .projectAboutBg{
+        display: none;
+    }
+
+    .colorPaletteStar{
+        width: 36px;
+        height: 36px;
+        top: -20%;
+        right: -10%;
+    }
+
+    #takeYourPick .websiteText{
+        width: 115%;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+    }
+
+    .versionFrame{
+        width: 320px;
+        height: 338px;
+        padding-left: -20px !important;
+    }
+
     .colorPaletteGrid {
         grid-template-columns: 1fr;
         gap: 24px;
+        width: calc(100% + 75px);
+    }
+
+    .resultsCta{
+        padding-bottom: 40px;
+    }
+
+    .resultsGrid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .resultNumber {
+        font-size: 48px;
+    }
+
+    .resultsBg {
+        width: 279px;
+        height: 262px;
+        bottom: -100px;
+        right: -20px;
+    }
+
+    #projectResults {
+        padding: 170px 20px;
+        min-height: auto;
+    }
+
+    .headlineWrapper{
+        font-size: 48px;
     }
 
     .colorSwatch {
@@ -609,6 +736,82 @@
         height: auto;
     }
 
+    #builtToBeSeen {
+        padding: 120px 60px;
+    }
+
+    .builtToBeSeenStar {
+        position: absolute;
+        width: 36px;
+        height: 36px;
+        left: -15px;
+        top: -30px;
+        rotate: 131.77deg;
+    }
+
+    .builtToBeSeenUnderline {
+        position: absolute;
+        bottom: -10px;
+        right: 60px;
+        width: 114px;
+    }
+
+    .builtToBeSeenGrid{
+        margin-left: -35px;
+    }
+
+    .builtBottom{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .cardWrapper{
+        height: 100% !important;
+        width: 100%;
+    }
+
+    .card{
+        width: 320px;
+        height: 116px;
+    }
+
+    .builtBottom .card{
+        width: 320px;
+        height: 338px;
+    }
+
+    .moreWorkGrid{
+        gap: 50px;
+    }
+
+    .moreWorkTitle{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 18px;
+    }
+
+    #projectMore .phoneMockupCard {
+        width: 312px !important;
+        height: 433px !important;
+        min-width: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    .moreWorkBg{
+        position: absolute;
+        top: 900px;
+        left: 80px;
+        width: 400px;
+        height: 373px;
+        z-index: -1;
+    }
+
+    .moreWorkCta{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
     #colorPalette,
     #typography,
     #takeYourCut,
@@ -619,19 +822,8 @@
     #projectAbout {
         padding: 60px 20px;
     }
-}
 
-@media (max-width: 480px) {
-    .colorName {
-        font-size: 20px;
-    }
-
-    .colorHex,
-    .colorRgb {
-        font-size: 14px;
-    }
-
-    .typographyDisplay {
-        font-size: 48px !important;
+    .project-page .hamburger span {
+        background-color: var(--color-violet) !important;
     }
 }

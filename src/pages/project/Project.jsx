@@ -7,7 +7,8 @@ import Marquee from "react-fast-marquee";
 import "./Project.css"
 
 // Project images
-import beforeImage from "@/assets/imgs/projects/before.png"
+import mobileImage from "@/assets/imgs/projects/mobile-preview.png";
+import desktopImage from "@/assets/imgs/projects/desktop.png"
 import afterImage from "@/assets/imgs/projects/after.png"
 import about1Image from "@/assets/imgs/projects/about1.png"
 import about2Image from "@/assets/imgs/projects/about2.png"
@@ -31,7 +32,7 @@ import workSvg from "@/assets/imgs/projects/work.svg"
 
 const Project = () => {
     return (
-        <>
+        <div className="project-page">
             <Navbar />
             <ProjectHero />
             <ProjectBeforeAfter/>
@@ -41,7 +42,7 @@ const Project = () => {
             <ProjectBuiltToBeSeen />
             <ProjectMore />
             <Footer />
-        </>
+        </div>
     )
 }
 
@@ -53,7 +54,7 @@ const ProjectAbout = () => {
             data-navbar='dark'
         >
             <Headline
-                lines={['about the project']}
+                lines={['about', 'the project']}
                 highlight='about'
             >
                 <svg 
@@ -182,9 +183,13 @@ const ProjectBeforeAfter = () => {
                 Import at top: import yourImage from "@/assets/imgs/projects/your-image.png"
                 Then add .beforeAfterImage CSS class for styling
             */}
-            <div className="beforeAfterPlaceholder">
+            <picture className="beforeAfterImage">
+                <source media="(max-width: 768px)" srcset={mobileImage} />
+                <img src={desktopImage} alt="Project Preview" />
+            </picture>
+            {/* <div className="beforeAfterPlaceholder">
                 <span className="placeholderText">100% × 100vh</span>
-            </div>
+            </div> */}
         </section>
     )
 }
@@ -194,13 +199,18 @@ const ProjectHero = () => {
         <section className="projectHero" data-navbar='dark'>
             <Headline
                 lines={['dilli dilli']}
-                tooltip='webiste design'
-                tooltipColor='blue'
+                //tooltip='webiste design'
+                //tooltipColor='blue'
                 forceOpen
             >
+                <div className="projectHeroTooltip">
+                    <div className="tooltip blue">
+                        website design
+                    </div>
+                </div>
                 <div className="projectHeroCartoon">
                     <svg 
-                        width="175" height="157" 
+                        width="auto" height="auto" 
                         viewBox="0 0 175 157" fill="none" 
                         xmlns="http://www.w3.org/2000/svg"
                     >
@@ -447,7 +457,10 @@ const ProjectMore = () => {
             </div>
 
             <div className="moreWorkBg">
-                <img src={workSvg} alt="" />
+                <picture>
+                    <source media="(max-width: 768px)" srcSet={pinkSvg} />
+                    <img src={workSvg} alt="" />
+                </picture>
             </div>
         </section>
     )
