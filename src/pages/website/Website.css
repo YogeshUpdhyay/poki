@@ -579,6 +579,97 @@
         font-size: 14px !important;
     }
 
+    #fonts{
+        padding: 100px 20px;
+    }
+
+    #fonts .tooltip{
+        display: block;
+        position: absolute !important;
+        top: 10.5% !important;
+        left: 49.5% !important;
+        transform: translateX(-50%) !important;
+    }
+
+    .fontsGroup{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    .fontsGroup .cardImage{
+        width: 320px !important;
+        height: 188px !important;
+    }
+
+    .fontsGroup .card{
+        height: 188px !important;
+        gap: 10px;
+        overflow: visible !important;
+    }
+
+    .fontsGroup svg{
+        display: none !important;
+    }
+
+    /* Brand in Action Mobile */
+    #brandInAction {
+        padding: 100px 40px;
+    }
+
+    .brandInActionStar {
+        width: 36px !important;
+        height: 36px !important ;
+        bottom: 10% !important;
+        left: 80% !important;
+        rotate: -100deg !important;
+    }
+
+    .brandInActionGroup {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 60px;
+        gap: 20px;
+    }
+
+    .brandInActionColumn {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .brandInActionColumn.reverse {
+        flex-direction: column; 
+    }
+
+    .brandInActionGroup .cardWrapper,
+    .brandInActionGroup .card {
+        height: 100%;
+        width: 100%;
+    }
+
+    .brandInActionGroup .cardImage {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+    }
+
+    .brandInActionColumn:nth-child(1) .cardWrapper:nth-child(1) { width: 320px !important; height: 242px !important; flex: none !important; }
+    .brandInActionColumn:nth-child(1) .cardWrapper:nth-child(2) { width: 320px !important; height: 411px !important; flex: none !important; }
+
+    .brandInActionColumn:nth-child(2) .cardWrapper:nth-child(1) { width: 320px !important; height: 327px !important; flex: none !important; }
+    .brandInActionColumn:nth-child(2) .cardWrapper:nth-child(2) { width: 320px !important; height: 411px !important; flex: none !important; }
+
+    .brandInActionColumn:nth-child(3) .cardWrapper:nth-child(1) { width: 320px !important; height: 242px !important; flex: none !important; }
+    .brandInActionColumn:nth-child(3) .cardWrapper:nth-child(2) { width: 320px !important; height: 327px !important; flex: none !important; }
+
+
+    .brandInActionBg {
+        display: none; 
+    }
 
 }
-
