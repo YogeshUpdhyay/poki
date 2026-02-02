@@ -132,8 +132,10 @@
 }
 
 .advCartoon {
+    width: 151.26px;
+    height: 206.3px;
     position: absolute;
-    right: 95%;
+    right: 96%;
     transform: translateY(-20%);
 }
 
