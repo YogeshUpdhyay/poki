@@ -491,6 +491,16 @@
         height: 338px !important;
     }
 
+    .aboutImages .cardWrapper {
+        width: 320px !important;
+        height: 338px !important;
+        flex: none !important;
+    }
+    .aboutImages .card {
+        height: 100% !important;
+        width: 100% !important;
+    }
+
     .websiteAboutSvg{
         width: 350px;
         height: 344px;
@@ -516,9 +526,19 @@
         gap: 20px;
     }
 
-    .logoVariationsGroup .cardImage .cardWrapper{
+    .logoVariationsGroup .cardWrapper {
         width: 320px !important;
         height: 320px !important;
+        flex: none !important;
+    }
+    .logoVariationsGroup .card {
+        height: 100% !important;
+        width: 100% !important;
+    }
+    .logoVariationsGroup .cardImage {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
     }
 
     .logoVariationsText{
@@ -672,4 +692,49 @@
         display: none; 
     }
 
+
+    #moreWork {
+        padding: 100px 20px;
+    }
+    #moreWork > p{
+        font-size: 18px;
+    }
+    .moreWorkShowcase {
+        padding: 70px 0px 60px;
+    }
+    .moreWorkRow {
+        flex-direction: column;
+        gap: 50px;
+        padding: 0;
+    }
+    .moreWorkCard {
+        width: 312px !important;
+        height: 433px !important;
+        min-width: 0 !important;
+        margin-top: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        transform: rotate(0deg) !important;
+        translate: 0 0 !important;
+    }
+    .moreWorkRow:has(.moreWorkCard:hover) .moreWorkCard {
+        translate: 0 0 !important;
+        transform: rotate(0deg) !important;
+    }
+    .moreWorkCardImage {
+        border-width: 4px;
+    }
+    .buttonsGroup {
+        flex-direction: column;
+        width: 100%;
+        gap: 16px;
+        align-items: center;
+    }
+    .moreWorkPinkSvg{
+        width: 400px;
+        height: 373px;
+        top: 900px;
+        left: 80px;
+    }
 }
+
