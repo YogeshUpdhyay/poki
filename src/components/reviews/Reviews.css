@@ -49,7 +49,7 @@
 
 .reviewsCarouselInner {
     display: flex;
-    gap: 26px;
+    gap: 0px;
 }
 
 @keyframes scale-in {
