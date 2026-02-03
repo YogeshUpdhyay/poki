@@ -1,5 +1,4 @@
 import './Website.css'
-import Navbar from "@/components/navbar/Navbar"
 import Footer from "@/components/footer/Footer"
 import {Headline} from "@/components/common/headline/Headline"
 import Button from "@/components/common/button/Button"
@@ -11,7 +10,6 @@ import pinkSvg from '@/assets/imgs/projects/pink.svg'
 const Website = () => {
     return (
         <>
-            <Navbar />
             <WebsiteHero />
             <WebsiteImage />
             <WebsiteAbout />

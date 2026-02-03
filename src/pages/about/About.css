@@ -22,20 +22,7 @@
   margin-left: 0px; */
 }
 
-/* Make hamburger button black on about page */
-.about .hamburger span {
-  background-color: black !important;
-}
 
-/* Desktop navbar links should be black */
-.about .navLinks a {
-  color: black !important;
-}
-
-/* Hamburger menu links should be white (when menu is open) */
-.about .navLinks.open a {
-  color: white !important;
-}
 
 /* Studio carousel custom cursor (same as visitUsLink in Footer) */
 .about .studioCarouselItem {
@@ -158,10 +145,12 @@
     background-color: var(--background-light);
     border-radius: 40px 40px 0px 0px;
     margin-top: -40px;
+    position: relative;
+    z-index: 30;
 }
 
 .studioCarousel {
-    padding: 160px 0px;
+    padding: 190px 0px;
     position: relative;
     overflow: visible; /* Allow blob to overflow */
 }
@@ -279,8 +268,8 @@
         transform: none !important;
     } */
      .aboutHeroTooltip {
-        top: 327px !important;
-        left: 20px !important;
+        top: 33% !important;
+        left: -53% !important;
      }
 
     .aboutImage {
