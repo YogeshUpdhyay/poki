@@ -4,14 +4,18 @@ import Button from '../common/button/Button'
 import buttonImg from '../../assets/imgs/button.png'
 import { useCms } from '../../utils/context'
 import { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 export default function Navbar() {
   const { data } = useCms()
+  const location = useLocation()
   const countMeInUrl = data?.hero?.countMeInUrl || '#'
   const [dark, setDark] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const navRef = useRef(null)
+
+  // Get current page class (e.g., /about -> page-about)
+  const pageClass = location.pathname === '/' ? 'page-home' : `page-${location.pathname.substring(1).replace(/\//g, '-')}`
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,9 +41,9 @@ export default function Navbar() {
     }
 
     window.addEventListener('scroll', handleScroll)
-    handleScroll() // call once on mount
+    handleScroll() // call once on mount/route change
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [location.pathname]) // Re-run when route changes
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen)
@@ -55,7 +59,7 @@ export default function Navbar() {
         />
       )}
 
-      <nav ref={navRef} className={`navbar ${dark ? 'dark' : ''}`}>
+      <nav ref={navRef} className={`navbar ${dark ? 'dark' : ''} ${pageClass}`}>
         {/* Hamburger Menu Button - Hidden on desktop */}
         <button 
           className={`hamburger ${menuOpen ? 'open' : ''}`}
@@ -68,9 +72,9 @@ export default function Navbar() {
 
         {/* Desktop Nav Links */}
         <div className={`navLinks ${menuOpen ? 'open' : ''}`}>
-          <a href="/work" onClick={() => setMenuOpen(false)}>work</a>
-          <a href="/about" onClick={() => setMenuOpen(false)}>about</a>
-          <a href="/agency" onClick={() => setMenuOpen(false)}>i'm an agency</a>
+          <Link to="/work" onClick={() => setMenuOpen(false)}>work</Link>
+          <Link to="/about" onClick={() => setMenuOpen(false)}>about</Link>
+          <Link to="/agency" onClick={() => setMenuOpen(false)}>i'm an agency</Link>
         </div>
 
         {/* Logo */}

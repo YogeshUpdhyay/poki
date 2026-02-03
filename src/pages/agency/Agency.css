@@ -462,8 +462,5 @@
         height: 500px;
     }
 
-    /* Scoped Navbar Styles for Agency Page */
-    .agency-page .hamburger span {
-        background-color: var(--color-violet) !important;
-    }
+    /* Navbar styles moved to Navbar.css global overrides */
 }

@@ -1,4 +1,3 @@
-import Navbar from "@/components/navbar/Navbar";
 import {Headline} from "@/components/common/headline/Headline"
 import Button from "@/components/common/button/Button"
 import Card from "@/components/common/card/Card"
@@ -33,7 +32,6 @@ import workSvg from "@/assets/imgs/projects/work.svg"
 const Project = () => {
     return (
         <div className="project-page">
-            <Navbar />
             <ProjectHero />
             <ProjectBeforeAfter/>
             <ProjectAbout />

@@ -1,5 +1,4 @@
 import './Agency.css'
-import Navbar from "../../components/navbar/Navbar"
 import { Headline } from "../../components/common/headline/Headline"
 import Button from "../../components/common/button/Button"
 import agencyCartoon from '../../assets/svgs/agency/agencyCartoon.svg'
@@ -14,7 +13,6 @@ import OutlinedSvgText from '../../components/common/outlineSvgText/OutlineSvgTe
 const Agency = () => {
     return (
         <div className="agency-page">
-            <Navbar />
             <AgencyHero />
             <AgencyPartnerWith />
             <AgencyAdv />

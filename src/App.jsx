@@ -8,12 +8,14 @@ import Agency from './pages/agency/Agency';
 import Work from './pages/work/Work';
 import Website from './pages/website/Website';
 import Project from './pages/project/Project';
+import Navbar from './components/navbar/Navbar';
 
 
 function App() {
   return (
     <CmsProvider>
       <Router>
+        <Navbar />
         <Routes>
           {/* Define */}
           <Route

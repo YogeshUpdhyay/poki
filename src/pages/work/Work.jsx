@@ -1,5 +1,4 @@
 import './Work.css'
-import Navbar from "../../components/navbar/Navbar"
 import Footer from "../../components/footer/Footer"
 import Collaborate from "../../components/collaborate/Collaborate"
 import Marquee from "react-fast-marquee";
@@ -51,7 +50,6 @@ const Work = () => {
 
     return (
         <>
-            <Navbar />
             <section className="work">
                 {/* Hero Marquee Section */}
                 <div className="skewedTapContainer">
