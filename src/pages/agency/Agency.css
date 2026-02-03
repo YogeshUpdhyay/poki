@@ -123,6 +123,11 @@
     transform: translateY(-6%) rotate(6deg) !important;
 }
 
+.agencyHeadlineLogo{
+    width: 191px;
+    height: 69px;
+}
+
 /* Hover Effects - Sibling Push Animation (Desktop Only) */
 @media (min-width: 769px) {
     .partnerCard:hover {
@@ -448,6 +453,11 @@
         width: 80%;
     }
 
+    .agencyHeadlineLogo{
+        width: 95px !important;
+        height: 34px !important;
+    }
+
     .advCartoon{
         width: 70.39px;
         height: 96px;
@@ -456,7 +466,7 @@
     }
 
     .advantage .tooltip{
-        top: 25.5% !important;
+        top: 25% !important;
         left: 35% !important;
     }
 

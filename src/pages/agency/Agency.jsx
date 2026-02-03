@@ -9,6 +9,8 @@ import Footer from '../../components/footer/Footer'
 import agencyHeroUnderline from '@/assets/svgs/agency/agencyHeroUnderline.svg'
 import agencyHeroStar from '@/assets/svgs/agency/agencyHeroStar.svg'
 import OutlinedSvgText from '../../components/common/outlineSvgText/OutlineSvgText'
+import PokiLogo from '../../assets/imgs/logo.svg?react'
+
 
 const Agency = () => {
     return (
@@ -104,12 +106,11 @@ const AgencyAdv = () => {
     return (
         <section className="advantage" data-navbar='dark'>
                 <Headline
-                    lines={['the poki advantage']}
-                    highlight={'poki'}
                     tooltipColor='blue'
                     tooltip='good things happen here'
                     forceOpen
                 >
+                    the <PokiLogo className="agencyHeadlineLogo" style={{ color: '#427665', width: '191px', height: '69px', verticalAlign: 'middle' }} /> advantage
                     <img 
                         src={agencyAdvCartoon} 
                         alt="advCartoon" 
