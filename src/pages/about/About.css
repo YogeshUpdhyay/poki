@@ -145,10 +145,12 @@
     background-color: var(--background-light);
     border-radius: 40px 40px 0px 0px;
     margin-top: -40px;
+    position: relative;
+    z-index: 30;
 }
 
 .studioCarousel {
-    padding: 160px 0px;
+    padding: 190px 0px;
     position: relative;
     overflow: visible; /* Allow blob to overflow */
 }
