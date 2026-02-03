@@ -75,7 +75,7 @@
     display: flex;
     padding-top: 120px;
     padding-bottom: 80px;
-    gap: 10px
+    gap: 0px
 }
 
 .partnerCard {
@@ -86,6 +86,82 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: start;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                translate 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                z-index 0.3s;
+    cursor: pointer;
+    position: relative;
+    translate: 0 0;
+}
+
+/* Individual Card Rotations - Desktop (Base) */
+.partnerCard:nth-child(1) {
+    transform: rotate(8deg);
+}
+.partnerCard:nth-child(1) svg {
+    transform: rotate(-4deg) !important;
+}
+
+.partnerCard:nth-child(2) {
+    transform: rotate(-6deg);
+}
+.partnerCard:nth-child(2) svg {
+    transform: translateY(-20%) rotate(-3deg) !important;
+}
+
+.partnerCard:nth-child(3) {
+    transform: rotate(5deg);
+}
+.partnerCard:nth-child(3) svg {
+    transform: translateY(-5%) rotate(-4deg) !important;
+}
+
+.partnerCard:nth-child(4) {
+    transform: rotate(-8deg);
+}
+.partnerCard:nth-child(4) svg {
+    transform: translateY(-6%) rotate(6deg) !important;
+}
+
+/* Hover Effects - Sibling Push Animation (Desktop Only) */
+@media (min-width: 769px) {
+    .partnerCard:hover {
+        z-index: 20;
+        transform: rotate(0deg) scale(1.05) !important;
+    }
+
+    /* Push siblings based on which card is hovered */
+    /* Card 1 Hover -> Push 2, 3, 4 Right */
+    .partnerCardsGroup:has(.partnerCard:nth-child(1):hover) .partnerCard:nth-child(2),
+    .partnerCardsGroup:has(.partnerCard:nth-child(1):hover) .partnerCard:nth-child(3),
+    .partnerCardsGroup:has(.partnerCard:nth-child(1):hover) .partnerCard:nth-child(4) {
+        translate: 40px 0;
+    }
+
+    /* Card 2 Hover -> Push 1 Left, 3, 4 Right */
+    .partnerCardsGroup:has(.partnerCard:nth-child(2):hover) .partnerCard:nth-child(1) {
+        translate: -40px 0;
+    }
+    .partnerCardsGroup:has(.partnerCard:nth-child(2):hover) .partnerCard:nth-child(3),
+    .partnerCardsGroup:has(.partnerCard:nth-child(2):hover) .partnerCard:nth-child(4) {
+        translate: 40px 0;
+    }
+
+    /* Card 3 Hover -> Push 1, 2 Left, 4 Right */
+    .partnerCardsGroup:has(.partnerCard:nth-child(3):hover) .partnerCard:nth-child(1),
+    .partnerCardsGroup:has(.partnerCard:nth-child(3):hover) .partnerCard:nth-child(2) {
+        translate: -40px 0;
+    }
+    .partnerCardsGroup:has(.partnerCard:nth-child(3):hover) .partnerCard:nth-child(4) {
+        translate: 40px 0;
+    }
+
+    /* Card 4 Hover -> Push 1, 2, 3 Left */
+    .partnerCardsGroup:has(.partnerCard:nth-child(4):hover) .partnerCard:nth-child(1),
+    .partnerCardsGroup:has(.partnerCard:nth-child(4):hover) .partnerCard:nth-child(2),
+    .partnerCardsGroup:has(.partnerCard:nth-child(4):hover) .partnerCard:nth-child(3) {
+        translate: -40px 0;
+    }
 }
 
 .partnerCard.green {
@@ -344,8 +420,6 @@
         transform: rotate(-4.51deg) translateX(10px);
         z-index: 4;
     }
-
-    /* Inside @media (max-width: 768px) */
 
     .partnerCard:nth-child(1) svg {
         /* Adjust values for 'referrals & collaborators' */
