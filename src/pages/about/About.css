@@ -46,7 +46,7 @@
 
 .aboutHero {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -59,7 +59,7 @@
 }
 
 .aboutHeadline {
-    padding-top: 120px;
+    padding-top: 300px;
 }
 
 .aboutHeroButton {
