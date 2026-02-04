@@ -4,9 +4,8 @@
    display: flex;
    flex-direction: column;
    gap: 26px;
-   padding-left: 26px;
    height: 100%;
-   overflow: hidden;
+   overflow: visible;
 }
 
 .reviewCard.reverse {
@@ -23,6 +22,24 @@
    padding: 28px;
    flex-grow: 1;
    width: 100%;
+   position: relative;
+   overflow: visible;
+}
+
+.reviewCardEdgeSvg {
+   position: absolute;
+   right: 0;
+   z-index: 10;
+}
+
+.reviewCardEdgeSvg.top {
+   top: 0;
+   transform: translate(-15%, -40%);
+}
+
+.reviewCardEdgeSvg.bottom {
+   bottom: 0;
+   transform: translate(-15%, 40%);
 }
 
 .reviewCardReviewer {
@@ -87,6 +104,15 @@
 .reviewCard.orange  .reviewCardContent { background-color: var(--color-orange); color: var(--color-white); }
 .reviewCard.orange  .reviewCardImage   { background-color: var(--color-orange); }
 
+.reviewCard.purple  .reviewCardContent { background-color: var(--color-purple); color: var(--color-white); }
+.reviewCard.purple  .reviewCardImage   { background-color: var(--color-purple); }
+
+.reviewCard.cream  .reviewCardContent { background-color: #EAF9C0; color: var(--color-black); }
+.reviewCard.cream  .reviewCardImage   { background-color: #EAF9C0; }
+
+.reviewCard.lightblue  .reviewCardContent { background-color: #86C9FF; color: var(--color-black); }
+.reviewCard.lightblue  .reviewCardImage   { background-color: #86C9FF; }
+
 /* ========================================
    RESPONSIVE BREAKPOINTS - REVIEW CARDS
    ======================================== */
@@ -107,6 +133,28 @@
    .reviewCard {
       width: 300px;
    }
+
+   .reviewCardReviewerAvatar{
+      width: 40px;
+      height: 40px;
+   }
+
+   .reviewCardReviewerName{
+      font-size: 14px;
+   }
+
+   .reviewCardReviewerLocation{
+      font-size: 12px;
+   }
+
+   /* Adjust SVG positioning for tablets */
+   .reviewCardEdgeSvg.top {
+      transform: translate(-10%, -40%) scale(1);
+   }
+
+   .reviewCardEdgeSvg.bottom {
+      transform: translate(-10%, 40%) scale(1);
+   }
 }
 
 @media (max-width: 576px) {
@@ -121,7 +169,9 @@
 
    .reviewCardContent {
       width: 260px;
-      padding: 24px;
+      height: 203px;
+      padding: 24px 15px 15px 15px;
+      gap: 10px;
    }
 
    .reviewCardReview {
@@ -129,6 +179,7 @@
       line-height: 140%;
       font-family: generalSansMedium;
       font-weight: 500;
+      width: 100%;
    }
 
    .reviewCardImage {
@@ -136,5 +187,14 @@
       height: 296px;
       border-radius: 12px;
       overflow: hidden;
+   }
+
+   /* Scale down SVGs on mobile */
+   .reviewCardEdgeSvg.top {
+      transform: translate(-15%, -30%) scale(0.9);
+   }
+
+   .reviewCardEdgeSvg.bottom {
+      transform: translate(-15%, 30%) scale(0.9);
    }
 }
