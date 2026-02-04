@@ -70,7 +70,7 @@ function Projects() {
       />
       <ProjectsCarousel projects={projects} />
       <div className="projectButtonContainer">
-        <Button text="view all projects" />
+        <Button text="view all projects" href="/work" />
       </div>
     </section>
   )

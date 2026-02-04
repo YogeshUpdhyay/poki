@@ -9,8 +9,8 @@ import Footer from '../../components/footer/Footer'
 import agencyHeroUnderline from '@/assets/svgs/agency/agencyHeroUnderline.svg'
 import agencyHeroStar from '@/assets/svgs/agency/agencyHeroStar.svg'
 import OutlinedSvgText from '../../components/common/outlineSvgText/OutlineSvgText'
+import { useCms } from '../../utils/context'
 import PokiLogo from '../../assets/imgs/logo.svg?react'
-
 
 const Agency = () => {
     return (
@@ -26,6 +26,9 @@ const Agency = () => {
 }
 
 const AgencyPartnerShips = () => {
+    const { data } = useCms();
+    const countMeInUrl = data?.hero?.countMeInUrl;
+
     return (
         <section className="partnerships">
             <Headline
@@ -76,7 +79,7 @@ const AgencyPartnerShips = () => {
                             translateY='0%'
                         /> 
                     </div>
-                      
+                    
                     <div className="partnerReviewText">
                         A development-only agency wanted to improve project 
                         outcomes by offering custom website design before 
@@ -97,7 +100,7 @@ const AgencyPartnerShips = () => {
                     </div>
                 </div>
             </div>
-            <Button text="i want these results" />
+            <Button text="i want these results" href={countMeInUrl} />
         </section>
     )
 }
@@ -160,6 +163,9 @@ const AgencyAdv = () => {
 }
 
 const AgencyPartnerWith = () => {
+    const { data } = useCms();
+    const countMeInUrl = data?.hero?.countMeInUrl;
+
     return (
         <section className="partnerWith">
             <Headline
@@ -217,7 +223,7 @@ const AgencyPartnerWith = () => {
                 />
 
             </div>
-            <Button text="let's team up" />
+            <Button text="let's team up" href={countMeInUrl} />
         </section>
     )
 }
@@ -238,6 +244,9 @@ const PartnerCard = ({ titleLines, text, color, fill, stroke, translateY, rotate
 }
 
 const AgencyHero = () => {
+    const { data } = useCms();
+    const countMeInUrl = data?.hero?.countMeInUrl;
+
     return (
         <section className="agencyHero" data-navbar='dark'>
             <Headline
@@ -259,8 +268,8 @@ const AgencyHero = () => {
                 </div>
             </Headline>
             <div className="agencyButtons">
-                <Button text="let's team up" />
-                <Button text="see what we do" color='green' />
+                <Button text="let's team up" href={countMeInUrl} />
+                <Button text="see what we do" color='green' href="/work" />
             </div>
         </section>
     )

@@ -11,15 +11,17 @@ import {
   useInteractions,
 } from "@floating-ui/react";
 
+import { Link } from 'react-router-dom'
+
 function Footer() {
   return (
     <footer>
       <div className="footerContainer">
         <EdgeBubble title='website' />
         <div className="footerItemsList">
-          <a className="footerItem">work</a>
-          <a className="footerItem">about</a>
-          <a className="footerItem">i'm an agency</a>
+          <Link to="/work" className="footerItem">work</Link>
+          <Link to="/about" className="footerItem">about</Link>
+          <Link to="/agency" className="footerItem">i'm an agency</Link>
         </div>
       </div>
       <div className="footerContainer">
@@ -35,8 +37,8 @@ function Footer() {
       <div className="footerContainer">
         <EdgeBubble title='contact' />
         <div className="footerItemsList">
-          <a className="footerItem">contact@pokistudios.com</a>
-          <a className="footerItem">send us a whatsapp</a>
+          <a href="mailto:pokistudios@gmail.com" className="footerItem">pokistudios@gmail.com</a>
+          <a href="https://wa.me/917738617600" className="footerItem">send us a whatsapp</a>
           <div className="footerItem">
             <div className="socials">
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -102,6 +104,9 @@ function VisitUsLink() {
   return (
     <>
       <a 
+        href="https://maps.app.goo.gl/3fR1XmDqE9R2" 
+        target="_blank"
+        rel="noopener noreferrer"
         className="footerItem visitUsLink"
         ref={refs.setReference}
         {...getReferenceProps({

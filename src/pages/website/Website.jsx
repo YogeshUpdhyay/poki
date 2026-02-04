@@ -7,7 +7,12 @@ import Marquee from "react-fast-marquee"
 import blueFlower from '@/assets/svgs/work/blueFlower.svg'
 import pinkSvg from '@/assets/imgs/projects/pink.svg'
 
+import { useCms } from '@/utils/context'
+
 const Website = () => {
+    const { data } = useCms();
+    const countMeInUrl = data?.hero?.countMeInUrl;
+
     return (
         <>
             <WebsiteHero />
@@ -47,8 +52,8 @@ const Website = () => {
                     </div>
                 </div>
                 <div className='buttonsGroup'>
-                    <Button text='start a project' />
-                    <Button text="i'm an agency" color='green' />
+                    <Button text='start a project' href={countMeInUrl} />
+                    <Button text="i'm an agency" color='green' href="/agency" />
                 </div>
             </section>
             <Footer />

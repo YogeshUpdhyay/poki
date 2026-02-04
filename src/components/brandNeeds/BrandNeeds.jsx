@@ -16,6 +16,9 @@ import headerUnderlineSvg from '../../assets/underlines/heroUnderline.svg'
 import { useCms } from '../../utils/context'
 
 export default function BrandNeeds() {
+  const { data } = useCms();
+  const countMeInUrl = data?.hero?.countMeInUrl;
+
   return (
     <section className="brandNeeds" data-navbar="dark">
       <BrandNeedsHeadline />
@@ -29,7 +32,7 @@ export default function BrandNeeds() {
         ]}
       />
       <div className="brandNeedsButton">
-        <Button text="start a project" />
+        <Button text="start a project" href={countMeInUrl} />
       </div>
     </section>
   )
