@@ -168,13 +168,13 @@ const Colors = () => {
                     <p className='colorBoxHex'>#CEF17B</p>
                 </div>
                 <div className='twoColorBoxes reverse'>
-                    <div className='colorBox' style={{'--boxColor': '#084735'}}>
-                        <p className='colorBoxTitle'>deep forest</p>
-                        <p className='colorBoxHex'>#084735</p>
-                    </div>
                     <div className='colorBox' style={{'--boxColor': '#1D1D1D'}}>
                         <p className='colorBoxTitle'>charcoal</p>
                         <p className='colorBoxHex'>#1D1D1D</p>
+                    </div>
+                    <div className='colorBox' style={{'--boxColor': '#084735'}}>
+                        <p className='colorBoxTitle'>deep forest</p>
+                        <p className='colorBoxHex'>#084735</p>
                     </div>
                 </div>
             </div>
