@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import './Work.css'
 import Footer from "../../components/footer/Footer"
 import Collaborate from "../../components/collaborate/Collaborate"
@@ -125,10 +126,10 @@ const Work = () => {
                 <div className="categoryMenu">
                     <h3>on the menu</h3>
                     <div className="categoryPills">
-                        <span className="categoryPill active">websites</span>
-                        <span className="categoryPill">logo designs</span>
-                        <span className="categoryPill">brand identities</span>
-                        <span className="categoryPill">products & apps</span>
+                        <NavLink to="/website" className="categoryPill">websites</NavLink>
+                        <NavLink to="/project" className="categoryPill">project</NavLink>
+                        {/* <span className="categoryPill">brand identities</span>
+                        <span className="categoryPill">products & apps</span> */}
                     </div>
                 </div>
             </section>
