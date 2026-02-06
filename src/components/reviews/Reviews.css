@@ -1,6 +1,6 @@
 .reviews {
     padding-top: 140px;
-    padding-bottom: 220px;
+    padding-bottom: 140px;
     position: relative;
     overflow: hidden;
     border-radius: 40px 40px 0px 0px;
@@ -12,8 +12,8 @@
     position: absolute;
     right: 85%;
     bottom: 30%;
-    width: 222.05px;
-    height: 217.79px;
+    width: 194.81px;
+    height: 186.18px;
 }
 
 .reviewUnderlinePosition {
@@ -29,10 +29,11 @@
 }
 
 .reviewsCarousel {
-    padding-top: 96px;
+    padding-top: 140px;
+    padding-bottom: 50px;
     display: flex;
     overflow-x: hidden;
-    overflow-y: visible;
+    overflow-y: hidden;
     z-index: 40;
 }
 
@@ -49,7 +50,7 @@
 
 .reviewsCarouselInner {
     display: flex;
-    gap: 0px;
+    gap: 26px;
 }
 
 @keyframes scale-in {

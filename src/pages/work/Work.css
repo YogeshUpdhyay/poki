@@ -61,6 +61,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
     border: 2px solid transparent;
+    text-decoration: none;
     letter-spacing: 99%;
     line-height: 100%;
     text-align: center;
@@ -77,6 +78,10 @@
 .categoryPill:not(.active) {
     background-color: rgba(239, 235, 231, 0.1);
     color: var(--color-white);
+}
+
+.categoryPill:hover {
+    cursor: url('/tooltip.svg'), pointer;
 }
 
 .categoryPill:not(.active):hover {

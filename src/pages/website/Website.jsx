@@ -7,7 +7,27 @@ import Marquee from "react-fast-marquee"
 import blueFlower from '@/assets/svgs/work/blueFlower.svg'
 import pinkSvg from '@/assets/imgs/projects/pink.svg'
 
+import about1 from '@/assets/images/website/about1.svg'
+import about2 from '@/assets/images/website/about2.svg'
+import bia1 from '@/assets/images/website/bia1.svg'
+import bia2 from '@/assets/images/website/bia2.svg'
+import bia3 from '@/assets/images/website/bia3.svg'
+import bia4 from '@/assets/images/website/bia4.svg'
+import bia5 from '@/assets/images/website/bia5.svg'
+import bia6 from '@/assets/images/website/bia6.svg'
+import logo1 from '@/assets/images/website/logo1.svg'
+import logo2 from '@/assets/images/website/logo2.svg'
+import logo3 from '@/assets/images/website/logo3.svg'
+import type1 from '@/assets/images/website/type1.svg'
+import type2 from '@/assets/images/website/type2.svg'
+import websiteimage from '@/assets/images/website/websiteimage.jpg'
+
+import { useCms } from '@/utils/context'
+
 const Website = () => {
+    const { data } = useCms();
+    const countMeInUrl = data?.hero?.countMeInUrl;
+
     return (
         <>
             <WebsiteHero />
@@ -47,8 +67,8 @@ const Website = () => {
                     </div>
                 </div>
                 <div className='buttonsGroup'>
-                    <Button text='start a project' />
-                    <Button text="i'm an agency" color='green' />
+                    <Button text='start a project' href={countMeInUrl} />
+                    <Button text="i'm an agency" color='green' href="/agency" />
                 </div>
             </section>
             <Footer />
@@ -74,16 +94,16 @@ const BrandInAction = () => {
             </Headline>
             <div className="brandInActionGroup">
                 <div className="brandInActionColumn">
-                    <Card image='https://placehold.co/800' style={{height: '33%'}} />
-                    <Card image='https://placehold.co/800' />
+                    <Card image={bia1} style={{width: '420px', height: '318px'}} />
+                    <Card image={bia2} style={{width: '420px', height: '540px'}} />
                 </div>
                 <div className="brandInActionColumn reverse">
-                    <Card image='https://placehold.co/800' style={{height: '33%'}} />
-                    <Card image='https://placehold.co/800' />
+                    <Card image={bia3} style={{width: '420px', height: '318px'}} />
+                    <Card image={bia4} style={{width: '420px', height: '540px'}} />
                 </div>
                 <div className="brandInActionColumn">
-                    <Card image='https://placehold.co/800' style={{height: '50%'}} />
-                    <Card image='https://placehold.co/800' style={{height: '50%'}} />
+                    <Card image={bia5} style={{width: '420px', height: '429px'}} />
+                    <Card image={bia6} style={{width: '420px', height: '429px'}} />
                 </div>
             </div>
             <svg 
@@ -118,18 +138,18 @@ const Fonts = () => {
             />
             <div className="fontsGroup">
                 <Card 
-                    image='https://placehold.co/800' 
+                    image={type1} 
                     svgText='primary'
                     svgTop='-12%'
                     svgFill="black"
-                    style={{height: '360px'}}
+                    style={{width: '672px', height: '360px'}}
                 />
                 <Card 
-                    image='https://placehold.co/800'
+                    image={type2}
                     svgText='alternative'
                     svgTop='-12%' 
                     svgFill="black"
-                    style={{height: '360px'}}
+                    style={{width: '672px', height: '360px'}}
                 />
             </div>
         </section>
@@ -168,13 +188,13 @@ const Colors = () => {
                     <p className='colorBoxHex'>#CEF17B</p>
                 </div>
                 <div className='twoColorBoxes reverse'>
-                    <div className='colorBox' style={{'--boxColor': '#084735'}}>
-                        <p className='colorBoxTitle'>deep forest</p>
-                        <p className='colorBoxHex'>#084735</p>
-                    </div>
                     <div className='colorBox' style={{'--boxColor': '#1D1D1D'}}>
                         <p className='colorBoxTitle'>charcoal</p>
                         <p className='colorBoxHex'>#1D1D1D</p>
+                    </div>
+                    <div className='colorBox' style={{'--boxColor': '#084735'}}>
+                        <p className='colorBoxTitle'>deep forest</p>
+                        <p className='colorBoxHex'>#084735</p>
                     </div>
                 </div>
             </div>
@@ -206,9 +226,9 @@ const LogoVariations = () => {
                 forceOpen={true}
             />
             <div className="logoVariationsGroup">
-                <Card image='https://placehold.co/400' />
-                <Card image='https://placehold.co/400' />
-                <Card image='https://placehold.co/400' />
+                <Card image={logo1} style={{width: '420px', height: '420px'}} />
+                <Card image={logo2} style={{width: '420px', height: '420px'}} />
+                <Card image={logo3} style={{width: '420px', height: '420px'}} />
             </div>
             <p className="logoVariationsText">
                 a custom wordmark with smooth curves to reflect movement and energy. 
@@ -264,8 +284,8 @@ const WebsiteAbout = () => {
                 Consectetur neque mauris ultrices diam urna enim.
             </p>
             <div className="aboutImages">
-                <Card image='https://placehold.co/800'/>
-                <Card image='https://placehold.co/800'/>
+                <Card image={about1} style={{width: '643px', height: '680px'}}/>
+                <Card image={about2} style={{width: '643px', height: '680px'}}/>
             </div>
             <svg
                 className="websiteAboutSvg"
@@ -284,7 +304,7 @@ const WebsiteImage = () => {
     return (
         <section className="websiteImageWrapper" data-navbar="dark">
             <img 
-                src='https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXJjaGl0ZWN0dXJhbCUyMHN0dWRpb3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60' 
+                src={websiteimage} 
                 alt="websiteImage" 
                 className='websiteImage' 
             />

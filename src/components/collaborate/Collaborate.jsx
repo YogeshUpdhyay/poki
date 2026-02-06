@@ -10,7 +10,12 @@ import {
   useInteractions,
 } from "@floating-ui/react";
 
+import { useCms } from '../../utils/context'
+
 export default function Collaborate() {
+  const { data } = useCms();
+  const countMeInUrl = data?.hero?.countMeInUrl;
+
   return (
     <section className="letsCollab" data-navbar="dark">
       <div className="collabHeadline">
@@ -23,8 +28,8 @@ export default function Collaborate() {
         we’ve got you covered.
       </div>
       <div className="collabButtons">
-        <Button text='start a project' />
-        <Button text={`i'm an agency`} color='green' />
+        <Button text='start a project' href={countMeInUrl} />
+        <Button text={`i'm an agency`} color='green' href="/agency" />
       </div>
     </section>
   )

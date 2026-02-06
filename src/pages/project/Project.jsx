@@ -9,10 +9,11 @@ import "./Project.css"
 import mobileImage from "@/assets/imgs/projects/mobile-preview.png";
 import desktopImage from "@/assets/imgs/projects/desktop.png"
 import afterImage from "@/assets/imgs/projects/after.png"
-import about1Image from "@/assets/imgs/projects/about1.png"
-import about2Image from "@/assets/imgs/projects/about2.png"
+import about1Image from "@/assets/imgs/projects/about1.svg"
+import about1MobileImage from "@/assets/imgs/projects/about1_mobile.svg"
+import about2Image from "@/assets/imgs/projects/about2.svg"
 import about2BgImage from "@/assets/imgs/projects/about2_background.png"
-import about3Image from "@/assets/imgs/projects/about3.png"
+import about3Image from "@/assets/imgs/projects/about3.svg"
 import pick1Image from "@/assets/imgs/projects/pick1.png"
 import pick2Image from "@/assets/imgs/projects/pick2.png"
 import built1Image from "@/assets/imgs/projects/built1.png"
@@ -28,6 +29,8 @@ import version2Svg from "@/assets/imgs/projects/version2.svg"
 import pinkSvg from "@/assets/imgs/projects/pink.svg"
 import underseenSvg from "@/assets/imgs/projects/underseen.svg"
 import workSvg from "@/assets/imgs/projects/work.svg"
+import beforeAfterSvg from "@/assets/imgs/projects/before_after.svg"
+import beforeAfterMobileSvg from "@/assets/imgs/projects/before_after_mobile.svg"
 
 const Project = () => {
     return (
@@ -91,48 +94,14 @@ const ProjectAbout = () => {
                 Consectetur neque mauris ultrices diam urna enim.
             </p>
 
-            <div 
-                className="wireframeContainer" 
-                style={{'--bg': '#4A4E00'}}
-            >
-                {/* <img 
-                    src={about1Image}
-                    alt="" 
-                    className="wireframe" 
-                /> */}
-                {/* 
-                    📁 IMAGE LOCATION: src/assets/imgs/projects/
-                    To add image: Uncomment the <img> above and update src={yourImageVariable}
-                    Import at top: import yourImage from "@/assets/imgs/projects/your-image.png"
-                */}
-                <div className="wireframePlaceholder">
-                    <span className="placeholderText">100% × 80vh</span>
-                </div>
-            </div>
+            <picture className="wireframe">
+                <source media="(max-width: 768px)" srcSet={about1MobileImage} />
+                <img src={about1Image} alt="" />
+            </picture>
 
             <div className="miscContainer">
                 <div className="layeredCard">
-                    {/* OLD: 2-layer approach - commented out
-                    <img 
-                        src={about2BgImage}
-                        alt="background" 
-                        className="layeredCardBackground" 
-                    />
-                    <img 
-                        src={about2Image}
-                        alt="foreground" 
-                        className="layeredCardForeground" 
-                    />
-                    */}
-                    {/* 
-                        📁 IMAGE LOCATION: src/assets/imgs/projects/
-                        To add image: Replace placeholder with:
-                        <img src={yourImageVariable} alt="" className="layeredCardImage" />
-                        Import at top: import yourImage from "@/assets/imgs/projects/your-image.png"
-                    */}
-                    <div className="layeredCardPlaceholder">
-                        <span className="placeholderText">50% × 80vh</span>
-                    </div>
+                    <img src={about2Image} alt="" className="layeredCardImage" />
                 </div>
                 <div className="miscCard">
                     <Card image={about3Image} />
@@ -182,8 +151,8 @@ const ProjectBeforeAfter = () => {
                 Then add .beforeAfterImage CSS class for styling
             */}
             <picture className="beforeAfterImage">
-                <source media="(max-width: 768px)" srcset={mobileImage} />
-                <img src={desktopImage} alt="Project Preview" />
+                <source media="(max-width: 768px)" srcSet={beforeAfterMobileSvg} />
+                <img src={beforeAfterSvg} alt="Project Preview" />
             </picture>
             {/* <div className="beforeAfterPlaceholder">
                 <span className="placeholderText">100% × 100vh</span>
@@ -304,36 +273,13 @@ const ProjectColorPalette = () => {
             </p>
 
             <div className="colorPaletteGrid">
-                {/* OLD: Version card with label + mockup - commented out
                 <div className="versionCard">
-                    <img src={version1Svg} alt="Version 1" className="versionLabel" />
-                    <div className="versionFrame" style={{backgroundColor: '#B4751D'}}>
-                        <img src={pick1Image} alt="Mockup 1" className="mockupImage" />
-                    </div>
+                    {/* <img src={version1Svg} alt="Version 1" className="versionLabel" /> */}
+                    <img src={version1Svg} alt="" className="versionFrameImage" />
                 </div>
                 <div className="versionCard">
-                    <img src={version2Svg} alt="Version 2" className="versionLabel" />
-                    <div className="versionFrame" style={{backgroundColor: '#B4751D'}}>
-                        <img src={pick2Image} alt="Mockup 2" className="mockupImage" />
-                    </div>
-                </div>
-                */}
-                
-                {/* 
-                    📁 IMAGE LOCATION: src/assets/imgs/projects/
-                    To add image: Replace placeholder with:
-                    <img src={yourImageVariable} alt="" className="versionFrameImage" />
-                    Import at top: import yourImage from "@/assets/imgs/projects/your-image.png"
-                */}
-                <div className="versionFrame">
-                    <div className="versionFramePlaceholder">
-                        <span className="placeholderText">50% × 91vh</span>
-                    </div>
-                </div>
-                <div className="versionFrame">
-                    <div className="versionFramePlaceholder">
-                        <span className="placeholderText">50% × 91vh</span>
-                    </div>
+                    {/* <img src={version2Svg} alt="Version 2" className="versionLabel" /> */}
+                    <img src={version2Svg} alt="" className="versionFrameImage" />
                 </div>
             </div>
         </section>
@@ -398,17 +344,17 @@ const ProjectBuiltToBeSeen = () => {
                     <div className="builtTop">
                         <Card 
                             image={built1Image} 
-                            style={{width: '100%', height: '80vh'}}
+                            style={{width: '100%', height: '800px'}}
                         />
                     </div>
                     <div className="builtBottom">
                         <Card 
                             image={built2Image} 
-                            style={{width: '100%', height: '60vh'}}
+                            style={{width: '100%', height: '600px'}}
                         />
                         <Card 
                             image={built3Image} 
-                            style={{width: '100%', height: '60vh'}}
+                            style={{width: '100%', height: '600px'}}
                         />
                     </div>
                 </div>

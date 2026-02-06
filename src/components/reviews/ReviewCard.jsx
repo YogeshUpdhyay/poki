@@ -12,10 +12,17 @@ export default function ReviewCard({
   color = 'yellow',
   reverse = false,
   projectImage = null,
+  edgeSvg = null,
+  edgeSvgPosition = 'top',
 }) {
   return (
     <div className={`reviewCard ${color} ${reverse ? 'reverse' : ''}`}>
       <div className="reviewCardContent">
+        {edgeSvg && (
+          <div className={`reviewCardEdgeSvg ${edgeSvgPosition}`}>
+            {edgeSvg}
+          </div>
+        )}
         <div className="reviewCardReviewer">
           {avatarSrc ? (
             <img className="reviewCardReviewerAvatar" src={avatarSrc} alt="avatar" />

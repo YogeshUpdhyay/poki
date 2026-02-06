@@ -5,6 +5,9 @@ import reviewsCartoon from '../../assets/imgs/reviewsCartoon.svg'
 import HeroUnderline from '../../assets/underlines/heroUnderline.svg?react'
 import AnimatedSvgLine from '../common/animatedSvgLine/animatedSvgLine'
 import avatarImgSrc from '../../assets/imgs/avatar.png'
+import MadeHereSvg from '../../assets/svgs/reviews/madehere.svg?react'
+import DilliDilliSvg from '../../assets/svgs/reviews/dillidilli.svg?react'
+import MakunaSvg from '../../assets/svgs/reviews/makuna.svg?react'
 import { useState, useEffect, useRef } from 'react'
 import {
   useFloating,
@@ -22,25 +25,31 @@ export default function Reviews() {
       reviewerName: 'Nikolas Gregory',
       location: 'United States',
       reviewText: 'Amazing work all around. An excellent understanding of my ask and delivered an amazing website design paying attention to every little detail that I had asked for. Super polite and professional from start to finish. Thank you Poki Studios!',
-      color: 'yellow',
+      color: 'cream',
       avatarSrc: avatarImgSrc,
-      projectImage: null, // Add your project image path here
+      projectImage: null,
+      edgeSvg: <MadeHereSvg />,
+      edgeSvgPosition: 'top',
     },
     {
       reviewerName: 'Gaurav Anand',
       location: 'NY, United States',
       reviewText: 'Beyond expectations! Delivered a design that aligns with our brand vision. Took feedback and suggestions with a very open mindset and WOWED me! I rarely write reviews but Poki Studios totally deserves it! It’s a but pricey but 100% worth it.',
-      color: 'pink',
+      color: 'lightblue',
       avatarSrc: avatarImgSrc,
-      projectImage: null, // Add your project image path here
+      projectImage: null,
+      edgeSvg: <DilliDilliSvg />,
+      edgeSvgPosition: 'bottom',
     },
     {
       reviewerName: 'Devon McPherson',
       location: 'California, United States',
       reviewText: 'Poki was exceptional in their work and delivery of the Figma project. The team can operate with very little information provided, letting their creativity take over. They are easy to work with and reliable when it comes to quality and meeting delivery timelines.',
-      color: 'blue',
+      color: 'orange',
       avatarSrc: avatarImgSrc,
-      projectImage: null, // Add your project image path here
+      projectImage: null,
+      edgeSvg: <MakunaSvg />,
+      edgeSvgPosition: 'top',
     },
     {
       reviewerName: 'Darac',
@@ -73,7 +82,7 @@ export default function Reviews() {
         <motion.div 
           className="reviewsCarouselInner"
           animate={{
-            x: [0, -reviewsData.length * 386 / 3], // 360px card + 26px gap
+            x: [0, -reviewsData.length * 386 / 3], // 360px card + 26px gap = 386px per card
           }}
           transition={{
             x: {
@@ -93,6 +102,8 @@ export default function Reviews() {
               color={r.color}
               avatarSrc={r.avatarSrc}
               projectImage={r.projectImage}
+              edgeSvg={r.edgeSvg}
+              edgeSvgPosition={r.edgeSvgPosition}
               reverse={idx % 2 === 1}
             />
           ))}
