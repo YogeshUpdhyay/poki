@@ -1,3 +1,8 @@
+/* Ensure all card images align to the top */
+.cardImage {
+    object-position: top center;
+}
+
 .websiteHero {
     height: 110vh;
     display: flex;

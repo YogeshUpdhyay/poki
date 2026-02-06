@@ -79,16 +79,16 @@ const BrandInAction = () => {
             </Headline>
             <div className="brandInActionGroup">
                 <div className="brandInActionColumn">
-                    <Card image='https://placehold.co/800' style={{height: '33%'}} />
-                    <Card image='https://placehold.co/800' />
+                    <Card image='https://placehold.co/800' style={{width: '420px', height: '318px'}} />
+                    <Card image='https://placehold.co/800' style={{width: '420px', height: '540px'}} />
                 </div>
                 <div className="brandInActionColumn reverse">
-                    <Card image='https://placehold.co/800' style={{height: '33%'}} />
-                    <Card image='https://placehold.co/800' />
+                    <Card image='https://placehold.co/800' style={{width: '420px', height: '318px'}} />
+                    <Card image='https://placehold.co/800' style={{width: '420px', height: '540px'}} />
                 </div>
                 <div className="brandInActionColumn">
-                    <Card image='https://placehold.co/800' style={{height: '50%'}} />
-                    <Card image='https://placehold.co/800' style={{height: '50%'}} />
+                    <Card image='https://placehold.co/800' style={{width: '420px', height: '429px'}} />
+                    <Card image='https://placehold.co/800' style={{width: '420px', height: '429px'}} />
                 </div>
             </div>
             <svg 
@@ -127,14 +127,14 @@ const Fonts = () => {
                     svgText='primary'
                     svgTop='-12%'
                     svgFill="black"
-                    style={{height: '360px'}}
+                    style={{width: '672px', height: '360px'}}
                 />
                 <Card 
                     image='https://placehold.co/800'
                     svgText='alternative'
                     svgTop='-12%' 
                     svgFill="black"
-                    style={{height: '360px'}}
+                    style={{width: '672px', height: '360px'}}
                 />
             </div>
         </section>
@@ -211,9 +211,9 @@ const LogoVariations = () => {
                 forceOpen={true}
             />
             <div className="logoVariationsGroup">
-                <Card image='https://placehold.co/400' />
-                <Card image='https://placehold.co/400' />
-                <Card image='https://placehold.co/400' />
+                <Card image='https://placehold.co/400' style={{width: '420px', height: '420px'}} />
+                <Card image='https://placehold.co/400' style={{width: '420px', height: '420px'}} />
+                <Card image='https://placehold.co/400' style={{width: '420px', height: '420px'}} />
             </div>
             <p className="logoVariationsText">
                 a custom wordmark with smooth curves to reflect movement and energy. 
@@ -269,8 +269,8 @@ const WebsiteAbout = () => {
                 Consectetur neque mauris ultrices diam urna enim.
             </p>
             <div className="aboutImages">
-                <Card image='https://placehold.co/800'/>
-                <Card image='https://placehold.co/800'/>
+                <Card image='https://placehold.co/800' style={{width: '643px', height: '680px'}}/>
+                <Card image='https://placehold.co/800' style={{width: '643px', height: '680px'}}/>
             </div>
             <svg
                 className="websiteAboutSvg"

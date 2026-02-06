@@ -147,7 +147,8 @@ const CompanyCard = ({ name, services, Logo }) => {
           {...getFloatingProps()}
           className="companyCardTooltip"
         >
-          {name}
+          {/* {name} */}
+          View Project
         </div>
       )}
     </>
