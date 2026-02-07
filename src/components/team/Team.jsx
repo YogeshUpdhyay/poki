@@ -203,7 +203,7 @@ const Teammates = ({ teammates = {} }) => {
 
       <div className="teamCols">
         <div className="teamRow">
-          <TeamMateCard
+          <TeammateCard
             svgSrc={svgList[0]}
             imageSrc={items[0].image}
             tooltipText={items[0].tooltip}
@@ -215,7 +215,7 @@ const Teammates = ({ teammates = {} }) => {
             calloutTop='80%'
           />
 
-          <TeamMateCard
+          <TeammateCard
             svgSrc={svgList[1]}
             imageSrc={items[1].image}
             tooltipText={items[1].tooltip}
@@ -227,7 +227,7 @@ const Teammates = ({ teammates = {} }) => {
             calloutTop='20%'
           />
 
-          <TeamMateCard
+          <TeammateCard
             svgSrc={svgList[2]}
             imageSrc={items[2].image}
             tooltipText={items[2].tooltip}
@@ -241,7 +241,7 @@ const Teammates = ({ teammates = {} }) => {
         </div>
 
         <div className="teamRow">
-          <TeamMateCard
+          <TeammateCard
             svgSrc={svgList[3]}
             imageSrc={items[3].image}
             tooltipText={items[3].tooltip}
@@ -253,7 +253,7 @@ const Teammates = ({ teammates = {} }) => {
             calloutBottom='10%'
           />
 
-          <TeamMateCard
+          <TeammateCard
             svgSrc={svgList[4]}
             imageSrc={items[4].image}
             tooltipText={items[4].tooltip}
@@ -265,7 +265,7 @@ const Teammates = ({ teammates = {} }) => {
             calloutBottom='20%'
           />
 
-          <TeamMateCard
+          <TeammateCard
             svgSrc={svgList[5]}
             imageSrc={items[5].image}
             tooltipText={items[5].tooltip}
@@ -283,7 +283,7 @@ const Teammates = ({ teammates = {} }) => {
 }
 
 
-const TeamMateCard = ({
+const TeammateCard = ({
   svgSrc = TeammateOneSvg,
   imageSrc = TeammateOneIamge,
   tooltipText = 'Robin',
@@ -298,18 +298,24 @@ const TeamMateCard = ({
   calloutTop = 'auto',
   calloutBottom = 'auto',
 }) => {
+  const cardRef = useRef(null);
+  const cardInView = useInView(cardRef, {
+    amount: 0.3,
+  });
 
   return (
     <>
       <div
         className="teammateCard"
         style={{ '--r': r }}
+        ref={cardRef}
       >
         <div className="teammateImageWrap">
           <img src={imageSrc} alt="teammateImage" className="teammateCardImage" />
           <img
             src={svgSrc}
             alt="teammateSvg"
+            className={cardInView ? 'teammateSvgPop' : ''}
             style={{
               position: 'absolute',
               left: svgLeft ?? 'auto',
