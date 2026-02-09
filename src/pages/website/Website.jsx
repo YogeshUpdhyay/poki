@@ -98,8 +98,8 @@ const BrandInAction = () => {
                     <Card image={bia2} style={{width: '420px', height: '540px'}} />
                 </div>
                 <div className="brandInActionColumn reverse">
-                    <Card image={bia3} style={{width: '420px', height: '318px'}} />
-                    <Card image={bia4} style={{width: '420px', height: '540px'}} />
+                    <Card image={bia4} style={{width: '420px', height: '318px'}} />
+                    <Card image={bia3} style={{width: '420px', height: '540px'}} />
                 </div>
                 <div className="brandInActionColumn">
                     <Card image={bia5} style={{width: '420px', height: '429px'}} />

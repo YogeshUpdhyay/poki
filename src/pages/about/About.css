@@ -114,7 +114,7 @@
 .aboutFlexTitle {
     font-size: 96px;
     position: relative;
-    letter-spacing: 97%;
+    letter-spacing: -0.03em;
 }
 
 .aboutFlexSvg {

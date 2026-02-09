@@ -1,9 +1,14 @@
 .agencyHero {
     display: flex;
-    height: 110vh;
-    justify-content: flex-end;
+    height: 115vh;
+    /* justify-content: flex-end; */
     align-items: center;
     flex-direction: column;
+    overflow: hidden;
+}
+
+.agencyHero .headlineContainer{
+    padding-top: 20%;
 }
 
 /* Tooltip positioning for AgencyHero */
