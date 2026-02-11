@@ -9,13 +9,16 @@ import Work from './pages/work/Work';
 import Website from './pages/website/Website';
 import Project from './pages/project/Project';
 import Navbar from './components/navbar/Navbar';
+import ScrollToTop from './components/common/ScrollToTop';
 
 
 function App() {
   return (
     <CmsProvider>
       <Router>
+        <ScrollToTop />
         <Navbar />
+
         <Routes>
           {/* Define */}
           <Route
