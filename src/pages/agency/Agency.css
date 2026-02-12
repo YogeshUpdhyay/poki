@@ -359,6 +359,7 @@
 
 @media (max-width: 768px) {
     .agencyHero {
+        padding-top: 55%;
         height: 100vh;
     }
 
@@ -371,7 +372,7 @@
 
     .agencyHeroTooltip{
         position: absolute;
-        top: 9%;
+        top: 25%;
         left: 25%;
     }
 

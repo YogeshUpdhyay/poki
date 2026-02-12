@@ -17,7 +17,7 @@ function AboutHeadline() {
       opacity: 1,
       transition: {
         type: 'spring',
-        damping: 12,
+        damping: 15,
         stiffness: 100
       }
     }
