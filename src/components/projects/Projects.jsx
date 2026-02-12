@@ -214,7 +214,7 @@ function ProjectCard({ title, image, alt, wrapTick }) {
       initial={false}
       animate={inView ? "in" : "out"}
       variants={{
-        out: { y: 140, opacity: 1 },
+        out: { y: 70, opacity: 1 },
         in: { y: 0, opacity: 1 },
       }}
         transition={
