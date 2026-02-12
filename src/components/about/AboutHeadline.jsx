@@ -1,4 +1,5 @@
-import { Headline } from '../common/headline/Headline'
+import { motion } from 'framer-motion'
+import { Headline, letterVariants } from '../common/headline/Headline'
 import aboutHeroCartoon from '../../assets/svgs/about/heroCartoon.svg'
 import { useInView } from 'react-intersection-observer'
 import { useState, useEffect } from 'react'
@@ -27,15 +28,20 @@ function AboutHeadline() {
         <Headline 
             lines={isMobile ? mobileLines : desktopLines}
             highlight="shine"
+            animated={true} 
             // tooltip="we put the 'fun' in functional design"
             // tooltipColor="blue"
         >
-        <img 
-            src={aboutHeroCartoon} 
-            alt="aboutHeroCartoon" 
-            className={`aboutHeroCartoon ${inView ? 'scaleInAnimation' : ''}`}
-            ref={ref}
-        />
+        <motion.div 
+            variants={letterVariants}
+            className="aboutHeroCartoon"
+        >
+          <img 
+              src={aboutHeroCartoon} 
+              alt="aboutHeroCartoon" 
+              style={{ width: '100%', height: '100%', display: 'block' }}
+          />
+        </motion.div>
         <div className='aboutHeroTooltip'>
           <div className={`tooltip blue`}>
           we put the 'fun' in functional design
