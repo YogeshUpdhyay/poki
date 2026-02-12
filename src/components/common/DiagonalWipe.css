@@ -38,7 +38,4 @@
 /* Body Scroll Lock */
 body.diagonal-wipe-active {
   overflow: hidden !important;
-  height: 100vh !important;
-  position: fixed;
-  width: 100%;
 }

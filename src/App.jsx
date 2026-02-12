@@ -105,8 +105,8 @@ function AppContent() {
 
   return (
     <>
-      <ScrollToTop />
-      <Navbar />
+      <ScrollToTop location={displayLocation} />
+      <Navbar location={displayLocation} />
       <DiagonalWipe
         phase={phase}
         color="#5168E8"
