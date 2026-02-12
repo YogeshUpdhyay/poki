@@ -28,8 +28,8 @@ import Teammate6Svg from '../../assets/imgs/teammate6.svg'
 
 import WorldMap from '../../assets/world.svg?react'
 
-import { Headline } from '../common/headline/Headline';
-import { useInView } from 'framer-motion';
+import { Headline, popInVariants } from '../common/headline/Headline';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 
 export default function Team() {
   const teamCartoonRef = useRef(null);
@@ -162,21 +162,30 @@ const Map = () => {
         viewBox="0 0 1009.6727 665.96301"
         preserveAspectRatio="xMidYMid meet"
       />
-      {open && hoveredInfo && (
-        <div
-          ref={refs.setFloating}
-          style={floatingStyles}
-          {...getFloatingProps({
-            className: 'tooltip orange',
-          })}
-        >
-          {hoveredInfo?.dataName || ''} 
-          <svg style={{margin: '0 3px 0 3px'}} width="2" height="10" viewBox="0 0 2 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="1.5" width="10" height="1.5" rx="0.75" transform="rotate(90 1.5 0)" fill="#ffffffff"/>
-          </svg>
-          320 projects
-        </div>
-      )}
+      <AnimatePresence>
+        {open && hoveredInfo && (
+          <div
+            ref={refs.setFloating}
+            style={{ ...floatingStyles, zIndex: 1000 }}
+            {...getFloatingProps()}
+          >
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              variants={popInVariants}
+              className='tooltip orange'
+              style={{ transformOrigin: 'bottom left' }}
+            >
+              {hoveredInfo?.dataName || ''} 
+              <svg style={{margin: '0 3px 0 3px'}} width="2" height="10" viewBox="0 0 2 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="1.5" width="10" height="1.5" rx="0.75" transform="rotate(90 1.5 0)" fill="#ffffffff"/>
+              </svg>
+              320 projects
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }
@@ -324,18 +333,22 @@ const TeammateCard = ({
               bottom: svgBottom ?? 'auto',
             }}
           />
-          <div 
+          <motion.div 
             className='teammateCallout'
+            initial="hidden"
+            animate={cardInView ? "visible" : "hidden"}
+            variants={popInVariants}
             style={{
               left: calloutLeft ?? 'auto',
               right: calloutRight ?? 'auto',
               top: calloutTop ?? 'auto',
               bottom: calloutBottom ?? 'auto',
               borderRadius: borderRadius,
+              transformOrigin: calloutRight !== 'auto' ? 'bottom right' : 'bottom left'
             }}
           >
             {tooltipText}
-          </div>
+          </motion.div>
         </div>
       </div>
     </>
