@@ -108,14 +108,29 @@ const AgencyPartnerShips = () => {
 }
 
 const AgencyAdv = () => {
+    const { ref, inView } = useInView({
+        threshold: 0.1,
+        triggerOnce: false,
+    });
+
     return (
-        <section className="advantage" data-navbar='dark'>
+        <section className="advantage" data-navbar='dark' ref={ref}>
                 <Headline
-                    tooltipColor='blue'
-                    tooltip='good things happen here'
-                    forceOpen
+                    animated={true}
                 >
-                    the <PokiLogo className="agencyHeadlineLogo" style={{ color: '#427665', width: '191px', height: '69px', verticalAlign: 'middle' }} /> advantage
+                    <div style={{ position: 'relative', display: 'inline-block' }}>
+                        the <PokiLogo className="agencyHeadlineLogo" style={{ color: '#427665', width: '191px', height: '69px', verticalAlign: 'middle' }} /> advantage
+                        <div className="advantageTooltipWrapper">
+                            <motion.div 
+                                animate={inView ? "visible" : "hidden"}
+                                variants={popInVariants}
+                                className="tooltip blue"
+                                style={{ transformOrigin: 'bottom left' }}
+                            >
+                                good things happen here
+                            </motion.div>
+                        </div>
+                    </div>
                     <img 
                         src={agencyAdvCartoon} 
                         alt="advCartoon" 

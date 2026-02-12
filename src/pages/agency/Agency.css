@@ -29,14 +29,15 @@
 
 /* Tooltip positioning for Advantage section */
 .advantage .tooltip {
-    position: absolute !important;
-    /* Custom positioning - adjust these values as needed */
-    top: 17.9% !important;
-    left: 62.3% !important;
-    right: auto !important;
-    bottom: auto !important;
-    transform: translateX(-50%) !important;
+    position: absolute;
+    top: 17.9%;
+    left: 62.3%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    pointer-events: none;
 }
+
+
 
 .agencyCartoon {
     right: 51%;
