@@ -1,5 +1,6 @@
 import './Agency.css'
-import { Headline } from "../../components/common/headline/Headline"
+import { motion } from 'framer-motion'
+import { Headline, letterVariants } from "../../components/common/headline/Headline"
 import Button from "../../components/common/button/Button"
 import agencyCartoon from '../../assets/svgs/agency/agencyCartoon.svg'
 import agencyAdvCartoon from '../../assets/svgs/agency/agencyAdvCartoon.svg'
@@ -247,6 +248,11 @@ const AgencyHero = () => {
     const { data } = useCms();
     const countMeInUrl = data?.hero?.countMeInUrl;
 
+    const agencyCartoonVariants = {
+        hidden: { ...letterVariants.hidden, y: "-90%" },
+        visible: { ...letterVariants.visible, y: "-90%" }
+    };
+
     return (
         <section className="agencyHero" data-navbar='dark'>
             <Headline
@@ -255,12 +261,18 @@ const AgencyHero = () => {
                 // tooltipColor='pink'
                 // tooltip="because great work isn't built alone"
                 forceOpen
+                animated={true}
             >
-                <img
-                    src={agencyCartoon}
-                    alt="agencyCartoon"
+                <motion.div 
+                    variants={agencyCartoonVariants} 
                     className="agencyCartoon"
-                />
+                >
+                    <img
+                        src={agencyCartoon}
+                        alt="agencyCartoon"
+                        style={{ width: '100%', height: '100%', display: 'block' }}
+                    />
+                </motion.div>
                 <div className='agencyHeroTooltip'>
                     <div className={`tooltip pink`}>
                         because great work isn't built alone

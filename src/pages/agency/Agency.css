@@ -41,8 +41,8 @@
 .agencyCartoon {
     right: 51%;
     top: 20px;
-    transform: translateY(-90%);
     position: absolute;
+    pointer-events: none;
 }
 
 .agencyButtons {
