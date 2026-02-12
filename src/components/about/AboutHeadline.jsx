@@ -6,8 +6,22 @@ import { useState, useEffect } from 'react'
 
 function AboutHeadline() {
   const { ref, inView } = useInView({
-    threshold: 0.5,
+    threshold: 0.1,
+    triggerOnce: true
   })
+
+  const popInVariants = {
+    hidden: { scale: 0, opacity: 0 },
+    visible: { 
+      scale: 1, 
+      opacity: 1,
+      transition: {
+        type: 'spring',
+        damping: 12,
+        stiffness: 100
+      }
+    }
+  };
 
   const [isMobile, setIsMobile] = useState(false)
 
@@ -24,7 +38,7 @@ function AboutHeadline() {
   const mobileLines = ['agile design', 'agency. born', 'to make', 'brands shine']
 
   return (
-    <div className="aboutHeadline">
+    <div className="aboutHeadline" ref={ref}>
         <Headline 
             lines={isMobile ? mobileLines : desktopLines}
             highlight="shine"
@@ -42,11 +56,13 @@ function AboutHeadline() {
               style={{ width: '100%', height: '100%', display: 'block' }}
           />
         </motion.div>
-        <div className='aboutHeroTooltip'>
-          <div className={`tooltip blue`}>
+        <motion.div 
+            variants={popInVariants}
+            className='aboutHeroTooltip tooltip blue'
+            style={{ transformOrigin: 'bottom left' }}
+        >
           we put the 'fun' in functional design
-        </div>
-        </div>
+        </motion.div>
         </Headline>
     </div>
   )

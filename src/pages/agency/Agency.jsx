@@ -12,6 +12,7 @@ import agencyHeroStar from '@/assets/svgs/agency/agencyHeroStar.svg'
 import OutlinedSvgText from '../../components/common/outlineSvgText/OutlineSvgText'
 import { useCms } from '../../utils/context'
 import PokiLogo from '../../assets/imgs/logo.svg?react'
+import { useInView } from 'react-intersection-observer'
 
 const Agency = () => {
     return (
@@ -253,8 +254,26 @@ const AgencyHero = () => {
         visible: { ...letterVariants.visible, y: "-90%" }
     };
 
+    const popInVariants = {
+        hidden: { scale: 0, opacity: 0 },
+        visible: { 
+            scale: 1, 
+            opacity: 1,
+            transition: {
+                type: 'spring',
+                damping: 12,
+                stiffness: 100
+            }
+        }
+    };
+
+    const { ref, inView } = useInView({
+        threshold: 0.1,
+        triggerOnce: true,
+    });
+
     return (
-        <section className="agencyHero" data-navbar='dark'>
+        <section className="agencyHero" data-navbar='dark' ref={ref}>
             <Headline
                 lines={['your creative', 'muscle, without', 'the headcount']}
                 highlight={"headcount"}
@@ -273,11 +292,13 @@ const AgencyHero = () => {
                         style={{ width: '100%', height: '100%', display: 'block' }}
                     />
                 </motion.div>
-                <div className='agencyHeroTooltip'>
-                    <div className={`tooltip pink`}>
-                        because great work isn't built alone
-                    </div>
-                </div>
+                <motion.div 
+                    variants={popInVariants}
+                    className='agencyHeroTooltip tooltip pink'
+                    style={{ transformOrigin: 'bottom left' }}
+                >
+                    because great work isn't built alone
+                </motion.div>
             </Headline>
             <div className="agencyButtons">
                 <Button text="let's team up" href={countMeInUrl} />
