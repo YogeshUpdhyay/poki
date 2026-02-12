@@ -14,6 +14,7 @@ import Project from './pages/project/Project';
 import Navbar from './components/navbar/Navbar';
 import ScrollToTop from './components/common/ScrollToTop';
 import DiagonalWipe from './components/common/DiagonalWipe';
+import { PreloaderProvider, usePreloader } from './utils/PreloaderContext';
 
 function AppContent() {
   const location = useLocation();
@@ -22,6 +23,7 @@ function AppContent() {
   const [showLogo, setShowLogo] = useState(false);
   const [isInitialLoad, setIsInitialLoad] = useState(true);
   const [pageReady, setPageReady] = useState(false);
+  const { setIsRevealed } = usePreloader();
   const pendingRef = useRef(null);
   const waitingForLoadRef = useRef(false);
 
@@ -43,7 +45,9 @@ function AppContent() {
       // Brief pause after load to let content settle
       setTimeout(() => {
         setShowLogo(false);
-        setTimeout(() => setPhase('revealing'), 300);
+        setTimeout(() => {
+          setPhase('revealing');
+        }, 300);
       }, 500);
     }
   }, [pageReady]);
@@ -62,7 +66,9 @@ function AppContent() {
         // Page already loaded — hold logo briefly, then reveal
         setTimeout(() => {
           setShowLogo(false);
-          setTimeout(() => setPhase('revealing'), 300);
+          setTimeout(() => {
+            setPhase('revealing');
+          }, 300);
         }, 800);
       } else {
         // Page still loading — wait for load event
@@ -70,10 +76,11 @@ function AppContent() {
       }
     } else if (completedPhase === 'revealing') {
       setPhase('idle');
+      setIsRevealed(true);
       setIsInitialLoad(false);
       document.body.classList.remove('diagonal-wipe-active');
     }
-  }, [pageReady]);
+  }, [pageReady, setIsRevealed]);
 
   // Initial load — start painting
   useEffect(() => {
@@ -86,6 +93,7 @@ function AppContent() {
     if (location.pathname !== displayLocation.pathname && !isInitialLoad) {
       document.body.classList.add('diagonal-wipe-active');
       setPageReady(false); // Reset load state for new route
+      setIsRevealed(false); // Reset reveal state
       pendingRef.current = location;
       setPhase('painting');
 
@@ -93,7 +101,7 @@ function AppContent() {
       // Set a minimum wait time, then mark as ready
       setTimeout(() => setPageReady(true), 200);
     }
-  }, [location, displayLocation.pathname, isInitialLoad]);
+  }, [location, displayLocation.pathname, isInitialLoad, setIsRevealed]);
 
   return (
     <>
@@ -143,9 +151,11 @@ function AppContent() {
 function App() {
   return (
     <CmsProvider>
-      <Router>
-        <AppContent />
-      </Router>
+      <PreloaderProvider>
+        <Router>
+          <AppContent />
+        </Router>
+      </PreloaderProvider>
     </CmsProvider>
   )
 }
