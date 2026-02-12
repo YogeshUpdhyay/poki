@@ -104,6 +104,35 @@
     object-fit: fill;
 }
 
+/* Initial state - SVGs hidden until animation triggers */
+.teammateImageWrap img[alt="teammateSvg"] {
+    transform: scale(0);
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+/* Pop animation class for teammate SVGs */
+.teammateSvgPop {
+    animation: svgPop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes svgPop {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    70% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 #worldMap path {
     fill: #414141;
     stroke: #414141;

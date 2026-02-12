@@ -1,5 +1,6 @@
 import './Agency.css'
-import { Headline } from "../../components/common/headline/Headline"
+import { motion } from 'framer-motion'
+import { Headline, letterVariants, popInVariants } from "../../components/common/headline/Headline"
 import Button from "../../components/common/button/Button"
 import agencyCartoon from '../../assets/svgs/agency/agencyCartoon.svg'
 import agencyAdvCartoon from '../../assets/svgs/agency/agencyAdvCartoon.svg'
@@ -11,6 +12,7 @@ import agencyHeroStar from '@/assets/svgs/agency/agencyHeroStar.svg'
 import OutlinedSvgText from '../../components/common/outlineSvgText/OutlineSvgText'
 import { useCms } from '../../utils/context'
 import PokiLogo from '../../assets/imgs/logo.svg?react'
+import { useInView } from 'react-intersection-observer'
 
 const Agency = () => {
     return (
@@ -106,14 +108,29 @@ const AgencyPartnerShips = () => {
 }
 
 const AgencyAdv = () => {
+    const { ref, inView } = useInView({
+        threshold: 0.1,
+        triggerOnce: false,
+    });
+
     return (
-        <section className="advantage" data-navbar='dark'>
+        <section className="advantage" data-navbar='dark' ref={ref}>
                 <Headline
-                    tooltipColor='blue'
-                    tooltip='good things happen here'
-                    forceOpen
+                    animated={true}
                 >
-                    the <PokiLogo className="agencyHeadlineLogo" style={{ color: '#427665', width: '191px', height: '69px', verticalAlign: 'middle' }} /> advantage
+                    <div style={{ position: 'relative', display: 'inline-block' }}>
+                        the <PokiLogo className="agencyHeadlineLogo" style={{ color: '#427665', width: '191px', height: '69px', verticalAlign: 'middle' }} /> advantage
+                        <div className="advantageTooltipWrapper">
+                            <motion.div 
+                                animate={inView ? "visible" : "hidden"}
+                                variants={popInVariants}
+                                className="tooltip blue"
+                                style={{ transformOrigin: 'bottom left' }}
+                            >
+                                good things happen here
+                            </motion.div>
+                        </div>
+                    </div>
                     <img 
                         src={agencyAdvCartoon} 
                         alt="advCartoon" 
@@ -247,25 +264,43 @@ const AgencyHero = () => {
     const { data } = useCms();
     const countMeInUrl = data?.hero?.countMeInUrl;
 
+    const agencyCartoonVariants = {
+        hidden: { ...letterVariants.hidden, y: "-90%" },
+        visible: { ...letterVariants.visible, y: "-90%" }
+    };
+
+    const { ref, inView } = useInView({
+        threshold: 0.1,
+        triggerOnce: true,
+    });
+
     return (
-        <section className="agencyHero" data-navbar='dark'>
+        <section className="agencyHero" data-navbar='dark' ref={ref}>
             <Headline
                 lines={['your creative', 'muscle, without', 'the headcount']}
                 highlight={"headcount"}
                 // tooltipColor='pink'
                 // tooltip="because great work isn't built alone"
                 forceOpen
+                animated={true}
             >
-                <img
-                    src={agencyCartoon}
-                    alt="agencyCartoon"
+                <motion.div 
+                    variants={agencyCartoonVariants} 
                     className="agencyCartoon"
-                />
-                <div className='agencyHeroTooltip'>
-                    <div className={`tooltip pink`}>
-                        because great work isn't built alone
-                    </div>
-                </div>
+                >
+                    <img
+                        src={agencyCartoon}
+                        alt="agencyCartoon"
+                        style={{ width: '100%', height: '100%', display: 'block' }}
+                    />
+                </motion.div>
+                <motion.div 
+                    variants={popInVariants}
+                    className='agencyHeroTooltip tooltip pink'
+                    style={{ transformOrigin: 'bottom left' }}
+                >
+                    because great work isn't built alone
+                </motion.div>
             </Headline>
             <div className="agencyButtons">
                 <Button text="let's team up" href={countMeInUrl} />

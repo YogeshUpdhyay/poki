@@ -8,7 +8,7 @@
 /* Hero Marquee Section */
 .skewedTapContainer {
     background-color: var(--background-dark);
-    min-height: 100vh;
+    min-height: 80vh;
     padding-top: 200px;
     overflow-x: hidden;
 }

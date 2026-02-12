@@ -55,7 +55,7 @@ function BrandNeedsHeadline() {
         <img
           src={brandNeedsCartoon}
           alt="brandNeedsCartoon"
-          className={`brandNeedsCartoon ${inView ? 'scaleInAnimation' : ''}`}
+          className={`brandNeedsCartoon ${inView ? 'teammateSvgPop' : ''}`}
           ref={ref}
         />
 

@@ -1,11 +1,13 @@
-import { Headline } from '../common/headline/Headline'
+import { motion } from 'framer-motion'
+import { Headline, letterVariants, popInVariants } from '../common/headline/Headline'
 import aboutHeroCartoon from '../../assets/svgs/about/heroCartoon.svg'
 import { useInView } from 'react-intersection-observer'
 import { useState, useEffect } from 'react'
 
 function AboutHeadline() {
   const { ref, inView } = useInView({
-    threshold: 0.5,
+    threshold: 0.1,
+    triggerOnce: true
   })
 
   const [isMobile, setIsMobile] = useState(false)
@@ -23,24 +25,31 @@ function AboutHeadline() {
   const mobileLines = ['agile design', 'agency. born', 'to make', 'brands shine']
 
   return (
-    <div className="aboutHeadline">
+    <div className="aboutHeadline" ref={ref}>
         <Headline 
             lines={isMobile ? mobileLines : desktopLines}
             highlight="shine"
+            animated={true} 
             // tooltip="we put the 'fun' in functional design"
             // tooltipColor="blue"
         >
-        <img 
-            src={aboutHeroCartoon} 
-            alt="aboutHeroCartoon" 
-            className={`aboutHeroCartoon ${inView ? 'scaleInAnimation' : ''}`}
-            ref={ref}
-        />
-        <div className='aboutHeroTooltip'>
-          <div className={`tooltip blue`}>
+        <motion.div 
+            variants={letterVariants}
+            className="aboutHeroCartoon"
+        >
+          <img 
+              src={aboutHeroCartoon} 
+              alt="aboutHeroCartoon" 
+              style={{ width: '100%', height: '100%', display: 'block' }}
+          />
+        </motion.div>
+        <motion.div 
+            variants={popInVariants}
+            className='aboutHeroTooltip tooltip blue'
+            style={{ transformOrigin: 'bottom left' }}
+        >
           we put the 'fun' in functional design
-        </div>
-        </div>
+        </motion.div>
         </Headline>
     </div>
   )

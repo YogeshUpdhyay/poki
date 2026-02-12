@@ -127,7 +127,9 @@ const Work = () => {
                     <h3>on the menu</h3>
                     <div className="categoryPills">
                         <NavLink to="/website" className="categoryPill">websites</NavLink>
-                        <NavLink to="/project" className="categoryPill">project</NavLink>
+                        <NavLink to="/project" className="categoryPill">logo designs</NavLink>
+                        <NavLink to="/project" className="categoryPill">brand identities</NavLink>
+                        <NavLink to="/website" className="categoryPill">products & apps</NavLink>
                         {/* <span className="categoryPill">brand identities</span>
                         <span className="categoryPill">products & apps</span> */}
                     </div>

@@ -4,10 +4,12 @@ import heroCartoon from '../../assets/imgs/heroCartoon.svg'
 import yellowStar from '../../assets/imgs/stars/yellow.svg'
 import AnimatedSvgLine from '../common/animatedSvgLine/animatedSvgLine'
 import HeroUnderline from "../../assets/underlines/heroUnderline.svg?react";
-import { Headline } from '../common/headline/Headline';
+import { motion } from 'framer-motion';
+import { Headline, letterVariants } from '../common/headline/Headline';
 import { useCms } from '../../utils/context'
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from 'react'
+import { usePreloader } from '../../utils/PreloaderContext';
 
 function Hero() {
   const { data } = useCms()
@@ -55,26 +57,47 @@ function Hero() {
 // Navbar moved to App.jsx so it sits above the page content
 
 function HeroHeadline({lines, highlight}) {
+  const { isRevealed } = usePreloader();
   const { ref, inView, entry } = useInView({
     /* Optional options */
-    threshold: 0.5,
+    threshold: 0.1,
+    triggerOnce: true,
   });
   
-  return (
-    <Headline lines={lines} highlight={highlight}>
-      <img
-        src={heroCartoon}
-        alt="heroCartoon"
-        className={`heroCartoon ${inView ? 'scaleInAnimation' : ''}`}
-        ref={ref}
-      />
+  const shouldAnimate = inView && isRevealed;
+  
+  const [showUnderline, setShowUnderline] = useState(false);
 
-      <div className="heroStar">
-        <img src={yellowStar} alt="yellowStar"/>
+  useEffect(() => {
+    if (shouldAnimate) {
+      // Trigger underline after letters/star fly in
+      const timer = setTimeout(() => setShowUnderline(true), 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [shouldAnimate]);
+  
+  return (
+    <Headline lines={lines} highlight={highlight} animated={true}>
+      <div 
+        className={`heroCartoonWrapper ${shouldAnimate ? 'slideInRotateAnimation' : ''}`}
+        ref={ref}
+      >
+        <img
+          src={heroCartoon}
+          alt="heroCartoon"
+          className="heroCartoon"
+        />
       </div>
 
+      <motion.div 
+        className="heroStar"
+        variants={letterVariants}
+      >
+        <img src={yellowStar} alt="yellowStar"/>
+      </motion.div>
+
       <div className="heroUnderlinePosition">
-        <AnimatedSvgLine Svg={HeroUnderline} />
+        <AnimatedSvgLine Svg={HeroUnderline} forceAnimate={showUnderline} />
       </div>
     </Headline>
   )

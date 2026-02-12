@@ -14,12 +14,8 @@
 
 .aboutHeroTooltip {
   position: absolute;
-  top: 38%;
-  left: 4%;
-  /* left: 545px !important;
-  transform: none !important;
-  margin-top: 0px;
-  margin-left: 0px; */
+  top: 70%;
+  left: 6%;
 }
 
 
@@ -56,6 +52,7 @@
     position: absolute;
     bottom: 100%;
     right: 20%;
+    pointer-events: none;
 }
 
 .aboutHeadline {
@@ -114,7 +111,7 @@
 .aboutFlexTitle {
     font-size: 96px;
     position: relative;
-    letter-spacing: 97%;
+    letter-spacing: -0.03em;
 }
 
 .aboutFlexSvg {
@@ -224,7 +221,7 @@
     font-family: 'generalSansMedium';
     font-size: 14px;
     pointer-events: none;
-    z-index: 1000;
+    z-index: 1000 !important;
 }
 
 .studioButtons {
@@ -270,7 +267,7 @@
         transform: none !important;
     } */
      .aboutHeroTooltip {
-        top: 33% !important;
+        top: 58% !important;
         left: -53% !important;
      }
 

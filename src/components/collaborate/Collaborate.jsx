@@ -2,6 +2,8 @@ import './Collaborate.css'
 import Button from '../common/button/Button'
 import collaborateCartoon from '../../assets/svgs/collaborate/collaborateCartoon.svg'
 import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { popInVariants } from '../common/headline/Headline'
 import {
   useFloating,
   useClientPoint,
@@ -67,33 +69,45 @@ function CollabHeadline() {
   ]);
 
   return (
-    <h1 className="headlineText large">
-      <span 
-        className="headlineWrapper" 
-        ref={refs.setReference}
-        {...getReferenceProps({
-          onMouseEnter: () => setOpen(true),
-          onMouseLeave: () => setOpen(false),
-        })}
-      >
-        <span className="headlineHighlight">let's</span>{isMobile ? <br /> : ' '}collaborate 
-        <img
-          src={collaborateCartoon}
-          alt="collaborateCartoon"
-          className="collaborateCartoon"
-        />
-      </span>
-
-      {open && (
-        <div
-          ref={refs.setFloating}
-          style={floatingStyles}
-          {...getFloatingProps({
-            className: "tooltip green",
+    <>
+      <h1 className="headlineText large">
+        <span 
+          className="headlineWrapper" 
+          ref={refs.setReference}
+          {...getReferenceProps({
+            onMouseEnter: () => setOpen(true),
+            onMouseLeave: () => setOpen(false),
           })}
         >
-          start a project
-        </div>)}
-    </h1>
+          <span className="headlineHighlight">let's</span>{isMobile ? <br /> : ' '}collaborate 
+          <img
+            src={collaborateCartoon}
+            alt="collaborateCartoon"
+            className="collaborateCartoon"
+          />
+        </span>
+      </h1>
+
+      <AnimatePresence>
+        {open && (
+          <div
+            ref={refs.setFloating}
+            style={{ ...floatingStyles, zIndex: 1000 }}
+            {...getFloatingProps()}
+          >
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              variants={popInVariants}
+              className="tooltip green"
+              style={{ transformOrigin: 'bottom left' }}
+            >
+              start a project
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+    </>
   )
 }

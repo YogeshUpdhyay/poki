@@ -1,9 +1,14 @@
 .agencyHero {
     display: flex;
-    height: 110vh;
-    justify-content: flex-end;
+    height: 115vh;
+    /* justify-content: flex-end; */
     align-items: center;
     flex-direction: column;
+    overflow: hidden;
+}
+
+.agencyHero .headlineContainer{
+    padding-top: 20%;
 }
 
 /* Tooltip positioning for AgencyHero */
@@ -18,26 +23,27 @@
 
 .agencyHeroTooltip {
     position: absolute;
-    top: 6%;
+    top: 28%;
     left: 64%;
 }
 
 /* Tooltip positioning for Advantage section */
 .advantage .tooltip {
-    position: absolute !important;
-    /* Custom positioning - adjust these values as needed */
-    top: 17.9% !important;
-    left: 62.3% !important;
-    right: auto !important;
-    bottom: auto !important;
-    transform: translateX(-50%) !important;
+    position: absolute;
+    top: 17.9%;
+    left: 62.3%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    pointer-events: none;
 }
+
+
 
 .agencyCartoon {
     right: 51%;
     top: 20px;
-    transform: translateY(-90%);
     position: absolute;
+    pointer-events: none;
 }
 
 .agencyButtons {
@@ -354,6 +360,7 @@
 
 @media (max-width: 768px) {
     .agencyHero {
+        padding-top: 55%;
         height: 100vh;
     }
 
@@ -366,7 +373,7 @@
 
     .agencyHeroTooltip{
         position: absolute;
-        top: 9%;
+        top: 25%;
         left: 25%;
     }
 

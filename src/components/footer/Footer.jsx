@@ -3,6 +3,8 @@ import EdgeBubble from '../common/edgeBubble/edgeBubble'
 import footerSvg from '../../assets/svgs/footer/footer.svg'
 import footer1Svg from '../../assets/svgs/footer/footer1.svg'
 import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { popInVariants } from '../common/headline/Headline'
 import {
   useFloating,
   useClientPoint,
@@ -120,17 +122,26 @@ function VisitUsLink() {
         </svg>
       </a>
 
-      {open && (
-        <div
-          ref={refs.setFloating}
-          style={floatingStyles}
-          {...getFloatingProps({
-            className: "tooltip pink",
-          })}
-        >
-          google maps
-        </div>
-      )}
+      <AnimatePresence>
+        {open && (
+          <div
+            ref={refs.setFloating}
+            style={{ ...floatingStyles, zIndex: 1000 }}
+            {...getFloatingProps()}
+          >
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              variants={popInVariants}
+              className="tooltip pink"
+              style={{ transformOrigin: 'bottom left' }}
+            >
+              google maps
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </>
   )
 }

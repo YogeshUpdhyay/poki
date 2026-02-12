@@ -5,10 +5,13 @@ import buttonImg from '../../assets/imgs/button.png'
 import { useCms } from '../../utils/context'
 import { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { usePreloader } from '../../utils/PreloaderContext'
 
-export default function Navbar() {
+export default function Navbar({ location: locationProp }) {
   const { data } = useCms()
-  const location = useLocation()
+  const immediateLocation = useLocation()
+  const location = locationProp || immediateLocation
+  const { isRevealed } = usePreloader()
   const countMeInUrl = data?.hero?.countMeInUrl || '#'
   const [dark, setDark] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -41,9 +44,17 @@ export default function Navbar() {
     }
 
     window.addEventListener('scroll', handleScroll)
-    handleScroll() // call once on mount/route change
+    
+    // Call handleScroll whenever location changes or page is revealed
+    if (isRevealed) {
+      // Use requestAnimationFrame to ensure DOM is updated before checking
+      requestAnimationFrame(() => {
+        handleScroll()
+      })
+    }
+    
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [location.pathname]) // Re-run when route changes
+  }, [location.pathname, isRevealed]) // Re-run when route changes or revealed
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen)
