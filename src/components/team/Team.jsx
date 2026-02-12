@@ -65,13 +65,19 @@ export default function Team() {
           <img
             src={teamCartoon}
             alt="teamCartoon"
-            className={`teamCartoon ${teamCartoonInView ? 'scaleInAnimation' : ''}`}
+            className={`teamCartoon ${teamCartoonInView ? 'teammateSvgPop' : ''}`}
             ref={teamCartoonRef}
           />
 
-          <div className="teamPill">
+          <motion.div 
+            className="teamPill"
+            initial="hidden"
+            animate={teamCartoonInView ? "visible" : "hidden"}
+            variants={popInVariants}
+            style={{ transformOrigin: 'bottom left' }}
+          >
             born digital - raised on chai
-          </div>
+          </motion.div>
 
           <div className="teamUnderline">
             <AnimatedSvgLine Svg={TeamUnderline} />

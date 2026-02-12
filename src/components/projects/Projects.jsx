@@ -3,7 +3,7 @@ import Button from '../common/button/Button'
 import projectBackground from "../../assets/imgs/projectBg.svg"
 import { useCms } from '../../utils/context'
 import 'react-multi-carousel/lib/styles.css';
-import { Headline } from '../common/headline/Headline'
+import { Headline, popInVariants } from '../common/headline/Headline'
 import projectsCartoon from "../../assets/imgs/projectsCartoon.svg";
 import {
   motion,
@@ -56,12 +56,18 @@ function Projects() {
         <img
           src={projectsCartoon}
           alt="projectsCartoon"
-          className={`projectsCartoon ${projectCartoonInView ? 'scaleInAnimation' : ''}`}
+          className={`projectsCartoon ${projectCartoonInView ? 'teammateSvgPop' : ''}`}
           ref={projectsCartoonRef}
         />
-        <div className="projectsPill">
+        <motion.div 
+          className="projectsPill"
+          initial="hidden"
+          animate={projectCartoonInView ? "visible" : "hidden"}
+          variants={popInVariants}
+          style={{ transformOrigin: 'bottom left' }}
+        >
           {tooltipText}
-        </div>
+        </motion.div>
       </Headline>
       <img 
         src={projectBackground} 
