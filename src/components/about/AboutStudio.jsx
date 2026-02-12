@@ -13,6 +13,8 @@ import {
   useInteractions,
 } from "@floating-ui/react"
 import { companiesData } from '../../data/companiesData'
+import { motion, AnimatePresence } from 'framer-motion'
+import {popInVariants} from '../common/headline/Headline'
 
 // Carousel item with cursor-following tooltip (same pattern as VisitUsLink in Footer)
 function StudioCarouselItem({keyNumber, image}) {
@@ -47,17 +49,26 @@ function StudioCarouselItem({keyNumber, image}) {
         <img src={image} alt='studioCarouselImage' className='carouselImage'/>
       </div>
 
-      {open && (
-        <div
-          ref={refs.setFloating}
-          style={floatingStyles}
-          {...getFloatingProps({
-            className: "tooltip blue",
-          })}
-        >
-          visit our studio
-        </div>
-      )}
+      <AnimatePresence>
+        {open && (
+          <div
+            ref={refs.setFloating}
+            style={{ ...floatingStyles, zIndex: 1000 }}
+            {...getFloatingProps()}
+          >
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              variants={popInVariants}
+              className="tooltip blue"
+              style={{ transformOrigin: 'bottom left' }}
+            >
+              visit our studio
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </>
   )
 }
@@ -140,17 +151,27 @@ const CompanyCard = ({ name, services, Logo }) => {
         <div className="companyWorks">{services}</div>
       </div>
 
-      {isOpen && (
-        <div
-          ref={refs.setFloating}
-          style={floatingStyles}
-          {...getFloatingProps()}
-          className="companyCardTooltip"
-        >
-          {/* {name} */}
-          View Project
-        </div>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <div
+            ref={refs.setFloating}
+            style={floatingStyles}
+            {...getFloatingProps()}
+          >
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              variants={popInVariants}
+              className="companyCardTooltip"
+              style={{ transformOrigin: 'bottom left' }}
+            >
+              {/* {name} */}
+              View Project
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </>
   );
 };

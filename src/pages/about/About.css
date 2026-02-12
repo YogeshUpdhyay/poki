@@ -221,7 +221,7 @@
     font-family: 'generalSansMedium';
     font-size: 14px;
     pointer-events: none;
-    z-index: 1000;
+    z-index: 1000 !important;
 }
 
 .studioButtons {

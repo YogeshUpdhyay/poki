@@ -1,6 +1,6 @@
 import './Agency.css'
 import { motion } from 'framer-motion'
-import { Headline, letterVariants } from "../../components/common/headline/Headline"
+import { Headline, letterVariants, popInVariants } from "../../components/common/headline/Headline"
 import Button from "../../components/common/button/Button"
 import agencyCartoon from '../../assets/svgs/agency/agencyCartoon.svg'
 import agencyAdvCartoon from '../../assets/svgs/agency/agencyAdvCartoon.svg'
@@ -252,19 +252,6 @@ const AgencyHero = () => {
     const agencyCartoonVariants = {
         hidden: { ...letterVariants.hidden, y: "-90%" },
         visible: { ...letterVariants.visible, y: "-90%" }
-    };
-
-    const popInVariants = {
-        hidden: { scale: 0, opacity: 0 },
-        visible: { 
-            scale: 1, 
-            opacity: 1,
-            transition: {
-                type: 'spring',
-                damping: 15,
-                stiffness: 100
-            }
-        }
     };
 
     const { ref, inView } = useInView({

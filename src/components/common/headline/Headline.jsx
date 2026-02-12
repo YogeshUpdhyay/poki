@@ -30,6 +30,19 @@ export const letterVariants = {
   }
 };
 
+export const popInVariants = {
+  hidden: { scale: 0, opacity: 0 },
+  visible: { 
+    scale: 1, 
+    opacity: 1,
+    transition: {
+      type: 'spring',
+      damping: 15,
+      stiffness: 100
+    }
+  }
+};
+
 export function Headline({children, tooltip, tooltipColor, lines, highlight, forceOpen, animated = false}) {
   const { isRevealed } = usePreloader();
   const { ref: inViewRef, inView } = useInView({

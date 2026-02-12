@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Headline, letterVariants } from '../common/headline/Headline'
+import { Headline, letterVariants, popInVariants } from '../common/headline/Headline'
 import aboutHeroCartoon from '../../assets/svgs/about/heroCartoon.svg'
 import { useInView } from 'react-intersection-observer'
 import { useState, useEffect } from 'react'
@@ -9,19 +9,6 @@ function AboutHeadline() {
     threshold: 0.1,
     triggerOnce: true
   })
-
-  const popInVariants = {
-    hidden: { scale: 0, opacity: 0 },
-    visible: { 
-      scale: 1, 
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        damping: 15,
-        stiffness: 100
-      }
-    }
-  };
 
   const [isMobile, setIsMobile] = useState(false)
 

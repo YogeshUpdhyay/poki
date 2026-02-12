@@ -3,6 +3,8 @@ import warmingUpFlex from '../../assets/svgs/about/warmingUp.svg'
 import aFullHomeFlex from '../../assets/svgs/about/afullhome.svg'
 import nailedItFlex from '../../assets/svgs/about/nailedit.svg'
 import seprator from '../../assets/svgs/about/seprator.svg'
+import { motion } from 'framer-motion'
+import {popInVariants} from '../common/headline/Headline'
 import { useState, useEffect } from 'react'
 
 function AboutContent() {
@@ -43,9 +45,16 @@ function AboutContent() {
         <br/>
         We don't just think outside the box — we redesign the box, the logo on 
         it, and the unboxing experience.
-        <div className="tooltip pink-pill">
+        <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.5}}
+            variants={popInVariants}
+            className='aboutHeroTooltip tooltip pink-pill'
+            style={{ transformOrigin: 'bottom left' }}
+        >
           ^ and fun
-        </div>
+        </motion.div>
       </div>
       <AboutFlexItem 
         title="6+ years"
