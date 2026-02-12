@@ -22,6 +22,7 @@ import built3Image from "@/assets/imgs/projects/built3.png"
 import posterImg from "@/assets/images/projects/poster.png"
 import makeupImg from "@/assets/images/projects/makeup.png"
 import phoneImg from "@/assets/images/projects/phone.png"
+import webpagePdf from "@/assets/webpage.pdf"
 
 // SVGs
 import version1Svg from "@/assets/imgs/projects/version1.svg"
@@ -94,10 +95,15 @@ const ProjectAbout = () => {
                 Consectetur neque mauris ultrices diam urna enim.
             </p>
 
-            <picture className="wireframe">
-                <source media="(max-width: 768px)" srcSet={about1MobileImage} />
-                <img src={about1Image} alt="" />
-            </picture>
+            <div className="wireframe">
+                <div className="pdfBox">
+                    <iframe 
+                        src={`${webpagePdf}#view=FitH&toolbar=0&navpanes=0&scrollbar=0`} 
+                        title="Project PDF"
+                        style={{ border: 'none', width: '100%', height: '100%' }}
+                    />
+                </div>
+            </div>
 
             <div className="miscContainer">
                 <div className="layeredCard">
