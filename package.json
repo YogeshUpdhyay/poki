@@ -11,9 +11,7 @@
   },
   "dependencies": {
     "@floating-ui/react": "^0.27.16",
-    "@studio-freight/react-lenis": "^0.0.47",
     "framer-motion": "^12.23.26",
-    "lenis": "^1.3.17",
     "motion": "^12.23.26",
     "picomatch": "^4.0.3",
     "react": "^19.2.0",
