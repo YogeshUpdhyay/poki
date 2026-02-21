@@ -202,7 +202,7 @@
     padding: 28px;
     font-size: 24px;
     line-height: 120%;
-    letter-spacing: 98%;
+    letter-spacing: -0.02em;
 }
 
 .advantage {
@@ -328,7 +328,7 @@
     font-size: 16px;
     font-family: generalSansMedium, sans-serif;
     line-height: 150%;
-    letter-spacing: 98%;
+    letter-spacing: -0.02em;
     flex-grow: 1;
     margin-top: -15px;
 }
@@ -340,7 +340,7 @@
 
 .partnerName {
     line-height: 140%;
-    letter-spacing: 98%;
+    letter-spacing: -0.02em;
     font-size: 16px;
     font-family: generalSansMedium, sans-serif;
     filter: blur(4px);
@@ -349,7 +349,7 @@
 .partnerLocation {
     font-size: 16px;
     line-height: 110%;
-    letter-spacing: 98%;
+    letter-spacing: -0.02em;
     font-family: generalSansMedium, sans-serif;
 }
 

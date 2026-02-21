@@ -46,7 +46,7 @@
     font-family: generalSansMedium;
     font-size: 14px;
     line-height: 150%;
-    letter-spacing: 98%;
+    letter-spacing: -0.02em;
     width: 500px;
     text-align: center;
     padding-top: 48px;
