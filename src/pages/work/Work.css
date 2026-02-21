@@ -22,7 +22,7 @@
     letter-spacing: -0.03em;
     align-items: center;
     font-family: 'General Sans', sans-serif;
-    line-height: -3;
+    line-height: 100%;
     overflow: hidden;
 }
 
@@ -62,7 +62,7 @@
     transition: all 0.3s ease;
     border: 2px solid transparent;
     text-decoration: none;
-    letter-spacing: 99%;
+    letter-spacing: -0.01em;
     line-height: 100%;
     text-align: center;
     font-family: generalSansMedium;
