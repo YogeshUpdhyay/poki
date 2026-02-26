@@ -45,6 +45,9 @@ function AppContent() {
       // Brief pause after load to let content settle
       setTimeout(() => {
         setShowLogo(false);
+        // Remove the solid blue overlay right before the canvas wipe-off starts
+        document.body.classList.remove('splash-loading');
+
         setTimeout(() => {
           setPhase('revealing');
         }, 300);
@@ -66,6 +69,9 @@ function AppContent() {
         // Page already loaded — hold logo briefly, then reveal
         setTimeout(() => {
           setShowLogo(false);
+          // Remove the solid blue overlay right before the canvas wipe-off starts
+          document.body.classList.remove('splash-loading');
+
           setTimeout(() => {
             setPhase('revealing');
           }, 300);
@@ -124,7 +130,7 @@ function AppContent() {
             style={{
               position: 'fixed',
               inset: 0,
-              zIndex: 1000001,
+              zIndex: 10000002,
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
