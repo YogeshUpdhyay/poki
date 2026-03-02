@@ -21,58 +21,94 @@ function AppContent() {
   const [displayLocation, setDisplayLocation] = useState(location);
   const [phase, setPhase] = useState('idle');
   const [showLogo, setShowLogo] = useState(false);
+  const [isBlinking, setIsBlinking] = useState(false);
   const [isInitialLoad, setIsInitialLoad] = useState(true);
   const [pageReady, setPageReady] = useState(false);
   const { setIsRevealed } = usePreloader();
   const pendingRef = useRef(null);
   const waitingForLoadRef = useRef(false);
 
-  // Detect when page is fully loaded (images, fonts, etc.)
-  useEffect(() => {
-    if (document.readyState === 'complete') {
-      setPageReady(true);
-    } else {
-      const handleLoad = () => setPageReady(true);
-      window.addEventListener('load', handleLoad);
-      return () => window.removeEventListener('load', handleLoad);
-    }
+  const logoVisibleSinceRef = useRef(0);
+
+  const triggerReveal = useCallback(() => {
+    // Ensure logo has been visible for at least 800ms
+    const elapsed = Date.now() - logoVisibleSinceRef.current;
+    const remaining = Math.max(0, 800 - elapsed);
+
+    setTimeout(() => {
+      // 1. Stop blinking and start fading out (duration is 0.3s)
+      setIsBlinking(false);
+
+      // 2. Wait exactly for the fade out to finish
+      setTimeout(() => {
+        setShowLogo(false); // Safely remove from DOM now that it's invisible
+        document.body.classList.remove('splash-loading');
+        setPhase('revealing'); // Start wiping
+      }, 300);
+
+    }, remaining);
   }, []);
+
+  // Detect when page assets (images, videos) are fully loaded
+  useEffect(() => {
+    let checkInterval;
+    let fallbackTimeout;
+    setPageReady(false); // Mark new page as not ready immediately
+
+    const checkAssets = () => {
+      if (document.readyState !== 'complete') return;
+
+      const images = Array.from(document.querySelectorAll('img:not([loading="lazy"])'));
+      const videos = Array.from(document.querySelectorAll('video[autoplay]'));
+
+      const allImagesReady = images.every(img => img.complete);
+      const allVideosReady = videos.every(vid => vid.readyState >= 3);
+
+      if (allImagesReady && allVideosReady) {
+        completeLoad();
+      }
+    };
+
+    const completeLoad = () => {
+      setPageReady(true);
+      clearInterval(checkInterval);
+      clearTimeout(fallbackTimeout);
+    };
+
+    checkAssets();
+    checkInterval = setInterval(checkAssets, 150);
+    fallbackTimeout = setTimeout(completeLoad, 6000); // 6s max delay
+
+    return () => {
+      clearInterval(checkInterval);
+      clearTimeout(fallbackTimeout);
+    };
+  }, [displayLocation]);
 
   // When page is ready AND we're waiting, trigger the reveal
   useEffect(() => {
     if (pageReady && waitingForLoadRef.current) {
       waitingForLoadRef.current = false;
-      // Brief pause after load to let content settle
-      setTimeout(() => {
-        setShowLogo(false);
-        setTimeout(() => {
-          setPhase('revealing');
-        }, 300);
-      }, 500);
+      triggerReveal();
     }
-  }, [pageReady]);
+  }, [pageReady, triggerReveal]);
 
   const handlePhaseComplete = useCallback((completedPhase) => {
     if (completedPhase === 'painting') {
-      // Swap route behind the curtain
+      setShowLogo(true);
+      setIsBlinking(true); // Start blinking
+      logoVisibleSinceRef.current = Date.now();
+
       if (pendingRef.current) {
         setDisplayLocation(pendingRef.current);
         pendingRef.current = null;
-      }
-      // Show logo
-      setShowLogo(true);
-
-      if (pageReady) {
-        // Page already loaded — hold logo briefly, then reveal
-        setTimeout(() => {
-          setShowLogo(false);
-          setTimeout(() => {
-            setPhase('revealing');
-          }, 300);
-        }, 800);
-      } else {
-        // Page still loading — wait for load event
         waitingForLoadRef.current = true;
+      } else {
+        if (pageReady) {
+          triggerReveal();
+        } else {
+          waitingForLoadRef.current = true;
+        }
       }
     } else if (completedPhase === 'revealing') {
       setPhase('idle');
@@ -97,9 +133,8 @@ function AppContent() {
       pendingRef.current = location;
       setPhase('painting');
 
-      // For SPA route changes, content is ready almost immediately
-      // Set a minimum wait time, then mark as ready
-      setTimeout(() => setPageReady(true), 200);
+      // For SPA route changes: the new components mount, but we wait for their assets
+      // (This old artificial timeout is removed; the displayLocation hook handles it securely now)
     }
   }, [location, displayLocation.pathname, isInitialLoad, setIsRevealed]);
 
@@ -118,13 +153,21 @@ function AppContent() {
         {showLogo && (
           <motion.div
             initial={{ opacity: 0, scale: 0.85 }}
-            animate={{ opacity: 1, scale: 1 }}
+            animate={{
+              opacity: isBlinking ? [0.3, 1, 0.3] : 0,
+              scale: isBlinking ? 1 : 0.95
+            }}
             exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.4, ease: 'easeOut' }}
+            transition={{
+              opacity: isBlinking
+                ? { repeat: Infinity, duration: 1.5, ease: "easeInOut" }
+                : { duration: 0.3, ease: 'easeOut' },
+              scale: { duration: 0.4, ease: 'easeOut' }
+            }}
             style={{
               position: 'fixed',
               inset: 0,
-              zIndex: 1000001,
+              zIndex: 10000002,
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
