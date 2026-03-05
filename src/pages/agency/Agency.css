@@ -365,6 +365,12 @@
 }
 
 @media (max-width: 768px) {
+
+    .partnerWith .headlineWrapper {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
     .agencyHero {
         padding-top: 55%;
         height: 100vh;
@@ -390,7 +396,7 @@
     .agencyHeroUnderline {
         width: 115px;
         top: 100%;
-        left: 55%;
+        left: 21%;
     }
 
     .agencyHeroStar {
