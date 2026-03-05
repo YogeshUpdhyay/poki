@@ -7,7 +7,7 @@
     overflow: hidden;
 }
 
-.agencyHero .headlineContainer{
+.agencyHero .headlineContainer {
     padding-top: 20%;
 }
 
@@ -92,9 +92,9 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: start;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
-                translate 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-                z-index 0.3s;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        translate 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        z-index 0.3s;
     cursor: pointer;
     position: relative;
     translate: 0 0;
@@ -104,6 +104,7 @@
 .partnerCard:nth-child(1) {
     transform: rotate(8deg);
 }
+
 .partnerCard:nth-child(1) svg {
     transform: rotate(-4deg) !important;
 }
@@ -111,6 +112,7 @@
 .partnerCard:nth-child(2) {
     transform: rotate(-6deg);
 }
+
 .partnerCard:nth-child(2) svg {
     transform: translateY(-20%) rotate(-3deg) !important;
 }
@@ -118,6 +120,7 @@
 .partnerCard:nth-child(3) {
     transform: rotate(5deg);
 }
+
 .partnerCard:nth-child(3) svg {
     transform: translateY(-5%) rotate(-4deg) !important;
 }
@@ -125,11 +128,12 @@
 .partnerCard:nth-child(4) {
     transform: rotate(-8deg);
 }
+
 .partnerCard:nth-child(4) svg {
     transform: translateY(-6%) rotate(6deg) !important;
 }
 
-.agencyHeadlineLogo{
+.agencyHeadlineLogo {
     width: 191px;
     height: 69px;
 }
@@ -153,6 +157,7 @@
     .partnerCardsGroup:has(.partnerCard:nth-child(2):hover) .partnerCard:nth-child(1) {
         translate: -40px 0;
     }
+
     .partnerCardsGroup:has(.partnerCard:nth-child(2):hover) .partnerCard:nth-child(3),
     .partnerCardsGroup:has(.partnerCard:nth-child(2):hover) .partnerCard:nth-child(4) {
         translate: 40px 0;
@@ -163,6 +168,7 @@
     .partnerCardsGroup:has(.partnerCard:nth-child(3):hover) .partnerCard:nth-child(2) {
         translate: -40px 0;
     }
+
     .partnerCardsGroup:has(.partnerCard:nth-child(3):hover) .partnerCard:nth-child(4) {
         translate: 40px 0;
     }
@@ -364,30 +370,30 @@
         height: 100vh;
     }
 
-    .agencyCartoon{
+    .agencyCartoon {
         width: 128px;
         height: 82.57px;
         top: 10px;
         right: 48%;
     }
 
-    .agencyHeroTooltip{
+    .agencyHeroTooltip {
         position: absolute;
         top: 25%;
         left: 25%;
     }
 
-    .partnerWith{
+    .partnerWith {
         padding: 100px 30px;
     }
 
-    .agencyHeroUnderline{
-        width:115px;
-        top:100%;
+    .agencyHeroUnderline {
+        width: 115px;
+        top: 100%;
         left: 55%;
     }
 
-    .agencyHeroStar{
+    .agencyHeroStar {
         top: -17%;
         right: 77%;
         width: 36px;
@@ -405,7 +411,8 @@
         width: 300px;
         height: 180px;
         position: relative;
-        margin-top: -30px; /* Base negative margin for overlap */
+        margin-top: -30px;
+        /* Base negative margin for overlap */
     }
 
     .partnerReviewCard:nth-child(1) .outlineTextWrapper {
@@ -470,34 +477,34 @@
         width: 80%;
     }
 
-    .agencyHeadlineLogo{
+    .agencyHeadlineLogo {
         width: 95px !important;
         height: 34px !important;
     }
 
-    .advCartoon{
+    .advCartoon {
         width: 70.39px;
         height: 96px;
         top: -20px;
         right: 75%;
     }
 
-    .advantage .tooltip{
-        top: 25% !important;
-        left: 35% !important;
+    .advantage .tooltip {
+        top: 124% !important;
+        left: 2% !important;
     }
 
-    .advList{
+    .advList {
         padding-top: 60px;
         gap: 20px;
     }
 
-    .advList svg{
+    .advList svg {
         width: 48px;
         height: 16px;
     }
 
-    .advListItem{
+    .advListItem {
         width: 124%;
         padding: 20px;
         font-size: 14px;
@@ -524,43 +531,43 @@
         transform: rotate(-3deg);
     }
 
-    .agencyBg{
+    .agencyBg {
         width: 279px;
         height: 280px;
         top: 80%;
         left: 58%;
     }
 
-    .partnerships{
+    .partnerships {
         padding: 100px 30px;
     }
 
-    .agencyPartnerStar{
+    .agencyPartnerStar {
         width: 36px;
         height: 36px;
         top: -17%;
         right: 85%;
     }
 
-    .partnerReview{
+    .partnerReview {
         flex-direction: column;
         gap: 45px;
     }
 
-    .outlineTextWrapper text{
+    .outlineTextWrapper text {
         font-size: 24px;
     }
 
-    .partnerReviewText{
+    .partnerReviewText {
         font-size: 14px;
         margin-top: -40px;
     }
 
-    .partnerReviewCard:nth-child(1){
+    .partnerReviewCard:nth-child(1) {
         height: 410px;
     }
 
-    .partnerReviewCard:nth-child(2){
+    .partnerReviewCard:nth-child(2) {
         height: 500px;
     }
 
