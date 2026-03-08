@@ -174,7 +174,7 @@ function AppContent() {
               pointerEvents: 'none',
             }}
           >
-            <PokiLogo style={{ width: '180px', height: 'auto', fill: '#EFEBE7' }} />
+            <PokiLogo style={{ width: '180px', height: 'auto', color: '#F5F5DC' }} />
           </motion.div>
         )}
       </AnimatePresence>
