@@ -14,10 +14,10 @@ import {
 } from "@floating-ui/react"
 import { companiesData } from '../../data/companiesData'
 import { motion, AnimatePresence } from 'framer-motion'
-import {popInVariants} from '../common/headline/Headline'
+import { popInVariants } from '../common/headline/Headline'
 
 // Carousel item with cursor-following tooltip (same pattern as VisitUsLink in Footer)
-function StudioCarouselItem({keyNumber, image}) {
+function StudioCarouselItem({ keyNumber, image }) {
   const [open, setOpen] = useState(false);
   const { refs, floatingStyles, context } = useFloating({
     open,
@@ -37,7 +37,7 @@ function StudioCarouselItem({keyNumber, image}) {
 
   return (
     <>
-      <div 
+      <div
         className="carouselItem studioCarouselItem"
         key={keyNumber}
         ref={refs.setReference}
@@ -46,7 +46,7 @@ function StudioCarouselItem({keyNumber, image}) {
           onMouseLeave: () => setOpen(false),
         })}
       >
-        <img src={image} alt='studioCarouselImage' className='carouselImage'/>
+        <img src={image} alt='studioCarouselImage' className='carouselImage' />
       </div>
 
       <AnimatePresence>
@@ -73,51 +73,51 @@ function StudioCarouselItem({keyNumber, image}) {
   )
 }
 
-const AboutStudio = ({studioImages}) => {
-    return (
-        <section className="studio" data-navbar="dark">
-          <div className="studioCarousel">
-            <img src={TeamPinkBlob} alt="" className="studioPinkBlob" />
-            <GenericCarousel>
-            {studioImages.map((image, index) => (
-              <StudioCarouselItem 
-                keyNumber={index} 
-                image={image} 
-              />
-            ))}
-          </GenericCarousel>
-          </div>
-          <Headline
-            lines={['the company', 'we keep']}
-            highlight={'company'}
-          >
-            <img 
-              src={studioCartoon}
-              alt="" 
-              className="studioCartoon" 
+const AboutStudio = ({ studioImages }) => {
+  return (
+    <section className="studio" data-navbar="dark">
+      <div className="studioCarousel">
+        <img src={TeamPinkBlob} alt="" className="studioPinkBlob" />
+        <GenericCarousel>
+          {studioImages.map((image, index) => (
+            <StudioCarouselItem
+              keyNumber={index}
+              image={image}
             />
-            <img 
-              src={orangeStar} 
-              alt="orangeStar" 
-              className='studioStar'
-            />
-          </Headline>
-          <section className="companies">
-            {companiesData.map((company) => (
-              <CompanyCard 
-                key={company.id} 
-                name={company.name} 
-                services={company.services} 
-                Logo={company.Logo}
-              />
-            ))}
-          </section>
-          <div className="studioButtons">
-            <Button text='start a project' />
-            <Button text="i'm an agency" color='green' />
-          </div>
-        </section>
-    )
+          ))}
+        </GenericCarousel>
+      </div>
+      <Headline
+        lines={['the company', 'we keep']}
+        highlight={'company'}
+      >
+        <img
+          src={studioCartoon}
+          alt=""
+          className="studioCartoon"
+        />
+        <img
+          src={orangeStar}
+          alt="orangeStar"
+          className='studioStar'
+        />
+      </Headline>
+      <section className="companies">
+        {companiesData.map((company) => (
+          <CompanyCard
+            key={company.id}
+            name={company.name}
+            services={company.services}
+            Logo={company.Logo}
+          />
+        ))}
+      </section>
+      <div className="studioButtons">
+        <Button text='start a project' />
+        <Button text="i'm an agency" color='green' />
+      </div>
+    </section>
+  )
 }
 
 const CompanyCard = ({ name, services, Logo }) => {
@@ -139,7 +139,7 @@ const CompanyCard = ({ name, services, Logo }) => {
 
   return (
     <>
-      <div 
+      <div
         className="companyCard"
         ref={refs.setReference}
         {...getReferenceProps({
