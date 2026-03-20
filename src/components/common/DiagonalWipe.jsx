@@ -40,17 +40,23 @@ const DiagonalWipe = ({ phase = 'idle', color = '#5168E8', onPhaseComplete }) =>
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
 
-    const dpr = window.devicePixelRatio || 1;
     const resize = () => {
+      const dpr = window.devicePixelRatio || 1;
       canvas.width = window.innerWidth * dpr;
       canvas.height = window.innerHeight * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      // High-quality smoothing
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = 'high';
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
     };
     resize();
     window.addEventListener('resize', resize);
 
-    const PAINT_DUR = 2.8;  // seconds ΓÇö responsive but peaceful
-    const REVEAL_DUR = 2.2; // seconds ΓÇö slightly faster wipe-off
+    const PAINT_DUR = 2.8;  // seconds — responsive but peaceful
+    const REVEAL_DUR = 2.2; // seconds — slightly faster wipe-off
 
     const render = (time) => {
       const currentPhase = phaseRef.current;
@@ -92,12 +98,13 @@ const DiagonalWipe = ({ phase = 'idle', color = '#5168E8', onPhaseComplete }) =>
         ctx.shadowBlur = 15;
       }
 
-      // Draw many overlapping circles from lastP ΓåÆ p (paint trail)
-      const steps = 80;
+      // Draw many overlapping circles from lastP → p (paint trail)
+      // Increased steps for smoother rendering on high-res displays
+      const steps = 200;
       for (let i = 0; i <= steps; i++) {
         const t = lastP + (p - lastP) * (i / steps);
 
-        // Base position along the diagonal (top-left ΓåÆ bottom-right)
+        // Base position along the diagonal (top-left → bottom-right)
         // Extend 30% past viewport edges so the brush enters/exits smoothly
         const diag = t * 1.5 - 0.3;
         const baseX = diag * w;
@@ -105,8 +112,8 @@ const DiagonalWipe = ({ phase = 'idle', color = '#5168E8', onPhaseComplete }) =>
 
         // Zig-zag perpendicular to the diagonal (mirror-wiping motion)
         const zigOffset = Math.sin(t * Math.PI * zigFreq) * zigAmp;
-        const x = baseX + zigOffset * 0.707;  // cos(45┬░)
-        const y = baseY - zigOffset * 0.707;  // sin(45┬░)
+        const x = baseX + zigOffset * 0.707;  // cos(45°)
+        const y = baseY - zigOffset * 0.707;  // sin(45°)
 
         ctx.beginPath();
         ctx.arc(x, y, brushRadius, 0, Math.PI * 2);

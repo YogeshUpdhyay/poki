@@ -4,7 +4,8 @@
     border-radius: 12px;
     position: relative;
     margin-left: 26px;
-    z-index: 30; /* ensure cards can overlap elements below */
+    z-index: 30;
+    /* ensure cards can overlap elements below */
 }
 
 .carouselImage {
@@ -41,11 +42,20 @@
 
 .innerCarousel {
     display: flex;
-    animation: scroll 40s infinite linear;  
+    animation: scroll 40s infinite linear;
     z-index: 10;
 }
 
+.carousel:hover .innerCarousel {
+    animation-play-state: paused;
+}
+
 @keyframes scroll {
-    from {translate: 0;}
-    to {translate: -100%;}
+    from {
+        translate: 0;
+    }
+
+    to {
+        translate: -100%;
+    }
 }
