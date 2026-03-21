@@ -32,7 +32,7 @@ export default function BrandNeeds() {
         ]}
       />
       <div className="brandNeedsButton">
-        <Button text="start a project" href={countMeInUrl} />
+        <Button text="lets's start" href={countMeInUrl} />
       </div>
     </section>
   )

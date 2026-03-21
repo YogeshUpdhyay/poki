@@ -9,7 +9,7 @@ const SkewedTapeContainer = styled.div`
 
 const SkewedTapeBgContainer = styled.div`
     width: 100%;
-    height: 140px;
+    height: 110px;
     transform: skewY(${(props) => props.angle});
     background-color: var(--color-black);
     border-bottom: 2px solid var(--color-${(props) => props.borderColor});
@@ -22,13 +22,11 @@ const SkewedTapeBgContainer = styled.div`
 
 const SkewedTapeContentContainer = styled.div`
     width: 100%;
-    height: 140px;
     transform: rotate(${(props) => props.angle})
         skewY(${(props) => props.angle * -1});
     transform-origin: ${(props) => props.tranformOrigin || "50% 50% 0"};
     background-color: ${(props) =>
         props.theme[props.backgroundColor] || props.theme.black};
-
     position: absolute;
     display: block;
     z-index: 4;

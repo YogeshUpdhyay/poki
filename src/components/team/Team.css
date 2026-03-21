@@ -21,12 +21,12 @@
 .teamUnderline {
     position: absolute;
     bottom: -30px;
-    left: 52%
+    left: 52%;
 }
 
 .teamPill {
     position: absolute;
-    left: 88%;
+    left: 70%;
     transform: translateX(-50%);
     top: 28%;
     display: inline-block;
@@ -202,9 +202,8 @@
     }
 
     .teamPill {
-        left: 85%;
-        top: 24%;
-        font-size: 11px;
+        left: 62%;
+        top: 30%;
     }
 
     .teamCols {
@@ -255,8 +254,8 @@
     }
 
     .teamPill {
-        left: 80%;
-        top: 22%;
+        left: 50%;
+        top: 25%;
     }
 
     .teamRow {
@@ -321,8 +320,8 @@
 
     .teamPill {
         display: inline-block;
-        left: 73%;
-        top: 25%; /* Adjust height as needed */
+        left: 34%;
+        top: 23%; /* Adjust height as needed */
         transform: translateX(-50%);
         font-size: 14px;
         padding: 8px 12px;

@@ -83,6 +83,35 @@ const Work = () => {
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
+                                    style={{ paddingRight: '20px' }}
+                                />
+                                work
+                                <OutlinedSvgText 
+                                    lines={['no limits']} 
+                                    stroke='white' 
+                                    fill='pink'
+                                    translateY='0%'
+                                    rotate='0deg'
+                                    size='40'
+                                />
+                                work
+                                <OutlinedSvgText 
+                                    lines={['no limits']} 
+                                    stroke='white' 
+                                    fill='pink'
+                                    translateY='0%'
+                                    rotate='0deg'
+                                    size='40'
+                                />
+                                work
+                                <OutlinedSvgText 
+                                    lines={['no limits']} 
+                                    stroke='white' 
+                                    fill='pink'
+                                    translateY='0%'
+                                    rotate='0deg'
+                                    size='40'
+                                    style={{ paddingRight: '20px' }}
                                 />
                             </div>
                         </Marquee>
@@ -109,14 +138,41 @@ const Work = () => {
                                     size='40'
                                 />
                                 work
-                                <OutlinedSvgText    
-                                    lines={['with love']} 
+                                    <OutlinedSvgText    
+                                        lines={['with love']} 
+                                        stroke='white' 
+                                        fill='orange'
+                                        translateY='0%'
+                                        rotate='0deg'
+                                        size='40'
+                                    />
+                                    work
+                                <OutlinedSvgText 
+                                    lines={['for real']} 
                                     stroke='white' 
-                                    fill='orange'
+                                    fill='green'
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
                                 />
+                                work
+                                <OutlinedSvgText 
+                                    lines={['final final']} 
+                                    stroke='white' 
+                                    fill='blue'
+                                    translateY='0%'
+                                    rotate='0deg'
+                                    size='40'
+                                />
+                                work
+                                    <OutlinedSvgText    
+                                        lines={['with love']} 
+                                        stroke='white' 
+                                        fill='orange'
+                                        translateY='0%'
+                                        rotate='0deg'
+                                        size='40'
+                                    />
                             </div>
                         </Marquee>
                     </SkewedTape>

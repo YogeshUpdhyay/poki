@@ -8,7 +8,7 @@
 /* Hero Marquee Section */
 .skewedTapContainer {
     background-color: var(--background-dark);
-    min-height: 80vh;
+    min-height: 50vh;
     padding-top: 200px;
     overflow-x: hidden;
 }
@@ -24,6 +24,7 @@
     font-family: 'General Sans', sans-serif;
     line-height: 100%;
     overflow: hidden;
+    padding-right: 20px;
 }
 
 .skewedTapeContent svg {

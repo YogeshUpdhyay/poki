@@ -14,7 +14,6 @@
     display: flex;
     z-index: 20;
     padding-top: 140px;
-    padding-bottom: 140px;
     overflow-x: hidden;
     align-items: center; /* vertically center carousel items */
 }
@@ -23,7 +22,7 @@
 .projectButtonContainer {
     display: flex;
     justify-content: center;
-    margin-top: -40px;
+    margin-top: 64px;
 }
 
 .projectsCartoon {

@@ -72,13 +72,13 @@ export function Headline({children, tooltip, tooltipColor, lines, highlight, for
   const isTooltipVisible = forceOpen || open;
 
   const containerVariants = {
-    hidden: { opacity: 1 },
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.02, // Fast, aggressive stagger
-        delayChildren: 0,
-      }
+      // transition: {
+      //   staggerChildren: 0.02, // Fast, aggressive stagger
+      //   delayChildren: 0,
+      // }
     }
   };
 
