@@ -1,6 +1,6 @@
 footer {
     background-color: var(--background-violet);
-    color: white;
+    color: var(--color-white);
     border-radius: 40px 40px 0px 0px;
     display: flex;
     justify-content: center;

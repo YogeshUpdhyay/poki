@@ -165,3 +165,16 @@
         transform: none;
     }
 }
+
+
+.underlinedWord {
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.reviewsUnderlinePosition {
+    position: absolute;
+    bottom: -15px;
+    width: 105%;
+}

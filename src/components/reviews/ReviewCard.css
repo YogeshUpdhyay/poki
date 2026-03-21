@@ -24,6 +24,7 @@
    width: 100%;
    position: relative;
    overflow: visible;
+   min-height: 240px;
 }
 
 .reviewCardEdgeSvg {
@@ -76,6 +77,11 @@
    font-family: generalSansMedium;
    line-height: 140%;
    font-weight: lighter !important;
+   overflow: hidden;
+   display: -webkit-box;
+   -webkit-line-clamp: 6;
+   -webkit-box-orient: vertical;
+   text-overflow: ellipsis;
 }
 
 .reviewCardImage {

@@ -24,7 +24,7 @@ export default function Reviews() {
     {
       reviewerName: 'Nikolas Gregory',
       location: 'United States',
-      reviewText: 'Amazing work all around. An excellent understanding of my ask and delivered an amazing website design paying attention to every little detail that I had asked for. Super polite and professional from start to finish. Thank you Poki Studios!',
+      reviewText: 'Amazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask and delivered an amazing website design paying attention to every little detail that I had asked for. Super polite and professional from start to finish. Thank you Poki Studios!',
       color: 'cream',
       avatarSrc: avatarImgSrc,
       projectImage: null,
@@ -118,18 +118,12 @@ function ReviewHeadline() {
     <h1 className="headlineText">
       <span className="headlineWrapper">
         <span className="headlineHighlight">word</span> on <br />
-        the street <br />
-
+        the <span className='underlinedWord'>street <div className="reviewsUnderlinePosition"><AnimatedSvgLine Svg={HeroUnderline}/></div></span> <br />
         <img
           src={reviewsCartoon}
           alt="reviewsCartoon"
           className="reviewsCartoon"
         />
-        
-        <div className="reviewUnderlinePosition">
-          <AnimatedSvgLine Svg={HeroUnderline} />
-        </div>
-      
       </span>
     </h1>
   )

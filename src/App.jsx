@@ -53,7 +53,7 @@ function AppContent() {
   useEffect(() => {
     let checkInterval;
     let fallbackTimeout;
-    setPageReady(false); // Mark new page as not ready immediately
+    setPageReady(true); // Mark new page as not ready immediately
 
     const checkAssets = () => {
       if (document.readyState !== 'complete') return;
