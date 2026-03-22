@@ -24,13 +24,13 @@ export default function Collaborate() {
         <CollabHeadline />
       </div>
       <div className="collabText">
-        We collaborate with agencies on recurring projects 
-        with partner pricing, and we’re just as excited to 
-        take on one-time projects. Whatever you need, 
+        We collaborate with agencies on recurring projects
+        with partner pricing, and we’re just as excited to
+        take on one-time projects. Whatever you need,
         we’ve got you covered.
       </div>
       <div className="collabButtons">
-        <Button text='start a project' href={countMeInUrl} />
+        <Button text="Let's Start" href={countMeInUrl} />
         <Button text={`i'm an agency`} color='green' href="/agency" />
       </div>
     </section>
@@ -46,7 +46,7 @@ function CollabHeadline() {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-    
+
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
@@ -71,15 +71,15 @@ function CollabHeadline() {
   return (
     <>
       <h1 className="headlineText large">
-        <span 
-          className="headlineWrapper" 
+        <span
+          className="headlineWrapper"
           ref={refs.setReference}
           {...getReferenceProps({
             onMouseEnter: () => setOpen(true),
             onMouseLeave: () => setOpen(false),
           })}
         >
-          <span className="headlineHighlight">let's</span>{isMobile ? <br /> : ' '}collaborate 
+          <span className="headlineHighlight">let's</span>{isMobile ? <br /> : ' '}collaborate
           <img
             src={collaborateCartoon}
             alt="collaborateCartoon"
