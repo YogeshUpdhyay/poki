@@ -264,24 +264,47 @@
 }
 
 /* Custom rotate values for each advListItem - adjust as needed */
-.advListItem:nth-child(1) {
-    transform: rotate(1deg);
+/* Initial rotation variables for each advListItem */
+.advListItem {
+    --item-rotation: 0deg;
+    rotate: var(--item-rotation);
+    transition: translate 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.advListItem:nth-child(2) {
-    transform: rotate(-1deg);
+.advListItem:nth-child(1) { --item-rotation: 1deg; }
+.advListItem:nth-child(2) { --item-rotation: -1deg; }
+.advListItem:nth-child(3) { --item-rotation: 1deg; }
+.advListItem:nth-child(4) { --item-rotation: 0deg; }
+.advListItem:nth-child(5) { --item-rotation: -2deg; }
+
+/* Neighbor Push Logic - Move items away from the hovered one */
+.advList:has(.advListItem:nth-child(1):hover) .advListItem:nth-child(2) {
+    translate: 0 15px;
 }
 
-.advListItem:nth-child(3) {
-    transform: rotate(1deg);
+.advList:has(.advListItem:nth-child(2):hover) .advListItem:nth-child(1) {
+    translate: 0 -15px;
+}
+.advList:has(.advListItem:nth-child(2):hover) .advListItem:nth-child(3) {
+    translate: 0 15px;
 }
 
-.advListItem:nth-child(4) {
-    transform: rotate(0deg);
+.advList:has(.advListItem:nth-child(3):hover) .advListItem:nth-child(2) {
+    translate: 0 -15px;
+}
+.advList:has(.advListItem:nth-child(3):hover) .advListItem:nth-child(4) {
+    translate: 0 15px;
 }
 
-.advListItem:nth-child(5) {
-    transform: rotate(-2deg);
+.advList:has(.advListItem:nth-child(4):hover) .advListItem:nth-child(3) {
+    translate: 0 -15px;
+}
+.advList:has(.advListItem:nth-child(4):hover) .advListItem:nth-child(5) {
+    translate: 0 15px;
+}
+
+.advList:has(.advListItem:nth-child(5):hover) .advListItem:nth-child(4) {
+    translate: 0 -15px;
 }
 
 .agencyBg {
@@ -538,25 +561,11 @@
         text-align: left;
     }
 
-    .advListItem:nth-child(1) {
-        transform: rotate(3deg);
-    }
-
-    .advListItem:nth-child(2) {
-        transform: rotate(-2deg);
-    }
-
-    .advListItem:nth-child(3) {
-        transform: rotate(5deg);
-    }
-
-    .advListItem:nth-child(4) {
-        transform: rotate(0deg);
-    }
-
-    .advListItem:nth-child(5) {
-        transform: rotate(-3deg);
-    }
+    .advListItem:nth-child(1) { --item-rotation: 3deg; }
+    .advListItem:nth-child(2) { --item-rotation: -2deg; }
+    .advListItem:nth-child(3) { --item-rotation: 5deg; }
+    .advListItem:nth-child(4) { --item-rotation: 0deg; }
+    .advListItem:nth-child(5) { --item-rotation: -3deg; }
 
     .agencyBg {
         width: 279px;

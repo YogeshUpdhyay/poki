@@ -131,49 +131,97 @@ const AgencyAdv = () => {
                         </motion.div>
                     </div>
                 </div>
-                <img
+                <motion.img
                     src={agencyAdvCartoon}
                     alt="advCartoon"
                     className="advCartoon"
+                    variants={popInVariants}
+                    initial="hidden"
+                    animate={inView ? "visible" : "hidden"}
+                    style={{ transformOrigin: 'bottom right' }}
                 />
             </Headline>
-            <div className="advList">
-                <div className="advListItem">
+            <motion.div 
+                className="advList"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={{
+                    visible: {
+                        transition: {
+                            staggerChildren: 0.1
+                        }
+                    }
+                }}
+            >
+                <motion.div 
+                    className="advListItem"
+                    variants={{
+                        ...popInVariants,
+                        visible: {
+                            ...popInVariants.visible,
+                            rotate: "var(--item-rotation)"
+                        }
+                    }}
+                    whileHover={{ scale: 1.05, rotate: 0, zIndex: 10 }}
+                >
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.1733 -3.64892e-05L12.3726 7.70607L19.9972 10.173L12.2911 12.3723L9.82423 19.9969L7.62494 12.2908L0.00028063 9.82392L7.70639 7.62462L10.1733 -3.64892e-05Z" fill="#1A1A1A" />
                     </svg>
 
                     get access to cost-efficient rates while we handle design heavy-lifting
-                </div>
-                <div className="advListItem">
+                </motion.div>
+                <motion.div 
+                    className="advListItem"
+                    variants={{
+                        ...popInVariants,
+                        visible: {
+                            ...popInVariants.visible,
+                            rotate: "var(--item-rotation)"
+                        }
+                    }}
+                    whileHover={{ scale: 1.05, rotate: 0, zIndex: 10 }}
+                >
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.1733 -3.64892e-05L12.3726 7.70607L19.9972 10.173L12.2911 12.3723L9.82423 19.9969L7.62494 12.2908L0.00028063 9.82392L7.70639 7.62462L10.1733 -3.64892e-05Z" fill="#1A1A1A" />
                     </svg>
 
                     a dedicated team, clear processes, timely delivery and quality output
-                </div>
-                <div className="advListItem">
+                </motion.div>
+                <motion.div 
+                    className="advListItem"
+                    variants={popInVariants}
+                    whileHover={{ scale: 1.05, rotate: 0, zIndex: 10 }}
+                >
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.1733 -3.64892e-05L12.3726 7.70607L19.9972 10.173L12.2911 12.3723L9.82423 19.9969L7.62494 12.2908L0.00028063 9.82392L7.70639 7.62462L10.1733 -3.64892e-05Z" fill="#1A1A1A" />
                     </svg>
 
                     offer full-service UI & branding to clients without expanding in-house headcount
-                </div>
-                <div className="advListItem">
+                </motion.div>
+                <motion.div 
+                    className="advListItem"
+                    variants={popInVariants}
+                    whileHover={{ scale: 1.05, rotate: 0, zIndex: 10 }}
+                >
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.1733 -3.64892e-05L12.3726 7.70607L19.9972 10.173L12.2911 12.3723L9.82423 19.9969L7.62494 12.2908L0.00028063 9.82392L7.70639 7.62462L10.1733 -3.64892e-05Z" fill="#1A1A1A" />
                     </svg>
 
                     scale quickly during peak demand without compromising quality
-                </div>
-                <div className="advListItem">
+                </motion.div>
+                <motion.div 
+                    className="advListItem"
+                    variants={popInVariants}
+                    whileHover={{ scale: 1.05, rotate: 0, zIndex: 10 }}
+                >
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.1733 -3.64892e-05L12.3726 7.70607L19.9972 10.173L12.2911 12.3723L9.82423 19.9969L7.62494 12.2908L0.00028063 9.82392L7.70639 7.62462L10.1733 -3.64892e-05Z" fill="#1A1A1A" />
                     </svg>
 
                     collaborate, co-create, and grow your agency’s capabilities
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
             <img src={agencyBg} alt="" className="agencyBg" />
         </section>
     )
