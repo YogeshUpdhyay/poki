@@ -259,7 +259,7 @@
     border-radius: 100px;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
     width: fit-content;
 }
 
@@ -271,11 +271,25 @@
     transition: translate 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.advListItem:nth-child(1) { --item-rotation: 1deg; }
-.advListItem:nth-child(2) { --item-rotation: -1deg; }
-.advListItem:nth-child(3) { --item-rotation: 1deg; }
-.advListItem:nth-child(4) { --item-rotation: 0deg; }
-.advListItem:nth-child(5) { --item-rotation: -2deg; }
+.advListItem:nth-child(1) {
+    --item-rotation: 1deg;
+}
+
+.advListItem:nth-child(2) {
+    --item-rotation: -1deg;
+}
+
+.advListItem:nth-child(3) {
+    --item-rotation: 1deg;
+}
+
+.advListItem:nth-child(4) {
+    --item-rotation: 0deg;
+}
+
+.advListItem:nth-child(5) {
+    --item-rotation: -2deg;
+}
 
 /* Neighbor Push Logic - Move items away from the hovered one */
 .advList:has(.advListItem:nth-child(1):hover) .advListItem:nth-child(2) {
@@ -285,6 +299,7 @@
 .advList:has(.advListItem:nth-child(2):hover) .advListItem:nth-child(1) {
     translate: 0 -15px;
 }
+
 .advList:has(.advListItem:nth-child(2):hover) .advListItem:nth-child(3) {
     translate: 0 15px;
 }
@@ -292,6 +307,7 @@
 .advList:has(.advListItem:nth-child(3):hover) .advListItem:nth-child(2) {
     translate: 0 -15px;
 }
+
 .advList:has(.advListItem:nth-child(3):hover) .advListItem:nth-child(4) {
     translate: 0 15px;
 }
@@ -299,6 +315,7 @@
 .advList:has(.advListItem:nth-child(4):hover) .advListItem:nth-child(3) {
     translate: 0 -15px;
 }
+
 .advList:has(.advListItem:nth-child(4):hover) .advListItem:nth-child(5) {
     translate: 0 15px;
 }
@@ -532,6 +549,11 @@
         height: 34px !important;
     }
 
+    .advantage {
+        padding: 80px 64px;
+        z-index: 0;
+    }
+
     .advCartoon {
         width: 70.39px;
         height: 96px;
@@ -546,7 +568,7 @@
 
     .advList {
         padding-top: 60px;
-        gap: 20px;
+        gap: 25px;
     }
 
     .advList svg {
@@ -555,23 +577,40 @@
     }
 
     .advListItem {
-        width: 124%;
-        padding: 20px;
+        width: 115%;
+        /* padding: 20px; */
+        padding-right: 40px;
+        padding-left: 35px;
         font-size: 14px;
         text-align: left;
     }
 
-    .advListItem:nth-child(1) { --item-rotation: 3deg; }
-    .advListItem:nth-child(2) { --item-rotation: -2deg; }
-    .advListItem:nth-child(3) { --item-rotation: 5deg; }
-    .advListItem:nth-child(4) { --item-rotation: 0deg; }
-    .advListItem:nth-child(5) { --item-rotation: -3deg; }
+    .advListItem:nth-child(1) {
+        --item-rotation: 3deg;
+    }
+
+    .advListItem:nth-child(2) {
+        --item-rotation: -2deg;
+    }
+
+    .advListItem:nth-child(3) {
+        --item-rotation: 5deg;
+    }
+
+    .advListItem:nth-child(4) {
+        --item-rotation: 0deg;
+    }
+
+    .advListItem:nth-child(5) {
+        --item-rotation: -3deg;
+    }
 
     .agencyBg {
         width: 279px;
         height: 280px;
-        top: 80%;
-        left: 58%;
+        top: 76.5%;
+        left: 50%;
+        z-index: -1;
     }
 
     .partnerships {
