@@ -1,6 +1,6 @@
 import './Website.css'
 import Footer from "@/components/footer/Footer"
-import {Headline} from "@/components/common/headline/Headline"
+import {Headline, wordVariants} from "@/components/common/headline/Headline"
 import Button from "@/components/common/button/Button"
 import Card from "@/components/common/card/Card"
 import Marquee from "react-fast-marquee"
@@ -333,8 +333,9 @@ const WebsiteHero = () => {
                 }
                 tooltipColor='pink'
                 forceOpen={true}
+                animationType="word"
             >
-                <div className="websiteHeroCartoon">
+                <motion.div className="websiteHeroCartoon" variants={wordVariants}>
                     <svg viewBox="35 15 150 210" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M87.9204 181.353C87.9204 181.353 79.0616 181.492 78.9439 174.208C68.684 177.389 58.1066 179.568 47.4332 180.704C46.379 180.812 44.3056 181.038 42.2663 180.492C41.2186 180.211 40.17 179.723 39.2842 178.923C39.2446 178.972 39.1911 179.018 39.1429 179.057C38.8477 179.29 38.4644 179.375 38.098 179.341C37.7342 179.311 37.3837 179.176 37.0602 178.995C36.5285 178.695 36.0339 178.228 35.9437 177.626C35.8863 177.223 36.0235 176.81 36.2179 176.449C36.4549 176.013 36.8555 175.681 37.3104 175.525C36.8595 173.563 37.2587 171.274 38.5041 168.855C40.5935 164.8 43.7531 161.572 47.0702 158.344C55.8145 149.845 65.4844 141.2 76.9341 135.498L79.5107 140.669C68.7734 146.024 59.5133 154.318 51.101 162.489C48.0272 165.481 45.336 168.222 43.6459 171.502C42.8563 173.033 42.7877 174.13 43.0541 174.51C43.2235 174.747 43.9302 175.263 46.825 174.957C58.7237 173.691 70.8368 169.929 82.1556 166.048L87.9274 181.355L87.9204 181.353Z" fill="#1A1A1A"/>
                         <path d="M87.2368 215.931C86.2536 215.9 85.2722 216.016 84.3032 216.185L83.5037 216.324L100.057 143.362C98.1662 143.396 96.278 143.491 94.3748 143.642L77.1573 219.532L79.9643 220.212C84.3531 221.535 93.0741 224.21 93.0741 224.21C93.0741 224.21 95.5038 216.193 87.2359 215.934L87.2368 215.931Z" fill="#1A1A1A"/>
@@ -350,8 +351,7 @@ const WebsiteHero = () => {
                         <path d="M98.1933 96.2746L95.888 95.6018L90.6581 113.522L92.9633 114.194L98.1933 96.2746Z" fill="#1A1A1A"/>
                         <path d="M93.7302 120.47C93.2752 121.678 92.3595 122.754 91.1903 123.32C90.0299 123.88 88.6889 123.825 87.7483 122.878C86.7186 121.844 86.8192 120.361 87.1405 119.05L93.7267 120.469L93.7302 120.47Z" fill="#1A1A1A"/>
                     </svg>
-                </div>
-
+                </motion.div>
             </Headline>
             <p className="websiteHeroText">
                 A bold identity for an activewear brand built to empower. 

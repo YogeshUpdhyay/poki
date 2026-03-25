@@ -5,7 +5,7 @@ import yellowStar from '../../assets/imgs/stars/yellow.svg'
 import AnimatedSvgLine from '../common/animatedSvgLine/animatedSvgLine'
 import HeroUnderline from "../../assets/underlines/heroUnderline.svg?react";
 import { motion } from 'framer-motion';
-import { Headline, letterVariants } from '../common/headline/Headline';
+import { Headline, letterVariants, wordVariants } from '../common/headline/Headline';
 import { useCms } from '../../utils/context'
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from 'react'
@@ -77,21 +77,21 @@ function HeroHeadline({lines, highlight}) {
   }, [shouldAnimate]);
   
   return (
-    <Headline lines={lines} highlight={highlight} animated={true}>
-      <div 
-        className={`heroCartoonWrapper ${shouldAnimate ? 'slideInRotateAnimation' : ''}`}
-        ref={ref}
+    <Headline lines={lines} highlight={highlight} animated={true} animationType="word">
+      <motion.div 
+        className="heroCartoonWrapper"
+        variants={wordVariants}
       >
         <img
           src={heroCartoon}
           alt="heroCartoon"
           className="heroCartoon"
         />
-      </div>
+      </motion.div>
 
       <motion.div 
         className="heroStar"
-        variants={letterVariants}
+        variants={wordVariants}
       >
         <img src={yellowStar} alt="yellowStar"/>
       </motion.div>

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Headline, letterVariants, popInVariants } from '../common/headline/Headline'
+import { Headline, wordVariants, popInVariants } from '../common/headline/Headline'
 import aboutHeroCartoon from '../../assets/svgs/about/heroCartoon.svg'
 import { useInView } from 'react-intersection-observer'
 import { useState, useEffect } from 'react'
@@ -30,11 +30,12 @@ function AboutHeadline() {
             lines={isMobile ? mobileLines : desktopLines}
             highlight="shine"
             animated={true} 
+            animationType="word"
             // tooltip="we put the 'fun' in functional design"
             // tooltipColor="blue"
         >
         <motion.div 
-            variants={letterVariants}
+            variants={wordVariants}
             className="aboutHeroCartoon"
         >
           <img 

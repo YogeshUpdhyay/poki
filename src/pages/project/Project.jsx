@@ -1,4 +1,4 @@
-import {Headline} from "@/components/common/headline/Headline"
+import {Headline, wordVariants} from "@/components/common/headline/Headline"
 import Button from "@/components/common/button/Button"
 import Card from "@/components/common/card/Card"
 import Footer from "@/components/footer/Footer"
@@ -175,13 +175,14 @@ const ProjectHero = () => {
                 //tooltip='webiste design'
                 //tooltipColor='blue'
                 forceOpen
+                animationType="word"
             >
                 <div className="projectHeroTooltip">
                     <div className="tooltip blue">
                         website design
                     </div>
                 </div>
-                <div className="projectHeroCartoon">
+                <motion.div className="projectHeroCartoon" variants={wordVariants}>
                     <svg 
                         width="auto" height="auto" 
                         viewBox="0 0 175 157" fill="none" 
@@ -202,8 +203,7 @@ const ProjectHero = () => {
                         <path d="M108.663 47.6716C110.095 47.6716 111.256 46.5104 111.256 45.078C111.256 43.6457 110.095 42.4845 108.663 42.4845C107.231 42.4845 106.069 43.6457 106.069 45.078C106.069 46.5104 107.231 47.6716 108.663 47.6716Z" fill="#1A1A1A"/>
                         <path d="M86.993 82.8227C84.2526 82.8227 81.5689 82.0583 79.1657 80.5129C73.8785 77.1082 71.4252 70.8831 71.6655 61.487C71.6722 61.1599 71.9358 60.8929 72.273 60.9095C72.6001 60.9196 72.8571 61.1899 72.8471 61.5171C72.6134 70.5894 74.8264 76.3105 79.8065 79.5182C84.9235 82.816 91.4524 82.2286 96.8464 77.9928C101.756 74.1343 105.261 67.9024 106.226 61.3201C106.273 60.9963 106.573 60.7693 106.897 60.8194C107.221 60.8661 107.444 61.1666 107.397 61.4903C106.393 68.3663 102.721 74.882 97.5807 78.9208C94.2896 81.5076 90.5946 82.8194 86.9997 82.8194L86.993 82.8227Z" fill="#1A1A1A"/>
                     </svg>
-                </div>
-
+                </motion.div>
             </Headline>
             <p className="projectHeroText">
                 We partnered with Dilli Dilli, a bold restaurant concept 

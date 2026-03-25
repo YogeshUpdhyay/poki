@@ -1,6 +1,6 @@
 import './Agency.css'
 import { motion } from 'framer-motion'
-import { Headline, letterVariants, popInVariants } from "../../components/common/headline/Headline"
+import { Headline, letterVariants, wordVariants, popInVariants } from "../../components/common/headline/Headline"
 import Button from "../../components/common/button/Button"
 import agencyCartoon from '../../assets/svgs/agency/agencyCartoon.svg'
 import agencyAdvCartoon from '../../assets/svgs/agency/agencyAdvCartoon.svg'
@@ -313,8 +313,8 @@ const AgencyHero = () => {
     const countMeInUrl = data?.hero?.countMeInUrl;
 
     const agencyCartoonVariants = {
-        hidden: { ...letterVariants.hidden, y: "-90%" },
-        visible: { ...letterVariants.visible, y: "-90%" }
+        hidden: { ...wordVariants.hidden, y: "-90%" },
+        visible: { ...wordVariants.visible, y: "-90%" }
     };
 
     const { ref, inView } = useInView({
@@ -331,6 +331,7 @@ const AgencyHero = () => {
                     highlight={"headcount"}
                     forceOpen
                     animated={true}
+                    animationType="word"
                 >
                     <motion.div
                         variants={agencyCartoonVariants}
@@ -358,6 +359,7 @@ const AgencyHero = () => {
                     highlight={"headcount"}
                     forceOpen
                     animated={true}
+                    animationType="word"
                 >
                     <motion.div
                         variants={agencyCartoonVariants}
