@@ -14,6 +14,8 @@ import OutlinedSvgText from '../../components/common/outlineSvgText/OutlineSvgTe
 import { useCms } from '../../utils/context'
 import PokiLogo from '../../assets/imgs/logo.svg?react'
 import { useInView } from 'react-intersection-observer'
+import { usePreloader } from '../../utils/PreloaderContext'
+import { useState, useEffect } from 'react'
 
 const Agency = () => {
     return (
@@ -313,6 +315,7 @@ const PartnerCard = ({ titleLines, text, color, fill, stroke, translateY, rotate
 const AgencyHero = () => {
     const { data } = useCms();
     const countMeInUrl = data?.hero?.countMeInUrl;
+    const { isRevealed } = usePreloader();
 
     const agencyCartoonVariants = {
         hidden: { ...wordVariants.hidden, y: "-90%" },
@@ -323,6 +326,15 @@ const AgencyHero = () => {
         threshold: 0.1,
         triggerOnce: true,
     });
+
+    const [showButtons, setShowButtons] = useState(false);
+
+    useEffect(() => {
+        if (inView && isRevealed) {
+            const timer = setTimeout(() => setShowButtons(true), 2000);
+            return () => clearTimeout(timer);
+        }
+    }, [inView, isRevealed]);
 
     return (
         <section className="agencyHero" data-navbar='dark' ref={ref}>
@@ -383,8 +395,17 @@ const AgencyHero = () => {
                 </Headline>
             </div>
             <div className="agencyButtons">
-                <Button text="let's team up" href={countMeInUrl} />
-                <Button text="see what we do" color='green' href="/work" />
+                <Button 
+                    text="let's team up" 
+                    href={countMeInUrl} 
+                    className={showButtons ? 'heroButtonPop' : ''}
+                />
+                <Button 
+                    text="see what we do" 
+                    color='green' 
+                    href="/work" 
+                    className={showButtons ? 'heroButtonPop' : ''}
+                />
             </div>
         </section>
     )

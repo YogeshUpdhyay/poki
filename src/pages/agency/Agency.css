@@ -63,6 +63,15 @@
     padding-bottom: 160px;
 }
 
+.agencyButtons .cta-btn-background {
+    transform: scale(0);
+    opacity: 0;
+}
+
+.agencyButtons > div:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
 .partnerWith {
     background-color: var(--background-dark);
     color: var(--color-white);
