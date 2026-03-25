@@ -57,7 +57,7 @@ const Work = () => {
                     <SkewedTape angle="10deg" backgroundColor='black' borderColor='white'>
                         <Marquee speed={50} gradient={false} direction="right">
                             <div className="skewedTapeContent">
-                                work
+                                <span className="skewedTapeWork">work</span>
                                 <OutlinedSvgText
                                     lines={['no limits']}
                                     stroke='white'
@@ -65,8 +65,9 @@ const Work = () => {
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
+                                    width='220px'
                                 />
-                                work
+                                <span className="skewedTapeWork">work</span>
                                 <OutlinedSvgText
                                     lines={['no limits']}
                                     stroke='white'
@@ -74,8 +75,9 @@ const Work = () => {
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
+                                    width='220px'
                                 />
-                                work
+                                <span className="skewedTapeWork">work</span>
                                 <OutlinedSvgText
                                     lines={['no limits']}
                                     stroke='white'
@@ -83,9 +85,9 @@ const Work = () => {
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
-                                    style={{ paddingRight: '20px' }}
+                                    width='220px'
                                 />
-                                work
+                                <span className="skewedTapeWork">work</span>
                                 <OutlinedSvgText
                                     lines={['no limits']}
                                     stroke='white'
@@ -93,8 +95,9 @@ const Work = () => {
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
+                                    width='220px'
                                 />
-                                work
+                                <span className="skewedTapeWork">work</span>
                                 <OutlinedSvgText
                                     lines={['no limits']}
                                     stroke='white'
@@ -102,8 +105,9 @@ const Work = () => {
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
+                                    width='220px'
                                 />
-                                work
+                                <span className="skewedTapeWork">work</span>
                                 <OutlinedSvgText
                                     lines={['no limits']}
                                     stroke='white'
@@ -111,7 +115,7 @@ const Work = () => {
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
-                                    style={{ paddingRight: '20px' }}
+                                    width='220px'
                                 />
                             </div>
                         </Marquee>
@@ -119,7 +123,7 @@ const Work = () => {
                     <SkewedTape angle="-4deg" backgroundColor='black' borderColor='white'>
                         <Marquee speed={50} gradient={false}>
                             <div className="skewedTapeContent">
-                                work
+                                <span className="skewedTapeWork">work</span>
                                 <OutlinedSvgText
                                     lines={['for real']}
                                     stroke='white'
@@ -127,8 +131,9 @@ const Work = () => {
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
+                                    width='180px'
                                 />
-                                work
+                                <span className="skewedTapeWork">work</span>
                                 <OutlinedSvgText
                                     lines={['final final']}
                                     stroke='white'
@@ -136,8 +141,9 @@ const Work = () => {
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
+                                    width='220px'
                                 />
-                                work
+                                <span className="skewedTapeWork">work</span>
                                 <OutlinedSvgText
                                     lines={['with love']}
                                     stroke='white'
@@ -145,8 +151,9 @@ const Work = () => {
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
+                                    width='200px'
                                 />
-                                work
+                                <span className="skewedTapeWork">work</span>
                                 <OutlinedSvgText
                                     lines={['for real']}
                                     stroke='white'
@@ -154,8 +161,9 @@ const Work = () => {
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
+                                    width='180px'
                                 />
-                                work
+                                <span className="skewedTapeWork">work</span>
                                 <OutlinedSvgText
                                     lines={['final final']}
                                     stroke='white'
@@ -163,8 +171,9 @@ const Work = () => {
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
+                                    width='220px'
                                 />
-                                work
+                                <span className="skewedTapeWork">work</span>
                                 <OutlinedSvgText
                                     lines={['with love']}
                                     stroke='white'
@@ -172,6 +181,7 @@ const Work = () => {
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
+                                    width='200px'
                                 />
                             </div>
                         </Marquee>

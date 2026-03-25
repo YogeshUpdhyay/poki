@@ -9,26 +9,26 @@ const SkewedTapeContainer = styled.div`
 
 const SkewedTapeBgContainer = styled.div`
     width: 100%;
-    height: 110px;
-    transform: skewY(${(props) => props.angle});
+    height: 141px;
+    transform: rotate(${(props) => props.angle});
     background-color: var(--color-black);
     border-bottom: 2px solid var(--color-${(props) => props.borderColor});
     border-top: 2px solid var(--color-${(props) => props.borderColor});
     position: absolute;
     z-index: 3;
-    display: block;
+    display: flex;
+    align-items: center;
     overflow: hidden;
 `;
 
 const SkewedTapeContentContainer = styled.div`
     width: 100%;
-    transform: rotate(${(props) => props.angle})
-        skewY(${(props) => props.angle * -1});
+    transform: rotate(${(props) => props.angle * -1});
     transform-origin: ${(props) => props.tranformOrigin || "50% 50% 0"};
     background-color: ${(props) =>
         props.theme[props.backgroundColor] || props.theme.black};
     position: absolute;
-    display: block;
+    display: flex;
     z-index: 4;
     align-items: center;
     justify-content: center;

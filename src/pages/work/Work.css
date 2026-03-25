@@ -15,7 +15,7 @@
 
 .skewedTapeContent {
     display: inline-flex;
-    gap: 40px;
+    gap: 60px;
     color: var(--color-white);
     font-size: 96px;
     font-weight: 700;
@@ -24,11 +24,17 @@
     font-family: 'General Sans', sans-serif;
     line-height: 100%;
     overflow: hidden;
-    padding-right: 20px;
+    padding-right: 60px;
 }
 
 .skewedTapeContent svg {
     vertical-align: middle;
+}
+
+/* Customize individual "WORK" text position here */
+.skewedTapeWork {
+    display: inline-block;
+    padding-bottom: 15px;
 }
 
 /* Category Menu Section */
@@ -269,6 +275,7 @@
 }
 
 @media (max-width: 900px) {
+
     /* Disable rotations for better UX on smaller screens */
     .phoneMockupCard {
         transform: rotate(0deg) !important;
@@ -313,7 +320,7 @@
         min-height: 400px;
     }
 
-    .skewedTapContainer > div {
+    .skewedTapContainer>div {
         height: 100px !important;
     }
 

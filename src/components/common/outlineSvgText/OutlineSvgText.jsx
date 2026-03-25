@@ -16,6 +16,7 @@ function OutlinedSvgText({
   // tweakable:
   lineHeight = 1.0,     // multiplier on font size for each next line
   padding = null,       // if null, auto based on strokeWidth
+  width = "300px",      // new width prop
 }) {
   const fontSizePx = toNumberPx(size, 32);
   const strokePx = toNumberPx(strokeWidth, 0);
@@ -39,24 +40,26 @@ function OutlinedSvgText({
 
   return (
     <svg
-      width="100%"
+      width={width}
       height={heightPx}
+      viewBox={`0 0 ${toNumberPx(width, 300)} ${heightPx}`}
       style={{
-        display: "block",
+        display: "inline-block",
         transform: `translateY(${translateY}) rotate(${rotate})`,
         overflow: "visible",
+        verticalAlign: "middle"
       }}
       preserveAspectRatio="xMidYMid meet"
     >
       <text
         x="50%"
-        y={firstBaselineY}
+        y="50%"
         fontSize={fontSizePx}
         fill={`var(--color-${fill})`}
         stroke={`var(--color-${stroke})`}
         strokeWidth={strokePx}
         paintOrder="stroke fill"
-        dominantBaseline="alphabetic"
+        dominantBaseline="central"
         fontFamily="Milk Cursive W00 Regular"
         textAnchor="middle"
       >
