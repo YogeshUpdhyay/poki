@@ -7,8 +7,9 @@ import agencyAdvCartoon from '../../assets/svgs/agency/agencyAdvCartoon.svg'
 import agencyBg from '../../assets/svgs/agency/agencyBg.svg'
 import Collaborate from '../../components/collaborate/Collaborate'
 import Footer from '../../components/footer/Footer'
-import agencyHeroUnderline from '@/assets/svgs/agency/agencyHeroUnderline.svg'
+import agencyHeroUnderline from '@/assets/svgs/agency/agencyHeroUnderline.svg?react'
 import agencyHeroStar from '@/assets/svgs/agency/agencyHeroStar.svg'
+import AnimatedSvgLine from '../../components/common/animatedSvgLine/animatedSvgLine'
 import OutlinedSvgText from '../../components/common/outlineSvgText/OutlineSvgText'
 import { useCms } from '../../utils/context'
 import PokiLogo from '../../assets/imgs/logo.svg?react'
@@ -37,10 +38,11 @@ const AgencyPartnerShips = () => {
                 lines={['partnerships that paid off']}
                 highlight={'partnerships'}
             >
-                <img
+                <motion.img
                     src={agencyHeroStar}
                     alt="agencyHeroStar"
                     className='agencyPartnerStar'
+                    variants={popInVariants}
                 />
             </Headline>
             <div className="partnerReview">
@@ -141,7 +143,7 @@ const AgencyAdv = () => {
                     style={{ transformOrigin: 'bottom right' }}
                 />
             </Headline>
-            <motion.div 
+            <motion.div
                 className="advList"
                 initial="hidden"
                 whileInView="visible"
@@ -154,7 +156,7 @@ const AgencyAdv = () => {
                     }
                 }}
             >
-                <motion.div 
+                <motion.div
                     className="advListItem"
                     variants={{
                         ...popInVariants,
@@ -171,7 +173,7 @@ const AgencyAdv = () => {
 
                     get access to cost-efficient rates while we handle design heavy-lifting
                 </motion.div>
-                <motion.div 
+                <motion.div
                     className="advListItem"
                     variants={{
                         ...popInVariants,
@@ -188,7 +190,7 @@ const AgencyAdv = () => {
 
                     a dedicated team, clear processes, timely delivery and quality output
                 </motion.div>
-                <motion.div 
+                <motion.div
                     className="advListItem"
                     variants={popInVariants}
                     whileHover={{ scale: 1.05, rotate: 0, zIndex: 10 }}
@@ -199,7 +201,7 @@ const AgencyAdv = () => {
 
                     offer full-service UI & branding to clients without expanding in-house headcount
                 </motion.div>
-                <motion.div 
+                <motion.div
                     className="advListItem"
                     variants={popInVariants}
                     whileHover={{ scale: 1.05, rotate: 0, zIndex: 10 }}
@@ -210,7 +212,7 @@ const AgencyAdv = () => {
 
                     scale quickly during peak demand without compromising quality
                 </motion.div>
-                <motion.div 
+                <motion.div
                     className="advListItem"
                     variants={popInVariants}
                     whileHover={{ scale: 1.05, rotate: 0, zIndex: 10 }}
@@ -237,15 +239,15 @@ const AgencyPartnerWith = () => {
                 lines={['who we partner with']}
                 highlight={'partner'}
             >
-                <img
-                    src={agencyHeroUnderline}
-                    alt="agencyHeroUnderline"
+                <AnimatedSvgLine
+                    Svg={agencyHeroUnderline}
                     className='agencyHeroUnderline'
                 />
-                <img
+                <motion.img
                     src={agencyHeroStar}
                     alt="agencyHeroStar"
                     className='agencyHeroStar'
+                    variants={popInVariants}
                 />
             </Headline>
             <div className="partnerCardsGroup">
