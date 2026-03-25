@@ -38,16 +38,23 @@ function OutlinedSvgText({
   const descent = Math.ceil(fontSizePx * 0.35); // decent approximation
   const heightPx = pad + fontSizePx + (lineCount - 1) * lineStep + descent + pad;
 
+  const maxChars = lines.reduce((max, line) => Math.max(max, line.length), 0);
+  // Estimate width based on character count and font size (~0.6 font-size per char + stroke)
+  const estimatedWidth = Math.ceil(maxChars * fontSizePx * 0.75) + pad * 2;
+  const isAutoWidth = width === "auto" || width == null;
+  const finalWidth = isAutoWidth ? estimatedWidth : toNumberPx(width, 300);
+
   return (
     <svg
-      width={width}
+      width={isAutoWidth ? "auto" : finalWidth}
       height={heightPx}
-      viewBox={`0 0 ${toNumberPx(width, 300)} ${heightPx}`}
+      viewBox={`0 0 ${finalWidth} ${heightPx}`}
       style={{
         display: "inline-block",
         transform: `translateY(${translateY}) rotate(${rotate})`,
         overflow: "visible",
-        verticalAlign: "middle"
+        verticalAlign: "middle",
+        flexShrink: 0
       }}
       preserveAspectRatio="xMidYMid meet"
     >

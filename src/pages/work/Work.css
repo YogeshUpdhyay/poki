@@ -3,7 +3,8 @@
     padding: 120px 0px 0px;
     position: relative;
     min-height: 100vh;
-    min-height: 100dvh; /* iOS Safari fix */
+    min-height: 100dvh;
+    /* iOS Safari fix */
 }
 
 /* Hero Marquee Section */
@@ -11,7 +12,7 @@
     background-color: var(--background-dark);
     min-height: 50vh;
     padding-top: 200px;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .skewedTapeContent {
@@ -315,17 +316,36 @@
     }
 
     .skewedTapContainer {
-        padding: 150px 0px 100px;
-        min-height: 400px;
+        padding: 150px 0px 60px;
+        /* min-height: auto; */
     }
 
     .skewedTapContainer>div {
-        height: 100px !important;
+        height: 90px !important;
     }
 
     .skewedTapeContent {
-        font-size: 40px;
-        gap: 20px;
+        font-size: 44px;
+        gap: 35px;
+        padding-right: 40px;
+        align-items: center;
+        display: inline-flex;
+        line-height: normal;
+        letter-spacing: -0.01em;
+    }
+
+    .skewedTapeContent svg {
+        width: auto;
+        height: 48px;
+        flex-shrink: 0;
+        display: block;
+    }
+
+    .skewedTapeWork {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        line-height: normal;
     }
 
     .phoneMockupImage {
@@ -365,12 +385,15 @@
     }
 
     .categoryPills {
-        gap: 8px;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
     }
 
     .categoryPill {
-        padding: 10px 12px;
+        padding: 10px 16px;
         font-size: 13px;
+        width: fit-content;
     }
 }
 

@@ -8,7 +8,8 @@ const SkewedTapeContainer = styled.div`
 `;
 
 const SkewedTapeBgContainer = styled.div`
-    width: 100%;
+    width: 200vw;
+    left: -50vw;
     height: 141px;
     transform: rotate(${(props) => props.angle});
     background-color: var(--color-black);

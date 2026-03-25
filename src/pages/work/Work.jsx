@@ -65,7 +65,6 @@ const Work = () => {
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
-                                    width='220px'
                                 />
                                 <span className="skewedTapeWork">work</span>
                                 <OutlinedSvgText
@@ -75,7 +74,6 @@ const Work = () => {
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
-                                    width='220px'
                                 />
                                 <span className="skewedTapeWork">work</span>
                                 <OutlinedSvgText
@@ -85,7 +83,6 @@ const Work = () => {
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
-                                    width='220px'
                                 />
                                 <span className="skewedTapeWork">work</span>
                                 <OutlinedSvgText
@@ -95,7 +92,6 @@ const Work = () => {
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
-                                    width='220px'
                                 />
                                 <span className="skewedTapeWork">work</span>
                                 <OutlinedSvgText
@@ -105,7 +101,6 @@ const Work = () => {
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
-                                    width='220px'
                                 />
                                 <span className="skewedTapeWork">work</span>
                                 <OutlinedSvgText
@@ -115,7 +110,6 @@ const Work = () => {
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
-                                    width='220px'
                                 />
                             </div>
                         </Marquee>
@@ -131,7 +125,6 @@ const Work = () => {
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
-                                    width='180px'
                                 />
                                 <span className="skewedTapeWork">work</span>
                                 <OutlinedSvgText
@@ -141,7 +134,6 @@ const Work = () => {
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
-                                    width='220px'
                                 />
                                 <span className="skewedTapeWork">work</span>
                                 <OutlinedSvgText
@@ -151,7 +143,6 @@ const Work = () => {
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
-                                    width='200px'
                                 />
                                 <span className="skewedTapeWork">work</span>
                                 <OutlinedSvgText
@@ -161,7 +152,6 @@ const Work = () => {
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
-                                    width='180px'
                                 />
                                 <span className="skewedTapeWork">work</span>
                                 <OutlinedSvgText
@@ -171,7 +161,6 @@ const Work = () => {
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
-                                    width='220px'
                                 />
                                 <span className="skewedTapeWork">work</span>
                                 <OutlinedSvgText
@@ -181,7 +170,6 @@ const Work = () => {
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
-                                    width='200px'
                                 />
                             </div>
                         </Marquee>
