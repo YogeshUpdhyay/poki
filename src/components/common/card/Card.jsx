@@ -4,7 +4,7 @@ import OutlinedSvgText from '../outlineSvgText/OutlineSvgText'
 const Card = ({ 
     image, title, style, border, 
     svgTop, svgBottom, svgLeft, svgRight, 
-    svgTransform, svgText, svgFill
+    svgTransform, svgText, svgFill, contain
 }) => {
     const containerStyle = style || {};
     const imgStyle = { flexGrow: 1 };
@@ -31,6 +31,7 @@ const Card = ({
                     src={image} 
                     alt="cardImage" 
                     className="cardImage"
+                    style={contain ? { objectFit: 'contain' } : undefined}
                 />
                 {title && (
                     <div className="cardTitle">
