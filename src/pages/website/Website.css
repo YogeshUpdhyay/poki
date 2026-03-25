@@ -81,6 +81,7 @@
 .websiteHeroItalic {
     font-size: 96px;
     font-family: ppEditorial;
+    letter-spacing: -3px;
 }
 
 .websiteImageWrapper {
