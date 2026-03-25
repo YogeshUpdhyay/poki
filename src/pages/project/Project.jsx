@@ -1,8 +1,12 @@
-import {Headline, wordVariants} from "@/components/common/headline/Headline"
+import {Headline, wordVariants, popInVariants} from "@/components/common/headline/Headline"
 import Button from "@/components/common/button/Button"
 import Card from "@/components/common/card/Card"
 import Footer from "@/components/footer/Footer"
 import Marquee from "react-fast-marquee";
+import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
+import { useInView } from 'react-intersection-observer'
+import { usePreloader } from '@/utils/PreloaderContext'
 import "./Project.css"
 
 // Project images
@@ -168,20 +172,40 @@ const ProjectBeforeAfter = () => {
 }
 
 const ProjectHero = () => {
+    const { isRevealed } = usePreloader();
+    const { ref, inView } = useInView({
+        threshold: 0.1,
+        triggerOnce: true,
+    });
+
+    const [showButtons, setShowButtons] = useState(false);
+
+    useEffect(() => {
+        if (inView && isRevealed) {
+            const timer = setTimeout(() => setShowButtons(true), 2000);
+            return () => clearTimeout(timer);
+        }
+    }, [inView, isRevealed]);
+
     return (
-        <section className="projectHero" data-navbar='dark'>
+        <section className="projectHero" data-navbar='dark' ref={ref}>
             <Headline
                 lines={['dilli dilli']}
                 //tooltip='webiste design'
                 //tooltipColor='blue'
                 forceOpen
+                animated={true}
                 animationType="word"
             >
-                <div className="projectHeroTooltip">
+                <motion.div 
+                    className="projectHeroTooltip"
+                    variants={popInVariants}
+                    style={{ transformOrigin: 'bottom left' }}
+                >
                     <div className="tooltip blue">
                         website design
                     </div>
-                </div>
+                </motion.div>
                 <motion.div className="projectHeroCartoon" variants={wordVariants}>
                     <svg 
                         width="auto" height="auto" 
@@ -205,16 +229,22 @@ const ProjectHero = () => {
                     </svg>
                 </motion.div>
             </Headline>
-            <p className="projectHeroText">
+            <motion.p 
+                className="projectHeroText"
+                initial={{ opacity: 0, y: 30 }}
+                animate={inView && isRevealed ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                transition={{ duration: 0.8, delay: 1.5, ease: 'easeOut' }}
+            >
                 We partnered with Dilli Dilli, a bold restaurant concept 
                 fusing the spirited heritage of Old Delhi with the sleek energy 
                 of modern New York, to create a website that captures their 
                 dual-city story in equal measure.
-            </p>
+            </motion.p>
             <div className="projectHeroButtonWrapper">
                 <Button 
                     text={"let's have a look"} 
                     color='green'
+                    className={showButtons ? 'heroButtonPop' : ''}
                 />
             </div>
             <Marquee>

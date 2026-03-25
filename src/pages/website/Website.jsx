@@ -1,9 +1,13 @@
 import './Website.css'
 import Footer from "@/components/footer/Footer"
-import {Headline, wordVariants} from "@/components/common/headline/Headline"
+import {Headline, wordVariants, popInVariants} from "@/components/common/headline/Headline"
 import Button from "@/components/common/button/Button"
 import Card from "@/components/common/card/Card"
 import Marquee from "react-fast-marquee"
+import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
+import { useInView } from 'react-intersection-observer'
+import { usePreloader } from '@/utils/PreloaderContext'
 import blueFlower from '@/assets/svgs/work/blueFlower.svg'
 import pinkSvg from '@/assets/imgs/projects/pink.svg'
 
@@ -313,8 +317,23 @@ const WebsiteImage = () => {
 }
 
 const WebsiteHero = () => {
+    const { isRevealed } = usePreloader();
+    const { ref, inView } = useInView({
+        threshold: 0.1,
+        triggerOnce: true,
+    });
+
+    const [showButtons, setShowButtons] = useState(false);
+
+    useEffect(() => {
+        if (inView && isRevealed) {
+            const timer = setTimeout(() => setShowButtons(true), 2000);
+            return () => clearTimeout(timer);
+        }
+    }, [inView, isRevealed]);
+
     return (
-        <section className="websiteHero" data-navbar='dark'>
+        <section className="websiteHero" data-navbar='dark' ref={ref}>
             <img 
                 src={blueFlower} 
                 alt="blue flower decoration" 
@@ -322,19 +341,21 @@ const WebsiteHero = () => {
             />
             <Headline
                 lines={['begun']}
-                tooltip={
-                    <>
+                forceOpen={true}
+                animated={true}
+                animationType="word"
+            >
+                <motion.div
+                    variants={popInVariants}
+                    className='websiteHeroTooltip tooltip pink'
+                    style={{ transformOrigin: 'bottom left' }}
+                >
                     brand identity{'  '}
                     <svg style={{margin: '0 3px 0 3px'}} width="2" height="10" viewBox="0 0 2 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="1.5" width="10" height="1.5" rx="0.75" transform="rotate(90 1.5 0)" fill="#000000ff"/>
                     </svg>
                     {'  '}logo design
-                    </>
-                }
-                tooltipColor='pink'
-                forceOpen={true}
-                animationType="word"
-            >
+                </motion.div>
                 <motion.div className="websiteHeroCartoon" variants={wordVariants}>
                     <svg viewBox="35 15 150 210" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M87.9204 181.353C87.9204 181.353 79.0616 181.492 78.9439 174.208C68.684 177.389 58.1066 179.568 47.4332 180.704C46.379 180.812 44.3056 181.038 42.2663 180.492C41.2186 180.211 40.17 179.723 39.2842 178.923C39.2446 178.972 39.1911 179.018 39.1429 179.057C38.8477 179.29 38.4644 179.375 38.098 179.341C37.7342 179.311 37.3837 179.176 37.0602 178.995C36.5285 178.695 36.0339 178.228 35.9437 177.626C35.8863 177.223 36.0235 176.81 36.2179 176.449C36.4549 176.013 36.8555 175.681 37.3104 175.525C36.8595 173.563 37.2587 171.274 38.5041 168.855C40.5935 164.8 43.7531 161.572 47.0702 158.344C55.8145 149.845 65.4844 141.2 76.9341 135.498L79.5107 140.669C68.7734 146.024 59.5133 154.318 51.101 162.489C48.0272 165.481 45.336 168.222 43.6459 171.502C42.8563 173.033 42.7877 174.13 43.0541 174.51C43.2235 174.747 43.9302 175.263 46.825 174.957C58.7237 173.691 70.8368 169.929 82.1556 166.048L87.9274 181.355L87.9204 181.353Z" fill="#1A1A1A"/>
@@ -353,14 +374,20 @@ const WebsiteHero = () => {
                     </svg>
                 </motion.div>
             </Headline>
-            <p className="websiteHeroText">
+            <motion.p 
+                className="websiteHeroText"
+                initial={{ opacity: 0, y: 30 }}
+                animate={inView && isRevealed ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                transition={{ duration: 0.8, delay: 1.5, ease: 'easeOut' }}
+            >
                 A bold identity for an activewear brand built to empower. 
                 We brought boldness, balance, and a whole lot of green energy to life.
-            </p>
+            </motion.p>
             <div className="websiteHeroButtonWrapper">
                 <Button 
                     text={"let's have a look"} 
                     color='green'
+                    className={showButtons ? 'heroButtonPop' : ''}
                 />
             </div>
             <Marquee>
