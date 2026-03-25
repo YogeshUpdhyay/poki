@@ -2,6 +2,7 @@
     padding-top: 110px;
     display: flex;
     min-height: 100vh;
+    min-height: 100dvh; /* iOS Safari fix */
     /* justify-content: flex-end; */
     align-items: center;
     flex-direction: column;
@@ -432,6 +433,7 @@
     .agencyHero {
         padding-top: 55%;
         min-height: 100vh;
+        min-height: 100dvh; /* iOS Safari fix */
     }
 
     .agencyCartoon {

@@ -3,6 +3,7 @@
     padding: 120px 0px 0px;
     position: relative;
     min-height: 100vh;
+    min-height: 100dvh; /* iOS Safari fix */
 }
 
 /* Hero Marquee Section */
@@ -73,8 +74,7 @@
     line-height: 100%;
     text-align: center;
     font-family: generalSansMedium;
-    text-box-trim: trim-both;
-    text-box-edge: cap alphabetic;
+    /* text-box-trim removed — unsupported on iOS Safari */
 }
 
 .categoryPill.active {
@@ -215,8 +215,7 @@
     z-index: 3;
     line-height: 100%;
     text-align: center;
-    text-box-trim: trim-both;
-    text-box-edge: cap alphabetic;
+    /* text-box-trim removed — unsupported on iOS Safari */
 }
 
 /* Flower Decorations */

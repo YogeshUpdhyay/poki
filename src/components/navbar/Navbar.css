@@ -151,6 +151,7 @@
         left: -100%;
         width: 280px;
         height: 100vh;
+        height: 100dvh; /* iOS Safari fix — nav must fill screen */
         background-color: var(--background-dark);
         flex-direction: column;
         align-items: flex-start;

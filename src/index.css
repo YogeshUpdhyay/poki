@@ -17,8 +17,6 @@
 @font-face {
   font-family: 'ppEditorial';
   src: url('./assets/fonts/PPEditorial-UltralightItlaic.otf') format('opentype');
-  font-weight: 200;
-  font-style: italic;
   font-display: swap;
 }
 

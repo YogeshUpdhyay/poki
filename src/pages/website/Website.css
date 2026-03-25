@@ -5,6 +5,7 @@
 
 .websiteHero {
     height: 110vh;
+    height: 110dvh; /* iOS Safari fix — dynamic viewport height */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -200,6 +201,7 @@
     display: flex;
     width: 100%;
     height: 80vh;
+    height: 80dvh; /* iOS Safari fix */
     gap: 26px;
 }
 
@@ -442,14 +444,14 @@
     z-index: 3;
     line-height: 100%;
     text-align: center;
-    text-box-trim: trim-both;
-    text-box-edge: cap alphabetic;
+    /* text-box-trim removed — unsupported on iOS Safari */
 }
 
 @media (max-width: 768px) {
 
     .websiteHero {
         height: 79vh;
+        height: 79dvh; /* iOS Safari fix */
     }
 
     .websiteHeroCartoon {

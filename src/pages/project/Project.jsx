@@ -101,11 +101,24 @@ const ProjectAbout = () => {
 
             <div className="wireframe">
                 <div className="pdfBox">
-                    <iframe
-                        src={`${webpagePdf}#view=FitH&toolbar=0&navpanes=0&scrollbar=0`}
-                        title="Project PDF"
-                        style={{ border: 'none', width: '100%', height: '100%' }}
-                    />
+                    {/* iOS Safari cannot render PDFs in iframes — fallback to link */}
+                    {/iPad|iPhone|iPod/.test(navigator.userAgent) ? (
+                        <a
+                            href={webpagePdf}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="pdfFallbackLink"
+                        >
+                            <span className="pdfFallbackIcon">📄</span>
+                            <span>View Project PDF</span>
+                        </a>
+                    ) : (
+                        <iframe
+                            src={`${webpagePdf}#view=FitH&toolbar=0&navpanes=0&scrollbar=0`}
+                            title="Project PDF"
+                            style={{ border: 'none', width: '100%', height: '100%' }}
+                        />
+                    )}
                 </div>
             </div>
 
