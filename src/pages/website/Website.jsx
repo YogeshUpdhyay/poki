@@ -8,39 +8,33 @@ import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { usePreloader } from '@/utils/PreloaderContext'
+import { NavLink } from 'react-router-dom'
 import blueFlower from '@/assets/svgs/work/blueFlower.svg'
 import pinkSvg from '@/assets/imgs/projects/pink.svg'
-
-import about1 from '@/assets/images/website/about1.svg'
-import about2 from '@/assets/images/website/about2.svg'
-import bia1 from '@/assets/images/website/bia1.svg'
-import bia2 from '@/assets/images/website/bia2.svg'
-import bia3 from '@/assets/images/website/bia3.svg'
-import bia4 from '@/assets/images/website/bia4.svg'
-import bia5 from '@/assets/images/website/bia5.svg'
-import bia6 from '@/assets/images/website/bia6.svg'
-import logo1 from '@/assets/images/website/logo1.svg'
-import logo2 from '@/assets/images/website/logo2.svg'
-import logo3 from '@/assets/images/website/logo3.svg'
-import type1 from '@/assets/images/website/type1.svg'
-import type2 from '@/assets/images/website/type2.svg'
-import websiteimage from '@/assets/images/website/websiteimage.jpg'
+import { getProjectBySlug, getRelatedProjects } from '@/data/projectsData'
 
 import { useCms } from '@/utils/context'
 
-const Website = () => {
+const Website = ({ project: projectProp }) => {
     const { data } = useCms();
     const countMeInUrl = data?.hero?.countMeInUrl;
 
+    // Use provided project or fall back to Begun (default for /website route)
+    const project = projectProp || getProjectBySlug('begun');
+    const relatedProjects = getRelatedProjects(project.slug, 3);
+
+    // Default rotations for "some more work" cards
+    const rotations = [-5, 2, -4];
+
     return (
         <>
-            <WebsiteHero />
-            <WebsiteImage />
-            <WebsiteAbout />
-            <LogoVariations />
-            <Colors />
-            <Fonts />
-            <BrandInAction />
+            <WebsiteHero project={project} />
+            <WebsiteImage project={project} />
+            <WebsiteAbout project={project} />
+            <LogoVariations project={project} />
+            <Colors project={project} />
+            <Fonts project={project} />
+            <BrandInAction project={project} />
             <section className="whiteContainer" id="moreWork" data-navbar='dark'>
                 <img
                     src={pinkSvg}
@@ -50,24 +44,19 @@ const Website = () => {
                 <p>some more work</p>
                 <div className="moreWorkShowcase">
                     <div className="moreWorkRow">
-                        <div className="moreWorkCard" style={{ transform: 'rotate(-5deg)' }}>
-                            <div className="moreWorkCardImage">
-                                <img src='https://placehold.co/800' alt="project" />
-                                <div className="moreWorkCardLabel">biotech</div>
-                            </div>
-                        </div>
-                        <div className="moreWorkCard" style={{ transform: 'rotate(2deg)' }}>
-                            <div className="moreWorkCardImage">
-                                <img src='https://placehold.co/800' alt="project" />
-                                <div className="moreWorkCardLabel">biotech</div>
-                            </div>
-                        </div>
-                        <div className="moreWorkCard" style={{ transform: 'rotate(-4deg)' }}>
-                            <div className="moreWorkCardImage">
-                                <img src='https://placehold.co/800' alt="project" />
-                                <div className="moreWorkCardLabel">biotech</div>
-                            </div>
-                        </div>
+                        {relatedProjects.map((rp, i) => (
+                            <NavLink
+                                to={`/work/${rp.slug}`}
+                                key={rp.id}
+                                className="moreWorkCard"
+                                style={{ transform: `rotate(${rotations[i % rotations.length]}deg)` }}
+                            >
+                                <div className="moreWorkCardImage">
+                                    <img src={rp.cardImage} alt={rp.title} />
+                                    <div className="moreWorkCardLabel">{rp.title}</div>
+                                </div>
+                            </NavLink>
+                        ))}
                     </div>
                 </div>
                 <div className='buttonsGroup'>
@@ -80,7 +69,8 @@ const Website = () => {
     )
 }
 
-const BrandInAction = () => {
+const BrandInAction = ({ project }) => {
+    const images = project.brandInAction?.images || [];
     return (
         <section className="blackContainer" id="brandInAction">
             <Headline
@@ -98,16 +88,16 @@ const BrandInAction = () => {
             </Headline>
             <div className="brandInActionGroup">
                 <div className="brandInActionColumn">
-                    <Card image={bia1} style={{ width: '420px', height: '318px' }} />
-                    <Card image={bia2} style={{ width: '420px', height: '540px' }} />
+                    <Card image={images[0]} style={{ width: '420px', height: '318px' }} />
+                    <Card image={images[1]} style={{ width: '420px', height: '540px' }} />
                 </div>
                 <div className="brandInActionColumn reverse">
-                    <Card image={bia4} style={{ width: '420px', height: '318px' }} />
-                    <Card image={bia3} style={{ width: '420px', height: '540px' }} />
+                    <Card image={images[3]} style={{ width: '420px', height: '318px' }} />
+                    <Card image={images[2]} style={{ width: '420px', height: '540px' }} />
                 </div>
                 <div className="brandInActionColumn">
-                    <Card image={bia5} style={{ width: '420px', height: '429px' }} />
-                    <Card image={bia6} style={{ width: '420px', height: '429px' }} />
+                    <Card image={images[4]} style={{ width: '420px', height: '429px' }} />
+                    <Card image={images[5]} style={{ width: '420px', height: '429px' }} />
                 </div>
             </div>
             <svg
@@ -122,7 +112,12 @@ const BrandInAction = () => {
     )
 }
 
-const Fonts = () => {
+const Fonts = ({ project }) => {
+    const fonts = project.fonts || {};
+    const tooltipItems = fonts.tooltipItems || ['gilroy', 'plus jakarta sans'];
+    const images = fonts.images || [];
+    const labels = fonts.imageLabels || ['primary', 'alternative'];
+
     return (
         <section className="whiteContainer" id='fonts' data-navbar='dark'>
             <Headline
@@ -130,28 +125,28 @@ const Fonts = () => {
                 highlight='type'
                 tooltip={
                     <>
-                        gilroy{'  '}
+                        {tooltipItems[0]}{'  '}
                         <svg style={{ margin: '0 3px 0 3px' }} width="2" height="10" viewBox="0 0 2 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="1.5" width="10" height="1.5" rx="0.75" transform="rotate(90 1.5 0)" fill="#ffffffff" />
                         </svg>
-                        {'  '}plus jakarta sans
+                        {'  '}{tooltipItems[1]}
                     </>
                 }
-                tooltipColor='orange'
+                tooltipColor={fonts.tooltipColor || 'orange'}
                 forceOpen={true}
             />
             <div className="fontsGroup">
                 <Card
-                    image={type1}
-                    svgText='primary'
+                    image={images[0]}
+                    svgText={labels[0]}
                     svgTop='-12%'
                     svgFill="black"
                     style={{ flex: 1, height: '360px' }}
                     contain
                 />
                 <Card
-                    image={type2}
-                    svgText='alternative'
+                    image={images[1]}
+                    svgText={labels[1]}
                     svgTop='-12%'
                     svgFill="black"
                     style={{ flex: 1, height: '360px' }}
@@ -162,7 +157,8 @@ const Fonts = () => {
     )
 }
 
-const Colors = () => {
+const Colors = ({ project }) => {
+    const colors = project.colors || [];
     return (
         <section className="blackContainer" id="colors">
             <Headline
@@ -180,35 +176,42 @@ const Colors = () => {
             </Headline>
             <div className="colorsLayout">
                 <div className="twoColorBoxes">
-                    <div className='colorBox' style={{ '--boxColor': '#FDFDF5', '--contentColor': 'black' }}>
-                        <p className='colorBoxTitle'>soft ivory</p>
-                        <p className='colorBoxHex'>#FDFDF5</p>
-                    </div>
-                    <div className='colorBox' style={{ '--boxColor': '#CEEDB2', '--contentColor': 'black' }}>
-                        <p className='colorBoxTitle'>fresh mint</p>
-                        <p className='colorBoxHex'>#CEEDB2</p>
-                    </div>
+                    {colors.slice(0, 2).map((c, i) => (
+                        <div key={i} className='colorBox' style={{ '--boxColor': c.bgColor, '--contentColor': c.contentColor }}>
+                            <p className='colorBoxTitle'>{c.title}</p>
+                            <p className='colorBoxHex'>{c.hex}</p>
+                        </div>
+                    ))}
                 </div>
-                <div className='colorBox' style={{ '--boxColor': '#CEF17B', '--contentColor': 'black' }}>
-                    <p className='colorBoxTitle'>lime glow</p>
-                    <p className='colorBoxHex'>#CEF17B</p>
-                </div>
+                {colors[2] && (
+                    <div className='colorBox' style={{ '--boxColor': colors[2].bgColor, '--contentColor': colors[2].contentColor }}>
+                        <p className='colorBoxTitle'>{colors[2].title}</p>
+                        <p className='colorBoxHex'>{colors[2].hex}</p>
+                    </div>
+                )}
                 <div className='twoColorBoxes reverse'>
-                    <div className='colorBox' style={{ '--boxColor': '#1D1D1D' }}>
-                        <p className='colorBoxTitle'>charcoal</p>
-                        <p className='colorBoxHex'>#1D1D1D</p>
-                    </div>
-                    <div className='colorBox' style={{ '--boxColor': '#084735' }}>
-                        <p className='colorBoxTitle'>deep forest</p>
-                        <p className='colorBoxHex'>#084735</p>
-                    </div>
+                    {colors.slice(3, 5).map((c, i) => (
+                        <div key={i} className='colorBox' style={{ '--boxColor': c.bgColor, '--contentColor': c.contentColor }}>
+                            <p className='colorBoxTitle'>{c.title}</p>
+                            <p className='colorBoxHex'>{c.hex}</p>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>
     )
 }
 
-const LogoVariations = () => {
+const LogoVariations = ({ project }) => {
+    const logo = project.logoVariations || {};
+    const tooltipItems = logo.tooltipItems || ['wordmark', 'icon mark', 'devnagri logo'];
+    const images = logo.images || [];
+    const separator = (
+        <svg style={{ margin: '0 3px 0 3px' }} width="2" height="10" viewBox="0 0 2 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1.5" width="10" height="1.5" rx="0.75" transform="rotate(90 1.5 0)" fill="#000000ff" />
+        </svg>
+    );
+
     return (
         <section className="whiteContainer" id="logoVariations" data-navbar='dark'>
             <Headline
@@ -216,38 +219,39 @@ const LogoVariations = () => {
                 highlight='logo'
                 tooltip={
                     <>
-                        wordmark {' '}
-                        <svg style={{ margin: '0 3px 0 3px' }} width="2" height="10" viewBox="0 0 2 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="1.5" width="10" height="1.5" rx="0.75" transform="rotate(90 1.5 0)" fill="#000000ff" />
-                        </svg>
-                        {' '}
-                        icon mark{' '}
-                        <svg style={{ margin: '0 3px 0 3px' }} width="2" height="10" viewBox="0 0 2 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="1.5" width="10" height="1.5" rx="0.75" transform="rotate(90 1.5 0)" fill="#000000ff" />
-                        </svg>
-                        {' '}devnagri logo
+                        {tooltipItems.map((item, i) => (
+                            <span key={i}>
+                                {i > 0 && <>{' '}{separator}{' '}</>}
+                                {item}
+                            </span>
+                        ))}
                     </>
                 }
-                tooltipColor='blue'
+                tooltipColor={logo.tooltipColor || 'blue'}
                 forceOpen={true}
             />
             <div className="logoVariationsGroup">
-                <Card image={logo1} style={{ width: '420px', height: '420px' }} />
-                <Card image={logo2} style={{ width: '420px', height: '420px' }} />
-                <Card image={logo3} style={{ width: '420px', height: '420px' }} />
+                {images.map((img, i) => (
+                    <Card key={i} image={img} style={{ width: '420px', height: '420px' }} />
+                ))}
             </div>
-            <p className="logoVariationsText">
-                a custom wordmark with smooth curves to reflect movement and energy.
-                The Hindi script version ensures inclusivity and cultural relevance.
-                For typography, we paired Gilroy for headlines with Plus Jakarta Sans
-                for supporting text—creating a balance of modernity and readability.
-            </p>
+            {logo.text && (
+                <p className="logoVariationsText">
+                    {logo.text}
+                </p>
+            )}
             <Button text='dive deeper' color='green' />
         </section>
     )
 }
 
-const WebsiteAbout = () => {
+const WebsiteAbout = ({ project }) => {
+    const about = project.about || {};
+    const aboutText = about.text || '';
+    const aboutImages = about.images || [];
+    // Split text on double newlines into paragraphs
+    const paragraphs = aboutText.split('\n\n');
+
     return (
         <section className="blackContainer" id="websiteAbout">
             <Headline
@@ -275,23 +279,16 @@ const WebsiteAbout = () => {
                 </svg>
             </Headline>
             <p className="websiteText">
-                Lorem ipsum dolor sit amet consectetur.
-                Est tempus egestas id id donec eget lacus tempus nibh.
-                Orci amet id praesent purus ultrices nisl.
-                Sit vulputate aliquam et egestas elementum in praesent.
-                Cursus in bibendum lacus quis morbi nisl leo.
-                Et mauris urna mauris arcu fusce tincidunt tellus in.
-                Enim ullamcorper fames morbi auctor suspendisse faucibus
-                diam euismod arcu.
-                <br /> <br />
-                Arcu vulputate elementum feugiat posuere
-                gravida sit. Arcu vitae vivamus dolor id arcu lacus.
-                Leo fermentum enim volutpat faucibus.
-                Consectetur neque mauris ultrices diam urna enim.
+                {paragraphs.map((p, i) => (
+                    <span key={i}>
+                        {i > 0 && <><br /><br /></>}
+                        {p}
+                    </span>
+                ))}
             </p>
             <div className="aboutImages">
-                <Card image={about1} style={{ width: '643px', height: '680px' }} />
-                <Card image={about2} style={{ width: '643px', height: '680px' }} svgText='explorations' svgTop='-8%' svgRight='5%' svgFill='violet' />
+                {aboutImages[0] && <Card image={aboutImages[0]} style={{ width: '643px', height: '680px' }} />}
+                {aboutImages[1] && <Card image={aboutImages[1]} style={{ width: '643px', height: '680px' }} svgText='explorations' svgTop='-8%' svgRight='5%' svgFill='violet' />}
             </div>
             <svg
                 className="websiteAboutSvg"
@@ -306,19 +303,19 @@ const WebsiteAbout = () => {
     )
 }
 
-const WebsiteImage = () => {
+const WebsiteImage = ({ project }) => {
     return (
         <section className="websiteImageWrapper" data-navbar="dark">
             <img
-                src={websiteimage}
-                alt="websiteImage"
+                src={project.websiteImage}
+                alt={`${project.title} website preview`}
                 className='websiteImage'
             />
         </section>
     )
 }
 
-const WebsiteHero = () => {
+const WebsiteHero = ({ project }) => {
     const { isRevealed } = usePreloader();
     const { ref, inView } = useInView({
         threshold: 0.1,
@@ -342,21 +339,28 @@ const WebsiteHero = () => {
                 className="websiteHeroFlower"
             />
             <Headline
-                lines={['begun']}
+                lines={[project.hero.headline]}
                 forceOpen={true}
                 animated={true}
                 animationType="word"
             >
                 <motion.div
                     variants={popInVariants}
-                    className='websiteHeroTooltip tooltip pink'
+                    className={`websiteHeroTooltip tooltip ${project.hero.tooltipColor || 'pink'}`}
                     style={{ transformOrigin: 'bottom left' }}
                 >
-                    brand identity{'  '}
-                    <svg style={{ margin: '0 3px 0 3px' }} width="2" height="10" viewBox="0 0 2 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="1.5" width="10" height="1.5" rx="0.75" transform="rotate(90 1.5 0)" fill="#000000ff" />
-                    </svg>
-                    {'  '}logo design
+                    {project.hero.tooltipItems.map((item, i) => (
+                        <span key={i}>
+                            {i > 0 && <>
+                                {'  '}
+                                <svg style={{ margin: '0 3px 0 3px' }} width="2" height="10" viewBox="0 0 2 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="1.5" width="10" height="1.5" rx="0.75" transform="rotate(90 1.5 0)" fill="#000000ff" />
+                                </svg>
+                                {'  '}
+                            </>}
+                            {item}
+                        </span>
+                    ))}
                 </motion.div>
                 <motion.div className="websiteHeroCartoon" variants={wordVariants}>
                     <svg viewBox="35 15 150 210" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -382,8 +386,7 @@ const WebsiteHero = () => {
                 animate={inView && isRevealed ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.8, delay: 1.5, ease: 'easeOut' }}
             >
-                A bold identity for an activewear brand built to empower.
-                We brought boldness, balance, and a whole lot of green energy to life.
+                {project.hero.heroText}
             </motion.p>
             <div className="websiteHeroButtonWrapper">
                 <Button

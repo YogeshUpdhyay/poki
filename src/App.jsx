@@ -11,6 +11,7 @@ import Agency from './pages/agency/Agency';
 import Work from './pages/work/Work';
 import Website from './pages/website/Website';
 import Project from './pages/project/Project';
+import ProjectDetail from './pages/projectDetail/ProjectDetail';
 import Navbar from './components/navbar/Navbar';
 import ScrollToTop from './components/common/ScrollToTop';
 import DiagonalWipe from './components/common/DiagonalWipe';
@@ -186,6 +187,7 @@ function AppContent() {
         <Route path="/work" element={<Work />} />
         <Route path="/website" element={<Website />} />
         <Route path="/project" element={<Project />} />
+        <Route path="/work/:slug" element={<ProjectDetail />} />
       </Routes>
     </>
   );

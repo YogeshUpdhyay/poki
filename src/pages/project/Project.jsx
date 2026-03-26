@@ -7,52 +7,39 @@ import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { usePreloader } from '@/utils/PreloaderContext'
+import { NavLink } from 'react-router-dom'
 import "./Project.css"
+import { getProjectBySlug, getRelatedProjects } from '@/data/projectsData'
 
-// Project images
-import mobileImage from "@/assets/imgs/projects/mobile-preview.png";
-import desktopImage from "@/assets/imgs/projects/desktop.png"
-import afterImage from "@/assets/imgs/projects/after.png"
-import about1Image from "@/assets/imgs/projects/about1.svg"
-import about1MobileImage from "@/assets/imgs/projects/about1_mobile.svg"
-import about2Image from "@/assets/imgs/projects/about2.svg"
-import about2BgImage from "@/assets/imgs/projects/about2_background.png"
-import about3Image from "@/assets/imgs/projects/about3.svg"
-import pick1Image from "@/assets/imgs/projects/pick1.png"
-import pick2Image from "@/assets/imgs/projects/pick2.png"
-import built1Image from "@/assets/imgs/projects/built1.png"
-import built2Image from "@/assets/imgs/projects/built2.png"
-import built3Image from "@/assets/imgs/projects/built3.png"
-import posterImg from "@/assets/images/projects/poster.png"
-import makeupImg from "@/assets/images/projects/makeup.png"
-import phoneImg from "@/assets/images/projects/phone.png"
-import webpagePdf from "@/assets/webpage.pdf"
-
-// SVGs
-import version1Svg from "@/assets/imgs/projects/version1.svg"
-import version2Svg from "@/assets/imgs/projects/version2.svg"
+// SVGs (template-level decorations)
 import pinkSvg from "@/assets/imgs/projects/pink.svg"
 import underseenSvg from "@/assets/imgs/projects/underseen.svg"
 import workSvg from "@/assets/imgs/projects/work.svg"
-import beforeAfterSvg from "@/assets/imgs/projects/before_after.svg"
-import beforeAfterMobileSvg from "@/assets/imgs/projects/before_after_mobile.svg"
 
-const Project = () => {
+const Project = ({ project: projectProp }) => {
+    // Use provided project or fall back to Dilli Dilli (default for /project route)
+    const project = projectProp || getProjectBySlug('dilli-dilli');
+
     return (
         <div className="project-page">
-            <ProjectHero />
-            <ProjectBeforeAfter />
-            <ProjectAbout />
-            <ProjectColorPalette />
-            <ProjectResults />
-            <ProjectBuiltToBeSeen />
-            <ProjectMore />
+            <ProjectHero project={project} />
+            <ProjectBeforeAfter project={project} />
+            <ProjectAbout project={project} />
+            <ProjectColorPalette project={project} />
+            <ProjectResults project={project} />
+            <ProjectBuiltToBeSeen project={project} />
+            <ProjectMore project={project} />
             <Footer />
         </div>
     )
 }
 
-const ProjectAbout = () => {
+const ProjectAbout = ({ project }) => {
+    const about = project.about || {};
+    const aboutText = about.text || '';
+    const aboutImages = about.images || [];
+    const paragraphs = aboutText.split('\n\n');
+
     return (
         <section
             className="whiteContainer"
@@ -84,27 +71,20 @@ const ProjectAbout = () => {
                 </svg>
             </Headline>
             <p className="websiteText">
-                Lorem ipsum dolor sit amet consectetur.
-                Est tempus egestas id id donec eget lacus tempus nibh.
-                Orci amet id praesent purus ultrices nisl.
-                Sit vulputate aliquam et egestas elementum in praesent.
-                Cursus in bibendum lacus quis morbi nisl leo.
-                Et mauris urna mauris arcu fusce tincidunt tellus in.
-                Enim ullamcorper fames morbi auctor suspendisse faucibus
-                diam euismod arcu.
-                <br /> <br />
-                Arcu vulputate elementum feugiat posuere
-                gravida sit. Arcu vitae vivamus dolor id arcu lacus.
-                Leo fermentum enim volutpat faucibus.
-                Consectetur neque mauris ultrices diam urna enim.
+                {paragraphs.map((p, i) => (
+                    <span key={i}>
+                        {i > 0 && <><br /><br /></>}
+                        {p}
+                    </span>
+                ))}
             </p>
 
+            {about.pdf && (
             <div className="wireframe">
                 <div className="pdfBox">
-                    {/* iOS Safari cannot render PDFs in iframes — fallback to link */}
                     {/iPad|iPhone|iPod/.test(navigator.userAgent) ? (
                         <a
-                            href={webpagePdf}
+                            href={about.pdf}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="pdfFallbackLink"
@@ -114,20 +94,21 @@ const ProjectAbout = () => {
                         </a>
                     ) : (
                         <iframe
-                            src={`${webpagePdf}#view=FitH&toolbar=0&navpanes=0&scrollbar=0`}
+                            src={`${about.pdf}#view=FitH&toolbar=0&navpanes=0&scrollbar=0`}
                             title="Project PDF"
                             style={{ border: 'none', width: '100%', height: '100%' }}
                         />
                     )}
                 </div>
             </div>
+            )}
 
             <div className="miscContainer">
                 <div className="layeredCard">
-                    <img src={about2Image} alt="" className="layeredCardImage" />
+                    {aboutImages[0] && <img src={aboutImages[0]} alt="" className="layeredCardImage" />}
                 </div>
                 <div className="miscCard">
-                    <Card image={about3Image} />
+                    {aboutImages[1] && <Card image={aboutImages[1]} />}
                 </div>
             </div>
             <svg
@@ -143,48 +124,19 @@ const ProjectAbout = () => {
     )
 }
 
-const ProjectBeforeAfter = () => {
+const ProjectBeforeAfter = ({ project }) => {
+    const preview = project.preview || {};
     return (
         <section className="blackContainer" id="beforeAfter">
-            {/* <Card 
-                image={beforeImage}
-                style={{height: '80vh'}}
-                border={true}
-                svgText='before'
-                svgBottom='95%'
-                svgLeft='80%'
-                svgTransform='translateX(-100%)'
-                svgFill='black'
-            />
-            <Card
-                image={afterImage}
-                style={{height: '80vh'}}
-                border={true}
-                svgText='after'
-                svgBottom='95%'
-                svgLeft='80%'
-                svgTransform='translateX(-100%)'
-                svgFill='orange'
-            /> */}
-            {/* 
-                📁 IMAGE LOCATION: src/assets/imgs/projects/
-                To add image: Replace this placeholder with:
-                <img src={yourImageVariable} alt="" className="beforeAfterImage" />
-                Import at top: import yourImage from "@/assets/imgs/projects/your-image.png"
-                Then add .beforeAfterImage CSS class for styling
-            */}
             <picture className="beforeAfterImage">
-                <source media="(max-width: 768px)" srcSet={beforeAfterMobileSvg} />
-                <img src={beforeAfterSvg} alt="Project Preview" />
+                {preview.mobileImage && <source media="(max-width: 768px)" srcSet={preview.mobileImage} />}
+                {preview.desktopImage && <img src={preview.desktopImage} alt="Project Preview" />}
             </picture>
-            {/* <div className="beforeAfterPlaceholder">
-                <span className="placeholderText">100% × 100vh</span>
-            </div> */}
         </section>
     )
 }
 
-const ProjectHero = () => {
+const ProjectHero = ({ project }) => {
     const { isRevealed } = usePreloader();
     const { ref, inView } = useInView({
         threshold: 0.1,
@@ -203,7 +155,7 @@ const ProjectHero = () => {
     return (
         <section className="projectHero" data-navbar='dark' ref={ref}>
             <Headline
-                lines={['dilli dilli']}
+                lines={[project.hero.headline]}
                 //tooltip='webiste design'
                 //tooltipColor='blue'
                 forceOpen
@@ -215,8 +167,8 @@ const ProjectHero = () => {
                     variants={popInVariants}
                     style={{ transformOrigin: 'bottom left' }}
                 >
-                    <div className="tooltip blue">
-                        website design
+                    <div className={`tooltip ${project.hero.tooltipColor || 'blue'}`}>
+                        {project.hero.tooltipItems.join(' · ')}
                     </div>
                 </motion.div>
                 <motion.div className="projectHeroCartoon" variants={wordVariants}>
@@ -248,10 +200,7 @@ const ProjectHero = () => {
                 animate={inView && isRevealed ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.8, delay: 1.5, ease: 'easeOut' }}
             >
-                We partnered with Dilli Dilli, a bold restaurant concept
-                fusing the spirited heritage of Old Delhi with the sleek energy
-                of modern New York, to create a website that captures their
-                dual-city story in equal measure.
+                {project.hero.heroText}
             </motion.p>
             <div className="projectHeroButtonWrapper">
                 <Button
@@ -297,7 +246,9 @@ const ProjectHero = () => {
     )
 }
 
-const ProjectColorPalette = () => {
+const ProjectColorPalette = ({ project }) => {
+    const colorPalette = project.colorPalette || {};
+    const images = colorPalette.images || [];
     return (
         <section className="blackContainer" id="takeYourPick">
             <Headline
@@ -315,42 +266,34 @@ const ProjectColorPalette = () => {
                 </svg>
             </Headline>
 
-            <p className="websiteText">
-                arcu vulputate elementum feugiat posuere gravida sit. arcu vitae vivamus
-                dolor id arcu lacus. leo fermentum enim volutpat faucibus. consectetur
-                neque mauris ultrices diam urna enim.
-            </p>
+            {colorPalette.text && (
+                <p className="websiteText">
+                    {colorPalette.text}
+                </p>
+            )}
 
             <div className="colorPaletteGrid">
-                <div className="versionCard">
-                    {/* <img src={version1Svg} alt="Version 1" className="versionLabel" /> */}
-                    <img src={version1Svg} alt="" className="versionFrameImage" />
-                </div>
-                <div className="versionCard">
-                    {/* <img src={version2Svg} alt="Version 2" className="versionLabel" /> */}
-                    <img src={version2Svg} alt="" className="versionFrameImage" />
-                </div>
+                {images.map((img, i) => (
+                    <div key={i} className="versionCard">
+                        <img src={img} alt="" className="versionFrameImage" />
+                    </div>
+                ))}
             </div>
         </section>
     )
 }
 
-const ProjectResults = () => {
+const ProjectResults = ({ project }) => {
+    const results = project.results || [];
     return (
         <section className="whiteContainer" id="projectResults" data-navbar='dark'>
             <div className="resultsGrid">
-                <div className="resultItem">
-                    <h2 className="resultNumber">30,000</h2>
-                    <p className="resultLabel">monthly visitors</p>
-                </div>
-                <div className="resultItem">
-                    <h2 className="resultNumber">1000x</h2>
-                    <p className="resultLabel">increase in website traffic</p>
-                </div>
-                <div className="resultItem">
-                    <h2 className="resultNumber">900</h2>
-                    <p className="resultLabel">monthly table bookings</p>
-                </div>
+                {results.map((r, i) => (
+                    <div key={i} className="resultItem">
+                        <h2 className="resultNumber">{r.number}</h2>
+                        <p className="resultLabel">{r.label}</p>
+                    </div>
+                ))}
             </div>
             <div className="resultsCta">
                 <Button
@@ -365,7 +308,8 @@ const ProjectResults = () => {
     )
 }
 
-const ProjectBuiltToBeSeen = () => {
+const ProjectBuiltToBeSeen = ({ project }) => {
+    const images = project.builtToBeSeen?.images || [];
     return (
         <section className="blackContainer" id="builtToBeSeen">
             <div className="builtToBeSeenContent">
@@ -391,20 +335,11 @@ const ProjectBuiltToBeSeen = () => {
 
                 <div className="builtToBeSeenGrid">
                     <div className="builtTop">
-                        <Card
-                            image={built1Image}
-                            style={{ width: '100%', height: '800px' }}
-                        />
+                        {images[0] && <Card image={images[0]} style={{ width: '100%', height: '800px' }} />}
                     </div>
                     <div className="builtBottom">
-                        <Card
-                            image={built2Image}
-                            style={{ width: '643px', height: '680px' }}
-                        />
-                        <Card
-                            image={built3Image}
-                            style={{ width: '643px', height: '680px' }}
-                        />
+                        {images[1] && <Card image={images[1]} style={{ width: '643px', height: '680px' }} />}
+                        {images[2] && <Card image={images[2]} style={{ width: '643px', height: '680px' }} />}
                     </div>
                 </div>
             </div>
@@ -414,12 +349,9 @@ const ProjectBuiltToBeSeen = () => {
 
 
 
-const ProjectMore = () => {
-    const moreProjects = [
-        { id: 1, image: posterImg, title: "biddlee", rotation: -8 },
-        { id: 2, image: makeupImg, title: "sweatmate", rotation: 5 },
-        { id: 3, image: phoneImg, title: "ether", rotation: -4 },
-    ];
+const ProjectMore = ({ project }) => {
+    const relatedProjects = getRelatedProjects(project.slug, 3);
+    const rotations = [-8, 5, -4];
 
     return (
         <section className="whiteContainer" id="projectMore" data-navbar='dark'>
@@ -428,19 +360,20 @@ const ProjectMore = () => {
             </div>
 
             <div className="moreWorkGrid">
-                {moreProjects.map((project) => (
-                    <div
-                        key={project.id}
+                {relatedProjects.map((rp, i) => (
+                    <NavLink
+                        to={`/work/${rp.slug}`}
+                        key={rp.id}
                         className="phoneMockupCard"
-                        style={{ transform: `rotate(${project.rotation}deg)` }}
+                        style={{ transform: `rotate(${rotations[i % rotations.length]}deg)` }}
                     >
                         <div className="phoneMockupImage">
-                            <img src={project.image} alt={project.title} />
+                            <img src={rp.cardImage} alt={rp.title} />
                             <div className="phoneMockupLabel">
-                                {project.title}
+                                {rp.title}
                             </div>
                         </div>
-                    </div>
+                    </NavLink>
                 ))}
             </div>
 
