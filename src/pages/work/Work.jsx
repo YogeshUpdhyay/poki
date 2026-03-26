@@ -1,10 +1,12 @@
 import { NavLink } from 'react-router-dom'
+import { useState } from 'react'
 import './Work.css'
 import Footer from "../../components/footer/Footer"
 import Collaborate from "../../components/collaborate/Collaborate"
 import Marquee from "react-fast-marquee";
 import SkewedTape from "../../components/common/skewedTape/SkewedTape";
 import OutlinedSvgText from '../../components/common/outlineSvgText/OutlineSvgText';
+import { getAllProjects, CATEGORIES, CATEGORY_LABELS } from '../../data/projectsData';
 
 // Import flower decorations
 import greenFlower from '../../assets/svgs/work/greenFlower.svg';
@@ -12,42 +14,34 @@ import blueFlower from '../../assets/svgs/work/blueFlower.svg';
 import pinkFlower from '../../assets/svgs/work/pinkFlower.svg';
 import pistaFlower from '../../assets/svgs/work/pistaFlower.svg';
 
-// Import project images
-import watchImg from '../../assets/images/projects/watch.png';
-import makeupImg from '../../assets/images/projects/makeup.png';
-import phoneImg from '../../assets/images/projects/phone.png';
-import posterImg from '../../assets/images/projects/poster.png';
-import brandingImg from '../../assets/images/projects/branding.png';
-import magazineImg from '../../assets/images/projects/magazine.png';
+const FLOWER_DECORATIONS = [
+    { src: greenFlower, alt: 'green flower decoration', className: 'flowerDecoration flower-left' },
+    { src: blueFlower, alt: 'blue flower decoration', className: 'flowerDecoration flower-right' },
+    { src: pinkFlower, alt: 'pink flower decoration', className: 'flowerDecoration flower-pink' },
+    { src: pistaFlower, alt: 'pista flower decoration', className: 'flowerDecoration flower-yellow' },
+];
+
+/** Split a flat array into rows of `size` */
+function chunkArray(arr, size) {
+    const rows = [];
+    for (let i = 0; i < arr.length; i += size) {
+        rows.push(arr.slice(i, i + size));
+    }
+    return rows;
+}
 
 const Work = () => {
-    // Project data - 4 rows of 3 phone mockups each with rotation effects
-    const projects = [
-        // Row 1
-        [
-            { id: 1, image: watchImg, title: "cocinas chile", rotation: -5 },
-            { id: 2, image: phoneImg, title: "briotech", rotation: 2 },
-            { id: 3, image: brandingImg, title: "the brain psycologist", rotation: -4 },
-        ],
-        // Row 2
-        [
-            { id: 4, image: makeupImg, title: "cocinas chile", rotation: 2 },
-            { id: 5, image: posterImg, title: "begun", rotation: -3 },
-            { id: 6, image: magazineImg, title: "the brain psycologist", rotation: 3 },
-        ],
-        // Row 3
-        [
-            { id: 7, image: phoneImg, title: "cocinas chile", rotation: -5 },
-            { id: 8, image: watchImg, title: "briotech", rotation: 2 },
-            { id: 9, image: brandingImg, title: "begun", rotation: -3 },
-        ],
-        // Row 4
-        [
-            { id: 10, image: posterImg, title: "cocinas chile", rotation: 2 },
-            { id: 11, image: makeupImg, title: "briotech", rotation: -4 },
-            { id: 12, image: magazineImg, title: "the brain psycologist", rotation: 3 },
-        ],
-    ];
+    const [activeCategory, setActiveCategory] = useState(null); // null = show all
+
+    const allProjects = getAllProjects();
+
+    // Filter by category when a pill is active
+    const filteredProjects = activeCategory
+        ? allProjects.filter((p) => p.category === activeCategory)
+        : allProjects;
+
+    // Split filtered list into rows of 3
+    const projectRows = chunkArray(filteredProjects, 3);
 
     return (
         <>
@@ -180,63 +174,53 @@ const Work = () => {
                 <div className="categoryMenu">
                     <h3>on the menu</h3>
                     <div className="categoryPills">
-                        <NavLink to="/website" className="categoryPill">websites</NavLink>
-                        <NavLink to="/project" className="categoryPill">brand identities</NavLink>
-                        <NavLink to="/website" className="categoryPill">products & apps</NavLink>
-                        {/* <span className="categoryPill">brand identities</span>
-                        <span className="categoryPill">products & apps</span> */}
+                        <button
+                            className={`categoryPill ${activeCategory === null ? 'active' : ''}`}
+                            onClick={() => setActiveCategory(null)}
+                        >
+                            all
+                        </button>
+                        {Object.entries(CATEGORY_LABELS).map(([key, label]) => (
+                            <button
+                                key={key}
+                                className={`categoryPill ${activeCategory === key ? 'active' : ''}`}
+                                onClick={() => setActiveCategory(key)}
+                            >
+                                {label}
+                            </button>
+                        ))}
                     </div>
                 </div>
             </section>
 
             {/* Project Showcase Grid */}
             <div className="projectShowcase">
-                {projects.map((row, rowIndex) => (
+                {projectRows.map((row, rowIndex) => (
                     <div key={rowIndex} className="projectRow">
-                        {/* Flower decorations for each row */}
-                        {rowIndex === 0 && (
+                        {/* Flower decorations cycle through available flowers */}
+                        {FLOWER_DECORATIONS[rowIndex % FLOWER_DECORATIONS.length] && (
                             <img
-                                src={greenFlower}
-                                alt="green flower decoration"
-                                className="flowerDecoration flower-left"
-                            />
-                        )}
-                        {rowIndex === 1 && (
-                            <img
-                                src={blueFlower}
-                                alt="blue flower decoration"
-                                className="flowerDecoration flower-right"
-                            />
-                        )}
-                        {rowIndex === 2 && (
-                            <img
-                                src={pinkFlower}
-                                alt="pink flower decoration"
-                                className="flowerDecoration flower-pink"
-                            />
-                        )}
-                        {rowIndex === 3 && (
-                            <img
-                                src={pistaFlower}
-                                alt="pista flower decoration"
-                                className="flowerDecoration flower-yellow"
+                                src={FLOWER_DECORATIONS[rowIndex % FLOWER_DECORATIONS.length].src}
+                                alt={FLOWER_DECORATIONS[rowIndex % FLOWER_DECORATIONS.length].alt}
+                                className={FLOWER_DECORATIONS[rowIndex % FLOWER_DECORATIONS.length].className}
                             />
                         )}
 
                         <div className="projectGrid">
                             {row.map((project) => (
-                                <div
+                                <NavLink
+                                    to={`/work/${project.slug}`}
                                     key={project.id}
                                     className="phoneMockupCard"
                                     style={{ transform: `rotate(${project.rotation}deg)` }}
                                 >
                                     <div className="phoneMockupImage">
-                                        <img src={project.image} alt={project.title} />
+                                        <img src={project.cardImage} alt={project.title} />
                                         <div className="phoneMockupLabel">
                                             {project.title}
                                         </div>
                                     </div>
-                                </div>
+                                </NavLink>
                             ))}
                         </div>
                     </div>

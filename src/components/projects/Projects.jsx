@@ -1,7 +1,8 @@
 import './Projects.css'
 import Button from '../common/button/Button'
 import projectBackground from "../../assets/imgs/projectBg.svg"
-import { useCms } from '../../utils/context'
+import { NavLink } from 'react-router-dom'
+import { getFeaturedProjects } from '../../data/projectsData'
 import 'react-multi-carousel/lib/styles.css';
 import { Headline, popInVariants } from '../common/headline/Headline'
 import { GenericCarousel } from '../../components/common/genericCarousel/GenericCarousel'
@@ -16,7 +17,7 @@ import { useRef, useState, useLayoutEffect, useEffect } from 'react';
 
 
 function Projects() {
-  const { data } = useCms();
+  const featuredProjects = getFeaturedProjects();
   const [isMobile, setIsMobile] = useState(false);
   
   // Check screen size and update isMobile state
@@ -44,7 +45,7 @@ function Projects() {
   const highlight = 'spotlight';
   const tooltipText = 'no shadows, only shine';
   const tooltipColor = 'blue';
-  const projects = (data && data.projects && data.projects.length) ? data.projects : [{ title: 'begun', image: projectBackground }];
+  const projects = featuredProjects.length ? featuredProjects : [{ slug: 'begun', title: 'begun', cardImage: projectBackground }];
   
   const projectsCartoonRef = useRef(null);
   const projectCartoonInView = useInView(projectsCartoonRef, {
@@ -77,13 +78,13 @@ function Projects() {
       />
       <div className="projectCarousel">
         <GenericCarousel>
-        {projects.map(({title, image}, index) => (
+        {projects.map((project, index) => (
           <ProjectCard 
-            key={index}
-            title={title}
-            image={image}
-            alt={`${title} project image`}
-            // wrapTick={wrapTick}
+            key={project.id || index}
+            title={project.title}
+            image={project.cardImage}
+            slug={project.slug}
+            alt={`${project.title} project image`}
           />
         ))}
       </GenericCarousel>
@@ -96,13 +97,13 @@ function Projects() {
   )
 }
 
-function ProjectCard({ title, image, alt, wrapTick }) {
+function ProjectCard({ title, image, alt, slug }) {
 
   return (
-    <div className="projectCard">
+    <NavLink to={`/work/${slug}`} className="projectCard" style={{ textDecoration: 'none' }}>
       <img src={image} alt={alt || "projectCardImage"} className="projectCardImage" />
       <div className="projectCardTitle">{title}</div>
-    </div>
+    </NavLink>
   )
 }
 

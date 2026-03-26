@@ -1,0 +1,275 @@
+// ═══════════════════════════════════════════════════════════════════════════
+// Centralized Project Data — Single source of truth for all project listings
+// Used by: Homepage carousel, /work grid, /work/:slug detail, "some more work"
+// ═══════════════════════════════════════════════════════════════════════════
+
+// ── Card images (homepage carousel, /work grid, "some more work") ────────
+import projectCardImg1 from '../assets/imgs/projects/projectImg1.png';
+import projectCardImg2 from '../assets/imgs/projects/projectImg2.png';
+
+// ── Website template images (Begun) ──────────────────────────────────────
+import websiteimage from '../assets/images/website/websiteimage.jpg';
+import about1 from '../assets/images/website/about1.svg';
+import about2 from '../assets/images/website/about2.svg';
+import logo1 from '../assets/images/website/logo1.svg';
+import logo2 from '../assets/images/website/logo2.svg';
+import logo3 from '../assets/images/website/logo3.svg';
+import type1 from '../assets/images/website/type1.svg';
+import type2 from '../assets/images/website/type2.svg';
+import bia1 from '../assets/images/website/bia1.svg';
+import bia2 from '../assets/images/website/bia2.svg';
+import bia3 from '../assets/images/website/bia3.svg';
+import bia4 from '../assets/images/website/bia4.svg';
+import bia5 from '../assets/images/website/bia5.svg';
+import bia6 from '../assets/images/website/bia6.svg';
+
+// ── Project template images (Dilli Dilli) ────────────────────────────────
+import beforeAfterSvg from '../assets/imgs/projects/before_after.svg';
+import beforeAfterMobileSvg from '../assets/imgs/projects/before_after_mobile.svg';
+import about2Image from '../assets/imgs/projects/about2.svg';
+import about3Image from '../assets/imgs/projects/about3.svg';
+import version1Svg from '../assets/imgs/projects/version1.svg';
+import version2Svg from '../assets/imgs/projects/version2.svg';
+import built1Image from '../assets/imgs/projects/built1.png';
+import built2Image from '../assets/imgs/projects/built2.png';
+import built3Image from '../assets/imgs/projects/built3.png';
+import webpagePdf from '../assets/webpage.pdf';
+
+// ── Category constants ───────────────────────────────────────────────────
+export const CATEGORIES = {
+  WEBSITES: 'websites',
+  BRAND_IDENTITIES: 'brand-identities',
+  PRODUCTS_APPS: 'products-apps',
+};
+
+export const CATEGORY_LABELS = {
+  [CATEGORIES.WEBSITES]: 'websites',
+  [CATEGORIES.BRAND_IDENTITIES]: 'brand identities',
+  [CATEGORIES.PRODUCTS_APPS]: 'products & apps',
+};
+
+// ═══════════════════════════════════════════════════════════════════════════
+// Projects Array
+// template: 'website' → Website.jsx  (brand identity layout)
+//           'project' → Project.jsx  (website design layout)
+//
+// Hero cartoon SVGs: Currently rendered inline in each template.
+// When adding a new project, either:
+//   1. Add a new SVG file in assets/ and import it here as ?react
+//   2. Or pass null and the template will skip the cartoon
+// ═══════════════════════════════════════════════════════════════════════════
+
+const projects = [
+  // ─────────────────────────────────────────────────────────────────────────
+  // BEGUN — Brand Identity (Website template)
+  // ─────────────────────────────────────────────────────────────────────────
+  {
+    id: 1,
+    slug: 'begun',
+    title: 'begun',
+    category: CATEGORIES.BRAND_IDENTITIES,
+    cardImage: projectCardImg1,
+    featured: true,
+    template: 'website',
+    rotation: -5,
+
+    // Hero section
+    hero: {
+      headline: 'begun',
+      heroText:
+        'A bold identity for an activewear brand built to empower. We brought boldness, balance, and a whole lot of green energy to life.',
+      buttonLink: '#',
+      tooltipItems: ['brand identity', 'logo design'],
+      tooltipColor: 'pink',
+      marqueeItems: ['logo design', 'brand identity', 'visual language', 'packaging'],
+    },
+
+    // Full-width image below hero
+    websiteImage: websiteimage,
+
+    // About the project section
+    about: {
+      text: `Lorem ipsum dolor sit amet consectetur. Est tempus egestas id id donec eget lacus tempus nibh. Orci amet id praesent purus ultrices nisl. Sit vulputate aliquam et egestas elementum in praesent. Cursus in bibendum lacus quis morbi nisl leo. Et mauris urna mauris arcu fusce tincidunt tellus in. Enim ullamcorper fames morbi auctor suspendisse faucibus diam euismod arcu.\n\nArcu vulputate elementum feugiat posuere gravida sit. Arcu vitae vivamus dolor id arcu lacus. Leo fermentum enim volutpat faucibus. Consectetur neque mauris ultrices diam urna enim.`,
+      images: [about1, about2],
+    },
+
+    // Logo variations section
+    logoVariations: {
+      tooltipItems: ['wordmark', 'icon mark', 'devnagri logo'],
+      tooltipColor: 'blue',
+      images: [logo1, logo2, logo3],
+      text: 'a custom wordmark with smooth curves to reflect movement and energy. The Hindi script version ensures inclusivity and cultural relevance. For typography, we paired Gilroy for headlines with Plus Jakarta Sans for supporting text—creating a balance of modernity and readability.',
+    },
+
+    // Colors section — 5 boxes
+    colors: [
+      { title: 'soft ivory', hex: '#FDFDF5', bgColor: '#FDFDF5', contentColor: 'black' },
+      { title: 'fresh mint', hex: '#CEEDB2', bgColor: '#CEEDB2', contentColor: 'black' },
+      { title: 'lime glow', hex: '#CEF17B', bgColor: '#CEF17B', contentColor: 'black' },
+      { title: 'charcoal', hex: '#1D1D1D', bgColor: '#1D1D1D', contentColor: 'white' },
+      { title: 'deep forest', hex: '#084735', bgColor: '#084735', contentColor: 'white' },
+    ],
+
+    // Fonts section
+    fonts: {
+      tooltipItems: ['gilroy', 'plus jakarta sans'],
+      tooltipColor: 'orange',
+      images: [type1, type2],
+      imageLabels: ['primary', 'alternative'],
+    },
+
+    // Brand in action section
+    brandInAction: {
+      images: [bia1, bia2, bia3, bia4, bia5, bia6],
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // DILLI DILLI — Website Design (Project template)
+  // ─────────────────────────────────────────────────────────────────────────
+  {
+    id: 2,
+    slug: 'dilli-dilli',
+    title: 'dilli dilli',
+    category: CATEGORIES.WEBSITES,
+    cardImage: projectCardImg2,
+    featured: true,
+    template: 'project',
+    rotation: 2,
+
+    // Hero section
+    hero: {
+      headline: 'dilli dilli',
+      heroText:
+        'We partnered with Dilli Dilli, a bold restaurant concept fusing the spirited heritage of Old Delhi with the sleek energy of modern New York, to create a website that captures their dual-city story in equal measure.',
+      buttonLink: '#',
+      tooltipItems: ['website design'],
+      tooltipColor: 'blue',
+      marqueeItems: ['logo design', 'brand identity', 'visual language', 'packaging'],
+    },
+
+    // Before / after preview
+    preview: {
+      desktopImage: beforeAfterSvg,
+      mobileImage: beforeAfterMobileSvg,
+    },
+
+    // About the project section
+    about: {
+      text: `Lorem ipsum dolor sit amet consectetur. Est tempus egestas id id donec eget lacus tempus nibh. Orci amet id praesent purus ultrices nisl. Sit vulputate aliquam et egestas elementum in praesent. Cursus in bibendum lacus quis morbi nisl leo. Et mauris urna mauris arcu fusce tincidunt tellus in. Enim ullamcorper fames morbi auctor suspendisse faucibus diam euismod arcu.\n\nArcu vulputate elementum feugiat posuere gravida sit. Arcu vitae vivamus dolor id arcu lacus. Leo fermentum enim volutpat faucibus. Consectetur neque mauris ultrices diam urna enim.`,
+      pdf: webpagePdf,
+      images: [about2Image, about3Image],
+    },
+
+    // Take your pick / color palette section
+    colorPalette: {
+      text: 'arcu vulputate elementum feugiat posuere gravida sit. arcu vitae vivamus dolor id arcu lacus. leo fermentum enim volutpat faucibus. consectetur neque mauris ultrices diam urna enim.',
+      images: [version1Svg, version2Svg],
+    },
+
+    // Results section
+    results: [
+      { number: '30,000', label: 'monthly visitors' },
+      { number: '1000x', label: 'increase in website traffic' },
+      { number: '900', label: 'monthly table bookings' },
+    ],
+
+    // Built to be seen section
+    builtToBeSeen: {
+      images: [built1Image, built2Image, built3Image],
+    },
+  },
+
+  {
+    id: 3,
+    slug: 'astor-hotels',
+    title: 'astor hotels',
+    category: CATEGORIES.WEBSITES,
+    cardImage: projectCardImg2,
+    featured: true,
+    template: 'project',
+    rotation: 3,
+
+    // Hero section
+    hero: {
+      headline: 'astor hotels',
+      heroText:
+        'We partnered with Astor Hostels to design a welcoming, community-first website that reflects their “One Big Family” philosophy, blending warmth, local character, and ease of booking into a seamless digital experience.',
+      buttonLink: '#',
+      tooltipItems: ['website design'],
+      tooltipColor: 'blue',
+      marqueeItems: ['logo design', 'brand identity', 'visual language', 'packaging'],
+    },
+
+    // Before / after preview
+    preview: {
+      desktopImage: beforeAfterSvg,
+      mobileImage: beforeAfterMobileSvg,
+    },
+
+    // About the project section
+    about: {
+      text: `For Astor Hostels, the focus was on translating their philosophy into a digital experience that feels warm, inclusive, and easy to navigate. While the brand thrives on community and local character, the website needed to balance that friendliness with a clean, modern interface that builds trust and simplifies booking.\n\n We designed the website that feels approachable yet structured, using inviting visuals, thoughtful layouts, and subtle details that reflect the personality of each location. The result is a seamless experience that makes discovering, connecting, and booking feel effortless, while still capturing the social spirit that defines Astor.`,
+      pdf: webpagePdf,
+      images: [about2Image, about3Image],
+    },
+
+    // Take your pick / color palette section
+    colorPalette: {
+      text: 'We explored two distinct directions for the homepage’s opening sections, one leaning towards a fun and welcoming aesthetic, while the other takes on a more vibrant, energetic approach that highlights the social and community-driven nature of the brand.',
+      images: [version1Svg, version2Svg],
+    },
+
+    // Results section
+    results: [
+      { number: '41%', label: 'Increase in booking clients' },
+      { number: '33%', label: 'Increase in session duration' },
+      { number: '-29%', label: 'Drop in bounce Rate' },
+    ],
+
+    // Built to be seen section
+    builtToBeSeen: {
+      images: [built1Image, built2Image, built3Image],
+    },
+  },
+];
+
+// ═══════════════════════════════════════════════════════════════════════════
+// Helper functions
+// ═══════════════════════════════════════════════════════════════════════════
+
+/** All projects */
+export function getAllProjects() {
+  return projects;
+}
+
+/** Filter by category */
+export function getProjectsByCategory(category) {
+  return projects.filter((p) => p.category === category);
+}
+
+/** Featured projects only (homepage carousel) */
+export function getFeaturedProjects() {
+  return projects.filter((p) => p.featured);
+}
+
+/** Single project by slug (detail page) */
+export function getProjectBySlug(slug) {
+  return projects.find((p) => p.slug === slug) || null;
+}
+
+/**
+ * Related projects — same category, excluding current project.
+ * Used by both templates' "some more work" sections.
+ * @param {string} slug - current project slug to exclude
+ * @param {number} count - max items to return
+ */
+export function getRelatedProjects(slug, count = 3) {
+  const current = getProjectBySlug(slug);
+  if (!current) return [];
+  return projects
+    .filter((p) => p.category === current.category && p.slug !== slug)
+    .slice(0, count);
+}
+
+export default projects;
