@@ -18,8 +18,7 @@ body::-webkit-scrollbar {
     letter-spacing: normal;
     white-space: nowrap;
     line-height: normal;
-    text-box-trim: trim-both;
-    text-box-edge: cap alphabetic;
+    /* text-box-trim removed — unsupported on iOS Safari */
 }
 
 .tooltip.blue {

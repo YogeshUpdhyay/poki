@@ -57,61 +57,59 @@ const Work = () => {
                     <SkewedTape angle="10deg" backgroundColor='black' borderColor='white'>
                         <Marquee speed={50} gradient={false} direction="right">
                             <div className="skewedTapeContent">
-                                work
-                                <OutlinedSvgText 
-                                    lines={['no limits']} 
-                                    stroke='white' 
+                                <span className="skewedTapeWork">work</span>
+                                <OutlinedSvgText
+                                    lines={['no limits']}
+                                    stroke='white'
                                     fill='pink'
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
                                 />
-                                work
-                                <OutlinedSvgText 
-                                    lines={['no limits']} 
-                                    stroke='white' 
+                                <span className="skewedTapeWork">work</span>
+                                <OutlinedSvgText
+                                    lines={['no limits']}
+                                    stroke='white'
                                     fill='pink'
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
                                 />
-                                work
-                                <OutlinedSvgText 
-                                    lines={['no limits']} 
-                                    stroke='white' 
-                                    fill='pink'
-                                    translateY='0%'
-                                    rotate='0deg'
-                                    size='40'
-                                    style={{ paddingRight: '20px' }}
-                                />
-                                work
-                                <OutlinedSvgText 
-                                    lines={['no limits']} 
-                                    stroke='white' 
+                                <span className="skewedTapeWork">work</span>
+                                <OutlinedSvgText
+                                    lines={['no limits']}
+                                    stroke='white'
                                     fill='pink'
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
                                 />
-                                work
-                                <OutlinedSvgText 
-                                    lines={['no limits']} 
-                                    stroke='white' 
+                                <span className="skewedTapeWork">work</span>
+                                <OutlinedSvgText
+                                    lines={['no limits']}
+                                    stroke='white'
                                     fill='pink'
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
                                 />
-                                work
-                                <OutlinedSvgText 
-                                    lines={['no limits']} 
-                                    stroke='white' 
+                                <span className="skewedTapeWork">work</span>
+                                <OutlinedSvgText
+                                    lines={['no limits']}
+                                    stroke='white'
                                     fill='pink'
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
-                                    style={{ paddingRight: '20px' }}
+                                />
+                                <span className="skewedTapeWork">work</span>
+                                <OutlinedSvgText
+                                    lines={['no limits']}
+                                    stroke='white'
+                                    fill='pink'
+                                    translateY='0%'
+                                    rotate='0deg'
+                                    size='40'
                                 />
                             </div>
                         </Marquee>
@@ -119,60 +117,60 @@ const Work = () => {
                     <SkewedTape angle="-4deg" backgroundColor='black' borderColor='white'>
                         <Marquee speed={50} gradient={false}>
                             <div className="skewedTapeContent">
-                                work
-                                <OutlinedSvgText 
-                                    lines={['for real']} 
-                                    stroke='white' 
+                                <span className="skewedTapeWork">work</span>
+                                <OutlinedSvgText
+                                    lines={['for real']}
+                                    stroke='white'
                                     fill='green'
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
                                 />
-                                work
-                                <OutlinedSvgText 
-                                    lines={['final final']} 
-                                    stroke='white' 
+                                <span className="skewedTapeWork">work</span>
+                                <OutlinedSvgText
+                                    lines={['final final']}
+                                    stroke='white'
                                     fill='blue'
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
                                 />
-                                work
-                                    <OutlinedSvgText    
-                                        lines={['with love']} 
-                                        stroke='white' 
-                                        fill='orange'
-                                        translateY='0%'
-                                        rotate='0deg'
-                                        size='40'
-                                    />
-                                    work
-                                <OutlinedSvgText 
-                                    lines={['for real']} 
-                                    stroke='white' 
+                                <span className="skewedTapeWork">work</span>
+                                <OutlinedSvgText
+                                    lines={['with love']}
+                                    stroke='white'
+                                    fill='orange'
+                                    translateY='0%'
+                                    rotate='0deg'
+                                    size='40'
+                                />
+                                <span className="skewedTapeWork">work</span>
+                                <OutlinedSvgText
+                                    lines={['for real']}
+                                    stroke='white'
                                     fill='green'
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
                                 />
-                                work
-                                <OutlinedSvgText 
-                                    lines={['final final']} 
-                                    stroke='white' 
+                                <span className="skewedTapeWork">work</span>
+                                <OutlinedSvgText
+                                    lines={['final final']}
+                                    stroke='white'
                                     fill='blue'
                                     translateY='0%'
                                     rotate='0deg'
                                     size='40'
                                 />
-                                work
-                                    <OutlinedSvgText    
-                                        lines={['with love']} 
-                                        stroke='white' 
-                                        fill='orange'
-                                        translateY='0%'
-                                        rotate='0deg'
-                                        size='40'
-                                    />
+                                <span className="skewedTapeWork">work</span>
+                                <OutlinedSvgText
+                                    lines={['with love']}
+                                    stroke='white'
+                                    fill='orange'
+                                    translateY='0%'
+                                    rotate='0deg'
+                                    size='40'
+                                />
                             </div>
                         </Marquee>
                     </SkewedTape>
@@ -183,7 +181,6 @@ const Work = () => {
                     <h3>on the menu</h3>
                     <div className="categoryPills">
                         <NavLink to="/website" className="categoryPill">websites</NavLink>
-                        <NavLink to="/project" className="categoryPill">logo designs</NavLink>
                         <NavLink to="/project" className="categoryPill">brand identities</NavLink>
                         <NavLink to="/website" className="categoryPill">products & apps</NavLink>
                         {/* <span className="categoryPill">brand identities</span>
@@ -198,38 +195,38 @@ const Work = () => {
                     <div key={rowIndex} className="projectRow">
                         {/* Flower decorations for each row */}
                         {rowIndex === 0 && (
-                            <img 
-                                src={greenFlower} 
-                                alt="green flower decoration" 
+                            <img
+                                src={greenFlower}
+                                alt="green flower decoration"
                                 className="flowerDecoration flower-left"
                             />
                         )}
                         {rowIndex === 1 && (
-                            <img 
-                                src={blueFlower} 
-                                alt="blue flower decoration" 
+                            <img
+                                src={blueFlower}
+                                alt="blue flower decoration"
                                 className="flowerDecoration flower-right"
                             />
                         )}
                         {rowIndex === 2 && (
-                            <img 
-                                src={pinkFlower} 
-                                alt="pink flower decoration" 
+                            <img
+                                src={pinkFlower}
+                                alt="pink flower decoration"
                                 className="flowerDecoration flower-pink"
                             />
                         )}
                         {rowIndex === 3 && (
-                            <img 
-                                src={pistaFlower} 
-                                alt="pista flower decoration" 
+                            <img
+                                src={pistaFlower}
+                                alt="pista flower decoration"
                                 className="flowerDecoration flower-yellow"
                             />
                         )}
-                        
+
                         <div className="projectGrid">
                             {row.map((project) => (
-                                <div 
-                                    key={project.id} 
+                                <div
+                                    key={project.id}
                                     className="phoneMockupCard"
                                     style={{ transform: `rotate(${project.rotation}deg)` }}
                                 >

@@ -1,10 +1,8 @@
-﻿import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './DiagonalWipe.css';
 
-// Paint: starts visibly right away, decelerates peacefully at the end
-const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
-// Reveal: starts gentle, accelerates to finish cleanly
-const easeInCubic = (t) => t * t * t;
+// Extremely smooth, cinematic easing ΓÇö starts and ends slow
+const easeInOutCubic = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
 const DiagonalWipe = ({ phase = 'idle', color = '#5168E8', onPhaseComplete }) => {
   const canvasRef = useRef(null);
@@ -55,8 +53,8 @@ const DiagonalWipe = ({ phase = 'idle', color = '#5168E8', onPhaseComplete }) =>
     resize();
     window.addEventListener('resize', resize);
 
-    const PAINT_DUR = 2.8;  // seconds — responsive but peaceful
-    const REVEAL_DUR = 2.2; // seconds — slightly faster wipe-off
+    const PAINT_DUR = 3.5;  // seconds — peaceful and slow but not forever
+    const REVEAL_DUR = 2.8; // seconds — smooth and deliberate
 
     const render = (time) => {
       const currentPhase = phaseRef.current;
@@ -74,28 +72,24 @@ const DiagonalWipe = ({ phase = 'idle', color = '#5168E8', onPhaseComplete }) =>
       const maxDim = Math.max(w, h);
 
       // Brush config
-      const brushRadius = maxDim * 0.2;
-      const zigFreq = 7;            // More zig-zags for finer strokes
-      const zigAmp = maxDim * 0.35; // Slightly wider swing to ensure coverage
+      const brushRadius = maxDim * 0.25; // Larger brush
+      const zigFreq = 10;            // More zig-zags for smoother coverage
+      const zigAmp = maxDim * 0.45; // Wider swing to reach extreme corners
 
       // Progress
       const elapsed = (time - startRef.current) / 1000;
       const dur = currentPhase === 'painting' ? PAINT_DUR : REVEAL_DUR;
       const rawP = Math.min(elapsed / dur, 1);
-      const p = currentPhase === 'painting' ? easeOutCubic(rawP) : easeInCubic(rawP);
+      const p = easeInOutCubic(rawP);
       const lastP = lastPRef.current;
 
       // Composite mode: paint adds color, reveal erases it
       if (currentPhase === 'painting') {
         ctx.globalCompositeOperation = 'source-over';
         ctx.fillStyle = color;
-        ctx.shadowColor = color;
-        ctx.shadowBlur = 15;
       } else {
         ctx.globalCompositeOperation = 'destination-out';
         ctx.fillStyle = 'rgba(0,0,0,1)';
-        ctx.shadowColor = 'rgba(0,0,0,1)';
-        ctx.shadowBlur = 15;
       }
 
       // Draw many overlapping circles from lastP → p (paint trail)

@@ -1,18 +1,21 @@
 import './Agency.css'
 import { motion } from 'framer-motion'
-import { Headline, letterVariants, popInVariants } from "../../components/common/headline/Headline"
+import { Headline, letterVariants, wordVariants, popInVariants } from "../../components/common/headline/Headline"
 import Button from "../../components/common/button/Button"
 import agencyCartoon from '../../assets/svgs/agency/agencyCartoon.svg'
 import agencyAdvCartoon from '../../assets/svgs/agency/agencyAdvCartoon.svg'
 import agencyBg from '../../assets/svgs/agency/agencyBg.svg'
 import Collaborate from '../../components/collaborate/Collaborate'
 import Footer from '../../components/footer/Footer'
-import agencyHeroUnderline from '@/assets/svgs/agency/agencyHeroUnderline.svg'
+import agencyHeroUnderline from '@/assets/svgs/agency/agencyHeroUnderline.svg?react'
 import agencyHeroStar from '@/assets/svgs/agency/agencyHeroStar.svg'
+import AnimatedSvgLine from '../../components/common/animatedSvgLine/animatedSvgLine'
 import OutlinedSvgText from '../../components/common/outlineSvgText/OutlineSvgText'
 import { useCms } from '../../utils/context'
 import PokiLogo from '../../assets/imgs/logo.svg?react'
 import { useInView } from 'react-intersection-observer'
+import { usePreloader } from '../../utils/PreloaderContext'
+import { useState, useEffect } from 'react'
 
 const Agency = () => {
     return (
@@ -37,10 +40,11 @@ const AgencyPartnerShips = () => {
                 lines={['partnerships that paid off']}
                 highlight={'partnerships'}
             >
-                <img
+                <motion.img
                     src={agencyHeroStar}
                     alt="agencyHeroStar"
                     className='agencyPartnerStar'
+                    variants={popInVariants}
                 />
             </Headline>
             <div className="partnerReview">
@@ -131,49 +135,97 @@ const AgencyAdv = () => {
                         </motion.div>
                     </div>
                 </div>
-                <img
+                <motion.img
                     src={agencyAdvCartoon}
                     alt="advCartoon"
                     className="advCartoon"
+                    variants={popInVariants}
+                    initial="hidden"
+                    animate={inView ? "visible" : "hidden"}
+                    style={{ transformOrigin: 'bottom right' }}
                 />
             </Headline>
-            <div className="advList">
-                <div className="advListItem">
+            <motion.div
+                className="advList"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={{
+                    visible: {
+                        transition: {
+                            staggerChildren: 0.1
+                        }
+                    }
+                }}
+            >
+                <motion.div
+                    className="advListItem"
+                    variants={{
+                        ...popInVariants,
+                        visible: {
+                            ...popInVariants.visible,
+                            rotate: "var(--item-rotation)"
+                        }
+                    }}
+                    whileHover={{ scale: 1.05, rotate: 0, zIndex: 10 }}
+                >
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.1733 -3.64892e-05L12.3726 7.70607L19.9972 10.173L12.2911 12.3723L9.82423 19.9969L7.62494 12.2908L0.00028063 9.82392L7.70639 7.62462L10.1733 -3.64892e-05Z" fill="#1A1A1A" />
                     </svg>
 
                     get access to cost-efficient rates while we handle design heavy-lifting
-                </div>
-                <div className="advListItem">
+                </motion.div>
+                <motion.div
+                    className="advListItem"
+                    variants={{
+                        ...popInVariants,
+                        visible: {
+                            ...popInVariants.visible,
+                            rotate: "var(--item-rotation)"
+                        }
+                    }}
+                    whileHover={{ scale: 1.05, rotate: 0, zIndex: 10 }}
+                >
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.1733 -3.64892e-05L12.3726 7.70607L19.9972 10.173L12.2911 12.3723L9.82423 19.9969L7.62494 12.2908L0.00028063 9.82392L7.70639 7.62462L10.1733 -3.64892e-05Z" fill="#1A1A1A" />
                     </svg>
 
                     a dedicated team, clear processes, timely delivery and quality output
-                </div>
-                <div className="advListItem">
+                </motion.div>
+                <motion.div
+                    className="advListItem"
+                    variants={popInVariants}
+                    whileHover={{ scale: 1.05, rotate: 0, zIndex: 10 }}
+                >
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.1733 -3.64892e-05L12.3726 7.70607L19.9972 10.173L12.2911 12.3723L9.82423 19.9969L7.62494 12.2908L0.00028063 9.82392L7.70639 7.62462L10.1733 -3.64892e-05Z" fill="#1A1A1A" />
                     </svg>
 
                     offer full-service UI & branding to clients without expanding in-house headcount
-                </div>
-                <div className="advListItem">
+                </motion.div>
+                <motion.div
+                    className="advListItem"
+                    variants={popInVariants}
+                    whileHover={{ scale: 1.05, rotate: 0, zIndex: 10 }}
+                >
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.1733 -3.64892e-05L12.3726 7.70607L19.9972 10.173L12.2911 12.3723L9.82423 19.9969L7.62494 12.2908L0.00028063 9.82392L7.70639 7.62462L10.1733 -3.64892e-05Z" fill="#1A1A1A" />
                     </svg>
 
                     scale quickly during peak demand without compromising quality
-                </div>
-                <div className="advListItem">
+                </motion.div>
+                <motion.div
+                    className="advListItem"
+                    variants={popInVariants}
+                    whileHover={{ scale: 1.05, rotate: 0, zIndex: 10 }}
+                >
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.1733 -3.64892e-05L12.3726 7.70607L19.9972 10.173L12.2911 12.3723L9.82423 19.9969L7.62494 12.2908L0.00028063 9.82392L7.70639 7.62462L10.1733 -3.64892e-05Z" fill="#1A1A1A" />
                     </svg>
 
                     collaborate, co-create, and grow your agency’s capabilities
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
             <img src={agencyBg} alt="" className="agencyBg" />
         </section>
     )
@@ -189,15 +241,15 @@ const AgencyPartnerWith = () => {
                 lines={['who we partner with']}
                 highlight={'partner'}
             >
-                <img
-                    src={agencyHeroUnderline}
-                    alt="agencyHeroUnderline"
+                <AnimatedSvgLine
+                    Svg={agencyHeroUnderline}
                     className='agencyHeroUnderline'
                 />
-                <img
+                <motion.img
                     src={agencyHeroStar}
                     alt="agencyHeroStar"
                     className='agencyHeroStar'
+                    variants={popInVariants}
                 />
             </Headline>
             <div className="partnerCardsGroup">
@@ -263,16 +315,26 @@ const PartnerCard = ({ titleLines, text, color, fill, stroke, translateY, rotate
 const AgencyHero = () => {
     const { data } = useCms();
     const countMeInUrl = data?.hero?.countMeInUrl;
+    const { isRevealed } = usePreloader();
 
     const agencyCartoonVariants = {
-        hidden: { ...letterVariants.hidden, y: "-90%" },
-        visible: { ...letterVariants.visible, y: "-90%" }
+        hidden: { ...wordVariants.hidden, y: "-90%" },
+        visible: { ...wordVariants.visible, y: "-90%" }
     };
 
     const { ref, inView } = useInView({
         threshold: 0.1,
         triggerOnce: true,
     });
+
+    const [showButtons, setShowButtons] = useState(false);
+
+    useEffect(() => {
+        if (inView && isRevealed) {
+            const timer = setTimeout(() => setShowButtons(true), 2000);
+            return () => clearTimeout(timer);
+        }
+    }, [inView, isRevealed]);
 
     return (
         <section className="agencyHero" data-navbar='dark' ref={ref}>
@@ -283,6 +345,7 @@ const AgencyHero = () => {
                     highlight={"headcount"}
                     forceOpen
                     animated={true}
+                    animationType="word"
                 >
                     <motion.div
                         variants={agencyCartoonVariants}
@@ -310,6 +373,7 @@ const AgencyHero = () => {
                     highlight={"headcount"}
                     forceOpen
                     animated={true}
+                    animationType="word"
                 >
                     <motion.div
                         variants={agencyCartoonVariants}
@@ -331,8 +395,17 @@ const AgencyHero = () => {
                 </Headline>
             </div>
             <div className="agencyButtons">
-                <Button text="let's team up" href={countMeInUrl} />
-                <Button text="see what we do" color='green' href="/work" />
+                <Button 
+                    text="let's team up" 
+                    href={countMeInUrl} 
+                    className={showButtons ? 'heroButtonPop' : ''}
+                />
+                <Button 
+                    text="see what we do" 
+                    color='green' 
+                    href="/work" 
+                    className={showButtons ? 'heroButtonPop' : ''}
+                />
             </div>
         </section>
     )

@@ -3,6 +3,8 @@
     padding: 120px 0px 0px;
     position: relative;
     min-height: 100vh;
+    min-height: 100dvh;
+    /* iOS Safari fix */
 }
 
 /* Hero Marquee Section */
@@ -10,12 +12,12 @@
     background-color: var(--background-dark);
     min-height: 50vh;
     padding-top: 200px;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .skewedTapeContent {
     display: inline-flex;
-    gap: 40px;
+    gap: 60px;
     color: var(--color-white);
     font-size: 96px;
     font-weight: 700;
@@ -24,11 +26,17 @@
     font-family: 'General Sans', sans-serif;
     line-height: 100%;
     overflow: hidden;
-    padding-right: 20px;
+    padding-right: 60px;
 }
 
 .skewedTapeContent svg {
     vertical-align: middle;
+}
+
+/* Customize individual "WORK" text position here */
+.skewedTapeWork {
+    display: inline-block;
+    padding-bottom: 15px;
 }
 
 /* Category Menu Section */
@@ -67,8 +75,7 @@
     line-height: 100%;
     text-align: center;
     font-family: generalSansMedium;
-    text-box-trim: trim-both;
-    text-box-edge: cap alphabetic;
+    /* text-box-trim removed — unsupported on iOS Safari */
 }
 
 .categoryPill.active {
@@ -209,8 +216,7 @@
     z-index: 3;
     line-height: 100%;
     text-align: center;
-    text-box-trim: trim-both;
-    text-box-edge: cap alphabetic;
+    /* text-box-trim removed — unsupported on iOS Safari */
 }
 
 /* Flower Decorations */
@@ -269,6 +275,7 @@
 }
 
 @media (max-width: 900px) {
+
     /* Disable rotations for better UX on smaller screens */
     .phoneMockupCard {
         transform: rotate(0deg) !important;
@@ -309,17 +316,36 @@
     }
 
     .skewedTapContainer {
-        padding: 150px 0px 100px;
-        min-height: 400px;
+        padding: 150px 0px 60px;
+        /* min-height: auto; */
     }
 
-    .skewedTapContainer > div {
-        height: 100px !important;
+    .skewedTapContainer>div {
+        height: 90px !important;
     }
 
     .skewedTapeContent {
-        font-size: 40px;
-        gap: 20px;
+        font-size: 44px;
+        gap: 35px;
+        padding-right: 40px;
+        align-items: center;
+        display: inline-flex;
+        line-height: normal;
+        letter-spacing: -0.01em;
+    }
+
+    .skewedTapeContent svg {
+        width: auto;
+        height: 48px;
+        flex-shrink: 0;
+        display: block;
+    }
+
+    .skewedTapeWork {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        line-height: normal;
     }
 
     .phoneMockupImage {
@@ -359,12 +385,15 @@
     }
 
     .categoryPills {
-        gap: 8px;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
     }
 
     .categoryPill {
-        padding: 10px 12px;
+        padding: 10px 16px;
         font-size: 13px;
+        width: fit-content;
     }
 }
 

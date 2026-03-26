@@ -27,9 +27,10 @@
     display: inline;
 }
 
-.headlineChar {
+.headlineChar, .headlineWord {
     display: inline-block;
     vertical-align: baseline;
+    will-change: transform, opacity;
 }
 
 .headlineHighlight {

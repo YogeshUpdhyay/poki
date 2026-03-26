@@ -5,6 +5,7 @@
 
 .websiteHero {
     height: 110vh;
+    height: 110dvh; /* iOS Safari fix — dynamic viewport height */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,14 +16,25 @@
     position: relative;
 }
 
+.websiteHeroTooltip {
+    position: absolute;
+    top: 10%;
+    left: 57%;
+}
+
 .websiteHeroButtonWrapper {
     padding: 48px 0px 96px 0px;
+}
+
+.websiteHeroButtonWrapper .cta-btn-background {
+    transform: scale(0);
+    opacity: 0;
 }
 
 .websiteHeroCartoon {
     position: absolute;
     right: 80%;
-    top: 50%;
+    top: -60%;
     transform: translateY(-50%);
     width: 200px;
     height: 239px;
@@ -70,6 +82,7 @@
 .websiteHeroItalic {
     font-size: 96px;
     font-family: ppEditorial;
+    letter-spacing: -3px;
 }
 
 .websiteImageWrapper {
@@ -188,6 +201,7 @@
     display: flex;
     width: 100%;
     height: 80vh;
+    height: 80dvh; /* iOS Safari fix */
     gap: 26px;
 }
 
@@ -287,13 +301,6 @@
     gap: 10px
 }
 
-/* Fixed Tooltip Position for Hero Section */
-.websiteHero .tooltip {
-    position: absolute !important;
-    top: 265px !important;
-    left: 775px !important;
-    transform: none !important;
-}
 
 /* Fixed Tooltip Position for Logo Variations */
 #logoVariations .tooltip {
@@ -437,14 +444,14 @@
     z-index: 3;
     line-height: 100%;
     text-align: center;
-    text-box-trim: trim-both;
-    text-box-edge: cap alphabetic;
+    /* text-box-trim removed — unsupported on iOS Safari */
 }
 
 @media (max-width: 768px) {
 
     .websiteHero {
         height: 79vh;
+        height: 79dvh; /* iOS Safari fix */
     }
 
     .websiteHeroCartoon {
@@ -454,13 +461,6 @@
         top: 20%;
     }
 
-    .websiteHero .tooltip {
-        display: block;
-        position: absolute !important;
-        top: 33.5% !important;
-        left: 61% !important;
-        transform: translateX(-50%) !important;
-    }
 
     .websiteHeroButtonWrapper {
         padding: 48px 0px 120px 0px;

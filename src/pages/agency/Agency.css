@@ -1,7 +1,8 @@
 .agencyHero {
     padding-top: 110px;
     display: flex;
-    height: 115vh;
+    min-height: 100vh;
+    min-height: 100dvh; /* iOS Safari fix */
     /* justify-content: flex-end; */
     align-items: center;
     flex-direction: column;
@@ -63,6 +64,15 @@
     padding-bottom: 160px;
 }
 
+.agencyButtons .cta-btn-background {
+    transform: scale(0);
+    opacity: 0;
+}
+
+.agencyButtons > div:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
 .partnerWith {
     background-color: var(--background-dark);
     color: var(--color-white);
@@ -77,7 +87,7 @@
 .agencyHeroUnderline {
     position: absolute;
     top: 100%;
-    left: 45%;
+    left: 10%;
 }
 
 .agencyHeroStar {
@@ -259,29 +269,69 @@
     border-radius: 100px;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
     width: fit-content;
 }
 
 /* Custom rotate values for each advListItem - adjust as needed */
+/* Initial rotation variables for each advListItem */
+.advListItem {
+    --item-rotation: 0deg;
+    rotate: var(--item-rotation);
+    transition: translate 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .advListItem:nth-child(1) {
-    transform: rotate(1deg);
+    --item-rotation: 1deg;
 }
 
 .advListItem:nth-child(2) {
-    transform: rotate(-1deg);
+    --item-rotation: -1deg;
 }
 
 .advListItem:nth-child(3) {
-    transform: rotate(1deg);
+    --item-rotation: 1deg;
 }
 
 .advListItem:nth-child(4) {
-    transform: rotate(0deg);
+    --item-rotation: 0deg;
 }
 
 .advListItem:nth-child(5) {
-    transform: rotate(-2deg);
+    --item-rotation: -2deg;
+}
+
+/* Neighbor Push Logic - Move items away from the hovered one */
+.advList:has(.advListItem:nth-child(1):hover) .advListItem:nth-child(2) {
+    translate: 0 15px;
+}
+
+.advList:has(.advListItem:nth-child(2):hover) .advListItem:nth-child(1) {
+    translate: 0 -15px;
+}
+
+.advList:has(.advListItem:nth-child(2):hover) .advListItem:nth-child(3) {
+    translate: 0 15px;
+}
+
+.advList:has(.advListItem:nth-child(3):hover) .advListItem:nth-child(2) {
+    translate: 0 -15px;
+}
+
+.advList:has(.advListItem:nth-child(3):hover) .advListItem:nth-child(4) {
+    translate: 0 15px;
+}
+
+.advList:has(.advListItem:nth-child(4):hover) .advListItem:nth-child(3) {
+    translate: 0 -15px;
+}
+
+.advList:has(.advListItem:nth-child(4):hover) .advListItem:nth-child(5) {
+    translate: 0 15px;
+}
+
+.advList:has(.advListItem:nth-child(5):hover) .advListItem:nth-child(4) {
+    translate: 0 -15px;
 }
 
 .agencyBg {
@@ -382,7 +432,8 @@
 
     .agencyHero {
         padding-top: 55%;
-        height: 100vh;
+        min-height: 100vh;
+        min-height: 100dvh; /* iOS Safari fix */
     }
 
     .agencyCartoon {
@@ -509,6 +560,11 @@
         height: 34px !important;
     }
 
+    .advantage {
+        padding: 80px 64px;
+        z-index: 0;
+    }
+
     .advCartoon {
         width: 70.39px;
         height: 96px;
@@ -523,7 +579,7 @@
 
     .advList {
         padding-top: 60px;
-        gap: 20px;
+        gap: 25px;
     }
 
     .advList svg {
@@ -532,37 +588,40 @@
     }
 
     .advListItem {
-        width: 124%;
-        padding: 20px;
+        width: 115%;
+        /* padding: 20px; */
+        padding-right: 40px;
+        padding-left: 35px;
         font-size: 14px;
         text-align: left;
     }
 
     .advListItem:nth-child(1) {
-        transform: rotate(3deg);
+        --item-rotation: 3deg;
     }
 
     .advListItem:nth-child(2) {
-        transform: rotate(-2deg);
+        --item-rotation: -2deg;
     }
 
     .advListItem:nth-child(3) {
-        transform: rotate(5deg);
+        --item-rotation: 5deg;
     }
 
     .advListItem:nth-child(4) {
-        transform: rotate(0deg);
+        --item-rotation: 0deg;
     }
 
     .advListItem:nth-child(5) {
-        transform: rotate(-3deg);
+        --item-rotation: -3deg;
     }
 
     .agencyBg {
         width: 279px;
         height: 280px;
-        top: 80%;
-        left: 58%;
+        top: 76.5%;
+        left: 50%;
+        z-index: -1;
     }
 
     .partnerships {

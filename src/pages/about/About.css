@@ -66,6 +66,11 @@
     padding-bottom: 120px;
 }
 
+.aboutHeroButton .cta-btn-background {
+    transform: scale(0);
+    opacity: 0;
+}
+
 .aboutHeroImg {
     width: 100%;
     z-index: 10;
