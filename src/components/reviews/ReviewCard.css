@@ -89,35 +89,84 @@
    width: 100%;
    background-color: var(--color-yellow);
    flex-shrink: 0;
+   object-fit: cover;
    overflow: hidden;
 }
 
 /* Per-color variants for the card (use `color` prop to set class on root)
    green: dark background -> white text
    pink/blue/yellow: light backgrounds -> black text */
-.reviewCard.green .reviewCardContent { background-color: var(--color-green); color: var(--color-white); }
-.reviewCard.green .reviewCardImage   { background-color: var(--color-green); }
+.reviewCard.green .reviewCardContent {
+   background-color: var(--color-green);
+   color: var(--color-white);
+}
 
-.reviewCard.pink  .reviewCardContent { background-color: var(--color-pink); color: var(--color-black); }
-.reviewCard.pink  .reviewCardImage   { background-color: var(--color-pink); }
+.reviewCard.green .reviewCardImage {
+   background-color: var(--color-green);
+}
 
-.reviewCard.blue  .reviewCardContent { background-color: var(--color-blue); color: var(--color-black); }
-.reviewCard.blue  .reviewCardImage   { background-color: var(--color-blue); }
+.reviewCard.pink .reviewCardContent {
+   background-color: var(--color-pink);
+   color: var(--color-black);
+}
 
-.reviewCard.yellow  .reviewCardContent { background-color: var(--color-yellow); color: var(--color-black); }
-.reviewCard.yellow  .reviewCardImage   { background-color: var(--color-yellow); }
+.reviewCard.pink .reviewCardImage {
+   background-color: var(--color-pink);
+}
 
-.reviewCard.orange  .reviewCardContent { background-color: var(--color-orange); color: var(--color-white); }
-.reviewCard.orange  .reviewCardImage   { background-color: var(--color-orange); }
+.reviewCard.blue .reviewCardContent {
+   background-color: var(--color-blue);
+   color: var(--color-black);
+}
 
-.reviewCard.purple  .reviewCardContent { background-color: var(--color-purple); color: var(--color-white); }
-.reviewCard.purple  .reviewCardImage   { background-color: var(--color-purple); }
+.reviewCard.blue .reviewCardImage {
+   background-color: var(--color-blue);
+}
 
-.reviewCard.cream  .reviewCardContent { background-color: #EAF9C0; color: var(--color-black); }
-.reviewCard.cream  .reviewCardImage   { background-color: #EAF9C0; }
+.reviewCard.yellow .reviewCardContent {
+   background-color: var(--color-yellow);
+   color: var(--color-black);
+}
 
-.reviewCard.lightblue  .reviewCardContent { background-color: #86C9FF; color: var(--color-black); }
-.reviewCard.lightblue  .reviewCardImage   { background-color: #86C9FF; }
+.reviewCard.yellow .reviewCardImage {
+   background-color: var(--color-yellow);
+}
+
+.reviewCard.orange .reviewCardContent {
+   background-color: var(--color-orange);
+   color: var(--color-white);
+}
+
+.reviewCard.orange .reviewCardImage {
+   background-color: var(--color-orange);
+}
+
+.reviewCard.purple .reviewCardContent {
+   background-color: var(--color-purple);
+   color: var(--color-white);
+}
+
+.reviewCard.purple .reviewCardImage {
+   background-color: var(--color-purple);
+}
+
+.reviewCard.cream .reviewCardContent {
+   background-color: #EAF9C0;
+   color: var(--color-black);
+}
+
+.reviewCard.cream .reviewCardImage {
+   background-color: #EAF9C0;
+}
+
+.reviewCard.lightblue .reviewCardContent {
+   background-color: #86C9FF;
+   color: var(--color-black);
+}
+
+.reviewCard.lightblue .reviewCardImage {
+   background-color: #86C9FF;
+}
 
 /* ========================================
    RESPONSIVE BREAKPOINTS - REVIEW CARDS
@@ -140,16 +189,16 @@
       width: 300px;
    }
 
-   .reviewCardReviewerAvatar{
+   .reviewCardReviewerAvatar {
       width: 40px;
       height: 40px;
    }
 
-   .reviewCardReviewerName{
+   .reviewCardReviewerName {
       font-size: 14px;
    }
 
-   .reviewCardReviewerLocation{
+   .reviewCardReviewerLocation {
       font-size: 12px;
    }
 
@@ -164,9 +213,10 @@
 }
 
 @media (max-width: 576px) {
-   .reviewsCarouselInner{
+   .reviewsCarouselInner {
       align-items: center;
    }
+
    .reviewCard {
       width: 260px;
       padding-left: 0px;
