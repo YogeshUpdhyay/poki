@@ -4,63 +4,11 @@ import reviewsBg from '../../assets/imgs/reviewsBg.svg'
 import reviewsCartoon from '../../assets/imgs/reviewsCartoon.svg'
 import HeroUnderline from '../../assets/underlines/heroUnderline.svg?react'
 import AnimatedSvgLine from '../common/animatedSvgLine/animatedSvgLine'
-import avatarImgSrc from '../../assets/imgs/avatar.png'
-import MadeHereSvg from '../../assets/svgs/reviews/madehere.svg?react'
-import DilliDilliSvg from '../../assets/svgs/reviews/dillidilli.svg?react'
-import MakunaSvg from '../../assets/svgs/reviews/makuna.svg?react'
-import { useState, useEffect, useRef } from 'react'
-import {
-  useFloating,
-  useClientPoint,
-  offset,
-  autoUpdate,
-  useInteractions,
-} from "@floating-ui/react";
+import { realReviews } from '../../data/reviewsData'
+import { useState } from 'react'
 import { motion } from "framer-motion";
 
 export default function Reviews() {
-  // Real reviews data - replace with your actual reviews
-  const realReviews = [
-    {
-      reviewerName: 'Nikolas Gregory',
-      location: 'United States',
-      reviewText: 'Amazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask andAmazing work all around. An excellent understanding of my ask and delivered an amazing website design paying attention to every little detail that I had asked for. Super polite and professional from start to finish. Thank you Poki Studios!',
-      color: 'cream',
-      avatarSrc: avatarImgSrc,
-      projectImage: null,
-      edgeSvg: <MadeHereSvg />,
-      edgeSvgPosition: 'top',
-    },
-    {
-      reviewerName: 'Gaurav Anand',
-      location: 'NY, United States',
-      reviewText: 'Beyond expectations! Delivered a design that aligns with our brand vision. Took feedback and suggestions with a very open mindset and WOWED me! I rarely write reviews but Poki Studios totally deserves it! It’s a but pricey but 100% worth it.',
-      color: 'lightblue',
-      avatarSrc: avatarImgSrc,
-      projectImage: null,
-      edgeSvg: <DilliDilliSvg />,
-      edgeSvgPosition: 'bottom',
-    },
-    {
-      reviewerName: 'Devon McPherson',
-      location: 'California, United States',
-      reviewText: 'Poki was exceptional in their work and delivery of the Figma project. The team can operate with very little information provided, letting their creativity take over. They are easy to work with and reliable when it comes to quality and meeting delivery timelines.',
-      color: 'orange',
-      avatarSrc: avatarImgSrc,
-      projectImage: null,
-      edgeSvg: <MakunaSvg />,
-      edgeSvgPosition: 'top',
-    },
-    {
-      reviewerName: 'Darac',
-      location: 'United Arab Emirates',
-      reviewText: 'I now view these guys as long-term partners for all of my creative needs - their work is exceptional, and they are a joy to work with. True Creatives! I will come back again and again and have no need to ever use anyone else. You guys rock!',
-      color: 'green',
-      avatarSrc: avatarImgSrc,
-      projectImage: null, // Add your project image path here
-    },
-  ]
-
   // Duplicate reviews for infinite scroll effect
   const reviewsData = [...realReviews, ...realReviews, ...realReviews]
 
@@ -69,17 +17,17 @@ export default function Reviews() {
   return (
     <section className="reviews">
       <ReviewHeadline />
-      <img 
-        src={reviewsBg} 
-        alt="reviewsBg" 
-        className="reviewsBg" 
+      <img
+        src={reviewsBg}
+        alt="reviewsBg"
+        className="reviewsBg"
       />
-      <div 
+      <div
         className="reviewsCarousel"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <motion.div 
+        <motion.div
           className="reviewsCarouselInner"
           animate={{
             x: [0, -reviewsData.length * 386 / 3], // 360px card + 26px gap = 386px per card
@@ -118,7 +66,7 @@ function ReviewHeadline() {
     <h1 className="headlineText">
       <span className="headlineWrapper">
         <span className="headlineHighlight">word</span> on <br />
-        the <span className='underlinedWord'>street <div className="reviewsUnderlinePosition"><AnimatedSvgLine Svg={HeroUnderline}/></div></span> <br />
+        the <span className='underlinedWord'>street <div className="reviewsUnderlinePosition"><AnimatedSvgLine Svg={HeroUnderline} /></div></span> <br />
         <img
           src={reviewsCartoon}
           alt="reviewsCartoon"
