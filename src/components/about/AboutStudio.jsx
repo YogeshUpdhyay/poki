@@ -137,7 +137,7 @@ const CompanyCard = ({ svg, url }) => {
   );
 
   return (
-    <>
+    <div className="companyCardContainer">
       {url ? (
         <a
           href={url}
@@ -148,7 +148,7 @@ const CompanyCard = ({ svg, url }) => {
             onMouseEnter: () => setIsOpen(true),
             onMouseLeave: () => setIsOpen(false),
           })}
-          style={{ textDecoration: 'none' }}
+          className="companyCardLink"
         >
           {cardContent}
         </a>
@@ -159,6 +159,7 @@ const CompanyCard = ({ svg, url }) => {
             onMouseEnter: () => setIsOpen(true),
             onMouseLeave: () => setIsOpen(false),
           })}
+          className="companyCardLink"
         >
           {cardContent}
         </div>
@@ -168,7 +169,7 @@ const CompanyCard = ({ svg, url }) => {
         {isOpen && (
           <div
             ref={refs.setFloating}
-            style={floatingStyles}
+            style={{ ...floatingStyles, zIndex: 1000 }}
             {...getFloatingProps()}
           >
             <motion.div
@@ -184,7 +185,7 @@ const CompanyCard = ({ svg, url }) => {
           </div>
         )}
       </AnimatePresence>
-    </>
+    </div>
   );
 };
 
