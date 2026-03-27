@@ -216,32 +216,16 @@
 }
 
 .companyCard {
-    width: 242px;
-    height: 160px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    border-radius: 12px;
-    background-color: #E6E2DE;
+    justify-content: center;
     width: 100%;
-    padding: 0px 36px 48px;
-    margin-top: 68px;
 }
 
-.companyName {
-    font-size: 16px;
-    /* padding-top: 48px; */
-}
-
-.companyWorks {
-    font-family: 'generalSansMedium';
-    font-size: 14px;
-    margin-top: 8px;
-    text-align: center;
-}
-
-.companyLogo {
-    transform: translateY(-50%);
+.companyCard svg {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .companyCardTooltip {
@@ -449,18 +433,4 @@
         box-sizing: border-box;
     }
 
-    .companyCard {
-        padding: 0px 24px 32px;
-        margin-top: 48px;
-    }
-
-    .companyName {
-        font-size: 14px;
-        /* padding-top: 32px; */
-    }
-
-    .companyWorks {
-        font-size: 12px;
-        margin-top: 6px;
-    }
 }
