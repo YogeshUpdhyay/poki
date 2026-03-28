@@ -77,29 +77,31 @@ function HeroHeadline({lines, highlight}) {
   }, [shouldAnimate]);
   
   return (
-    <Headline lines={lines} highlight={highlight} animated={true} animationType="word">
-      <motion.div 
-        className="heroCartoonWrapper"
-        variants={wordVariants}
-      >
-        <img
-          src={heroCartoon}
-          alt="heroCartoon"
-          className="heroCartoon"
-        />
-      </motion.div>
+    <div ref={ref}>
+      <Headline lines={lines} highlight={highlight} animated={true} animationType="word">
+        <motion.div 
+          className="heroCartoonWrapper"
+          variants={wordVariants}
+        >
+          <img
+            src={heroCartoon}
+            alt="heroCartoon"
+            className="heroCartoon"
+          />
+        </motion.div>
 
-      <motion.div 
-        className="heroStar"
-        variants={wordVariants}
-      >
-        <img src={yellowStar} alt="yellowStar"/>
-      </motion.div>
+        <motion.div 
+          className="heroStar"
+          variants={wordVariants}
+        >
+          <img src={yellowStar} alt="yellowStar"/>
+        </motion.div>
 
-      <div className="heroUnderlinePosition">
-        <AnimatedSvgLine Svg={HeroUnderline} forceAnimate={showUnderline} />
-      </div>
-    </Headline>
+        <div className="heroUnderlinePosition">
+          <AnimatedSvgLine Svg={HeroUnderline} forceAnimate={showUnderline} />
+        </div>
+      </Headline>
+    </div>
   )
 }
 
