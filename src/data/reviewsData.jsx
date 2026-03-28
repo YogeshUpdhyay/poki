@@ -14,6 +14,7 @@ import studioeliasImg from '../assets/imgs/reviews/studioelias.png'
 import sweatmateImg from '../assets/imgs/reviews/sweatmate.png'
 import tbpImg from '../assets/imgs/reviews/tbp.png'
 import wildmateImg from '../assets/imgs/reviews/wildmate.png'
+import rentlyimg from '../assets/imgs/reviews/rently.png'
 
 // Avatars
 import asherAvt from '../assets/imgs/reviews-avatar/asher_avt.png'
@@ -29,6 +30,7 @@ import studioeliasAvt from '../assets/imgs/reviews-avatar/studioelias_avt.png'
 import sweatmateAvt from '../assets/imgs/reviews-avatar/sweatmate_avt.png'
 import tbpAvt from '../assets/imgs/reviews-avatar/tbp_avt.png'
 import wildmateAvt from '../assets/imgs/reviews-avatar/wildmate_avt.png'
+import rentlyavt from '../assets/imgs/reviews-avatar/rently_avt.png'
 
 // Edge SVGs
 import AsherSvg from '../assets/svgs/reviews/asher.svg?react'
@@ -45,6 +47,8 @@ import StudioeliasSvg from '../assets/svgs/reviews/studioelias.svg?react'
 import SweatmateSvg from '../assets/svgs/reviews/sweatmate.svg?react'
 import TbpSvg from '../assets/svgs/reviews/tbp.svg?react'
 import WildmateSvg from '../assets/svgs/reviews/wildmate.svg?react'
+import RentlySvg from '../assets/svgs/reviews/rently.svg?react'
+import { color } from 'framer-motion'
 
 export const realReviews = [
   {
@@ -176,6 +180,16 @@ export const realReviews = [
     projectImage: tbpImg,
     edgeSvg: <TbpSvg />,
     edgeSvgPosition: 'top',
+  },
+  {
+    reviewerName: 'Joshua Pavo',
+    location: 'United Kingdom',
+    reviewText: 'Amazing work as always! Went above and beyond when I was in a tight deadline & delivered. thank you again Poki Studios! Appreciate the level of professionalism and work ethic.',
+    color: 'blue',
+    avatarSrc: rentlyavt,
+    projectImage: rentlyimg,
+    edgeSvg: <RentlySvg />,
+    edgeSvgPosition: 'bottom',
   },
   // {
   //   reviewerName: 'Wildmate',

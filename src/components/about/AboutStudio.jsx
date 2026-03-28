@@ -106,9 +106,8 @@ const AboutStudio = ({ studioImages }) => {
         {companiesData.map((company) => (
           <CompanyCard
             key={company.id}
-            name={company.name}
-            services={company.services}
-            Logo={company.Logo}
+            svg={company.svg}
+            url={company.url}
           />
         ))}
       </section>
@@ -120,7 +119,7 @@ const AboutStudio = ({ studioImages }) => {
   )
 }
 
-const CompanyCard = ({ name, services, Logo }) => {
+const CompanyCard = ({ svg, url }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { refs, floatingStyles, context } = useFloating({
     open: isOpen,
@@ -131,31 +130,46 @@ const CompanyCard = ({ name, services, Logo }) => {
   const clientPoint = useClientPoint(context);
   const { getReferenceProps, getFloatingProps } = useInteractions([clientPoint]);
 
-  const renderLogo = () => {
-    if (!Logo) return <div className="companyLogo placeholderLogo" style={{ height: '39px', width: '155px' }} />;
-    if (typeof Logo === 'function') return <Logo className="companyLogo" />;
-    return <div className="companyLogo">{Logo}</div>;
-  };
+  const cardContent = (
+    <div className="companyCard">
+      {svg}
+    </div>
+  );
 
   return (
-    <>
-      <div
-        className="companyCard"
-        ref={refs.setReference}
-        {...getReferenceProps({
-          onMouseEnter: () => setIsOpen(true),
-          onMouseLeave: () => setIsOpen(false),
-        })}>
-        {renderLogo()}
-        <div className="companyName">{name}</div>
-        <div className="companyWorks">{services}</div>
-      </div>
+    <div className="companyCardContainer">
+      {url ? (
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          ref={refs.setReference}
+          {...getReferenceProps({
+            onMouseEnter: () => setIsOpen(true),
+            onMouseLeave: () => setIsOpen(false),
+          })}
+          className="companyCardLink"
+        >
+          {cardContent}
+        </a>
+      ) : (
+        <div
+          ref={refs.setReference}
+          {...getReferenceProps({
+            onMouseEnter: () => setIsOpen(true),
+            onMouseLeave: () => setIsOpen(false),
+          })}
+          className="companyCardLink"
+        >
+          {cardContent}
+        </div>
+      )}
 
       <AnimatePresence>
         {isOpen && (
           <div
             ref={refs.setFloating}
-            style={floatingStyles}
+            style={{ ...floatingStyles, zIndex: 1000 }}
             {...getFloatingProps()}
           >
             <motion.div
@@ -166,13 +180,12 @@ const CompanyCard = ({ name, services, Logo }) => {
               className="companyCardTooltip"
               style={{ transformOrigin: 'bottom left' }}
             >
-              {/* {name} */}
               View Project
             </motion.div>
           </div>
         )}
       </AnimatePresence>
-    </>
+    </div>
   );
 };
 
