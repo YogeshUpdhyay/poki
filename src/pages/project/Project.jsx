@@ -80,7 +80,7 @@ const ProjectAbout = ({ project }) => {
             </p>
 
             {about.pdf && (
-                <div className="wireframe">
+                <div className="wireframe" style={{ backgroundColor: about.bgColor || '#4A4E00' }}>
                     <div className="pdfBox">
                         {/iPad|iPhone|iPod/.test(navigator.userAgent) ? (
                             <a

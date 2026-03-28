@@ -286,7 +286,7 @@ const projects = [
       text: `For Astor Hostels, the focus was on translating their philosophy into a digital experience that feels warm, inclusive, and easy to navigate. While the brand thrives on community and local character, the website needed to balance that friendliness with a clean, modern interface that builds trust and simplifies booking.\n\n We designed the website that feels approachable yet structured, using inviting visuals, thoughtful layouts, and subtle details that reflect the personality of each location. The result is a seamless experience that makes discovering, connecting, and booking feel effortless, while still capturing the social spirit that defines Astor.`,
       pdf: webpagePdf,
       images: [astorAbout2Image, astorAbout3Image],
-      bgColor: '#427665',
+      bgColor: '#F9BBC9',
     },
 
     // Take your pick / color palette section
@@ -325,7 +325,7 @@ const projects = [
     hero: {
       headline: 'examon',
       heroText:
-        'We partnered with Examon to design a streamlined, robust platform that transforms test-taking into a smooth, visually engaging experience without compromising on focus and clarity.',
+        'We partnered with Examon ai, an AI-powered learning platform built for modern students, to design a website that transforms smart revision into a clear, intuitive, and motivating digital experience.',
       buttonLink: '#',
       tooltipItems: ['website design'],
       tooltipColor: 'blue',
@@ -353,23 +353,23 @@ const projects = [
 
     // About the project section
     about: {
-      text: `For Examon, the challenge was balancing the rigorous demands of an examination platform with an approachable, modern aesthetic. The interface needed to inspire focus while remaining friendly and intuitive for all users.\n\nWe designed a clear, well-structured interface that reduces friction throughout the entire process. Thoughtful color usage, clean typography, and spacious layouts ensure the platform is as effortless to use as it is reliable.`,
+      text: `the goal here was to translate a powerful, AI-driven learning system into an experience that feels simple, clear, and motivating for students. While the platform is built on advanced technology, the website needed to communicate it in a way that feels approachable, structured, and easy to understand.  \n\n We focused on creating a clean, modern interface with strong visual hierarchy, breaking down complex features into digestible sections. Subtle tech-inspired elements and smart use of color and typography help reinforce the intelligence behind the product, while keeping the overall experience distraction-free. `,
       pdf: webpagePdf,
       images: [examonAbout2Image, examonAbout3Image],
-      bgColor: '#ECA852',
+      bgColor: '#122515',
     },
 
     // Take your pick / color palette section
     colorPalette: {
-      text: 'We explored distinct directions to make data presentation and navigation feel effortlessly clear and engaging.',
+      text: 'We explored two distinct directions for the homepage’s opening sections, one focused on a clean, minimal, and clarity-driven approach, while the other takes on a more dynamic and high-energy direction',
       images: [examonVersion1Svg, examonVersion2Svg],
     },
 
     // Results section
     results: [
-      { number: '45%', label: 'Increase in user retention' },
-      { number: '20%', label: 'Faster task completion' },
-      { number: '-15%', label: 'Drop in error rates' },
+      { number: '23,000', label: 'students onboard in the first month' },
+      { number: '45x', label: 'user engagement from launch' },
+      { number: '68%', label: 'reduction in early drop-off' },
     ],
 
     // Built to be seen section
