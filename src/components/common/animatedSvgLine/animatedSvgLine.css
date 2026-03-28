@@ -3,11 +3,11 @@
     width: 100%;
 }
 
-.animated-underline.animated {
+.animated-underline.animated path {
     visibility: visible;
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
-    animation: draw 3s ease-in-out forwards;
+    animation: draw 2s ease-out forwards;
 }
 
 @keyframes draw {
