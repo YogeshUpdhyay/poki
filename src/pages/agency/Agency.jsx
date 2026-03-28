@@ -55,7 +55,7 @@ const AgencyPartnerShips = () => {
                             fill='green'
                             stroke='white'
                             rotate='0deg'
-                            translateY='0%'
+                            translateY='-20%'
                         />
                     </div>
                     <div className="partnerReviewText">
@@ -82,7 +82,7 @@ const AgencyPartnerShips = () => {
                             fill='violet'
                             stroke='white'
                             rotate='0deg'
-                            translateY='0%'
+                            translateY='-20%'
                         />
                     </div>
 
@@ -395,15 +395,15 @@ const AgencyHero = () => {
                 </Headline>
             </div>
             <div className="agencyButtons">
-                <Button 
-                    text="let's team up" 
-                    href={countMeInUrl} 
+                <Button
+                    text="let's team up"
+                    href={countMeInUrl}
                     className={showButtons ? 'heroButtonPop' : ''}
                 />
-                <Button 
-                    text="see what we do" 
-                    color='green' 
-                    href="/work" 
+                <Button
+                    text="see what we do"
+                    color='green'
+                    href="/work"
                     className={showButtons ? 'heroButtonPop' : ''}
                 />
             </div>
