@@ -103,6 +103,18 @@ import cocinaschileBuilt1Image from './cocinas-chile/built1image.svg';
 import cocinaschileBuilt2Image from './cocinas-chile/built2image.svg';
 import cocinaschileBuilt3Image from './cocinas-chile/built3image.svg';
 
+// ── Project template images (TBP) ──────────────────────────────────────
+import tbpProjectCardImg from './tbp/projectcardimage.svg';
+import TbpHeroCartoon from './tbp/herocartoon.svg?react';
+import tbpBeforeAfterSvg from './tbp/beforeafter.svg';
+import tbpAbout2Image from './tbp/about2.svg';
+import tbpAbout3Image from './tbp/about3.svg';
+import tbpVersion1Svg from './tbp/version1.svg';
+import tbpVersion2Svg from './tbp/version2.svg';
+import tbpBuilt1Image from './tbp/built1image.svg';
+import tbpBuilt2Image from './tbp/built2image.svg';
+import tbpBuilt3Image from './tbp/built3image.svg';
+
 // ── Category constants ───────────────────────────────────────────────────
 export const CATEGORIES = {
   WEBSITES: 'websites',
@@ -622,6 +634,75 @@ const projects = [
     // Built to be seen section
     builtToBeSeen: {
       images: [cocinaschileBuilt1Image, cocinaschileBuilt2Image, cocinaschileBuilt3Image],
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // THE BOYS PROJECT (TBP) — Website Design (Project template)
+  // ─────────────────────────────────────────────────────────────────────────
+
+  {
+    id: 8,
+    title: 'The Brain Psychologist',
+    slug: 'the-brain-psychologist',
+    category: CATEGORIES.WEBSITE, // Assuming website category
+    featured: true,
+    cardImage: tbpProjectCardImg,
+    template: 'project',
+
+    // Project Hero section
+    hero: {
+      headline: 'the brain psychologist',
+      heroText: 'We partnered with The Brain Psychologist to design a premium, calming website design that reflects their evidence-based approach to mental health, balancing trust, and a sense of quiet confidence across every interaction.',
+      buttonLink: '#',
+      tooltipItems: ['website design'],
+      tooltipColor: 'blue',
+      Cartoon: TbpHeroCartoon,
+      cartoonStyle: {
+        right: '95%',
+        bottom: '65%',
+        transform: 'translateY(30%)',
+        width: '150px',
+      },
+      cartoonMobileStyle: {
+        left: '-40%',
+        top: '-240%',
+        width: '100px',
+        height: '90px',
+      },
+    },
+
+    // Before/After section
+    preview: {
+      desktopImage: tbpBeforeAfterSvg,
+      mobileImage: tbpBeforeAfterSvg, // Fallback to desktop SVG since mobile isn't present
+    },
+
+    // About the project section
+    about: {
+      text: `For The Brain Psychologist, we designed the website that feels clean, composed, and reassuring, without falling into predictable or monotonous design patterns often seen in the space. We adopted a muted colour palette to maintain a sense of calm, paired with structured yet engaging layouts to avoid visual fatigue. Iconography plays a key role throughout the interface, helping simplify complex information and making the experience more intuitive and digestible. \n\n Special attention was also given to the mobile experience, ensuring that the website remains just as seamless, accessible, and easy to navigate across devices.`,
+      pdf: webpagePdf,
+      images: [tbpAbout2Image, tbpAbout3Image],
+      bgColor: '#2F3742',
+      starColor: '#EFB5D4',
+    },
+
+    // Take your pick / color palette section
+    colorPalette: {
+      text: 'We explored two distinct directions for the homepage’s opening sections, one leaning towards a more minimal and structured layout with subtle visual cues, while the other introduces slightly more expressive compositions and stronger icon-led elements.',
+      images: [tbpVersion1Svg, tbpVersion2Svg],
+    },
+
+    // Results section
+    results: [
+      { number: '32x', label: 'increase in inquiries' },
+      { number: '1,500', label: 'monthly service page visits' },
+      { number: '26%', label: 'increase in mobile engagement' },
+    ],
+
+    // Built to be seen section
+    builtToBeSeen: {
+      images: [tbpBuilt1Image, tbpBuilt2Image, tbpBuilt3Image],
     },
   },
 ];
