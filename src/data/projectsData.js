@@ -100,6 +100,18 @@ const projects = [
       tooltipColor: 'pink',
       marqueeItems: ['logo design', 'brand identity', 'visual language', 'packaging'],
       Cartoon: WebsiteHeroCartoon,
+      cartoonStyle: {
+        right: '80%',
+        top: '-60%',
+        transform: 'translateY(-50%)',
+        width: '200px',
+      },
+      cartoonMobileStyle: {
+        right: '90%',
+        top: '20%',
+        width: '70.39px',
+        height: '96px',
+      },
     },
 
     // Full-width image below hero
@@ -166,6 +178,18 @@ const projects = [
       tooltipColor: 'blue',
       marqueeItems: ['logo design', 'brand identity', 'visual language', 'packaging'],
       Cartoon: ProjectHeroCartoon,
+      cartoonStyle: {
+        right: '95%',
+        bottom: '65%',
+        transform: 'translateY(30%)',
+        width: '174.23px',
+      },
+      cartoonMobileStyle: {
+        left: '-45%',
+        top: '-240%',
+        width: '106.7px',
+        height: '96px',
+      },
     },
 
     // Before / after preview
@@ -201,6 +225,10 @@ const projects = [
     },
   },
 
+  // ─────────────────────────────────────────────────────────────────────────
+  // ASTOR HOTELS — Website Design (Project template)
+  // ─────────────────────────────────────────────────────────────────────────
+
   {
     id: 3,
     slug: 'astor-hotels',
@@ -221,6 +249,18 @@ const projects = [
       tooltipColor: 'blue',
       marqueeItems: ['logo design', 'brand identity', 'visual language', 'packaging'],
       Cartoon: AstorHeroCartoon,
+      cartoonStyle: {
+        right: '95%',
+        bottom: '65%',
+        transform: 'translateY(30%)',
+        width: '174.23px',
+      },
+      cartoonMobileStyle: {
+        left: '-45%',
+        top: '-240%',
+        width: '106.7px',
+        height: '96px',
+      },
     },
 
     // Before / after preview
@@ -256,6 +296,10 @@ const projects = [
     },
   },
 ];
+
+
+
+
 
 // ═══════════════════════════════════════════════════════════════════════════
 // Helper functions

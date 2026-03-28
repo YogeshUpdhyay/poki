@@ -323,6 +323,13 @@ const WebsiteHero = ({ project }) => {
     });
 
     const [showButtons, setShowButtons] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth <= 768);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     useEffect(() => {
         if (inView && isRevealed) {
@@ -363,7 +370,11 @@ const WebsiteHero = ({ project }) => {
                     ))}
                 </motion.div>
                 {project.hero.Cartoon && (
-                    <motion.div className="websiteHeroCartoon" variants={wordVariants}>
+                    <motion.div 
+                        className="websiteHeroCartoon" 
+                        variants={wordVariants}
+                        style={isMobile ? project.hero.cartoonMobileStyle : project.hero.cartoonStyle}
+                    >
                         <project.hero.Cartoon />
                     </motion.div>
                 )}
