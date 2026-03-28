@@ -64,6 +64,19 @@ import examonBuilt1Image from './examon/built1image.svg';
 import examonBuilt2Image from './examon/built2image.svg';
 import examonBuilt3Image from './examon/built3image.svg';
 
+// ── Project template images (Dumbclub) ──────────────────────────────────────
+import dumbclubProjectCardImg from './dumbclub/projectimage.svg';
+import DumbclubHeroCartoon from './dumbclub/herocartoon.svg?react';
+import dumbclubBeforeAfterSvg from './dumbclub/beforeafter.svg';
+import dumbclubBeforeAfterMobileSvg from './dumbclub/beforeaftermobile.svg';
+import dumbclubAbout2Image from './dumbclub/about2image.svg';
+import dumbclubAbout3Image from './dumbclub/about3image.svg';
+import dumbclubVersion1Svg from './dumbclub/version1.svg';
+import dumbclubVersion2Svg from './dumbclub/version2.svg';
+import dumbclubBuilt1Image from './dumbclub/built1image.svg';
+import dumbclubBuilt2Image from './dumbclub/built2image.svg';
+import dumbclubBuilt3Image from './dumbclub/built3image.svg';
+
 // ── Category constants ───────────────────────────────────────────────────
 export const CATEGORIES = {
   WEBSITES: 'websites',
@@ -375,6 +388,76 @@ const projects = [
     // Built to be seen section
     builtToBeSeen: {
       images: [examonBuilt1Image, examonBuilt2Image, examonBuilt3Image],
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // DUMBCLUB — Website Design (Project template)
+  // ─────────────────────────────────────────────────────────────────────────
+
+  {
+    id: 5,
+    title: 'dumbclub',
+    slug: 'dumb-club',
+    category: CATEGORIES.WEBSITE, // Assuming website category using the project template
+    featured: true,
+    cardImage: dumbclubProjectCardImg,
+    template: 'project',
+
+    // Project Hero section
+    hero: {
+      headline: 'dumbclub',
+      heroText:
+        'We partnered with Dumbclub to create a playful, social-first website that highlights ultra-soft comfort, strong social proof, and the brand’s viral, feel-good personality.',
+      buttonLink: '#',
+      tooltipItems: ['website design'],
+      tooltipColor: 'blue',
+      Cartoon: DumbclubHeroCartoon,
+      cartoonStyle: {
+        right: '95%',
+        bottom: '65%',
+        transform: 'translateY(30%)',
+        width: '150px',
+      },
+      cartoonMobileStyle: {
+        left: '-40%',
+        top: '-240%',
+        width: '100px',
+        height: '90px',
+      },
+    },
+
+    // Before/After section
+    preview: {
+      desktopImage: dumbclubBeforeAfterSvg,
+      mobileImage: dumbclubBeforeAfterMobileSvg,
+    },
+
+    // About the project section
+    about: {
+      text: `For Dumbclub, the goal was to design a website that feels as fun, effortless, and addictive as the brand itself. We leaned into rounded typography and Stickers are used throughout the website as a recurring visual element, adding layers of playfulness and reinforcing the brand’s expressive tone. \n\n Custom-styled buttons further enhance this personality, making even small interactions feel unique and on-brand. Elements like customer reactions, community-driven visuals, and punchy messaging were integrated to build trust and relatability, ensuring a seamless journey from discovery to purchase.`,
+      pdf: webpagePdf,
+      images: [dumbclubAbout2Image, dumbclubAbout3Image],
+      bgColor: '#C59CE2',
+      starColor: '#EFB5D4',
+    },
+
+    // Take your pick / color palette section
+    colorPalette: {
+      text: 'We explored two distinct directions for the homepage’s opening sections, one leaning towards a minimal and product-focused aesthetic, while the other embraces a more playful direction inspired by social media and viral culture.',
+      images: [dumbclubVersion1Svg, dumbclubVersion2Svg],
+    },
+
+    // Results section
+    results: [
+      { number: '+39%', label: 'add-to-cart rate' },
+      { number: '1,800', label: 'hoodies sold in the first month' },
+      { number: '4.2k+', label: 'shares, clicks and engagements' },
+    ],
+
+    // Built to be seen section
+    builtToBeSeen: {
+      images: [dumbclubBuilt1Image, dumbclubBuilt2Image, dumbclubBuilt3Image],
     },
   },
 ];
