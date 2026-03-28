@@ -42,6 +42,7 @@ import apoiosenorPdf from './apoio-senor/Apoio sénior Homepage-compressed.pdf'
 import cocinaschilePdf from './cocinas-chile/Cocinas Chile Homepage-compressed.pdf';
 import tbpPdf from './tbp/The Brain Psychologist Homepage-compressed.pdf';
 import purepushPdf from './pure-push/PurePush Homepage-compressed.pdf';
+import amigoPdf from './amigo/Amigo Study Homepage-compressed.pdf';
 
 // ── Shared Cartoons ──────────────────────────────────────────────────────
 import ProjectHeroCartoon from '../assets/imgs/projects/projectHeroCartoon.svg?react';
@@ -147,6 +148,18 @@ import rentlyVersion2Svg from './rently/version2.svg';
 import rentlyBuilt1Image from './rently/built1image.svg';
 import rentlyBuilt2Image from './rently/built2image.svg';
 import rentlyBuilt3Image from './rently/built3image.svg';
+
+// ── Project template images (Amigo) ──────────────────────────────────────
+import amigoProjectCardImg from './amigo/projectcardimage.svg';
+import AmigoHeroCartoon from './amigo/herocartoon.svg?react';
+import amigoBeforeAfterSvg from './amigo/beforeafter.svg';
+import amigoAbout2Image from './amigo/about2.svg';
+import amigoAbout3Image from './amigo/about3.svg';
+import amigoVersion1Svg from './amigo/version1.svg';
+import amigoVersion2Svg from './amigo/version2.svg';
+import amigoBuilt1Image from './amigo/built1image.svg';
+import amigoBuilt2Image from './amigo/built2image.svg';
+import amigoBuilt3Image from './amigo/built3image.svg';
 
 // ── Category constants ───────────────────────────────────────────────────
 export const CATEGORIES = {
@@ -880,6 +893,76 @@ const projects = [
     // Built to be seen section
     builtToBeSeen: {
       images: [rentlyBuilt1Image, rentlyBuilt2Image, rentlyBuilt3Image],
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // AMIGO — Website Design (Project template)
+  // ─────────────────────────────────────────────────────────────────────────
+
+  {
+    id: 11,
+    title: 'amigo study',
+    slug: 'amigo',
+    category: CATEGORIES.PRODUCTS_APPS,
+    featured: true,
+    cardImage: amigoProjectCardImg,
+    template: 'project',
+    rotation: 3,
+
+    // Project Hero section
+    hero: {
+      headline: 'amigo study',
+      heroText: 'we partnered with amigo study to design an intelligent, student-first app experience that simplifies exam preparation, turning complex study routines into a structured, motivating, and easy-to-follow journey.',
+      buttonLink: '#',
+      tooltipItems: ['product design'],
+      tooltipColor: 'blue',
+      Cartoon: AmigoHeroCartoon,
+      cartoonStyle: {
+        right: '95%',
+        bottom: '65%',
+        transform: 'translateY(30%)',
+        width: '150px',
+      },
+      cartoonMobileStyle: {
+        left: '-40%',
+        top: '-240%',
+        width: '100px',
+        height: '90px',
+      },
+    },
+
+    // Before/After section
+    preview: {
+      desktopImage: amigoBeforeAfterSvg,
+      mobileImage: amigoBeforeAfterSvg, // Fallback
+    },
+
+    // About the project section
+    about: {
+      text: `For Amigo Study, the goal was to translate a powerful, science-backed learning system into an experience that feels simple, intuitive, and motivating for students. We designed a structured yet engaging interface that breaks down complex study workflows into manageable steps. Clear visual hierarchy, guided flows, and smart use of components help students stay on track without confusion. \n\n Subtle visual elements and interactive cues are used to maintain engagement, while the overall system ensures that users always know what to do next.`,
+      pdf: amigoPdf,
+      images: [amigoAbout2Image, amigoAbout3Image],
+      bgColor: '#FF7518', // Dummy color
+      starColor: '#5168E8', // Dummy color
+    },
+
+    // Take your pick / color palette section
+    colorPalette: {
+      text: 'we explored two distinct directions for the app’s initial screens, one leaning towards a cleaner, more minimal and structure-driven approach, while the other introduces a more dynamic and engaging visual style to motivate users.',
+      images: [amigoVersion1Svg, amigoVersion2Svg],
+    },
+
+    // Results section
+    results: [
+      { number: '27x', label: 'study plan completion rate' },
+      { number: '3,100+', label: 'students onboarded monthly' },
+      { number: '33%', label: 'students engaged more regularly' },
+    ],
+
+    // Built to be seen section
+    builtToBeSeen: {
+      images: [amigoBuilt1Image, amigoBuilt2Image, amigoBuilt3Image],
     },
   },
 ];
