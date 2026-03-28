@@ -77,6 +77,19 @@ import dumbclubBuilt1Image from './dumbclub/built1image.svg';
 import dumbclubBuilt2Image from './dumbclub/built2image.svg';
 import dumbclubBuilt3Image from './dumbclub/built3image.svg';
 
+// ── Project template images (Apoio Senor) ──────────────────────────────────────
+import apoiosenorProjectCardImg from './apoio-senor/projectcard.svg';
+import ApoiosenorHeroCartoon from './apoio-senor/herocartoon.svg?react';
+import apoiosenorBeforeAfterSvg from './apoio-senor/beforeafter.svg';
+import apoiosenorBeforeAfterMobileSvg from './apoio-senor/beforeaftermobile.svg';
+import apoiosenorAbout2Image from './apoio-senor/about2.svg';
+import apoiosenorAbout3Image from './apoio-senor/about3.svg';
+import apoiosenorVersion1Svg from './apoio-senor/version1.svg';
+import apoiosenorVersion2Svg from './apoio-senor/version2.svg';
+import apoiosenorBuilt1Image from './apoio-senor/built1image.svg';
+import apoiosenorBuilt2Image from './apoio-senor/built2image.svg';
+import apoiosenorBuilt3Image from './apoio-senor/built3image.svg';
+
 // ── Category constants ───────────────────────────────────────────────────
 export const CATEGORIES = {
   WEBSITES: 'websites',
@@ -458,6 +471,75 @@ const projects = [
     // Built to be seen section
     builtToBeSeen: {
       images: [dumbclubBuilt1Image, dumbclubBuilt2Image, dumbclubBuilt3Image],
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // APOIO SENOR — Website Design (Project template)
+  // ─────────────────────────────────────────────────────────────────────────
+
+  {
+    id: 6,
+    title: 'apoio sénior',
+    slug: 'apoio-sénior',
+    category: CATEGORIES.WEBSITE, // Assuming website category
+    featured: true,
+    cardImage: apoiosenorProjectCardImg,
+    template: 'project',
+
+    // Project Hero section
+    hero: {
+      headline: 'apoio sénior',
+      heroText: 'We partnered with Apoio Sénior to design a calm, human-centered website that simplifies the care-finding process and supports families in making confident, informed decisions with trust and clarity.',
+      buttonLink: '#',
+      tooltipItems: ['website design'],
+      tooltipColor: 'blue',
+      Cartoon: ApoiosenorHeroCartoon,
+      cartoonStyle: {
+        right: '95%',
+        bottom: '65%',
+        transform: 'translateY(30%)',
+        width: '150px',
+      },
+      cartoonMobileStyle: {
+        left: '-40%',
+        top: '-240%',
+        width: '100px',
+        height: '90px',
+      },
+    },
+
+    // Before/After section
+    preview: {
+      desktopImage: apoiosenorBeforeAfterSvg,
+      mobileImage: apoiosenorBeforeAfterMobileSvg,
+    },
+
+    // About the project section
+    about: {
+      text: `we have designed the website For Apoio Sénior that feels human, approachable, and easy to navigate during an otherwise overwhelming decision-making process. While the space is often dominated by overly clinical and monotonous designs, we intentionally took a different route. \n\n We introduced a more vibrant and engaging visual language, using expressive colors and playful elements to make the experience feel less intimidating and more uplifting. This helps break away from the conventional tone of care-related platforms, making the journey feel lighter while still maintaining trust and clarity.`,
+      pdf: webpagePdf,
+      images: [apoiosenorAbout2Image, apoiosenorAbout3Image],
+      bgColor: '#3D63E8',
+      starColor: '#427665',
+    },
+
+    // Take your pick / color palette section
+    colorPalette: {
+      text: 'We explored two distinct directions for the homepage’s opening sections, one leaning towards a more playful and expressive visual style, while the other introduces a slightly more structured approach with clearer content hierarchy.',
+      images: [apoiosenorVersion1Svg, apoiosenorVersion2Svg],
+    },
+
+    // Results section
+    results: [
+      { number: '1,200+', label: 'families assisted' },
+      { number: '34%', label: 'increase in enquiries submissions' },
+      { number: '28%', label: 'reduced decision time' },
+    ],
+
+    // Built to be seen section
+    builtToBeSeen: {
+      images: [apoiosenorBuilt1Image, apoiosenorBuilt2Image, apoiosenorBuilt3Image],
     },
   },
 ];
