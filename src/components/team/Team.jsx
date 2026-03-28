@@ -39,8 +39,8 @@ export default function Team() {
   const lines = ['a crew of 6', 'dominating the', 'whole world']
   const highlight = 'dominating'
   const Separator = (
-    <svg style={{margin: '0 3px 0 3px'}} width="2" height="10" viewBox="0 0 2 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="1.5" width="10" height="1.5" rx="0.75" transform="rotate(90 1.5 0)" fill="#000000ff"/>
+    <svg style={{ margin: '0 3px 0 3px' }} width="2" height="10" viewBox="0 0 2 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1.5" width="10" height="1.5" rx="0.75" transform="rotate(90 1.5 0)" fill="#000000ff" />
     </svg>
   );
   const teammates = {
@@ -58,8 +58,8 @@ export default function Team() {
         <Map />
       </div>
       <div className="teamHeadline">
-        <Headline 
-          lines={lines} 
+        <Headline
+          lines={lines}
           highlight={highlight}
         >
           <img
@@ -69,7 +69,7 @@ export default function Team() {
             ref={teamCartoonRef}
           />
 
-          <motion.div 
+          <motion.div
             className="teamPill"
             initial="hidden"
             animate={teamCartoonInView ? "visible" : "hidden"}
@@ -89,9 +89,68 @@ export default function Team() {
   )
 }
 
+// Define your dynamic country data here using the country's 2-letter ID
+// Example: 'US', 'IN', 'GB', etc.
+const countryData = {
+  'US': '526 projects',
+  'CA': '32 projects',
+  'MX': '17 projects',
+  'JM': '1 project',
+  'PA': '5 projects',
+  'EC': '1 project',
+  'BR': '3 projects',
+  'UY': '2 projects',
+  'AR': '1 project',
+  'CL': '2 projects',
+  'IS': '2 projects',
+  'NO': '3 projects',
+  'GB': '276 projects',
+  'IE': '1 project',
+  'ES': '4 projects',
+  'PT': '6 projects',
+  'MA': '1 project',
+  'TN': '3 projects',
+  'IT': '19 projects',
+  'CH': '98 projects',
+  'DE': '34 projects',
+  'DK': '1 project',
+  'NL': '21 projects',
+  'FR': '23 projects',
+  'SE': '8 projects',
+  'FI': '4 projects',
+  'EE': '8 projects',
+  'LV': '1 project',
+  'PL': '12 projects',
+  'AT': '3 projects',
+  'SI': '6 projects',
+  'ME': '1 project',
+  'RS': '12 projects',
+  'RO': '1 project',
+  'TR': '5 projects',
+  'IL': '3 projects',
+  'SA': '3 projects',
+  'AE': '14 projects',
+  'KW': '1 project',
+  'KE': '1 project',
+  'ZA': '3 projects',
+  'IN': '142 projects',
+  'NP': '1 project',
+  'VN': '1 project',
+  'MY': '3 projects',
+  'ID': '1 project',
+  'PH': '18 projects',
+  'TW': '4 projects',
+  'KR': '1 project',
+  'JP': '5 projects',
+  'AU': '23 projects',
+  'NZ': '2 projects',
+  'FJ': '2 projects',
+  'default': '0 projects'
+};
+
 const Map = () => {
   const [hoveredInfo, setHoveredInfo] = useState(null);
-  const [open , setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   const lastPathIdRef = useRef(null);
 
   const { refs, floatingStyles, context } = useFloating({
@@ -157,13 +216,13 @@ const Map = () => {
 
   return (
     <div className="mapContainer">
-      <WorldMap 
-        ref={refs.setReference} 
+      <WorldMap
+        ref={refs.setReference}
         {...getReferenceProps({
           onMouseMove: onMouseMove,
           onMouseLeave: onMouseLeave,
         })}
-        className="mapSVG" 
+        className="mapSVG"
         id='worldMap'
         viewBox="0 0 1009.6727 665.96301"
         preserveAspectRatio="xMidYMid meet"
@@ -183,11 +242,11 @@ const Map = () => {
               className='tooltip orange'
               style={{ transformOrigin: 'bottom left' }}
             >
-              {hoveredInfo?.dataName || ''} 
-              <svg style={{margin: '0 3px 0 3px'}} width="2" height="10" viewBox="0 0 2 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="1.5" width="10" height="1.5" rx="0.75" transform="rotate(90 1.5 0)" fill="#ffffffff"/>
+              {hoveredInfo?.dataName || ''}
+              <svg style={{ margin: '0 3px 0 3px' }} width="2" height="10" viewBox="0 0 2 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="1.5" width="10" height="1.5" rx="0.75" transform="rotate(90 1.5 0)" fill="#ffffffff" />
               </svg>
-              320 projects
+              {countryData[hoveredInfo?.id] || countryData['default']}
             </motion.div>
           </div>
         )}
@@ -209,9 +268,9 @@ const Teammates = ({ teammates = {} }) => {
   const rOverrides = [0.3, 0.8, 0.55, 0.5, 0.3, 0.55]
 
   // Ensure we have exactly six items; read numeric keys 1..6 from the object
-  const items = [1,2,3,4,5,6].map(i => teammates[i] || { image: undefined, tooltip: '', borderRadius: undefined });
+  const items = [1, 2, 3, 4, 5, 6].map(i => teammates[i] || { image: undefined, tooltip: '', borderRadius: undefined });
 
-  return(
+  return (
     <div className="teammates">
       <img src={TeamGreenBlob} alt="" className="teammateGreenBlob" />
       <img src={TeamPinkBlob} alt="" className="teammatePinkBlob" />
@@ -339,7 +398,7 @@ const TeammateCard = ({
               bottom: svgBottom ?? 'auto',
             }}
           />
-          <motion.div 
+          <motion.div
             className='teammateCallout'
             initial="hidden"
             animate={cardInView ? "visible" : "hidden"}

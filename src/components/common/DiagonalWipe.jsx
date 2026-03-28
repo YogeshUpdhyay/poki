@@ -54,7 +54,7 @@ const DiagonalWipe = ({ phase = 'idle', color = '#5168E8', onPhaseComplete }) =>
     window.addEventListener('resize', resize);
 
     const PAINT_DUR = 3.5;  // seconds — peaceful and slow but not forever
-    const REVEAL_DUR = 2.8; // seconds — smooth and deliberate
+    const REVEAL_DUR = 3.5; // seconds — smooth and deliberate
 
     const render = (time) => {
       const currentPhase = phaseRef.current;
