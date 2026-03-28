@@ -33,7 +33,15 @@ import version2Svg from '../assets/imgs/projects/version2.svg';
 import built1Image from '../assets/imgs/projects/built1.png';
 import built2Image from '../assets/imgs/projects/built2.png';
 import built3Image from '../assets/imgs/projects/built3.png';
-import webpagePdf from '../assets/webpage.pdf';
+
+import dilliDilliPdf from './Dilli Dilli Homepage-compressed.pdf';
+import astorHotelsPdf from './astor hotels/Astor Hostels Homepage-compressed.pdf';
+import examonPdf from './examon/Examon AI Homepage-compressed.pdf';
+import dumbclubPdf from './dumbclub/Dumbclub Homepage-compressed.pdf';
+import apoiosenorPdf from './apoio-senor/Apoio sénior Homepage-compressed.pdf';
+import cocinaschilePdf from './cocinas-chile/Cocinas Chile Homepage-compressed.pdf';
+import tbpPdf from './tbp/The Brain Psychologist Homepage-compressed.pdf';
+import purepushPdf from './pure-push/PurePush Homepage-compressed.pdf';
 
 // ── Shared Cartoons ──────────────────────────────────────────────────────
 import ProjectHeroCartoon from '../assets/imgs/projects/projectHeroCartoon.svg?react';
@@ -276,7 +284,7 @@ const projects = [
     // About the project section
     about: {
       text: `Lorem ipsum dolor sit amet consectetur. Est tempus egestas id id donec eget lacus tempus nibh. Orci amet id praesent purus ultrices nisl. Sit vulputate aliquam et egestas elementum in praesent. Cursus in bibendum lacus quis morbi nisl leo. Et mauris urna mauris arcu fusce tincidunt tellus in. Enim ullamcorper fames morbi auctor suspendisse faucibus diam euismod arcu.\n\nArcu vulputate elementum feugiat posuere gravida sit. Arcu vitae vivamus dolor id arcu lacus. Leo fermentum enim volutpat faucibus. Consectetur neque mauris ultrices diam urna enim.`,
-      pdf: webpagePdf,
+      pdf: dilliDilliPdf,
       images: [about2Image, about3Image],
       bgColor: '#5168E8',
     },
@@ -347,7 +355,7 @@ const projects = [
     // About the project section
     about: {
       text: `For Astor Hostels, the focus was on translating their philosophy into a digital experience that feels warm, inclusive, and easy to navigate. While the brand thrives on community and local character, the website needed to balance that friendliness with a clean, modern interface that builds trust and simplifies booking.\n\n We designed the website that feels approachable yet structured, using inviting visuals, thoughtful layouts, and subtle details that reflect the personality of each location. The result is a seamless experience that makes discovering, connecting, and booking feel effortless, while still capturing the social spirit that defines Astor.`,
-      pdf: webpagePdf,
+      pdf: astorHotelsPdf,
       images: [astorAbout2Image, astorAbout3Image],
       bgColor: '#F9BBC9',
     },
@@ -417,7 +425,7 @@ const projects = [
     // About the project section
     about: {
       text: `the goal here was to translate a powerful, AI-driven learning system into an experience that feels simple, clear, and motivating for students. While the platform is built on advanced technology, the website needed to communicate it in a way that feels approachable, structured, and easy to understand.  \n\n We focused on creating a clean, modern interface with strong visual hierarchy, breaking down complex features into digestible sections. Subtle tech-inspired elements and smart use of color and typography help reinforce the intelligence behind the product, while keeping the overall experience distraction-free. `,
-      pdf: webpagePdf,
+      pdf: examonPdf,
       images: [examonAbout2Image, examonAbout3Image],
       bgColor: '#122515',
     },
@@ -487,7 +495,7 @@ const projects = [
     // About the project section
     about: {
       text: `For Dumbclub, the goal was to design a website that feels as fun, effortless, and addictive as the brand itself. We leaned into rounded typography and Stickers are used throughout the website as a recurring visual element, adding layers of playfulness and reinforcing the brand’s expressive tone. \n\n Custom-styled buttons further enhance this personality, making even small interactions feel unique and on-brand. Elements like customer reactions, community-driven visuals, and punchy messaging were integrated to build trust and relatability, ensuring a seamless journey from discovery to purchase.`,
-      pdf: webpagePdf,
+      pdf: dumbclubPdf,
       images: [dumbclubAbout2Image, dumbclubAbout3Image],
       bgColor: '#C59CE2',
       starColor: '#EFB5D4',
@@ -557,7 +565,7 @@ const projects = [
     // About the project section
     about: {
       text: `we have designed the website For Apoio Sénior that feels human, approachable, and easy to navigate during an otherwise overwhelming decision-making process. While the space is often dominated by overly clinical and monotonous designs, we intentionally took a different route. \n\n We introduced a more vibrant and engaging visual language, using expressive colors and playful elements to make the experience feel less intimidating and more uplifting. This helps break away from the conventional tone of care-related platforms, making the journey feel lighter while still maintaining trust and clarity.`,
-      pdf: webpagePdf,
+      pdf: apoiosenorPdf,
       images: [apoiosenorAbout2Image, apoiosenorAbout3Image],
       bgColor: '#3D63E8',
       starColor: '#427665',
@@ -627,7 +635,7 @@ const projects = [
     // About the project section
     about: {
       text: `the objective here was to create a website design that feels premium, timeless, and visually driven allowing the quality of their work to take center stage. We adopted a minimal design approach with sleek typography and structured layouts that bring clarity without distraction. Large, high-quality imagery plays a dominant role throughout the experience, showcasing materials, finishes, and transformations in detail. \n\n Every element is intentionally restrained, creating a sense of sophistication while guiding users effortlessly through the portfolio and services. The result is a website that feels elevated, confident, and built around visual storytelling.`,
-      pdf: webpagePdf,
+      pdf: cocinaschilePdf,
       images: [cocinaschileAbout2Image, cocinaschileAbout3Image],
       bgColor: '#A59182',
       starColor: '#E47249',
@@ -697,7 +705,7 @@ const projects = [
     // About the project section
     about: {
       text: `For The Brain Psychologist, we designed the website that feels clean, composed, and reassuring, without falling into predictable or monotonous design patterns often seen in the space. We adopted a muted colour palette to maintain a sense of calm, paired with structured yet engaging layouts to avoid visual fatigue. Iconography plays a key role throughout the interface, helping simplify complex information and making the experience more intuitive and digestible. \n\n Special attention was also given to the mobile experience, ensuring that the website remains just as seamless, accessible, and easy to navigate across devices.`,
-      pdf: webpagePdf,
+      pdf: tbpPdf,
       images: [tbpAbout2Image, tbpAbout3Image],
       bgColor: '#2F3742',
       starColor: '#EFB5D4',
@@ -767,7 +775,7 @@ const projects = [
     // About the project section
     about: {
       text: `For Purepush, the goal was to create a website that feels light, calming, and easy to navigate, mirroring the brand’s focus on wellness and simplicity. The experience needed to communicate trust and quality without overwhelming users, allowing the products and their benefits to stand out naturally. We worked with a soft pastel color palette paired with generous white space to create a sense of openness and clarity throughout the interface. \n\n A distinctive toggle bar element is used consistently across the website as a core branding feature, adding a unique interactive layer while reinforcing visual identity.`,
-      pdf: webpagePdf,
+      pdf: purepushPdf,
       images: [purepushAbout2Image, purepushAbout3Image],
       bgColor: '#B9DBE8',
       starColor: '#427665',
