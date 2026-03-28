@@ -90,6 +90,19 @@ import apoiosenorBuilt1Image from './apoio-senor/built1image.svg';
 import apoiosenorBuilt2Image from './apoio-senor/built2image.svg';
 import apoiosenorBuilt3Image from './apoio-senor/built3image.svg';
 
+// ── Project template images (Cocinas Chile) ──────────────────────────────────────
+import cocinaschileProjectCardImg from './cocinas-chile/projectimagecard.svg';
+import CocinaschileHeroCartoon from './cocinas-chile/herocartoon.svg?react';
+import cocinaschileBeforeAfterSvg from './cocinas-chile/beforeafter.svg';
+import cocinaschileBeforeAfterMobileSvg from './cocinas-chile/beforeaftermobile.svg';
+import cocinaschileAbout2Image from './cocinas-chile/about2.svg';
+import cocinaschileAbout3Image from './cocinas-chile/about3.svg';
+import cocinaschileVersion1Svg from './cocinas-chile/version1.svg';
+import cocinaschileVersion2Svg from './cocinas-chile/version2.svg';
+import cocinaschileBuilt1Image from './cocinas-chile/built1image.svg';
+import cocinaschileBuilt2Image from './cocinas-chile/built2image.svg';
+import cocinaschileBuilt3Image from './cocinas-chile/built3image.svg';
+
 // ── Category constants ───────────────────────────────────────────────────
 export const CATEGORIES = {
   WEBSITES: 'websites',
@@ -540,6 +553,75 @@ const projects = [
     // Built to be seen section
     builtToBeSeen: {
       images: [apoiosenorBuilt1Image, apoiosenorBuilt2Image, apoiosenorBuilt3Image],
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // COCINAS CHILE — Website Design (Project template)
+  // ─────────────────────────────────────────────────────────────────────────
+
+  {
+    id: 7,
+    title: 'Cocinas Chile',
+    slug: 'cocinas-chile',
+    category: CATEGORIES.WEBSITE, // Assuming website category
+    featured: true,
+    cardImage: cocinaschileProjectCardImg,
+    template: 'project',
+
+    // Project Hero section
+    hero: {
+      headline: 'cocinas chile',
+      heroText: 'We partnered with Cocinas Chile, a high-end kitchen renovation studio, to design a website that reflects their commitment to craftsmanship, precision, and modern living.',
+      buttonLink: '#',
+      tooltipItems: ['website design'],
+      tooltipColor: 'blue',
+      Cartoon: CocinaschileHeroCartoon,
+      cartoonStyle: {
+        right: '95%',
+        bottom: '65%',
+        transform: 'translateY(30%)',
+        width: '150px',
+      },
+      cartoonMobileStyle: {
+        left: '-40%',
+        top: '-240%',
+        width: '100px',
+        height: '90px',
+      },
+    },
+
+    // Before/After section
+    preview: {
+      desktopImage: cocinaschileBeforeAfterSvg,
+      mobileImage: cocinaschileBeforeAfterMobileSvg,
+    },
+
+    // About the project section
+    about: {
+      text: `the objective here was to create a website design that feels premium, timeless, and visually driven allowing the quality of their work to take center stage. We adopted a minimal design approach with sleek typography and structured layouts that bring clarity without distraction. Large, high-quality imagery plays a dominant role throughout the experience, showcasing materials, finishes, and transformations in detail. \n\n Every element is intentionally restrained, creating a sense of sophistication while guiding users effortlessly through the portfolio and services. The result is a website that feels elevated, confident, and built around visual storytelling.`,
+      pdf: webpagePdf,
+      images: [cocinaschileAbout2Image, cocinaschileAbout3Image],
+      bgColor: '#A59182',
+      starColor: '#E47249',
+    },
+
+    // Take your pick / color palette section
+    colorPalette: {
+      text: 'We explored two typographic directions for the homepage, one led by a clean sans-serif approach for a sharper, more contemporary look and the other driven by a refined serif style to bring in a more classic, editorial feel.',
+      images: [cocinaschileVersion1Svg, cocinaschileVersion2Svg],
+    },
+
+    // Results section
+    results: [
+      { number: '950+', label: 'Portfolio Views in the First Month' },
+      { number: '36%', label: 'Increase in project inquiries' },
+      { number: '+28%', label: 'Time spent on website' },
+    ],
+
+    // Built to be seen section
+    builtToBeSeen: {
+      images: [cocinaschileBuilt1Image, cocinaschileBuilt2Image, cocinaschileBuilt3Image],
     },
   },
 ];
