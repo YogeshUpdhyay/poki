@@ -45,10 +45,14 @@ function AppContent() {
         setShowLogo(false); // Safely remove from DOM now that it's invisible
         document.body.classList.remove('splash-loading');
         setPhase('revealing'); // Start wiping
+
+        // Pre-trigger element animations near the end of the 2.8s wipe 
+        // to flawlessly neutralize the pause between the wipe finishing and elements starting.
+        setTimeout(() => setIsRevealed(true), 2000);
       }, 300);
 
     }, remaining);
-  }, []);
+  }, [setIsRevealed]);
 
   // Detect when page assets (images, videos) are fully loaded
   useEffect(() => {
