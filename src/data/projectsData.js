@@ -115,6 +115,18 @@ import tbpBuilt1Image from './tbp/built1image.svg';
 import tbpBuilt2Image from './tbp/built2image.svg';
 import tbpBuilt3Image from './tbp/built3image.svg';
 
+// ── Project template images (Pure Push) ──────────────────────────────────────
+import purepushProjectCardImg from './pure-push/projectcardimage.svg';
+import PurepushHeroCartoon from './pure-push/herocartoon.svg?react';
+import purepushBeforeAfterSvg from './pure-push/beforeafter.svg';
+import purepushAbout2Image from './pure-push/about2.svg';
+import purepushAbout3Image from './pure-push/about3.svg';
+import purepushVersion1Svg from './pure-push/version1.svg';
+import purepushVersion2Svg from './pure-push/version2.svg';
+import purepushBuilt1Image from './pure-push/built1image.svg';
+import purepushBuilt2Image from './pure-push/built2image.svg';
+import purepushBuilt3Image from './pure-push/built3image.svg';
+
 // ── Category constants ───────────────────────────────────────────────────
 export const CATEGORIES = {
   WEBSITES: 'websites',
@@ -437,7 +449,7 @@ const projects = [
     id: 5,
     title: 'dumbclub',
     slug: 'dumb-club',
-    category: CATEGORIES.WEBSITE, // Assuming website category using the project template
+    category: CATEGORIES.WEBSITES, // Assuming website category using the project template
     featured: true,
     cardImage: dumbclubProjectCardImg,
     template: 'project',
@@ -507,7 +519,7 @@ const projects = [
     id: 6,
     title: 'apoio sénior',
     slug: 'apoio-sénior',
-    category: CATEGORIES.WEBSITE, // Assuming website category
+    category: CATEGORIES.WEBSITES, // Assuming website category
     featured: true,
     cardImage: apoiosenorProjectCardImg,
     template: 'project',
@@ -576,7 +588,7 @@ const projects = [
     id: 7,
     title: 'Cocinas Chile',
     slug: 'cocinas-chile',
-    category: CATEGORIES.WEBSITE, // Assuming website category
+    category: CATEGORIES.WEBSITES, // Assuming website category
     featured: true,
     cardImage: cocinaschileProjectCardImg,
     template: 'project',
@@ -638,14 +650,14 @@ const projects = [
   },
 
   // ─────────────────────────────────────────────────────────────────────────
-  // THE BOYS PROJECT (TBP) — Website Design (Project template)
+  // THE BRAIN PSYCHOLOGIST (TBP) — Website Design (Project template)
   // ─────────────────────────────────────────────────────────────────────────
 
   {
     id: 8,
     title: 'The Brain Psychologist',
     slug: 'the-brain-psychologist',
-    category: CATEGORIES.WEBSITE, // Assuming website category
+    category: CATEGORIES.WEBSITES, // Assuming website category
     featured: true,
     cardImage: tbpProjectCardImg,
     template: 'project',
@@ -703,6 +715,75 @@ const projects = [
     // Built to be seen section
     builtToBeSeen: {
       images: [tbpBuilt1Image, tbpBuilt2Image, tbpBuilt3Image],
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // PURE PUSH — Website Design (Project template)
+  // ─────────────────────────────────────────────────────────────────────────
+
+  {
+    id: 9,
+    title: 'Pure Push',
+    slug: 'pure-push',
+    category: CATEGORIES.WEBSITES, // Assuming website category
+    featured: true,
+    cardImage: purepushProjectCardImg,
+    template: 'project',
+
+    // Project Hero section
+    hero: {
+      headline: 'pure push',
+      heroText: 'We partnered with Purepush, a modern supplement brand, to design a calm, minimal website that reflects clarity, balance, and intentional living, translating their philosophy into a soft, focused digital experience.',
+      buttonLink: '#',
+      tooltipItems: ['website design'],
+      tooltipColor: 'blue',
+      Cartoon: PurepushHeroCartoon,
+      cartoonStyle: {
+        right: '95%',
+        bottom: '65%',
+        transform: 'translateY(30%)',
+        width: '150px',
+      },
+      cartoonMobileStyle: {
+        left: '-40%',
+        top: '-240%',
+        width: '100px',
+        height: '90px',
+      },
+    },
+
+    // Before/After section
+    preview: {
+      desktopImage: purepushBeforeAfterSvg,
+      mobileImage: purepushBeforeAfterSvg, // Fallback to desktop SVG since mobile isn't present
+    },
+
+    // About the project section
+    about: {
+      text: `For Purepush, the goal was to create a website that feels light, calming, and easy to navigate, mirroring the brand’s focus on wellness and simplicity. The experience needed to communicate trust and quality without overwhelming users, allowing the products and their benefits to stand out naturally. We worked with a soft pastel color palette paired with generous white space to create a sense of openness and clarity throughout the interface. \n\n A distinctive toggle bar element is used consistently across the website as a core branding feature, adding a unique interactive layer while reinforcing visual identity.`,
+      pdf: webpagePdf,
+      images: [purepushAbout2Image, purepushAbout3Image],
+      bgColor: '#B9DBE8',
+      starColor: '#427665',
+    },
+
+    // Take your pick / color palette section
+    colorPalette: {
+      text: 'We explored two distinct directions for the homepage’s opening sections, one leaning towards a more structure and emphasis on product storytelling  while the other introduces slightly softer, more minimal and airy composition.',
+      images: [purepushVersion1Svg, purepushVersion2Svg],
+    },
+
+    // Results section
+    results: [
+      { number: '29x', label: 'increase in Add-to-Cart Rate' },
+      { number: '1,624', label: 'monthly product page visits' },
+      { number: '24x', label: 'Increase in Returning Visitors' },
+    ],
+
+    // Built to be seen section
+    builtToBeSeen: {
+      images: [purepushBuilt1Image, purepushBuilt2Image, purepushBuilt3Image],
     },
   },
 ];
