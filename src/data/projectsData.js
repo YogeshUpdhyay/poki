@@ -35,6 +35,10 @@ import built2Image from '../assets/imgs/projects/built2.png';
 import built3Image from '../assets/imgs/projects/built3.png';
 import webpagePdf from '../assets/webpage.pdf';
 
+// ── Project template images (Astor Hotels) ────────────────────────────────
+import ProjectHeroCartoon from '../assets/imgs/projects/projectHeroCartoon.svg?react';
+import WebsiteHeroCartoon from '../assets/imgs/projects/websiteHeroCartoon.svg?react';
+
 // ── Category constants ───────────────────────────────────────────────────
 export const CATEGORIES = {
   WEBSITES: 'websites',
@@ -82,6 +86,7 @@ const projects = [
       tooltipItems: ['brand identity', 'logo design'],
       tooltipColor: 'pink',
       marqueeItems: ['logo design', 'brand identity', 'visual language', 'packaging'],
+      Cartoon: WebsiteHeroCartoon,
     },
 
     // Full-width image below hero
@@ -91,6 +96,7 @@ const projects = [
     about: {
       text: `Lorem ipsum dolor sit amet consectetur. Est tempus egestas id id donec eget lacus tempus nibh. Orci amet id praesent purus ultrices nisl. Sit vulputate aliquam et egestas elementum in praesent. Cursus in bibendum lacus quis morbi nisl leo. Et mauris urna mauris arcu fusce tincidunt tellus in. Enim ullamcorper fames morbi auctor suspendisse faucibus diam euismod arcu.\n\nArcu vulputate elementum feugiat posuere gravida sit. Arcu vitae vivamus dolor id arcu lacus. Leo fermentum enim volutpat faucibus. Consectetur neque mauris ultrices diam urna enim.`,
       images: [about1, about2],
+      bgColor: '#EFB5D4',
     },
 
     // Logo variations section
@@ -146,6 +152,7 @@ const projects = [
       tooltipItems: ['website design'],
       tooltipColor: 'blue',
       marqueeItems: ['logo design', 'brand identity', 'visual language', 'packaging'],
+      Cartoon: ProjectHeroCartoon,
     },
 
     // Before / after preview
@@ -159,6 +166,7 @@ const projects = [
       text: `Lorem ipsum dolor sit amet consectetur. Est tempus egestas id id donec eget lacus tempus nibh. Orci amet id praesent purus ultrices nisl. Sit vulputate aliquam et egestas elementum in praesent. Cursus in bibendum lacus quis morbi nisl leo. Et mauris urna mauris arcu fusce tincidunt tellus in. Enim ullamcorper fames morbi auctor suspendisse faucibus diam euismod arcu.\n\nArcu vulputate elementum feugiat posuere gravida sit. Arcu vitae vivamus dolor id arcu lacus. Leo fermentum enim volutpat faucibus. Consectetur neque mauris ultrices diam urna enim.`,
       pdf: webpagePdf,
       images: [about2Image, about3Image],
+      bgColor: '#5168E8',
     },
 
     // Take your pick / color palette section
@@ -199,6 +207,7 @@ const projects = [
       tooltipItems: ['website design'],
       tooltipColor: 'blue',
       marqueeItems: ['logo design', 'brand identity', 'visual language', 'packaging'],
+      Cartoon: ProjectHeroCartoon,
     },
 
     // Before / after preview
@@ -212,6 +221,7 @@ const projects = [
       text: `For Astor Hostels, the focus was on translating their philosophy into a digital experience that feels warm, inclusive, and easy to navigate. While the brand thrives on community and local character, the website needed to balance that friendliness with a clean, modern interface that builds trust and simplifies booking.\n\n We designed the website that feels approachable yet structured, using inviting visuals, thoughtful layouts, and subtle details that reflect the personality of each location. The result is a seamless experience that makes discovering, connecting, and booking feel effortless, while still capturing the social spirit that defines Astor.`,
       pdf: webpagePdf,
       images: [about2Image, about3Image],
+      bgColor: '#427665',
     },
 
     // Take your pick / color palette section
