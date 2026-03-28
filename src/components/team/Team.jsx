@@ -45,11 +45,11 @@ export default function Team() {
   );
   const teammates = {
     1: { image: TeammateOneIamge, tooltip: <>Robin{Separator}Co-founder</>, borderRadius: '18px 18px 18px 0px' },
-    2: { image: TeammateTwoImage, tooltip: <>Asha{Separator}Product</>, borderRadius: '100px 100px 100px 0px' },
-    3: { image: TeammateThreeImage, tooltip: <>Kunal{Separator}Engineering</>, borderRadius: '18px 18px 18px 0px' },
-    4: { image: TeammateFourImage, tooltip: <>Meera{Separator}Design</>, borderRadius: '100px 100px 0px 100px' },
-    5: { image: TeammateFiveImage, tooltip: <>Sahil{Separator}Growth</>, borderRadius: '18px 18px 18px 0px' },
-    6: { image: TeammateSixImage, tooltip: <>Nisha{Separator}Ops</>, borderRadius: '100px 100px 0px 100px' },
+    2: { image: TeammateTwoImage, tooltip: <>Abhishek{Separator}Senior UI Designer</>, borderRadius: '100px 100px 100px 0px' },
+    3: { image: TeammateThreeImage, tooltip: <>Shreyasi{Separator}Visual Designer</>, borderRadius: '18px 18px 18px 0px' },
+    4: { image: TeammateFourImage, tooltip: <>Shweta{Separator}Co-Founder</>, borderRadius: '100px 100px 0px 100px' },
+    5: { image: TeammateFiveImage, tooltip: <>Raj{Separator}Senior Brand Designer</>, borderRadius: '18px 18px 18px 0px' },
+    6: { image: TeammateSixImage, tooltip: <>Prajwal{Separator}UI Designer</>, borderRadius: '100px 100px 0px 100px' },
   }
 
   return (
