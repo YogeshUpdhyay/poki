@@ -52,6 +52,18 @@ import astorBuilt1Image from './astor hotels/built1image.svg';
 import astorBuilt2Image from './astor hotels/built2image.svg';
 import astorBuilt3Image from './astor hotels/built3image.svg';
 
+// ── Project template images (Examon) ──────────────────────────────────────
+import examonProjectCardImg from './examon/projectcardimage.svg';
+import ExamonHeroCartoon from './examon/herocartoon.svg?react';
+import examonBeforeAfterSvg from './examon/beforeafter.svg';
+import examonAbout2Image from './examon/about2image.svg';
+import examonAbout3Image from './examon/about3image.svg';
+import examonVersion1Svg from './examon/version1.svg';
+import examonVersion2Svg from './examon/version2.svg';
+import examonBuilt1Image from './examon/built1image.svg';
+import examonBuilt2Image from './examon/built2image.svg';
+import examonBuilt3Image from './examon/built3image.svg';
+
 // ── Category constants ───────────────────────────────────────────────────
 export const CATEGORIES = {
   WEBSITES: 'websites',
@@ -293,6 +305,76 @@ const projects = [
     // Built to be seen section
     builtToBeSeen: {
       images: [astorBuilt1Image, astorBuilt2Image, astorBuilt3Image],
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // EXAMON — Website Design (Project template)
+  // ─────────────────────────────────────────────────────────────────────────
+  {
+    id: 4,
+    slug: 'examon',
+    title: 'examon',
+    category: CATEGORIES.WEBSITES,
+    cardImage: examonProjectCardImg,
+    featured: true,
+    template: 'project',
+    rotation: -2,
+
+    // Hero section
+    hero: {
+      headline: 'examon',
+      heroText:
+        'We partnered with Examon to design a streamlined, robust platform that transforms test-taking into a smooth, visually engaging experience without compromising on focus and clarity.',
+      buttonLink: '#',
+      tooltipItems: ['website design'],
+      tooltipColor: 'blue',
+      marqueeItems: ['ui design', 'website design', 'architecture', 'user experience'],
+      Cartoon: ExamonHeroCartoon,
+      cartoonStyle: {
+        right: '95%',
+        bottom: '65%',
+        transform: 'translateY(30%)',
+        width: '150px',
+      },
+      cartoonMobileStyle: {
+        left: '-40%',
+        top: '-240%',
+        width: '100px',
+        height: '90px',
+      },
+    },
+
+    // Before / after preview
+    preview: {
+      desktopImage: examonBeforeAfterSvg,
+      mobileImage: examonBeforeAfterSvg, // Fallback since mobile SVG isn't provided
+    },
+
+    // About the project section
+    about: {
+      text: `For Examon, the challenge was balancing the rigorous demands of an examination platform with an approachable, modern aesthetic. The interface needed to inspire focus while remaining friendly and intuitive for all users.\n\nWe designed a clear, well-structured interface that reduces friction throughout the entire process. Thoughtful color usage, clean typography, and spacious layouts ensure the platform is as effortless to use as it is reliable.`,
+      pdf: webpagePdf,
+      images: [examonAbout2Image, examonAbout3Image],
+      bgColor: '#ECA852',
+    },
+
+    // Take your pick / color palette section
+    colorPalette: {
+      text: 'We explored distinct directions to make data presentation and navigation feel effortlessly clear and engaging.',
+      images: [examonVersion1Svg, examonVersion2Svg],
+    },
+
+    // Results section
+    results: [
+      { number: '45%', label: 'Increase in user retention' },
+      { number: '20%', label: 'Faster task completion' },
+      { number: '-15%', label: 'Drop in error rates' },
+    ],
+
+    // Built to be seen section
+    builtToBeSeen: {
+      images: [examonBuilt1Image, examonBuilt2Image, examonBuilt3Image],
     },
   },
 ];

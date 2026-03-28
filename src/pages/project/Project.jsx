@@ -80,27 +80,27 @@ const ProjectAbout = ({ project }) => {
             </p>
 
             {about.pdf && (
-            <div className="wireframe">
-                <div className="pdfBox">
-                    {/iPad|iPhone|iPod/.test(navigator.userAgent) ? (
-                        <a
-                            href={about.pdf}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="pdfFallbackLink"
-                        >
-                            <span className="pdfFallbackIcon">📄</span>
-                            <span>View Project PDF</span>
-                        </a>
-                    ) : (
-                        <iframe
-                            src={`${about.pdf}#view=FitH&toolbar=0&navpanes=0&scrollbar=0`}
-                            title="Project PDF"
-                            style={{ border: 'none', width: '100%', height: '100%' }}
-                        />
-                    )}
+                <div className="wireframe">
+                    <div className="pdfBox">
+                        {/iPad|iPhone|iPod/.test(navigator.userAgent) ? (
+                            <a
+                                href={about.pdf}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="pdfFallbackLink"
+                            >
+                                <span className="pdfFallbackIcon">📄</span>
+                                <span>View Project PDF</span>
+                            </a>
+                        ) : (
+                            <iframe
+                                src={`${about.pdf}#view=FitH&toolbar=0&navpanes=0&scrollbar=0`}
+                                title="Project PDF"
+                                style={{ border: 'none', width: '100%', height: '100%' }}
+                            />
+                        )}
+                    </div>
                 </div>
-            </div>
             )}
 
             <div className="miscContainer">
@@ -179,8 +179,8 @@ const ProjectHero = ({ project }) => {
                     </div>
                 </motion.div>
                 {project.hero.Cartoon && (
-                    <motion.div 
-                        className="projectHeroCartoon" 
+                    <motion.div
+                        className="projectHeroCartoon"
                         variants={wordVariants}
                         style={isMobile ? project.hero.cartoonMobileStyle : project.hero.cartoonStyle}
                     >
