@@ -453,6 +453,7 @@ const projects = [
     featured: true,
     cardImage: dumbclubProjectCardImg,
     template: 'project',
+    rotation: 4,
 
     // Project Hero section
     hero: {
@@ -523,6 +524,7 @@ const projects = [
     featured: true,
     cardImage: apoiosenorProjectCardImg,
     template: 'project',
+    rotation: -3,
 
     // Project Hero section
     hero: {
@@ -592,6 +594,7 @@ const projects = [
     featured: true,
     cardImage: cocinaschileProjectCardImg,
     template: 'project',
+    rotation: 2,
 
     // Project Hero section
     hero: {
@@ -661,6 +664,7 @@ const projects = [
     featured: true,
     cardImage: tbpProjectCardImg,
     template: 'project',
+    rotation: -4,
 
     // Project Hero section
     hero: {
@@ -730,6 +734,7 @@ const projects = [
     featured: true,
     cardImage: purepushProjectCardImg,
     template: 'project',
+    rotation: 3,
 
     // Project Hero section
     hero: {
