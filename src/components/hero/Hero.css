@@ -61,6 +61,7 @@
     left: 58%;
     bottom: -20px;
     z-index: 20;
+    width: 303px;
 }
 
 /* ========================================
@@ -137,6 +138,10 @@
         transform: none;
     }
 
+    .animated-underline {
+        width: 80% !important;
+    }
+
     .heroStar {
         left: 95%;
         top: 55px;
@@ -154,8 +159,8 @@
     }
 
     .heroUnderlinePosition {
-        left: -5%;
-        bottom: -28px;
+        left: -10%;
+        bottom: -25px;
         transform: scale(0.6);
     }
 }
