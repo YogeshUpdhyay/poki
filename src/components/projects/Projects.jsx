@@ -3,9 +3,7 @@ import Button from '../common/button/Button'
 import projectBackground from "../../assets/imgs/projectBg.svg"
 import { NavLink } from 'react-router-dom'
 import { getFeaturedProjects } from '../../data/projectsData'
-import 'react-multi-carousel/lib/styles.css';
 import { Headline, popInVariants } from '../common/headline/Headline'
-import { GenericCarousel } from '../../components/common/genericCarousel/GenericCarousel'
 import projectsCartoon from "../../assets/imgs/projectsCartoon.svg";
 import {
   motion,
@@ -47,6 +45,27 @@ function Projects() {
   const tooltipColor = 'blue';
   const projects = featuredProjects.length ? featuredProjects : [{ slug: 'begun', title: 'begun', cardImage: projectBackground }];
   
+  // Duplicate projects for infinite scroll effect
+  const projectsData = [...projects, ...projects, ...projects, ...projects];
+
+  const [isHovered, setIsHovered] = useState(false);
+
+  const x = useMotionValue(0);
+  // Each project card is min-width: 300px + margin-left: 26px = 326px total per item
+  const totalWidth = projects.length * 326;
+
+  useAnimationFrame((t, delta) => {
+    // duration in milliseconds: 60s base, 120s on hover
+    const duration = isHovered ? 120000 : 60000;
+    const speed = totalWidth / duration; // pixels per millisecond
+
+    let newX = x.get() - Math.max(speed * delta, 0); 
+    if (newX <= -totalWidth) {
+      newX += totalWidth;
+    }
+    x.set(newX);
+  });
+  
   const projectsCartoonRef = useRef(null);
   const projectCartoonInView = useInView(projectsCartoonRef, {
     amoount: 0.5,
@@ -76,18 +95,25 @@ function Projects() {
         alt="projectBackground" 
         className={`projectBg`}
       />
-      <div className="projectCarousel">
-        <GenericCarousel>
-        {projects.map((project, index) => (
-          <ProjectCard 
-            key={project.id || index}
-            title={project.title}
-            image={project.cardImage}
-            slug={project.slug}
-            alt={`${project.title} project image`}
-          />
-        ))}
-      </GenericCarousel>
+      <div 
+        className="projectCarousel"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <motion.div
+          className="projectCarouselInner"
+          style={{ x }}
+        >
+          {projectsData.map((project, index) => (
+            <ProjectCard 
+              key={`${project.id || project.slug}-${index}`}
+              title={project.title}
+              image={project.cardImage}
+              slug={project.slug}
+              alt={`${project.title} project image`}
+            />
+          ))}
+        </motion.div>
       </div>
       
       <div className="projectButtonContainer">

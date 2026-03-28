@@ -33,7 +33,15 @@ import version2Svg from '../assets/imgs/projects/version2.svg';
 import built1Image from '../assets/imgs/projects/built1.png';
 import built2Image from '../assets/imgs/projects/built2.png';
 import built3Image from '../assets/imgs/projects/built3.png';
-import webpagePdf from '../assets/webpage.pdf';
+
+import dilliDilliPdf from './Dilli Dilli Homepage-compressed.pdf';
+import astorHotelsPdf from './astor hotels/Astor Hostels Homepage-compressed.pdf';
+import examonPdf from './examon/Examon AI Homepage-compressed.pdf';
+import dumbclubPdf from './dumbclub/Dumbclub Homepage-compressed.pdf';
+import apoiosenorPdf from './apoio-senor/Apoio sénior Homepage-compressed.pdf';
+import cocinaschilePdf from './cocinas-chile/Cocinas Chile Homepage-compressed.pdf';
+import tbpPdf from './tbp/The Brain Psychologist Homepage-compressed.pdf';
+import purepushPdf from './pure-push/PurePush Homepage-compressed.pdf';
 
 // ── Shared Cartoons ──────────────────────────────────────────────────────
 import ProjectHeroCartoon from '../assets/imgs/projects/projectHeroCartoon.svg?react';
@@ -169,7 +177,7 @@ const projects = [
     hero: {
       headline: 'begun',
       heroText:
-        'A bold identity for an activewear brand built to empower. We brought boldness, balance, and a whole lot of green energy to life.',
+        'a bold identity for an activewear brand built to empower. we brought boldness, balance, and a whole lot of green energy to life.',
       buttonLink: '#',
       tooltipItems: ['brand identity', 'logo design'],
       tooltipColor: 'pink',
@@ -194,7 +202,7 @@ const projects = [
 
     // About the project section
     about: {
-      text: `Lorem ipsum dolor sit amet consectetur. Est tempus egestas id id donec eget lacus tempus nibh. Orci amet id praesent purus ultrices nisl. Sit vulputate aliquam et egestas elementum in praesent. Cursus in bibendum lacus quis morbi nisl leo. Et mauris urna mauris arcu fusce tincidunt tellus in. Enim ullamcorper fames morbi auctor suspendisse faucibus diam euismod arcu.\n\nArcu vulputate elementum feugiat posuere gravida sit. Arcu vitae vivamus dolor id arcu lacus. Leo fermentum enim volutpat faucibus. Consectetur neque mauris ultrices diam urna enim.`,
+      text: `lorem ipsum dolor sit amet consectetur. est tempus egestas id id donec eget lacus tempus nibh. orci amet id praesent purus ultrices nisl. sit vulputate aliquam et egestas elementum in praesent. cursus in bibendum lacus quis morbi nisl leo. et mauris urna mauris arcu fusce tincidunt tellus in. enim ullamcorper fames morbi auctor suspendisse faucibus diam euismod arcu.\n\narcu vulputate elementum feugiat posuere gravida sit. arcu vitae vivamus dolor id arcu lacus. leo fermentum enim volutpat faucibus. consectetur neque mauris ultrices diam urna enim.`,
       images: [about1, about2],
       bgColor: '#EFB5D4',
     },
@@ -204,7 +212,7 @@ const projects = [
       tooltipItems: ['wordmark', 'icon mark', 'devnagri logo'],
       tooltipColor: 'blue',
       images: [logo1, logo2, logo3],
-      text: 'a custom wordmark with smooth curves to reflect movement and energy. The Hindi script version ensures inclusivity and cultural relevance. For typography, we paired Gilroy for headlines with Plus Jakarta Sans for supporting text—creating a balance of modernity and readability.',
+      text: 'a custom wordmark with smooth curves to reflect movement and energy. the hindi script version ensures inclusivity and cultural relevance. for typography, we paired gilroy for headlines with plus jakarta sans for supporting text—creating a balance of modernity and readability.',
     },
 
     // Colors section — 5 boxes
@@ -247,7 +255,7 @@ const projects = [
     hero: {
       headline: 'dilli dilli',
       heroText:
-        'We partnered with Dilli Dilli, a bold restaurant concept fusing the spirited heritage of Old Delhi with the sleek energy of modern New York, to create a website that captures their dual-city story in equal measure.',
+        'we partnered with dilli dilli, a bold restaurant concept fusing the spirited heritage of old delhi with the sleek energy of modern new york, to create a website that captures their dual-city story in equal measure.',
       buttonLink: '#',
       tooltipItems: ['website design'],
       tooltipColor: 'blue',
@@ -275,15 +283,15 @@ const projects = [
 
     // About the project section
     about: {
-      text: `Lorem ipsum dolor sit amet consectetur. Est tempus egestas id id donec eget lacus tempus nibh. Orci amet id praesent purus ultrices nisl. Sit vulputate aliquam et egestas elementum in praesent. Cursus in bibendum lacus quis morbi nisl leo. Et mauris urna mauris arcu fusce tincidunt tellus in. Enim ullamcorper fames morbi auctor suspendisse faucibus diam euismod arcu.\n\nArcu vulputate elementum feugiat posuere gravida sit. Arcu vitae vivamus dolor id arcu lacus. Leo fermentum enim volutpat faucibus. Consectetur neque mauris ultrices diam urna enim.`,
-      pdf: webpagePdf,
+      text: `for dilli dilli, the goal was to design a website that feels as rich and layered as the brand itself, premium in its presentation, yet deeply rooted in the warmth and vibrancy of indian culture. we focused on building a website that elevates the dining experience online while still retaining the soul of a bustling indian eatery. \n\n subtle details play a key role throughout the interface, textures, patterns, and accents inspired by indian elements are thoughtfully woven into the design to create an authentic yet contemporary feel. the result is a website that balances sophistication with a strong food-forward identity, capturing both indulgence and cultural familiarity.`,
+      pdf: dilliDilliPdf,
       images: [about2Image, about3Image],
       bgColor: '#5168E8',
     },
 
     // Take your pick / color palette section
     colorPalette: {
-      text: 'arcu vulputate elementum feugiat posuere gravida sit. arcu vitae vivamus dolor id arcu lacus. leo fermentum enim volutpat faucibus. consectetur neque mauris ultrices diam urna enim.',
+      text: 'we explored two distinct directions for the homepage’s opening sections, one leaning towards a subtle, refined, and modern aesthetic, while the other embraces a bolder, more expressive visual approach rooted in the brand’s vibrant personality.',
       images: [version1Svg, version2Svg],
     },
 
@@ -318,7 +326,7 @@ const projects = [
     hero: {
       headline: 'astor hotels',
       heroText:
-        'We partnered with Astor Hostels to design a welcoming, community-first website that reflects their “One Big Family” philosophy, blending warmth, local character, and ease of booking into a seamless digital experience.',
+        'we partnered with astor hostels to design a welcoming, community-first website that reflects their “one big family” philosophy, blending warmth, local character, and ease of booking into a seamless digital experience.',
       buttonLink: '#',
       tooltipItems: ['website design'],
       tooltipColor: 'blue',
@@ -346,23 +354,23 @@ const projects = [
 
     // About the project section
     about: {
-      text: `For Astor Hostels, the focus was on translating their philosophy into a digital experience that feels warm, inclusive, and easy to navigate. While the brand thrives on community and local character, the website needed to balance that friendliness with a clean, modern interface that builds trust and simplifies booking.\n\n We designed the website that feels approachable yet structured, using inviting visuals, thoughtful layouts, and subtle details that reflect the personality of each location. The result is a seamless experience that makes discovering, connecting, and booking feel effortless, while still capturing the social spirit that defines Astor.`,
-      pdf: webpagePdf,
+      text: `for astor hostels, the focus was on translating their philosophy into a digital experience that feels warm, inclusive, and easy to navigate. while the brand thrives on community and local character, the website needed to balance that friendliness with a clean, modern interface that builds trust and simplifies booking.\n\n we designed the website that feels approachable yet structured, using inviting visuals, thoughtful layouts, and subtle details that reflect the personality of each location. the result is a seamless experience that makes discovering, connecting, and booking feel effortless, while still capturing the social spirit that defines astor.`,
+      pdf: astorHotelsPdf,
       images: [astorAbout2Image, astorAbout3Image],
       bgColor: '#F9BBC9',
     },
 
     // Take your pick / color palette section
     colorPalette: {
-      text: 'We explored two distinct directions for the homepage’s opening sections, one leaning towards a fun and welcoming aesthetic, while the other takes on a more vibrant, energetic approach that highlights the social and community-driven nature of the brand.',
+      text: 'we explored two distinct directions for the homepage’s opening sections, one leaning towards a fun and welcoming aesthetic, while the other takes on a more vibrant, energetic approach that highlights the social and community-driven nature of the brand.',
       images: [astorVersion1Svg, astorVersion2Svg],
     },
 
     // Results section
     results: [
-      { number: '41%', label: 'Increase in booking clients' },
-      { number: '33%', label: 'Increase in session duration' },
-      { number: '-29%', label: 'Drop in bounce Rate' },
+      { number: '41%', label: 'increase in booking clients' },
+      { number: '33%', label: 'increase in session duration' },
+      { number: '-29%', label: 'drop in bounce rate' },
     ],
 
     // Built to be seen section
@@ -388,7 +396,7 @@ const projects = [
     hero: {
       headline: 'examon',
       heroText:
-        'We partnered with Examon ai, an AI-powered learning platform built for modern students, to design a website that transforms smart revision into a clear, intuitive, and motivating digital experience.',
+        'we partnered with examon ai, an ai-powered learning platform built for modern students, to design a website that transforms smart revision into a clear, intuitive, and motivating digital experience.',
       buttonLink: '#',
       tooltipItems: ['website design'],
       tooltipColor: 'blue',
@@ -416,15 +424,15 @@ const projects = [
 
     // About the project section
     about: {
-      text: `the goal here was to translate a powerful, AI-driven learning system into an experience that feels simple, clear, and motivating for students. While the platform is built on advanced technology, the website needed to communicate it in a way that feels approachable, structured, and easy to understand.  \n\n We focused on creating a clean, modern interface with strong visual hierarchy, breaking down complex features into digestible sections. Subtle tech-inspired elements and smart use of color and typography help reinforce the intelligence behind the product, while keeping the overall experience distraction-free. `,
-      pdf: webpagePdf,
+      text: `the goal here was to translate a powerful, ai-driven learning system into an experience that feels simple, clear, and motivating for students. while the platform is built on advanced technology, the website needed to communicate it in a way that feels approachable, structured, and easy to understand.  \n\n we focused on creating a clean, modern interface with strong visual hierarchy, breaking down complex features into digestible sections. subtle tech-inspired elements and smart use of color and typography help reinforce the intelligence behind the product, while keeping the overall experience distraction-free. `,
+      pdf: examonPdf,
       images: [examonAbout2Image, examonAbout3Image],
       bgColor: '#122515',
     },
 
     // Take your pick / color palette section
     colorPalette: {
-      text: 'We explored two distinct directions for the homepage’s opening sections, one focused on a clean, minimal, and clarity-driven approach, while the other takes on a more dynamic and high-energy direction',
+      text: 'we explored two distinct directions for the homepage’s opening sections, one focused on a clean, minimal, and clarity-driven approach, while the other takes on a more dynamic and high-energy direction',
       images: [examonVersion1Svg, examonVersion2Svg],
     },
 
@@ -453,12 +461,13 @@ const projects = [
     featured: true,
     cardImage: dumbclubProjectCardImg,
     template: 'project',
+    rotation: 4,
 
     // Project Hero section
     hero: {
       headline: 'dumbclub',
       heroText:
-        'We partnered with Dumbclub to create a playful, social-first website that highlights ultra-soft comfort, strong social proof, and the brand’s viral, feel-good personality.',
+        'we partnered with dumbclub to create a playful, social-first website that highlights ultra-soft comfort, strong social proof, and the brand’s viral, feel-good personality.',
       buttonLink: '#',
       tooltipItems: ['website design'],
       tooltipColor: 'blue',
@@ -485,8 +494,8 @@ const projects = [
 
     // About the project section
     about: {
-      text: `For Dumbclub, the goal was to design a website that feels as fun, effortless, and addictive as the brand itself. We leaned into rounded typography and Stickers are used throughout the website as a recurring visual element, adding layers of playfulness and reinforcing the brand’s expressive tone. \n\n Custom-styled buttons further enhance this personality, making even small interactions feel unique and on-brand. Elements like customer reactions, community-driven visuals, and punchy messaging were integrated to build trust and relatability, ensuring a seamless journey from discovery to purchase.`,
-      pdf: webpagePdf,
+      text: `for dumbclub, the goal was to design a website that feels as fun, effortless, and addictive as the brand itself. we leaned into rounded typography and stickers are used throughout the website as a recurring visual element, adding layers of playfulness and reinforcing the brand’s expressive tone. \n\n custom-styled buttons further enhance this personality, making even small interactions feel unique and on-brand. elements like customer reactions, community-driven visuals, and punchy messaging were integrated to build trust and relatability, ensuring a seamless journey from discovery to purchase.`,
+      pdf: dumbclubPdf,
       images: [dumbclubAbout2Image, dumbclubAbout3Image],
       bgColor: '#C59CE2',
       starColor: '#EFB5D4',
@@ -494,7 +503,7 @@ const projects = [
 
     // Take your pick / color palette section
     colorPalette: {
-      text: 'We explored two distinct directions for the homepage’s opening sections, one leaning towards a minimal and product-focused aesthetic, while the other embraces a more playful direction inspired by social media and viral culture.',
+      text: 'we explored two distinct directions for the homepage’s opening sections, one leaning towards a minimal and product-focused aesthetic, while the other embraces a more playful direction inspired by social media and viral culture.',
       images: [dumbclubVersion1Svg, dumbclubVersion2Svg],
     },
 
@@ -523,11 +532,12 @@ const projects = [
     featured: true,
     cardImage: apoiosenorProjectCardImg,
     template: 'project',
+    rotation: -3,
 
     // Project Hero section
     hero: {
       headline: 'apoio sénior',
-      heroText: 'We partnered with Apoio Sénior to design a calm, human-centered website that simplifies the care-finding process and supports families in making confident, informed decisions with trust and clarity.',
+      heroText: 'we partnered with apoio sénior to design a calm, human-centered website that simplifies the care-finding process and supports families in making confident, informed decisions with trust and clarity.',
       buttonLink: '#',
       tooltipItems: ['website design'],
       tooltipColor: 'blue',
@@ -554,8 +564,8 @@ const projects = [
 
     // About the project section
     about: {
-      text: `we have designed the website For Apoio Sénior that feels human, approachable, and easy to navigate during an otherwise overwhelming decision-making process. While the space is often dominated by overly clinical and monotonous designs, we intentionally took a different route. \n\n We introduced a more vibrant and engaging visual language, using expressive colors and playful elements to make the experience feel less intimidating and more uplifting. This helps break away from the conventional tone of care-related platforms, making the journey feel lighter while still maintaining trust and clarity.`,
-      pdf: webpagePdf,
+      text: `we have designed the website for apoio sénior that feels human, approachable, and easy to navigate during an otherwise overwhelming decision-making process. while the space is often dominated by overly clinical and monotonous designs, we intentionally took a different route. \n\n we introduced a more vibrant and engaging visual language, using expressive colors and playful elements to make the experience feel less intimidating and more uplifting. this helps break away from the conventional tone of care-related platforms, making the journey feel lighter while still maintaining trust and clarity.`,
+      pdf: apoiosenorPdf,
       images: [apoiosenorAbout2Image, apoiosenorAbout3Image],
       bgColor: '#3D63E8',
       starColor: '#427665',
@@ -563,7 +573,7 @@ const projects = [
 
     // Take your pick / color palette section
     colorPalette: {
-      text: 'We explored two distinct directions for the homepage’s opening sections, one leaning towards a more playful and expressive visual style, while the other introduces a slightly more structured approach with clearer content hierarchy.',
+      text: 'we explored two distinct directions for the homepage’s opening sections, one leaning towards a more playful and expressive visual style, while the other introduces a slightly more structured approach with clearer content hierarchy.',
       images: [apoiosenorVersion1Svg, apoiosenorVersion2Svg],
     },
 
@@ -586,17 +596,18 @@ const projects = [
 
   {
     id: 7,
-    title: 'Cocinas Chile',
+    title: 'cocinas chile',
     slug: 'cocinas-chile',
     category: CATEGORIES.WEBSITES, // Assuming website category
     featured: true,
     cardImage: cocinaschileProjectCardImg,
     template: 'project',
+    rotation: 2,
 
     // Project Hero section
     hero: {
       headline: 'cocinas chile',
-      heroText: 'We partnered with Cocinas Chile, a high-end kitchen renovation studio, to design a website that reflects their commitment to craftsmanship, precision, and modern living.',
+      heroText: 'we partnered with cocinas chile, a high-end kitchen renovation studio, to design a website that reflects their commitment to craftsmanship, precision, and modern living.',
       buttonLink: '#',
       tooltipItems: ['website design'],
       tooltipColor: 'blue',
@@ -623,8 +634,8 @@ const projects = [
 
     // About the project section
     about: {
-      text: `the objective here was to create a website design that feels premium, timeless, and visually driven allowing the quality of their work to take center stage. We adopted a minimal design approach with sleek typography and structured layouts that bring clarity without distraction. Large, high-quality imagery plays a dominant role throughout the experience, showcasing materials, finishes, and transformations in detail. \n\n Every element is intentionally restrained, creating a sense of sophistication while guiding users effortlessly through the portfolio and services. The result is a website that feels elevated, confident, and built around visual storytelling.`,
-      pdf: webpagePdf,
+      text: `the objective here was to create a website design that feels premium, timeless, and visually driven allowing the quality of their work to take center stage. we adopted a minimal design approach with sleek typography and structured layouts that bring clarity without distraction. large, high-quality imagery plays a dominant role throughout the experience, showcasing materials, finishes, and transformations in detail. \n\n every element is intentionally restrained, creating a sense of sophistication while guiding users effortlessly through the portfolio and services. the result is a website that feels elevated, confident, and built around visual storytelling.`,
+      pdf: cocinaschilePdf,
       images: [cocinaschileAbout2Image, cocinaschileAbout3Image],
       bgColor: '#A59182',
       starColor: '#E47249',
@@ -632,15 +643,15 @@ const projects = [
 
     // Take your pick / color palette section
     colorPalette: {
-      text: 'We explored two typographic directions for the homepage, one led by a clean sans-serif approach for a sharper, more contemporary look and the other driven by a refined serif style to bring in a more classic, editorial feel.',
+      text: 'we explored two typographic directions for the homepage, one led by a clean sans-serif approach for a sharper, more contemporary look and the other driven by a refined serif style to bring in a more classic, editorial feel.',
       images: [cocinaschileVersion1Svg, cocinaschileVersion2Svg],
     },
 
     // Results section
     results: [
-      { number: '950+', label: 'Portfolio Views in the First Month' },
-      { number: '36%', label: 'Increase in project inquiries' },
-      { number: '+28%', label: 'Time spent on website' },
+      { number: '950+', label: 'portfolio views in the first month' },
+      { number: '36%', label: 'increase in project inquiries' },
+      { number: '+28%', label: 'time spent on website' },
     ],
 
     // Built to be seen section
@@ -655,17 +666,18 @@ const projects = [
 
   {
     id: 8,
-    title: 'The Brain Psychologist',
+    title: 'the brain psychologist',
     slug: 'the-brain-psychologist',
     category: CATEGORIES.WEBSITES, // Assuming website category
     featured: true,
     cardImage: tbpProjectCardImg,
     template: 'project',
+    rotation: -4,
 
     // Project Hero section
     hero: {
       headline: 'the brain psychologist',
-      heroText: 'We partnered with The Brain Psychologist to design a premium, calming website design that reflects their evidence-based approach to mental health, balancing trust, and a sense of quiet confidence across every interaction.',
+      heroText: 'we partnered with the brain psychologist to design a premium, calming website design that reflects their evidence-based approach to mental health, balancing trust, and a sense of quiet confidence across every interaction.',
       buttonLink: '#',
       tooltipItems: ['website design'],
       tooltipColor: 'blue',
@@ -692,8 +704,8 @@ const projects = [
 
     // About the project section
     about: {
-      text: `For The Brain Psychologist, we designed the website that feels clean, composed, and reassuring, without falling into predictable or monotonous design patterns often seen in the space. We adopted a muted colour palette to maintain a sense of calm, paired with structured yet engaging layouts to avoid visual fatigue. Iconography plays a key role throughout the interface, helping simplify complex information and making the experience more intuitive and digestible. \n\n Special attention was also given to the mobile experience, ensuring that the website remains just as seamless, accessible, and easy to navigate across devices.`,
-      pdf: webpagePdf,
+      text: `for the brain psychologist, we designed the website that feels clean, composed, and reassuring, without falling into predictable or monotonous design patterns often seen in the space. we adopted a muted colour palette to maintain a sense of calm, paired with structured yet engaging layouts to avoid visual fatigue. iconography plays a key role throughout the interface, helping simplify complex information and making the experience more intuitive and digestible. \n\n special attention was also given to the mobile experience, ensuring that the website remains just as seamless, accessible, and easy to navigate across devices.`,
+      pdf: tbpPdf,
       images: [tbpAbout2Image, tbpAbout3Image],
       bgColor: '#2F3742',
       starColor: '#EFB5D4',
@@ -701,7 +713,7 @@ const projects = [
 
     // Take your pick / color palette section
     colorPalette: {
-      text: 'We explored two distinct directions for the homepage’s opening sections, one leaning towards a more minimal and structured layout with subtle visual cues, while the other introduces slightly more expressive compositions and stronger icon-led elements.',
+      text: 'we explored two distinct directions for the homepage’s opening sections, one leaning towards a more minimal and structured layout with subtle visual cues, while the other introduces slightly more expressive compositions and stronger icon-led elements.',
       images: [tbpVersion1Svg, tbpVersion2Svg],
     },
 
@@ -724,17 +736,18 @@ const projects = [
 
   {
     id: 9,
-    title: 'Pure Push',
+    title: 'pure push',
     slug: 'pure-push',
     category: CATEGORIES.WEBSITES, // Assuming website category
     featured: true,
     cardImage: purepushProjectCardImg,
     template: 'project',
+    rotation: 3,
 
     // Project Hero section
     hero: {
       headline: 'pure push',
-      heroText: 'We partnered with Purepush, a modern supplement brand, to design a calm, minimal website that reflects clarity, balance, and intentional living, translating their philosophy into a soft, focused digital experience.',
+      heroText: 'we partnered with purepush, a modern supplement brand, to design a calm, minimal website that reflects clarity, balance, and intentional living, translating their philosophy into a soft, focused digital experience.',
       buttonLink: '#',
       tooltipItems: ['website design'],
       tooltipColor: 'blue',
@@ -761,8 +774,8 @@ const projects = [
 
     // About the project section
     about: {
-      text: `For Purepush, the goal was to create a website that feels light, calming, and easy to navigate, mirroring the brand’s focus on wellness and simplicity. The experience needed to communicate trust and quality without overwhelming users, allowing the products and their benefits to stand out naturally. We worked with a soft pastel color palette paired with generous white space to create a sense of openness and clarity throughout the interface. \n\n A distinctive toggle bar element is used consistently across the website as a core branding feature, adding a unique interactive layer while reinforcing visual identity.`,
-      pdf: webpagePdf,
+      text: `for purepush, the goal was to create a website that feels light, calming, and easy to navigate, mirroring the brand’s focus on wellness and simplicity. the experience needed to communicate trust and quality without overwhelming users, allowing the products and their benefits to stand out naturally. we worked with a soft pastel color palette paired with generous white space to create a sense of openness and clarity throughout the interface. \n\n a distinctive toggle bar element is used consistently across the website as a core branding feature, adding a unique interactive layer while reinforcing visual identity.`,
+      pdf: purepushPdf,
       images: [purepushAbout2Image, purepushAbout3Image],
       bgColor: '#B9DBE8',
       starColor: '#427665',
@@ -770,15 +783,15 @@ const projects = [
 
     // Take your pick / color palette section
     colorPalette: {
-      text: 'We explored two distinct directions for the homepage’s opening sections, one leaning towards a more structure and emphasis on product storytelling  while the other introduces slightly softer, more minimal and airy composition.',
+      text: 'we explored two distinct directions for the homepage’s opening sections, one leaning towards a more structure and emphasis on product storytelling  while the other introduces slightly softer, more minimal and airy composition.',
       images: [purepushVersion1Svg, purepushVersion2Svg],
     },
 
     // Results section
     results: [
-      { number: '29x', label: 'increase in Add-to-Cart Rate' },
+      { number: '29x', label: 'increase in add-to-cart rate' },
       { number: '1,624', label: 'monthly product page visits' },
-      { number: '24x', label: 'Increase in Returning Visitors' },
+      { number: '24x', label: 'increase in returning visitors' },
     ],
 
     // Built to be seen section

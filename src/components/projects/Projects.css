@@ -15,7 +15,25 @@
     z-index: 20;
     padding-top: 140px;
     overflow-x: hidden;
-    align-items: center; /* vertically center carousel items */
+    overflow-y: hidden;
+    align-items: center;
+    /* vertically center carousel items */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.projectCarousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.projectCarousel {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.projectCarouselInner {
+    display: flex;
+    width: max-content;
 }
 
 
@@ -59,14 +77,15 @@
     border-radius: 12px;
     position: relative;
     margin-left: 26px;
-    z-index: 30; /* ensure cards can overlap elements below */
+    z-index: 30;
+    /* ensure cards can overlap elements below */
 }
 
 .projectCardImage {
     position: absolute;
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: none;
     border-radius: 8px;
 }
 
@@ -151,7 +170,7 @@
         padding-bottom: 50px;
     }
 
-    .projectBg{
+    .projectBg {
         width: 406px;
         height: 378.66px;
     }
