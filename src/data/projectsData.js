@@ -35,9 +35,22 @@ import built2Image from '../assets/imgs/projects/built2.png';
 import built3Image from '../assets/imgs/projects/built3.png';
 import webpagePdf from '../assets/webpage.pdf';
 
-// ── Project template images (Astor Hotels) ────────────────────────────────
+// ── Shared Cartoons ──────────────────────────────────────────────────────
 import ProjectHeroCartoon from '../assets/imgs/projects/projectHeroCartoon.svg?react';
 import WebsiteHeroCartoon from '../assets/imgs/projects/websiteHeroCartoon.svg?react';
+
+// ── Project template images (Astor Hotels) ────────────────────────────────
+import astorProjectCardImg from './astor hotels/projectcardimage.svg';
+import AstorHeroCartoon from './astor hotels/herocartoon.svg?react';
+import astorBeforeAfterSvg from './astor hotels/beforeafter.svg';
+import astorBeforeAfterMobileSvg from './astor hotels/beforeaftermobilesvg.svg';
+import astorAbout2Image from './astor hotels/about2image.svg';
+import astorAbout3Image from './astor hotels/about3image.svg';
+import astorVersion1Svg from './astor hotels/version1.svg';
+import astorVersion2Svg from './astor hotels/version2.svg';
+import astorBuilt1Image from './astor hotels/built1image.svg';
+import astorBuilt2Image from './astor hotels/built2image.svg';
+import astorBuilt3Image from './astor hotels/built3image.svg';
 
 // ── Category constants ───────────────────────────────────────────────────
 export const CATEGORIES = {
@@ -138,7 +151,7 @@ const projects = [
     slug: 'dilli-dilli',
     title: 'dilli dilli',
     category: CATEGORIES.WEBSITES,
-    cardImage: projectCardImg2,
+    cardImage: built2Image,
     featured: true,
     template: 'project',
     rotation: 2,
@@ -193,7 +206,7 @@ const projects = [
     slug: 'astor-hotels',
     title: 'astor hotels',
     category: CATEGORIES.WEBSITES,
-    cardImage: projectCardImg2,
+    cardImage: astorProjectCardImg,
     featured: true,
     template: 'project',
     rotation: 3,
@@ -207,27 +220,27 @@ const projects = [
       tooltipItems: ['website design'],
       tooltipColor: 'blue',
       marqueeItems: ['logo design', 'brand identity', 'visual language', 'packaging'],
-      Cartoon: ProjectHeroCartoon,
+      Cartoon: AstorHeroCartoon,
     },
 
     // Before / after preview
     preview: {
-      desktopImage: beforeAfterSvg,
-      mobileImage: beforeAfterMobileSvg,
+      desktopImage: astorBeforeAfterSvg,
+      mobileImage: astorBeforeAfterMobileSvg,
     },
 
     // About the project section
     about: {
       text: `For Astor Hostels, the focus was on translating their philosophy into a digital experience that feels warm, inclusive, and easy to navigate. While the brand thrives on community and local character, the website needed to balance that friendliness with a clean, modern interface that builds trust and simplifies booking.\n\n We designed the website that feels approachable yet structured, using inviting visuals, thoughtful layouts, and subtle details that reflect the personality of each location. The result is a seamless experience that makes discovering, connecting, and booking feel effortless, while still capturing the social spirit that defines Astor.`,
       pdf: webpagePdf,
-      images: [about2Image, about3Image],
+      images: [astorAbout2Image, astorAbout3Image],
       bgColor: '#427665',
     },
 
     // Take your pick / color palette section
     colorPalette: {
       text: 'We explored two distinct directions for the homepage’s opening sections, one leaning towards a fun and welcoming aesthetic, while the other takes on a more vibrant, energetic approach that highlights the social and community-driven nature of the brand.',
-      images: [version1Svg, version2Svg],
+      images: [astorVersion1Svg, astorVersion2Svg],
     },
 
     // Results section
@@ -239,7 +252,7 @@ const projects = [
 
     // Built to be seen section
     builtToBeSeen: {
-      images: [built1Image, built2Image, built3Image],
+      images: [astorBuilt1Image, astorBuilt2Image, astorBuilt3Image],
     },
   },
 ];
