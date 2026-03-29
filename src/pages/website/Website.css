@@ -383,6 +383,7 @@
 }
 
 @media (hover: hover) {
+
     /* Hover Effects */
     .moreWorkCard:hover {
         z-index: 20;
@@ -496,8 +497,8 @@
     }
 
     .websiteAboutStar {
-        top: 3% !important;
-        right: 3%;
+        top: 40% !important;
+        right: -10%;
     }
 
     .aboutImages {

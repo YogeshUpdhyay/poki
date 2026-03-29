@@ -436,7 +436,7 @@
 .builtToBeSeenStar {
     position: absolute;
     left: -45px;
-    top: -35px;
+    top: -10px;
     rotate: 35deg;
 }
 
@@ -513,6 +513,7 @@
 }
 
 @media (hover: hover) {
+
     /* Hover Effects - Sibling Push Animation */
     #projectMore .phoneMockupCard:hover {
         z-index: 20;
@@ -521,29 +522,29 @@
 
     /* First card (left) hover - push others right */
     .moreWorkGrid:has(.phoneMockupCard:nth-child(1):hover) .phoneMockupCard:nth-child(2) {
-        transform: translate(40px, 0) rotate(5deg);
+        transform: translate(40px, 0) rotate(0deg);
     }
 
     .moreWorkGrid:has(.phoneMockupCard:nth-child(1):hover) .phoneMockupCard:nth-child(3) {
-        transform: translate(40px, 0) rotate(-4deg);
+        transform: translate(40px, 0) rotate(0deg);
     }
 
     /* Second card (middle) hover - push left card left, right card right */
     .moreWorkGrid:has(.phoneMockupCard:nth-child(2):hover) .phoneMockupCard:nth-child(1) {
-        transform: translate(-40px, 0) rotate(-8deg);
+        transform: translate(-40px, 0) rotate(0deg);
     }
 
     .moreWorkGrid:has(.phoneMockupCard:nth-child(2):hover) .phoneMockupCard:nth-child(3) {
-        transform: translate(40px, 0) rotate(-4deg);
+        transform: translate(40px, 0) rotate(0deg);
     }
 
     /* Third card (right) hover - push others left */
     .moreWorkGrid:has(.phoneMockupCard:nth-child(3):hover) .phoneMockupCard:nth-child(1) {
-        transform: translate(-40px, 0) rotate(-8deg);
+        transform: translate(-40px, 0) rotate(0deg);
     }
 
     .moreWorkGrid:has(.phoneMockupCard:nth-child(3):hover) .phoneMockupCard:nth-child(2) {
-        transform: translate(-40px, 0) rotate(5deg);
+        transform: translate(-40px, 0) rotate(0deg);
     }
 }
 
@@ -654,13 +655,13 @@
     .projectHeroCartoon {
         height: 96px !important;
         width: 106.7px !important;
-        top: -240%;
-        left: -45%;
+        top: -78%;
+        left: -26%;
     }
 
     .projectHeroTooltip {
-        top: -95%;
-        left: -3%;
+        top: -30%;
+        left: 10%;
     }
 
     .websiteHeroBold {
@@ -681,12 +682,13 @@
     }
 
     .projectHeroButtonWrapper {
-        padding: 60px 0px 200px 0px;
+        padding: 50px 0px 315px 0px;
     }
 
     .projectHeroText {
         width: 90%;
         font-size: 12px;
+        padding-top: 15px !important;
     }
 
     .beforeAfterImage img {
@@ -694,6 +696,8 @@
         height: 100%;
         object-fit: cover;
         display: block;
+        margin-bottom: -35px;
+        ;
     }
 
     .websiteAboutStar {
@@ -708,10 +712,10 @@
 
     .websiteText {
         font-size: 14px;
-        width: 100%;
+        width: 75%;
         padding-left: 10px;
         padding-right: 10px;
-        padding-bottom: 10px !important;
+        padding-bottom: 60px !important;
     }
 
 
@@ -747,8 +751,8 @@
     .colorPaletteStar {
         width: 36px;
         height: 36px;
-        top: -20%;
-        right: -10%;
+        top: 5%;
+        right: 5%;
     }
 
     #takeYourPick .websiteText {
@@ -797,6 +801,7 @@
 
     .headlineWrapper {
         font-size: 48px;
+        padding: 20px;
     }
 
     .colorSwatch {
@@ -837,20 +842,20 @@
         position: absolute;
         width: 36px;
         height: 36px;
-        left: -15px;
-        top: -30px;
+        left: 20px;
+        top: -10px;
         rotate: 131.77deg;
     }
 
     .builtToBeSeenUnderline {
         position: absolute;
-        bottom: -10px;
-        right: 60px;
+        bottom: 10px;
+        right: 92px;
         width: 114px;
     }
 
     .builtToBeSeenGrid {
-        margin-left: -35px;
+        margin-left: 0px;
     }
 
     .builtBottom {

@@ -246,6 +246,13 @@ const LogoVariations = ({ project }) => {
 }
 
 const WebsiteAbout = ({ project }) => {
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth <= 768);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     const about = project.about || {};
     const aboutText = about.text || '';
     const aboutImages = about.images || [];
@@ -255,7 +262,7 @@ const WebsiteAbout = ({ project }) => {
     return (
         <section className="blackContainer" id="websiteAbout">
             <Headline
-                lines={['about the project']}
+                lines={isMobile ? ['about', 'the project'] : ['about the project']}
                 highlight='about'
             >
                 <svg
