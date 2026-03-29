@@ -248,6 +248,10 @@ const projects = [
     about: {
       text: `We explored multiple directions to find the right balance between minimalism and distinctiveness, ensuring the brand feels premium yet approachable. While the foundation remains sleek and contemporary, subtle design decisions were introduced to give the logo its own personality, making it memorable and expressive without overcomplicating it.\n\n At the core of the brand is a sense of individuality and empowerment. The identity is designed to feel personal, something that resonates with the wearer and reflects the idea that the brand is built for ‘you’. The result is a logo that feels strong, adaptable, and rooted in both performance and self-expression.`,
       images: [about1, about2],
+      svgText: 'explorations',
+      svgTop: '-8%',
+      svgRight: '5%',
+      svgFill: 'violet',
       bgColor: '#EFB5D4',
     },
 
@@ -1028,6 +1032,10 @@ const projects = [
     about: {
       text: `we explored a variety of directions to find the perfect synergy between innovation and reliability, ensuring the briotech brand feels both cutting-edge and trustworthy. the foundation is built on clean, geometric lines, but we introduced subtle details that give the identity a unique character and energy without being overly complex.\n\nat the heart of the brand is a commitment to clarity and progress. the identity is designed to be highly adaptable, scaling effortlessly across digital and physical platforms. the final result is a brand that feels strong, modern, and deeply rooted in the philosophy of simple yet powerful technology.`,
       images: [briotechAbout1, briotechAbout2],
+      svgText: 'experimentation',
+      svgTop: '-8%',
+      svgRight: '5%',
+      svgFill: 'violet',
       bgColor: '#B9DBE8', // Dummy color
     },
 
