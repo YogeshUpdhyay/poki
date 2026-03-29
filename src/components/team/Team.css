@@ -120,12 +120,15 @@
         transform: scale(0);
         opacity: 0;
     }
+
     50% {
         opacity: 1;
     }
+
     70% {
         transform: scale(1.15);
     }
+
     100% {
         transform: scale(1);
         opacity: 1;
@@ -156,7 +159,7 @@
     display: inline-block;
     padding: 12px;
     border-radius: 100px 100px 100px 0px;
-    pointer-events: none; 
+    pointer-events: none;
     width: fit-content;
     font-size: 14px;
     font-family: generalSansMedium;
@@ -279,7 +282,8 @@
 
     /* Add space between map and headline */
     .map {
-        margin-bottom: 80px; /* Adjust this value to increase/decrease space */
+        margin-bottom: 80px;
+        /* Adjust this value to increase/decrease space */
     }
 
     .teamHeadline {
@@ -291,9 +295,12 @@
     .teamCartoon {
         /* Position teamCartoon in the space between map and headline */
         right: auto;
-        left: 50%; /* Horizontal center - change to left: 20px for left alignment, or left: auto; right: 20px for right alignment */
-        top: -120px; /* Negative value pulls it up into the space - adjust to move up/down */
-        transform: scale(0.7) translateX(-50%); /* First value controls size (0.7 = 70% size), adjust as needed */
+        left: 50%;
+        /* Horizontal center - change to left: 20px for left alignment, or left: auto; right: 20px for right alignment */
+        top: -120px;
+        /* Negative value pulls it up into the space - adjust to move up/down */
+        transform: scale(0.7) translateX(-50%);
+        /* First value controls size (0.7 = 70% size), adjust as needed */
         /* If you change left alignment, also adjust translateX:
            - For center: translateX(-50%)
            - For left align: translateX(0)
@@ -302,8 +309,10 @@
 
     /* Control teamUnderline SVG size */
     .teamUnderline {
-        width: 60%; /* Adjust this percentage to make underline bigger/smaller */
-        max-width: 200px; /* Optional: set a maximum pixel width */
+        width: 60%;
+        /* Adjust this percentage to make underline bigger/smaller */
+        max-width: 200px;
+        /* Optional: set a maximum pixel width */
     }
 
     .teamUnderline svg {
@@ -319,7 +328,8 @@
     .teamPill {
         display: inline-block;
         left: 34%;
-        top: 23%; /* Adjust height as needed */
+        top: 23%;
+        /* Adjust height as needed */
         transform: translateX(-50%);
         font-size: 14px;
         padding: 8px 12px;
@@ -329,12 +339,12 @@
     .teamCols {
         padding-top: 40px;
         padding-bottom: 40px;
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        justify-content: center;
     }
 
     .teamRow {
-        width: 100%;
+        width: 50%;
         gap: 60px;
     }
 
@@ -368,8 +378,13 @@
     }
 
     .teammateCard {
-        height: 300px;
-        width: 220px;
+        height: auto;
+        width: 80%;
+    }
+
+    .teammateCardImage {
+        height: auto;
+        width: 100%;
     }
 
     .mapContainer {
@@ -414,8 +429,10 @@
     .teamUnderline {
         left: 53%;
         top: 78%;
-        width: 50%; /* Adjust this percentage to make underline bigger/smaller */
-        max-width: 150px; /* Optional: set a maximum pixel width */
+        width: 50%;
+        /* Adjust this percentage to make underline bigger/smaller */
+        max-width: 150px;
+        /* Optional: set a maximum pixel width */
     }
 
     .teamUnderline svg {
@@ -432,9 +449,12 @@
     .teammateGreenBlob {
         display: block;
         position: absolute;
-        top: 10.5%; /* Adjust vertical position */
-        right: -1px; /* Adjust horizontal position */
-        transform: scale(1); /* Adjust size (0.5 = 50% size) */
+        top: 10.5%;
+        /* Adjust vertical position */
+        right: -1px;
+        /* Adjust horizontal position */
+        transform: scale(1);
+        /* Adjust size (0.5 = 50% size) */
         width: 312px !important;
         height: 268px !important;
     }
@@ -443,76 +463,88 @@
     .teammatePinkBlob {
         display: block;
         position: absolute;
-        bottom: 6%; /* Adjust vertical position */
-        left: -295px; /* Adjust horizontal position */
-        transform: scale(0.7); /* Adjust size (0.5 = 50% size) */
+        bottom: 6%;
+        /* Adjust vertical position */
+        left: -295px;
+        /* Adjust horizontal position */
+        transform: scale(0.7);
+        /* Adjust size (0.5 = 50% size) */
     }
 
     .teamCols {
         padding-top: 32px;
         padding-bottom: 32px;
+
     }
 
     .teamRow {
-        gap: 30px; /* Padding between all cards */
-        padding-left: 42px;
-        padding-right: 42px;
+        gap: 120px;
+        /* Padding between all cards */
+        padding-left: 10px;
+        padding-right: 10px;
         padding-bottom: 30px;
     }
 
-    /* Card 1 - Left aligned */
+    /* Card 1 - Slightly Left-ish */
     .teamRow:nth-child(1) .teammateCard:nth-child(1) {
         margin-left: 0;
         margin-right: auto;
     }
 
-    /* Card 2 - Right aligned */
+    /* Card 2 - Strongly Right-ish */
     .teamRow:nth-child(1) .teammateCard:nth-child(2) {
-        margin-left: auto;
+        margin-left: 20%;
         margin-right: 0;
     }
 
-    /* Card 3 - Left aligned */
+    /* Card 3 - Middle-Left-ish */
     .teamRow:nth-child(1) .teammateCard:nth-child(3) {
-        margin-left: 0;
+        margin-left: 5%;
         margin-right: auto;
     }
 
     .teamRow:nth-child(2) {
-        padding-left: 42px;
-        padding-right: 42px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 100px;
+        /* Restores the staggered column look */
     }
 
-    /* Card 4 - Right aligned */
+    /* Card 4 - Strongly Right */
     .teamRow:nth-child(2) .teammateCard:nth-child(1) {
         margin-left: auto;
-        margin-right: 0;
+        margin-right: -10%;
+        /* Makes it "poke out" a bit more like on desktop */
     }
 
-    /* Card 5 - Left aligned */
+    /* Card 5 - Slightly Left */
     .teamRow:nth-child(2) .teammateCard:nth-child(2) {
-        margin-left: 0;
+        margin-left: -5%;
         margin-right: auto;
     }
 
-    /* Card 6 - Right aligned */
+    /* Card 6 - Middle-Right */
     .teamRow:nth-child(2) .teammateCard:nth-child(3) {
-        margin-left: auto;
+        margin-left: 15%;
         margin-right: 0;
-        padding-top: 80px;
+        padding-top: 40px;
     }
 
     .teammateCardImage {
-        height: 280px;
-        width: 224px;
+        height: auto;
+        width: 100%;
     }
 
     /* Control teammate6.svg position and size on mobile */
     .teamRow:nth-child(2) .teammateCard:nth-child(3) img[alt="teammateSvg"] {
-        left: 20% !important;  /* Adjust horizontal position (lower % = more left) */
-        top: -43% !important;  /* Adjust vertical position (negative % = moves up) */
-        width: 71.16px !important;   /* Adjust width (e.g., 100px, 150px, or use auto) */
-        height: 96px !important;  /* Adjust height (e.g., 80px, 120px, or use auto) */
+        left: 20% !important;
+        /* Adjust horizontal position (lower % = more left) */
+        top: -43% !important;
+        /* Adjust vertical position (negative % = moves up) */
+        width: 71.16px !important;
+        /* Adjust width (e.g., 100px, 150px, or use auto) */
+        height: 96px !important;
+        /* Adjust height (e.g., 80px, 120px, or use auto) */
     }
 
     /* ========================================
@@ -625,7 +657,8 @@
     }
 
     .mapContainer {
-        width: 100%; /* Increased from 60% - adjust this to make map bigger/smaller */
+        width: 100%;
+        /* Increased from 60% - adjust this to make map bigger/smaller */
         max-width: 100%;
         padding: 0 12px;
         box-sizing: border-box;
