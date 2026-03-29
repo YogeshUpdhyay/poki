@@ -538,7 +538,7 @@
     #logoVariations .tooltip {
         display: block;
         position: absolute !important;
-        top: 12.5% !important;
+        top: 11.5% !important;
         left: 18% !important;
         transform: translateX(-50%) !important;
     }
@@ -651,7 +651,7 @@
     #fonts .tooltip {
         display: block;
         position: absolute !important;
-        top: 10.5% !important;
+        top: 12.5% !important;
         left: 49.5% !important;
         transform: translateX(-50%) !important;
     }
@@ -659,9 +659,16 @@
     .fontsGroup {
         display: flex;
         flex-direction: column;
+        align-items: center;
         gap: 20px;
         margin-top: 60px;
         margin-bottom: 60px;
+    }
+
+    .fontsGroup .cardWrapper {
+        width: 320px !important;
+        height: 188px !important;
+        flex: none !important;
     }
 
     .fontsGroup .cardImage {
@@ -670,6 +677,7 @@
     }
 
     .fontsGroup .card {
+        width: 100% !important;
         height: 188px !important;
         gap: 10px;
         overflow: visible !important;

@@ -72,8 +72,17 @@
     .headlineText {
         font-size: 48px;
         letter-spacing: -1.5px;
+        line-height: 0.9;
     }
     
+    .headlineLineWrapper {
+        display: block;
+    }
+
+    .headlineText br {
+        display: none;
+    }
+
     .headlineText.large {
         font-size: 72px;
     }
@@ -83,8 +92,17 @@
     .headlineText {
         font-size: 55px;
         letter-spacing: -1px;
+        line-height: 0.85;
     }
     
+    .headlineLineWrapper {
+        display: block;
+    }
+
+    .headlineText br {
+        display: none;
+    }
+
     .headlineText.large {
         font-size: 52px;
     }
