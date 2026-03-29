@@ -228,15 +228,15 @@ export function Headline({ children, tooltip, tooltipColor, lines, highlight, fo
                 const before = line.slice(0, idx)
                 const after = line.slice(idx + highlight.length)
                 return (
-                  <React.Fragment key={i}>
+                  <span key={i} className="headlineLineWrapper">
                     {before}
                     <span className="headlineHighlight">{highlight}</span>
                     {after}
                     {i < lines.length - 1 ? <br /> : null}
-                  </React.Fragment>
+                  </span>
                 )
               }
-              return <React.Fragment key={i}>{line}{i < lines.length - 1 ? <br /> : null}</React.Fragment>
+              return <span key={i} className="headlineLineWrapper">{line}{i < lines.length - 1 ? <br /> : null}</span>
             })
           ) : (
             <></>

@@ -303,6 +303,7 @@
 }
 
 @media (hover: hover) {
+
     /* Neighbor Push Logic - Move items away from the hovered one */
     .advList:has(.advListItem:nth-child(1):hover) .advListItem:nth-child(2) {
         translate: 0 15px;
@@ -461,12 +462,16 @@
 
     .agencyHeroTooltip {
         position: absolute;
-        top: 19%;
+        top: 22%;
         left: 20%;
     }
 
     .partnerWith {
         padding: 100px 30px;
+    }
+
+    #partnerships .headlineWrapper {
+        padding: 30px;
     }
 
     .agencyHeroUnderline {
@@ -635,8 +640,8 @@
     .agencyPartnerStar {
         width: 36px;
         height: 36px;
-        top: -17%;
-        right: 85%;
+        top: 10%;
+        right: 78%;
     }
 
     .partnerReview {
