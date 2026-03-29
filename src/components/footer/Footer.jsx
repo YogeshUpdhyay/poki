@@ -224,24 +224,18 @@ function Credits() {
           >
             <div className="credits-content">
               <div className="credits-section">
-                <span className="credits-label">Designed by</span>
-                <PokiLogo className="credits-poki-logo" />
+                <span className="credits-label">design by</span>
+                <span className="credits-name">Poki Studios</span>
               </div>
-              <div className="credits-divider" />
               <div className="credits-section">
-                <span className="credits-label">Code by</span>
+                <span className="credits-label">code by</span>
                 <a
                   href="https://kmats.in/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="credits-kmats-link"
-                  ref={kmatsRefs.setReference}
-                  {...getKmatsRefProps({
-                    onMouseEnter: () => setKmatsTooltipOpen(true),
-                    onMouseLeave: () => setKmatsTooltipOpen(false),
-                  })}
+                  className="credits-name"
                 >
-                  <img src={kmatsLogo} alt="KMats Logo" className="credits-kmats-logo" />
+                  Krishank Shah
                 </a>
               </div>
             </div>
