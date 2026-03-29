@@ -211,7 +211,7 @@
 .companies {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-gap: 26px;
+    column-gap: 26px;
     padding: 80px 64px;
 }
 
@@ -305,8 +305,8 @@
         transform: none !important;
     } */
     .aboutHeroTooltip {
-        top: 58% !important;
-        left: -53% !important;
+        top: 56% !important;
+        left: -40% !important;
     }
 
     .aboutImage {
@@ -374,20 +374,20 @@
     /* Individual SVG customization */
     .yearsItem .aboutFlexSvg {
         top: 45%;
-        right: 3%;
+        right: -13%;
         width: 238px;
     }
 
     .brandsItem .aboutFlexSvg {
         top: 45%;
-        right: -3%;
+        right: -32%;
         width: 250px;
     }
 
     .projectsItem .aboutFlexSvg {
         top: 45%;
-        right: -3%;
-        width: 134px;
+        right: -24%;
+        width: 164px;
     }
 
     .aboutFlexText {
@@ -445,7 +445,7 @@
 
     .companies {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-gap: 16px;
+        column-gap: 16px;
         padding: 40px 20px;
         width: 100%;
         max-width: 100vw;
