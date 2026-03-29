@@ -79,7 +79,13 @@ function CollabHeadline() {
             onMouseLeave: () => setOpen(false),
           })}
         >
-          <span className="headlineHighlight">let's</span>{isMobile ? <br /> : ' '}collaborate
+          <span className="headlineLineWrapper">
+            <span className="headlineHighlight">let's</span>
+          </span>
+          {' '}
+          <span className="headlineLineWrapper">
+            collaborate
+          </span>
           <img
             src={collaborateCartoon}
             alt="collaborateCartoon"

@@ -37,7 +37,7 @@
 .collabButtons {
     padding-top: 48px;
     padding-bottom: 160px;
-    
+
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -92,9 +92,10 @@
 
 @media (max-width: 768px) {
 
-    .headlineText{
+    .headlineText {
         font-size: 56px;
     }
+
     .letsCollab {
         border-radius: 32px 32px 0px 0px;
     }
@@ -135,8 +136,8 @@
     }
 
     .collaborateCartoon {
-        bottom: 26%;
-        left: -4%;
+        bottom: 32%;
+        left: 2%;
         width: 69.66px;
         height: 78.26px;
         transform: none;
