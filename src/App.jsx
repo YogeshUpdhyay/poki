@@ -58,6 +58,7 @@ function AppContent() {
   useEffect(() => {
     let checkInterval;
     let fallbackTimeout;
+    let startDelay;
     setPageReady(false); // Mark new page as not ready
 
     const checkAssets = () => {
@@ -67,7 +68,10 @@ function AppContent() {
       const videos = Array.from(document.querySelectorAll('video[autoplay]'));
 
       const allImagesReady = images.every(img => img.complete);
-      const allVideosReady = videos.every(vid => vid.readyState >= 3);
+      
+      // Mobile browsers (especially iOS Safari) can heavily throttle or block autoplay videos.
+      const isMobile = window.innerWidth <= 768;
+      const allVideosReady = videos.every(vid => isMobile ? vid.readyState >= 1 : vid.readyState >= 3);
 
       if (allImagesReady && allVideosReady) {
         completeLoad();
@@ -80,11 +84,18 @@ function AppContent() {
       clearTimeout(fallbackTimeout);
     };
 
-    checkAssets();
-    checkInterval = setInterval(checkAssets, 150);
+    // Add a slight delay before the first check. Synchronous checks immediately after 
+    // a render can sometimes find img.complete === true before the browser has started 
+    // fetching the new src.
+    startDelay = setTimeout(() => {
+      checkAssets();
+      checkInterval = setInterval(checkAssets, 150);
+    }, 100);
+    
     fallbackTimeout = setTimeout(completeLoad, 6000); // 6s max delay
 
     return () => {
+      clearTimeout(startDelay);
       clearInterval(checkInterval);
       clearTimeout(fallbackTimeout);
     };

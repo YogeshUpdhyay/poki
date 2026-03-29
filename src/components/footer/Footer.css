@@ -256,11 +256,13 @@ footer {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.credits-pill:hover {
-    background-color: #000000;
-    border-color: #ffffff;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+@media (hover: hover) {
+    .credits-pill:hover {
+        background-color: #000000;
+        border-color: #ffffff;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    }
 }
 
 .credits-box {
@@ -333,9 +335,11 @@ footer {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.credits-kmats-logo:hover {
-    transform: scale(1.08) rotate(0deg);
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3)) brightness(1.5);
+@media (hover: hover) {
+    .credits-kmats-logo:hover {
+        transform: scale(1.08) rotate(0deg);
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3)) brightness(1.5);
+    }
 }
 
 @media (max-width: 768px) {

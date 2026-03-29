@@ -27,7 +27,8 @@
     display: inline;
 }
 
-.headlineChar, .headlineWord {
+.headlineChar,
+.headlineWord {
     display: inline-block;
     vertical-align: baseline;
     will-change: transform, opacity;
@@ -38,7 +39,8 @@
 }
 
 .headlineWrapper {
-    position: relative; /* anchor for image */
+    position: relative;
+    /* anchor for image */
     display: inline-block;
 }
 
@@ -51,7 +53,7 @@
         font-size: 80px;
         letter-spacing: -3px;
     }
-    
+
     .headlineText.large {
         font-size: 130px;
     }
@@ -62,7 +64,7 @@
         font-size: 64px;
         letter-spacing: -2px;
     }
-    
+
     .headlineText.large {
         font-size: 100px;
     }
@@ -72,8 +74,22 @@
     .headlineText {
         font-size: 48px;
         letter-spacing: -1.5px;
+        line-height: 100%;
     }
-    
+
+    #websiteAbout .headlineText,
+    #projectAbout .headlineText {
+        line-height: 0.85 !important;
+    }
+
+    .headlineLineWrapper {
+        display: block;
+    }
+
+    .headlineText br {
+        display: none;
+    }
+
     .headlineText.large {
         font-size: 72px;
     }
@@ -83,8 +99,17 @@
     .headlineText {
         font-size: 55px;
         letter-spacing: -1px;
+        line-height: 100%;
     }
-    
+
+    .headlineLineWrapper {
+        display: block;
+    }
+
+    .headlineText br {
+        display: none;
+    }
+
     .headlineText.large {
         font-size: 52px;
     }

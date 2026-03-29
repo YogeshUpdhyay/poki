@@ -1,7 +1,7 @@
 import './Navbar.css'
 import PokiLogo from '../../assets/imgs/logo.svg?react'
 import Button from '../common/button/Button'
-import buttonImg from '../../assets/imgs/button.png'
+import ButtonImg from '../../assets/imgs/button.svg?react'
 import { useCms } from '../../utils/context'
 import { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
@@ -44,7 +44,7 @@ export default function Navbar({ location: locationProp }) {
     }
 
     window.addEventListener('scroll', handleScroll)
-    
+
     // Call handleScroll whenever location changes or page is revealed
     if (isRevealed) {
       // Use requestAnimationFrame to ensure DOM is updated before checking
@@ -52,7 +52,7 @@ export default function Navbar({ location: locationProp }) {
         handleScroll()
       })
     }
-    
+
     return () => window.removeEventListener('scroll', handleScroll)
   }, [location.pathname, isRevealed]) // Re-run when route changes or revealed
 
@@ -64,15 +64,15 @@ export default function Navbar({ location: locationProp }) {
     <>
       {/* Backdrop overlay - shown when menu is open */}
       {menuOpen && (
-        <div 
-          className="menu-backdrop" 
+        <div
+          className="menu-backdrop"
           onClick={() => setMenuOpen(false)}
         />
       )}
 
       <nav ref={navRef} className={`navbar ${dark ? 'dark' : ''} ${pageClass}`}>
         {/* Hamburger Menu Button - Hidden on desktop */}
-        <button 
+        <button
           className={`hamburger ${menuOpen ? 'open' : ''}`}
           onClick={toggleMenu}
           aria-label="Toggle menu"
@@ -98,9 +98,9 @@ export default function Navbar({ location: locationProp }) {
           <Button text="count me in" href={countMeInUrl} />
         </div>
 
-        {/* Mobile Button - Image button */}
-        <a href={countMeInUrl} className="navbar-cta-mobile">
-          <img src={buttonImg} alt="count me in" className="navbar-button-img" />
+        {/* Mobile Button - SVG component */}
+        <a href={countMeInUrl} className="navbar-cta-mobile" aria-label="count me in">
+          <ButtonImg className="navbar-button-img" />
         </a>
       </nav>
     </>

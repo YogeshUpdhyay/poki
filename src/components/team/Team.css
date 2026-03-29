@@ -120,12 +120,15 @@
         transform: scale(0);
         opacity: 0;
     }
+
     50% {
         opacity: 1;
     }
+
     70% {
         transform: scale(1.15);
     }
+
     100% {
         transform: scale(1);
         opacity: 1;
@@ -137,10 +140,12 @@
     stroke: #414141;
 }
 
-#worldMap path:hover {
-    fill: #EAF9C0 !important;
-    stroke: #EAF9C0 !important;
-    cursor: url('/tooltip.svg'), pointer;
+@media (hover: hover) {
+    #worldMap path:hover {
+        fill: #EAF9C0 !important;
+        stroke: #EAF9C0 !important;
+        cursor: url('/tooltip.svg'), pointer;
+    }
 }
 
 .mapContainer {
@@ -156,7 +161,7 @@
     display: inline-block;
     padding: 12px;
     border-radius: 100px 100px 100px 0px;
-    pointer-events: none; 
+    pointer-events: none;
     width: fit-content;
     font-size: 14px;
     font-family: generalSansMedium;
@@ -279,7 +284,8 @@
 
     /* Add space between map and headline */
     .map {
-        margin-bottom: 80px; /* Adjust this value to increase/decrease space */
+        margin-bottom: 80px;
+        /* Adjust this value to increase/decrease space */
     }
 
     .teamHeadline {
@@ -291,9 +297,12 @@
     .teamCartoon {
         /* Position teamCartoon in the space between map and headline */
         right: auto;
-        left: 50%; /* Horizontal center - change to left: 20px for left alignment, or left: auto; right: 20px for right alignment */
-        top: -120px; /* Negative value pulls it up into the space - adjust to move up/down */
-        transform: scale(0.7) translateX(-50%); /* First value controls size (0.7 = 70% size), adjust as needed */
+        left: 50%;
+        /* Horizontal center - change to left: 20px for left alignment, or left: auto; right: 20px for right alignment */
+        top: -120px;
+        /* Negative value pulls it up into the space - adjust to move up/down */
+        transform: scale(0.7) translateX(-50%);
+        /* First value controls size (0.7 = 70% size), adjust as needed */
         /* If you change left alignment, also adjust translateX:
            - For center: translateX(-50%)
            - For left align: translateX(0)
@@ -302,8 +311,10 @@
 
     /* Control teamUnderline SVG size */
     .teamUnderline {
-        width: 60%; /* Adjust this percentage to make underline bigger/smaller */
-        max-width: 200px; /* Optional: set a maximum pixel width */
+        width: 60%;
+        /* Adjust this percentage to make underline bigger/smaller */
+        max-width: 200px;
+        /* Optional: set a maximum pixel width */
     }
 
     .teamUnderline svg {
@@ -319,7 +330,8 @@
     .teamPill {
         display: inline-block;
         left: 34%;
-        top: 23%; /* Adjust height as needed */
+        top: 23%;
+        /* Adjust height as needed */
         transform: translateX(-50%);
         font-size: 14px;
         padding: 8px 12px;
@@ -329,12 +341,12 @@
     .teamCols {
         padding-top: 40px;
         padding-bottom: 40px;
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        justify-content: center;
     }
 
     .teamRow {
-        width: 100%;
+        width: 50%;
         gap: 60px;
     }
 
@@ -368,8 +380,13 @@
     }
 
     .teammateCard {
-        height: 300px;
-        width: 220px;
+        height: auto;
+        width: 80%;
+    }
+
+    .teammateCardImage {
+        height: auto;
+        width: 100%;
     }
 
     .mapContainer {
@@ -414,8 +431,10 @@
     .teamUnderline {
         left: 53%;
         top: 78%;
-        width: 50%; /* Adjust this percentage to make underline bigger/smaller */
-        max-width: 150px; /* Optional: set a maximum pixel width */
+        width: 50%;
+        /* Adjust this percentage to make underline bigger/smaller */
+        max-width: 150px;
+        /* Optional: set a maximum pixel width */
     }
 
     .teamUnderline svg {
@@ -432,9 +451,12 @@
     .teammateGreenBlob {
         display: block;
         position: absolute;
-        top: 10.5%; /* Adjust vertical position */
-        right: -1px; /* Adjust horizontal position */
-        transform: scale(1); /* Adjust size (0.5 = 50% size) */
+        top: 10.5%;
+        /* Adjust vertical position */
+        right: 35px;
+        /* Adjust horizontal position */
+        transform: scale(1);
+        /* Adjust size (0.5 = 50% size) */
         width: 312px !important;
         height: 268px !important;
     }
@@ -443,189 +465,155 @@
     .teammatePinkBlob {
         display: block;
         position: absolute;
-        bottom: 6%; /* Adjust vertical position */
-        left: -295px; /* Adjust horizontal position */
-        transform: scale(0.7); /* Adjust size (0.5 = 50% size) */
+        bottom: 6%;
+        /* Adjust vertical position */
+        left: -295px;
+        /* Adjust horizontal position */
+        transform: scale(0.7);
+        /* Adjust size (0.5 = 50% size) */
     }
 
     .teamCols {
         padding-top: 32px;
         padding-bottom: 32px;
+        flex-direction: row;
+        justify-content: center;
+        overflow: visible;
     }
 
     .teamRow {
-        gap: 30px; /* Padding between all cards */
-        padding-left: 42px;
-        padding-right: 42px;
+        width: 55%;
+        /* Allow for overlap */
+        gap: 500px;
+        /* Tighter gap to match the image interleaving */
+        padding-left: 5px;
+        padding-right: 5px;
         padding-bottom: 30px;
+        flex-shrink: 0;
     }
 
-    /* Card 1 - Left aligned */
-    .teamRow:nth-child(1) .teammateCard:nth-child(1) {
-        margin-left: 0;
-        margin-right: auto;
-    }
-
-    /* Card 2 - Right aligned */
-    .teamRow:nth-child(1) .teammateCard:nth-child(2) {
-        margin-left: auto;
-        margin-right: 0;
-    }
-
-    /* Card 3 - Left aligned */
-    .teamRow:nth-child(1) .teammateCard:nth-child(3) {
-        margin-left: 0;
-        margin-right: auto;
+    /* Column Overlap Logic */
+    .teamRow:nth-child(1) {
+        margin-right: -5%;
     }
 
     .teamRow:nth-child(2) {
-        padding-left: 42px;
-        padding-right: 42px;
+        margin-left: -30%;
+        padding-top: 400px;
+        /* Shifts Row 2 down to interleave with Row 1 */
+        z-index: 10;
     }
 
-    /* Card 4 - Right aligned */
-    .teamRow:nth-child(2) .teammateCard:nth-child(1) {
-        margin-left: auto;
-        margin-right: 0;
-    }
-
-    /* Card 5 - Left aligned */
-    .teamRow:nth-child(2) .teammateCard:nth-child(2) {
-        margin-left: 0;
-        margin-right: auto;
-    }
-
-    /* Card 6 - Right aligned */
-    .teamRow:nth-child(2) .teammateCard:nth-child(3) {
-        margin-left: auto;
-        margin-right: 0;
-        padding-top: 80px;
+    .teammateCard {
+        height: auto;
+        width: 100%;
     }
 
     .teammateCardImage {
-        height: 280px;
-        width: 224px;
-    }
-
-    /* Control teammate6.svg position and size on mobile */
-    .teamRow:nth-child(2) .teammateCard:nth-child(3) img[alt="teammateSvg"] {
-        left: 20% !important;  /* Adjust horizontal position (lower % = more left) */
-        top: -43% !important;  /* Adjust vertical position (negative % = moves up) */
-        width: 71.16px !important;   /* Adjust width (e.g., 100px, 150px, or use auto) */
-        height: 96px !important;  /* Adjust height (e.g., 80px, 120px, or use auto) */
+        height: auto;
+        width: 100%;
+        border-radius: 12px;
     }
 
     /* ========================================
-       CUSTOMIZE ALL TEAM CARD SVGs FOR MOBILE
+       INDIVIDUAL CARD REPOSITIONING (SCREENSHOT MATCH)
        ======================================== */
 
-    /* Card 1 SVG (Row 1, Card 1) */
+    /* CARD 1 (ROBIN - Row 1, Pos 1) */
     .teamRow:nth-child(1) .teammateCard:nth-child(1) img[alt="teammateSvg"] {
-        left: 74% !important;
-        right: auto !important;
-        top: 25% !important;
-        bottom: auto !important;
-        width: 86px !important;
-        height: 48px !important;
-    }
-
-    /* Card 2 SVG (Row 1, Card 2) */
-    .teamRow:nth-child(1) .teammateCard:nth-child(2) img[alt="teammateSvg"] {
         left: auto !important;
-        right: 95% !important;
-        top: 125% !important;
+        right: -15% !important;
+        top: 20% !important;
         bottom: auto !important;
-        width: 108px !important;
-        height: 58px !important;
-        z-index: 10 !important;
-        transform: scale(1.2);
+        width: 90px !important;
     }
 
-    /* Card 3 SVG (Row 1, Card 3) */
-    .teamRow:nth-child(1) .teammateCard:nth-child(3) img[alt="teammateSvg"] {
-        left: 80% !important;
-        right: auto !important;
-        top: 301% !important;
-        bottom: auto !important;
-        width: 86px !important;
-        height: 48px !important;
-        z-index: 10 !important;
-    }
-
-    /* Card 4 SVG (Row 2, Card 1) */
-    .teamRow:nth-child(2) .teammateCard:nth-child(1) img[alt="teammateSvg"] {
-        left: 83% !important;
-        right: auto !important;
-        top: -209% !important;
-        bottom: auto !important;
-        width: 49px !important;
-        height: 26px !important;
-    }
-
-    /* Card 5 SVG (Row 2, Card 2) */
-    .teamRow:nth-child(2) .teammateCard:nth-child(2) img[alt="teammateSvg"] {
-        left: auto !important;
-        right: 40% !important;
-        top: auto !important;
-        bottom: 170% !important;
-        width: auto !important;
-        height: 90px !important;
-    }
-
-    /* ========================================
-       CUSTOMIZE ALL TEAM CARD CALLOUTS FOR MOBILE
-       ======================================== */
-
-    /* Card 1 Callout (Row 1, Card 1) */
     .teamRow:nth-child(1) .teammateCard:nth-child(1) .teammateCallout {
-        left: 68% !important;
-        right: auto !important;
-        top: 78% !important;
-        bottom: auto !important;
+        left: auto !important;
+        right: -20% !important;
+        top: auto !important;
+        bottom: 15% !important;
     }
 
-    /* Card 2 Callout (Row 1, Card 2) */
-    .teamRow:nth-child(1) .teammateCard:nth-child(2) .teammateCallout {
-        left: -19% !important;
-        right: auto !important;
-        top: 74% !important;
-        bottom: auto !important;
+    /* CARD 4 (SHWETA - Row 2, Pos 1) */
+    .teamRow:nth-child(2) .teammateCard:nth-child(1) img[alt="teammateSvg"] {
+        left: auto !important;
+        right: -10% !important;
+        top: 10% !important;
+        width: 80px !important;
     }
 
-    /* Card 3 Callout (Row 1, Card 3) */
-    .teamRow:nth-child(1) .teammateCard:nth-child(3) .teammateCallout {
-        left: 65% !important;
-        right: auto !important;
-        top: 35% !important;
-        bottom: auto !important;
-    }
-
-    /* Card 4 Callout (Row 2, Card 1) */
     .teamRow:nth-child(2) .teammateCard:nth-child(1) .teammateCallout {
-        left: auto !important;
-        right: 80% !important;
-        top: auto !important;
-        bottom: 16% !important;
-    }
-
-    /* Card 5 Callout (Row 2, Card 2) */
-    .teamRow:nth-child(2) .teammateCard:nth-child(2) .teammateCallout {
-        left: 41% !important;
+        left: -20% !important;
         right: auto !important;
         top: auto !important;
-        bottom: 84% !important;
+        bottom: 15% !important;
     }
 
-    /* Card 6 Callout (Row 2, Card 3) */
-    .teamRow:nth-child(2) .teammateCard:nth-child(3) .teammateCallout {
+    /* CARD 2 (ABHISHEK - Row 1, Pos 2) */
+    .teamRow:nth-child(1) .teammateCard:nth-child(2) img[alt="teammateSvg"] {
+        left: -20% !important;
+        right: auto !important;
+        top: 10% !important;
+        width: 100px !important;
+    }
+
+    .teamRow:nth-child(1) .teammateCard:nth-child(2) .teammateCallout {
         left: auto !important;
-        right: 80% !important;
+        right: -30% !important;
+        top: 70% !important;
+        bottom: auto !important;
+    }
+
+    /* CARD 5 (RAJ - Row 2, Pos 2) */
+    .teamRow:nth-child(2) .teammateCard:nth-child(2) img[alt="teammateSvg"] {
+        left: -15% !important;
+        right: auto !important;
+        top: 15% !important;
+        width: 90px !important;
+    }
+
+    .teamRow:nth-child(2) .teammateCard:nth-child(2) .teammateCallout {
+        left: -15% !important;
+        right: auto !important;
         top: auto !important;
-        bottom: -10% !important;
+        bottom: 10% !important;
+    }
+
+    /* CARD 3 (SHREYASI - Row 1, Pos 3) */
+    .teamRow:nth-child(1) .teammateCard:nth-child(3) img[alt="teammateSvg"] {
+        left: auto !important;
+        right: -10% !important;
+        top: auto !important;
+        bottom: -5% !important;
+        width: 100px !important;
+    }
+
+    .teamRow:nth-child(1) .teammateCard:nth-child(3) .teammateCallout {
+        left: auto !important;
+        right: -25% !important;
+        top: 5% !important;
+        bottom: auto !important;
+    }
+
+    /* CARD 6 (PRAJWAL - Row 2, Pos 3) */
+    .teamRow:nth-child(2) .teammateCard:nth-child(3) img[alt="teammateSvg"] {
+        left: 12% !important;
+        right: auto !important;
+        top: -38% !important;
+        width: 80px !important;
+    }
+
+    .teamRow:nth-child(2) .teammateCard:nth-child(3) .teammateCallout {
+        left: -25% !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: 10% !important;
+        z-index: 20;
     }
 
     .mapContainer {
-        width: 100%; /* Increased from 60% - adjust this to make map bigger/smaller */
+        width: 100%;
         max-width: 100%;
         padding: 0 12px;
         box-sizing: border-box;
@@ -638,7 +626,8 @@
     }
 
     .teammateCallout {
-        font-size: 14px;
+        font-size: 13px;
+        /* Slightly smaller to fit label+role on one line better */
         padding: 8px 12px;
     }
 }

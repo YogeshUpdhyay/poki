@@ -46,8 +46,10 @@
     z-index: 10;
 }
 
-.carousel:hover .innerCarousel {
-    animation-play-state: paused;
+@media (hover: hover) {
+    .carousel:hover .innerCarousel {
+        animation-play-state: paused;
+    }
 }
 
 @keyframes scroll {

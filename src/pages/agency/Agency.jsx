@@ -35,7 +35,7 @@ const AgencyPartnerShips = () => {
     const countMeInUrl = data?.hero?.countMeInUrl;
 
     return (
-        <section className="partnerships">
+        <section className="partnerships" id="partnerships">
             <Headline
                 lines={['partnerships that paid off']}
                 highlight={'partnerships'}

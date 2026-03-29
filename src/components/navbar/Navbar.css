@@ -110,8 +110,10 @@
     transition: transform 0.2s ease;
 }
 
-.navbar-button-img:hover {
-    transform: scale(1.1);
+@media (hover: hover) {
+    .navbar-button-img:hover {
+        transform: scale(1.1);
+    }
 }
 
 /* Menu backdrop overlay */

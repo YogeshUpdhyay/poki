@@ -24,13 +24,13 @@ export default function Collaborate() {
         <CollabHeadline />
       </div>
       <div className="collabText">
-        We collaborate with agencies on recurring projects
+        we collaborate with agencies on recurring projects
         with partner pricing, and we’re just as excited to
-        take on one-time projects. Whatever you need,
+        take on one-time projects. whatever you need,
         we’ve got you covered.
       </div>
       <div className="collabButtons">
-        <Button text="Let's Start" href={countMeInUrl} />
+        <Button text="let's start" href={countMeInUrl} />
         <Button text={`i'm an agency`} color='green' href="/agency" />
       </div>
     </section>
@@ -79,7 +79,13 @@ function CollabHeadline() {
             onMouseLeave: () => setOpen(false),
           })}
         >
-          <span className="headlineHighlight">let's</span>{isMobile ? <br /> : ' '}collaborate
+          <span className="headlineLineWrapper">
+            <span className="headlineHighlight">let's</span>
+          </span>
+          {' '}
+          <span className="headlineLineWrapper">
+            collaborate
+          </span>
           <img
             src={collaborateCartoon}
             alt="collaborateCartoon"
