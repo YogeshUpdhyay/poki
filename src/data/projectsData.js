@@ -161,6 +161,24 @@ import amigoBuilt1Image from './amigo/built1image.svg';
 import amigoBuilt2Image from './amigo/built2image.svg';
 import amigoBuilt3Image from './amigo/built3image.svg';
 
+// ── Project template images (Briotech) ──────────────────────────────────────
+import briotechProjectCardImg from './briotech/projectcardimage.svg';
+import BriotechHeroCartoon from './briotech/herocartoon.svg?react';
+import briotechWebsiteImage from './briotech/websiteimage.svg';
+import briotechAbout1 from './briotech/about1.svg';
+import briotechAbout2 from './briotech/about2.svg';
+import briotechLogo1 from './briotech/logo1.svg';
+import briotechLogo2 from './briotech/logo2.svg';
+import briotechLogo3 from './briotech/logo3.svg';
+import briotechType1 from './briotech/type1.svg';
+import briotechType2 from './briotech/type2.svg';
+import briotechBIA1 from './briotech/bia1.svg';
+import briotechBIA2 from './briotech/bia2.svg';
+import briotechBIA3 from './briotech/bia3.svg';
+import briotechBIA4 from './briotech/bia4.svg';
+import briotechBIA5 from './briotech/bia5.svg';
+import briotechBIA6 from './briotech/bia6.svg';
+
 // ── Category constants ───────────────────────────────────────────────────
 export const CATEGORIES = {
   WEBSITES: 'websites',
@@ -228,7 +246,7 @@ const projects = [
 
     // About the project section
     about: {
-      text: `lorem ipsum dolor sit amet consectetur. est tempus egestas id id donec eget lacus tempus nibh. orci amet id praesent purus ultrices nisl. sit vulputate aliquam et egestas elementum in praesent. cursus in bibendum lacus quis morbi nisl leo. et mauris urna mauris arcu fusce tincidunt tellus in. enim ullamcorper fames morbi auctor suspendisse faucibus diam euismod arcu.\n\narcu vulputate elementum feugiat posuere gravida sit. arcu vitae vivamus dolor id arcu lacus. leo fermentum enim volutpat faucibus. consectetur neque mauris ultrices diam urna enim.`,
+      text: `We explored multiple directions to find the right balance between minimalism and distinctiveness, ensuring the brand feels premium yet approachable. While the foundation remains sleek and contemporary, subtle design decisions were introduced to give the logo its own personality, making it memorable and expressive without overcomplicating it.\n\n At the core of the brand is a sense of individuality and empowerment. The identity is designed to feel personal, something that resonates with the wearer and reflects the idea that the brand is built for ‘you’. The result is a logo that feels strong, adaptable, and rooted in both performance and self-expression.`,
       images: [about1, about2],
       bgColor: '#EFB5D4',
     },
@@ -963,6 +981,91 @@ const projects = [
     // Built to be seen section
     builtToBeSeen: {
       images: [amigoBuilt1Image, amigoBuilt2Image, amigoBuilt3Image],
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // BRIOTECH — Brand Identity (Website template)
+  // ─────────────────────────────────────────────────────────────────────────
+  {
+    id: 12,
+    slug: 'briotech',
+    title: 'briotech',
+    category: CATEGORIES.BRAND_IDENTITIES,
+    cardImage: briotechProjectCardImg,
+    featured: true,
+    template: 'website',
+    rotation: -4,
+
+    // Hero section
+    hero: {
+      headline: 'briotech',
+      heroText:
+        'a forward-thinking identity for a technology leader. we crafted a visual language that balances technical precision with human-centric design.',
+      buttonLink: '#',
+      tooltipItems: ['brand identity', 'technology'],
+      tooltipColor: 'blue',
+      marqueeItems: ['visual identity', 'brand strategy', 'technical precision', 'ui/ux'],
+      Cartoon: BriotechHeroCartoon,
+      cartoonStyle: {
+        right: '80%',
+        top: '-60%',
+        transform: 'translateY(-50%)',
+        width: '200px',
+      },
+      cartoonMobileStyle: {
+        right: '90%',
+        top: '20%',
+        width: '70.39px',
+        height:96,
+      },
+    },
+
+    // Full-width image below hero
+    websiteImage: briotechWebsiteImage,
+
+    // About the project section
+    about: {
+      text: `we explored a variety of directions to find the perfect synergy between innovation and reliability, ensuring the briotech brand feels both cutting-edge and trustworthy. the foundation is built on clean, geometric lines, but we introduced subtle details that give the identity a unique character and energy without being overly complex.\n\nat the heart of the brand is a commitment to clarity and progress. the identity is designed to be highly adaptable, scaling effortlessly across digital and physical platforms. the final result is a brand that feels strong, modern, and deeply rooted in the philosophy of simple yet powerful technology.`,
+      images: [briotechAbout1, briotechAbout2],
+      bgColor: '#B9DBE8', // Dummy color
+    },
+
+    // Logo variations section
+    logoVariations: {
+      tooltipItems: ['primary mark', 'icon mark', 'monotone'],
+      tooltipColor: 'blue',
+      images: [briotechLogo1, briotechLogo2, briotechLogo3],
+      text: 'a custom-built mark that embodies precision and connectivity. the logo system is designed to be flexible, with a primary mark that stands strong on its own and a set of variations that adapt to any environment.',
+    },
+
+    // Colors section — 5 boxes
+    colors: [
+      { title: 'tech blue', hex: '#2A5C82', bgColor: '#2A5C82', contentColor: 'white' },
+      { title: 'cloud white', hex: '#F0F4F8', bgColor: '#F0F4F8', contentColor: 'black' },
+      { title: 'cyber gray', hex: '#333333', bgColor: '#333333', contentColor: 'white' },
+      { title: 'electric cyan', hex: '#00D1FF', bgColor: '#00D1FF', contentColor: 'black' },
+      { title: 'deep space', hex: '#0A0E14', bgColor: '#0A0E14', contentColor: 'white' },
+    ],
+
+    // Fonts section
+    fonts: {
+      tooltipItems: ['primary font', 'supporting font'],
+      tooltipColor: 'orange',
+      images: [briotechType1, briotechType2],
+      imageLabels: ['primary', 'alternative'],
+    },
+
+    // Brand in action section
+    brandInAction: {
+      images: [
+        briotechBIA1,
+        briotechBIA2,
+        briotechBIA3,
+        briotechBIA4,
+        briotechBIA5,
+        briotechBIA6,
+      ],
     },
   },
 ];
