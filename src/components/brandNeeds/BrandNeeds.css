@@ -58,53 +58,55 @@
    transform: translate(10%, 7%) rotate(8deg);
 }
 
-/* Smoothly scale the blue card on hover while preserving its translate/rotate */
-.offeringCard.green:hover {
-   transform: scale(1.1);
-}
+@media (hover: hover) {
+    /* Smoothly scale the card on hover while preserving its translate/rotate */
+    .offeringCard.green:hover {
+        transform: scale(1.1);
+    }
 
-.offerings:has(.offeringCard.green:hover) .offeringCard.pink {
-  transform: translate(49%, 3%) rotate(-3deg);
-}
+    .offerings:has(.offeringCard.green:hover) .offeringCard.pink {
+        transform: translate(49%, 3%) rotate(-3deg);
+    }
 
-.offerings:has(.offeringCard.green:hover) .offeringCard.blue {
-   transform: translate(10%, 20%) rotate(15deg);
+    .offerings:has(.offeringCard.green:hover) .offeringCard.blue {
+        transform: translate(10%, 20%) rotate(15deg);
+    }
+
+    /* Smoothly scale the card on hover while preserving its translate/rotate */
+    .offeringCard.pink:hover {
+        transform: scale(1.1);
+    }
+
+    .offerings:has(.offeringCard.pink:hover) .offeringCard.blue {
+        transform: translate(30%, 20%) rotate(15deg);
+    }
+
+    .offerings:has(.offeringCard.pink:hover) .offeringCard.green {
+        transform: translate(-35%, 7%) rotate(8deg);
+    }
+
+    /* Smoothly scale the card on hover while preserving its translate/rotate */
+    .offeringCard.blue:hover {
+        transform: scale(1.1);
+    }
+
+    .offerings:has(.offeringCard.blue:hover) .offeringCard.pink {
+        transform: translate(-51%, 3%) rotate(-3deg);
+    }
+
+    .offerings:has(.offeringCard.blue:hover) .offeringCard.green {
+        transform: translate(-15%, 7%) rotate(8deg);
+    }
 }
 
 .offeringCard.pink {
-   background-color: #EFB5D4;
-   transform: translate(-1%, 3%) rotate(-3deg);
-}
-
-/* Smoothly scale the blue card on hover while preserving its translate/rotate */
-.offeringCard.pink:hover {
-   transform: scale(1.1);
-}
-
-.offerings:has(.offeringCard.pink:hover) .offeringCard.blue {
-  transform: translate(30%, 20%) rotate(15deg);
-}
-
-.offerings:has(.offeringCard.pink:hover) .offeringCard.green {
-   transform: translate(-35%, 7%) rotate(8deg);
+    background-color: #EFB5D4;
+    transform: translate(-1%, 3%) rotate(-3deg);
 }
 
 .offeringCard.blue {
-   background-color: #86C9FF;
-   transform: translate(-15%, 20%) rotate(15deg);
-}
-
-/* Smoothly scale the blue card on hover while preserving its translate/rotate */
-.offeringCard.blue:hover {
-   transform: scale(1.1);
-}
-
-.offerings:has(.offeringCard.blue:hover) .offeringCard.pink {
-  transform: translate(-51%, 3%) rotate(-3deg);
-}
-
-.offerings:has(.offeringCard.blue:hover) .offeringCard.green {
-   transform: translate(-15%, 7%) rotate(8deg);
+    background-color: #86C9FF;
+    transform: translate(-15%, 20%) rotate(15deg);
 }
 
 .offeringCardTitle {
@@ -281,41 +283,43 @@
         transform: translate(0%, 20%) rotate(15deg);
     }
 
-    /* Keep hover effects on tablet */
-    .offeringCard.green:hover {
-        transform: scale(1.1);
-    }
+    @media (hover: hover) {
+        /* Keep hover effects on tablet */
+        .offeringCard.green:hover {
+            transform: scale(1.1);
+        }
 
-    .offeringCard.pink:hover {
-        transform: scale(1.1);
-    }
+        .offeringCard.pink:hover {
+            transform: scale(1.1);
+        }
 
-    .offeringCard.blue:hover {
-        transform: scale(1.1);
-    }
+        .offeringCard.blue:hover {
+            transform: scale(1.1);
+        }
 
-    .offerings:has(.offeringCard.green:hover) .offeringCard.pink {
-        transform: translate(49%, 3%) rotate(-3deg);
-    }
+        .offerings:has(.offeringCard.green:hover) .offeringCard.pink {
+            transform: translate(49%, 3%) rotate(-3deg);
+        }
 
-    .offerings:has(.offeringCard.green:hover) .offeringCard.blue {
-        transform: translate(10%, 20%) rotate(15deg);
-    }
+        .offerings:has(.offeringCard.green:hover) .offeringCard.blue {
+            transform: translate(10%, 20%) rotate(15deg);
+        }
 
-    .offerings:has(.offeringCard.pink:hover) .offeringCard.blue {
-        transform: translate(30%, 20%) rotate(15deg);
-    }
+        .offerings:has(.offeringCard.pink:hover) .offeringCard.blue {
+            transform: translate(30%, 20%) rotate(15deg);
+        }
 
-    .offerings:has(.offeringCard.pink:hover) .offeringCard.green {
-        transform: translate(-35%, 7%) rotate(8deg);
-    }
+        .offerings:has(.offeringCard.pink:hover) .offeringCard.green {
+            transform: translate(-35%, 7%) rotate(8deg);
+        }
 
-    .offerings:has(.offeringCard.blue:hover) .offeringCard.pink {
-        transform: translate(-51%, 3%) rotate(-3deg);
-    }
+        .offerings:has(.offeringCard.blue:hover) .offeringCard.pink {
+            transform: translate(-51%, 3%) rotate(-3deg);
+        }
 
-    .offerings:has(.offeringCard.blue:hover) .offeringCard.green {
-        transform: translate(-15%, 7%) rotate(8deg);
+        .offerings:has(.offeringCard.blue:hover) .offeringCard.green {
+            transform: translate(-15%, 7%) rotate(8deg);
+        }
     }
 
     .offeringCardSvg {

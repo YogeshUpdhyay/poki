@@ -159,7 +159,7 @@
 }
 
 /* Hover Effects - Sibling Push Animation (Desktop Only) */
-@media (min-width: 769px) {
+@media (min-width: 769px) and (hover: hover) {
     .partnerCard:hover {
         z-index: 20;
         transform: rotate(0deg) scale(1.05) !important;
@@ -302,37 +302,39 @@
     --item-rotation: -2deg;
 }
 
-/* Neighbor Push Logic - Move items away from the hovered one */
-.advList:has(.advListItem:nth-child(1):hover) .advListItem:nth-child(2) {
-    translate: 0 15px;
-}
+@media (hover: hover) {
+    /* Neighbor Push Logic - Move items away from the hovered one */
+    .advList:has(.advListItem:nth-child(1):hover) .advListItem:nth-child(2) {
+        translate: 0 15px;
+    }
 
-.advList:has(.advListItem:nth-child(2):hover) .advListItem:nth-child(1) {
-    translate: 0 -15px;
-}
+    .advList:has(.advListItem:nth-child(2):hover) .advListItem:nth-child(1) {
+        translate: 0 -15px;
+    }
 
-.advList:has(.advListItem:nth-child(2):hover) .advListItem:nth-child(3) {
-    translate: 0 15px;
-}
+    .advList:has(.advListItem:nth-child(2):hover) .advListItem:nth-child(3) {
+        translate: 0 15px;
+    }
 
-.advList:has(.advListItem:nth-child(3):hover) .advListItem:nth-child(2) {
-    translate: 0 -15px;
-}
+    .advList:has(.advListItem:nth-child(3):hover) .advListItem:nth-child(2) {
+        translate: 0 -15px;
+    }
 
-.advList:has(.advListItem:nth-child(3):hover) .advListItem:nth-child(4) {
-    translate: 0 15px;
-}
+    .advList:has(.advListItem:nth-child(3):hover) .advListItem:nth-child(4) {
+        translate: 0 15px;
+    }
 
-.advList:has(.advListItem:nth-child(4):hover) .advListItem:nth-child(3) {
-    translate: 0 -15px;
-}
+    .advList:has(.advListItem:nth-child(4):hover) .advListItem:nth-child(3) {
+        translate: 0 -15px;
+    }
 
-.advList:has(.advListItem:nth-child(4):hover) .advListItem:nth-child(5) {
-    translate: 0 15px;
-}
+    .advList:has(.advListItem:nth-child(4):hover) .advListItem:nth-child(5) {
+        translate: 0 15px;
+    }
 
-.advList:has(.advListItem:nth-child(5):hover) .advListItem:nth-child(4) {
-    translate: 0 -15px;
+    .advList:has(.advListItem:nth-child(5):hover) .advListItem:nth-child(4) {
+        translate: 0 -15px;
+    }
 }
 
 .agencyBg {

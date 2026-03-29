@@ -512,37 +512,39 @@
     margin-top: 60px;
 }
 
-/* Hover Effects - Sibling Push Animation */
-#projectMore .phoneMockupCard:hover {
-    z-index: 20;
-    transform: rotate(0deg) scale(1.08) !important;
-}
+@media (hover: hover) {
+    /* Hover Effects - Sibling Push Animation */
+    #projectMore .phoneMockupCard:hover {
+        z-index: 20;
+        transform: rotate(0deg) scale(1.08) !important;
+    }
 
-/* First card (left) hover - push others right */
-.moreWorkGrid:has(.phoneMockupCard:nth-child(1):hover) .phoneMockupCard:nth-child(2) {
-    transform: translate(40px, 0) rotate(5deg);
-}
+    /* First card (left) hover - push others right */
+    .moreWorkGrid:has(.phoneMockupCard:nth-child(1):hover) .phoneMockupCard:nth-child(2) {
+        transform: translate(40px, 0) rotate(5deg);
+    }
 
-.moreWorkGrid:has(.phoneMockupCard:nth-child(1):hover) .phoneMockupCard:nth-child(3) {
-    transform: translate(40px, 0) rotate(-4deg);
-}
+    .moreWorkGrid:has(.phoneMockupCard:nth-child(1):hover) .phoneMockupCard:nth-child(3) {
+        transform: translate(40px, 0) rotate(-4deg);
+    }
 
-/* Second card (middle) hover - push left card left, right card right */
-.moreWorkGrid:has(.phoneMockupCard:nth-child(2):hover) .phoneMockupCard:nth-child(1) {
-    transform: translate(-40px, 0) rotate(-8deg);
-}
+    /* Second card (middle) hover - push left card left, right card right */
+    .moreWorkGrid:has(.phoneMockupCard:nth-child(2):hover) .phoneMockupCard:nth-child(1) {
+        transform: translate(-40px, 0) rotate(-8deg);
+    }
 
-.moreWorkGrid:has(.phoneMockupCard:nth-child(2):hover) .phoneMockupCard:nth-child(3) {
-    transform: translate(40px, 0) rotate(-4deg);
-}
+    .moreWorkGrid:has(.phoneMockupCard:nth-child(2):hover) .phoneMockupCard:nth-child(3) {
+        transform: translate(40px, 0) rotate(-4deg);
+    }
 
-/* Third card (right) hover - push others left */
-.moreWorkGrid:has(.phoneMockupCard:nth-child(3):hover) .phoneMockupCard:nth-child(1) {
-    transform: translate(-40px, 0) rotate(-8deg);
-}
+    /* Third card (right) hover - push others left */
+    .moreWorkGrid:has(.phoneMockupCard:nth-child(3):hover) .phoneMockupCard:nth-child(1) {
+        transform: translate(-40px, 0) rotate(-8deg);
+    }
 
-.moreWorkGrid:has(.phoneMockupCard:nth-child(3):hover) .phoneMockupCard:nth-child(2) {
-    transform: translate(-40px, 0) rotate(5deg);
+    .moreWorkGrid:has(.phoneMockupCard:nth-child(3):hover) .phoneMockupCard:nth-child(2) {
+        transform: translate(-40px, 0) rotate(5deg);
+    }
 }
 
 #projectMore .phoneMockupImage {

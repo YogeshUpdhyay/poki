@@ -22,8 +22,14 @@
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.project-card:hover .project-card__image {
-  transform: scale(1.1);
+@media (hover: hover) {
+  .project-card:hover .project-card__image {
+    transform: scale(1.1);
+  }
+
+  .project-card:hover .project-card__overlay {
+    opacity: 1;
+  }
 }
 
 .project-card__overlay {
@@ -37,9 +43,7 @@
   transition: opacity 0.3s ease;
 }
 
-.project-card:hover .project-card__overlay {
-  opacity: 1;
-}
+
 
 .project-card__content {
   color: var(--color-white);

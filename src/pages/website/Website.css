@@ -382,37 +382,39 @@
     z-index: 2;
 }
 
-/* Hover Effects */
-.moreWorkCard:hover {
-    z-index: 20;
-    transform: rotate(0deg) scale(1.08) !important;
-}
+@media (hover: hover) {
+    /* Hover Effects */
+    .moreWorkCard:hover {
+        z-index: 20;
+        transform: rotate(0deg) scale(1.08) !important;
+    }
 
-/* First card hover - push others right */
-.moreWorkRow:has(.moreWorkCard:nth-child(1):hover) .moreWorkCard:nth-child(2) {
-    translate: 60px 0;
-}
+    /* First card hover - push others right */
+    .moreWorkRow:has(.moreWorkCard:nth-child(1):hover) .moreWorkCard:nth-child(2) {
+        translate: 60px 0;
+    }
 
-.moreWorkRow:has(.moreWorkCard:nth-child(1):hover) .moreWorkCard:nth-child(3) {
-    translate: 60px 0;
-}
+    .moreWorkRow:has(.moreWorkCard:nth-child(1):hover) .moreWorkCard:nth-child(3) {
+        translate: 60px 0;
+    }
 
-/* Second card hover - push left card left, right card right */
-.moreWorkRow:has(.moreWorkCard:nth-child(2):hover) .moreWorkCard:nth-child(1) {
-    translate: -60px 0;
-}
+    /* Second card hover - push left card left, right card right */
+    .moreWorkRow:has(.moreWorkCard:nth-child(2):hover) .moreWorkCard:nth-child(1) {
+        translate: -60px 0;
+    }
 
-.moreWorkRow:has(.moreWorkCard:nth-child(2):hover) .moreWorkCard:nth-child(3) {
-    translate: 60px 0;
-}
+    .moreWorkRow:has(.moreWorkCard:nth-child(2):hover) .moreWorkCard:nth-child(3) {
+        translate: 60px 0;
+    }
 
-/* Third card hover - push others left */
-.moreWorkRow:has(.moreWorkCard:nth-child(3):hover) .moreWorkCard:nth-child(1) {
-    translate: -60px 0;
-}
+    /* Third card hover - push others left */
+    .moreWorkRow:has(.moreWorkCard:nth-child(3):hover) .moreWorkCard:nth-child(1) {
+        translate: -60px 0;
+    }
 
-.moreWorkRow:has(.moreWorkCard:nth-child(3):hover) .moreWorkCard:nth-child(2) {
-    translate: -60px 0;
+    .moreWorkRow:has(.moreWorkCard:nth-child(3):hover) .moreWorkCard:nth-child(2) {
+        translate: -60px 0;
+    }
 }
 
 .moreWorkCardImage {
@@ -791,9 +793,11 @@
         translate: 0 0 !important;
     }
 
-    .moreWorkRow:has(.moreWorkCard:hover) .moreWorkCard {
-        translate: 0 0 !important;
-        transform: rotate(0deg) !important;
+    @media (hover: hover) {
+        .moreWorkRow:has(.moreWorkCard:hover) .moreWorkCard {
+            translate: 0 0 !important;
+            transform: rotate(0deg) !important;
+        }
     }
 
     .moreWorkCardImage {

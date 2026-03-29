@@ -88,12 +88,14 @@
     color: var(--color-white);
 }
 
-.categoryPill:hover {
-    cursor: url('/tooltip.svg'), pointer;
-}
+@media (hover: hover) {
+    .categoryPill:hover {
+        cursor: url('/tooltip.svg'), pointer;
+    }
 
-.categoryPill:not(.active):hover {
-    background-color: rgba(239, 235, 231, 0.2);
+    .categoryPill:not(.active):hover {
+        background-color: rgba(239, 235, 231, 0.2);
+    }
 }
 
 /* Project Showcase Grid */
@@ -146,37 +148,39 @@
     z-index: 2;
 }
 
-/* Hover Effects - Sibling Push Animation */
-.phoneMockupCard:hover {
-    z-index: 20;
-    transform: rotate(0deg) scale(1.08) !important;
-}
+@media (hover: hover) {
+    /* Hover Effects - Sibling Push Animation */
+    .phoneMockupCard:hover {
+        z-index: 20;
+        transform: rotate(0deg) scale(1.08) !important;
+    }
 
-/* First card (left) hover - push others right */
-.projectRow:has(.phoneMockupCard:nth-child(1):hover) .phoneMockupCard:nth-child(2) {
-    translate: 60px 0;
-}
+    /* First card (left) hover - push others right */
+    .projectRow:has(.phoneMockupCard:nth-child(1):hover) .phoneMockupCard:nth-child(2) {
+        translate: 60px 0;
+    }
 
-.projectRow:has(.phoneMockupCard:nth-child(1):hover) .phoneMockupCard:nth-child(3) {
-    translate: 60px 0;
-}
+    .projectRow:has(.phoneMockupCard:nth-child(1):hover) .phoneMockupCard:nth-child(3) {
+        translate: 60px 0;
+    }
 
-/* Second card (middle) hover - push left card left, right card right */
-.projectRow:has(.phoneMockupCard:nth-child(2):hover) .phoneMockupCard:nth-child(1) {
-    translate: -60px 0;
-}
+    /* Second card (middle) hover - push left card left, right card right */
+    .projectRow:has(.phoneMockupCard:nth-child(2):hover) .phoneMockupCard:nth-child(1) {
+        translate: -60px 0;
+    }
 
-.projectRow:has(.phoneMockupCard:nth-child(2):hover) .phoneMockupCard:nth-child(3) {
-    translate: 60px 0;
-}
+    .projectRow:has(.phoneMockupCard:nth-child(2):hover) .phoneMockupCard:nth-child(3) {
+        translate: 60px 0;
+    }
 
-/* Third card (right) hover - push others left */
-.projectRow:has(.phoneMockupCard:nth-child(3):hover) .phoneMockupCard:nth-child(1) {
-    translate: -60px 0;
-}
+    /* Third card (right) hover - push others left */
+    .projectRow:has(.phoneMockupCard:nth-child(3):hover) .phoneMockupCard:nth-child(1) {
+        translate: -60px 0;
+    }
 
-.projectRow:has(.phoneMockupCard:nth-child(3):hover) .phoneMockupCard:nth-child(2) {
-    translate: -60px 0;
+    .projectRow:has(.phoneMockupCard:nth-child(3):hover) .phoneMockupCard:nth-child(2) {
+        translate: -60px 0;
+    }
 }
 
 .phoneMockupImage {
