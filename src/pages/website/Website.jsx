@@ -344,6 +344,7 @@ const WebsiteHero = ({ project }) => {
     });
 
     const [showButtons, setShowButtons] = useState(false);
+    const [showText, setShowText] = useState(false);
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
     useEffect(() => {
@@ -355,7 +356,11 @@ const WebsiteHero = ({ project }) => {
     useEffect(() => {
         if (inView && isRevealed) {
             const timer = setTimeout(() => setShowButtons(true), 1000);
-            return () => clearTimeout(timer);
+            const textTimer = setTimeout(() => setShowText(true), 1200);
+            return () => {
+                clearTimeout(timer);
+                clearTimeout(textTimer);
+            };
         }
     }, [inView, isRevealed]);
 
@@ -403,8 +408,8 @@ const WebsiteHero = ({ project }) => {
             <motion.p
                 className="websiteHeroText"
                 initial={{ opacity: 0, y: 30 }}
-                animate={inView && isRevealed ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                transition={{ duration: 0.8, delay: 1.5, ease: 'easeOut' }}
+                animate={showText ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
             >
                 {project.hero.heroText}
             </motion.p>
