@@ -161,7 +161,7 @@ const ProjectHero = ({ project }) => {
 
     useEffect(() => {
         if (inView && isRevealed) {
-            const timer = setTimeout(() => setShowButtons(true), 2000);
+            const timer = setTimeout(() => setShowButtons(true), 1000);
             return () => clearTimeout(timer);
         }
     }, [inView, isRevealed]);

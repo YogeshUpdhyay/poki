@@ -354,7 +354,7 @@ const WebsiteHero = ({ project }) => {
 
     useEffect(() => {
         if (inView && isRevealed) {
-            const timer = setTimeout(() => setShowButtons(true), 2000);
+            const timer = setTimeout(() => setShowButtons(true), 1000);
             return () => clearTimeout(timer);
         }
     }, [inView, isRevealed]);
@@ -391,8 +391,8 @@ const WebsiteHero = ({ project }) => {
                     ))}
                 </motion.div>
                 {project.hero.Cartoon && (
-                    <motion.div 
-                        className="websiteHeroCartoon" 
+                    <motion.div
+                        className="websiteHeroCartoon"
                         variants={wordVariants}
                         style={isMobile ? project.hero.cartoonMobileStyle : project.hero.cartoonStyle}
                     >
