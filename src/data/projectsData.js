@@ -542,7 +542,7 @@ const projects = [
     id: 4,
     slug: 'examon',
     title: 'examon',
-    category: CATEGORIES.WEBSITES,
+    category: CATEGORIES.PRODUCTS_APPS,
     cardImage: examonProjectCardImg,
     featured: true,
     template: 'project',
@@ -1129,7 +1129,7 @@ const projects = [
         right: '90%',
         top: '20%',
         width: '70.39px',
-        height:96,
+        height: 96,
       },
     },
 
