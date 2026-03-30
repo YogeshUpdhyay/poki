@@ -121,7 +121,7 @@ function VisitUsLink() {
         })}
       >
         visit us
-        <svg width="86" height="6" viewBox="0 0 86 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="visitUsUnderline" width="86" height="6" viewBox="0 0 86 6" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M1.50015 3.34053C31.1592 -0.211095 110.651 2.04784 75.8509 4.5" stroke="#EFEBE7" stroke-width="3" stroke-linecap="round" />
         </svg>
       </a>

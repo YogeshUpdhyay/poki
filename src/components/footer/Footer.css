@@ -198,6 +198,10 @@ footer {
         bottom: 10%;
         display: block;
     }
+
+    .visitUsUnderline {
+        width: 60px;
+    }
 }
 
 @media (max-width: 576px) {
