@@ -9,7 +9,7 @@
     left: 0;
     right: 0;
     height: var(--navbar-height);
-    z-index: 10000;
+    z-index: 21000; /* Higher than menu overlay */
     background: transparent;
     width: 100%;
     box-sizing: border-box;
@@ -28,16 +28,17 @@
     color: var(--color-black);
 }
 
-.navLinks {
+.navLinks-desktop {
     display: flex;
     gap: 36px;
     color: inherit;
     justify-self: start;
 }
 
-.navbar .navLinks a {
+.navbar .navLinks-desktop a {
     color: inherit;
     text-decoration: none;
+    font-weight: 500;
 }
 
 .logo-link {
@@ -77,8 +78,13 @@
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 10010;
+    z-index: 20010; /* Above overlay */
     justify-self: start;
+}
+
+/* Ensure icons are white when menu is open */
+.navbar.menu-open-active .hamburger span {
+    background-color: var(--color-white) !important;
 }
 
 .hamburger span {
@@ -105,8 +111,12 @@
 
 /* Mobile button - hidden by default */
 .navbar-cta-mobile {
-    display: none;
-    justify-self: end;
+    z-index: 21010; /* Above overlay */
+}
+
+/* Force mobile CTA to show when menu is open */
+.navbar-cta-mobile.menu-open-cta {
+    display: block !important;
 }
 
 .navbar-button-img {
@@ -122,25 +132,92 @@
     }
 }
 
-/* Menu backdrop overlay */
-.menu-backdrop {
+/* Full-Screen Menu Overlay */
+.menu-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1004;
-    animation: fadeIn 0.3s ease;
+    height: 100vh;
+    height: 80vh;
+    height: 80dvh;
+    background-color: var(--color-violet);
+    z-index: 20000;
+    display: flex;
+    flex-direction: column;
+    padding: 64px 32px 0; /* More top padding for navbar clearance */
+    color: var(--color-white);
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-bottom-left-radius: 40px; /* Modern rounded look */
+    border-bottom-right-radius: 40px;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
+.menu-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    padding: 40px 0; 
+}
 
-    to {
-        opacity: 1;
+.menu-content a {
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: clamp(38px, 8vw, 48px);
+    font-weight: 700;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: -0.02em;
+}
+
+@media (hover: hover) {
+    .menu-content a:hover {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+.menu-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+    padding-bottom: 60px; /* Large bottom clearance */
+    margin-top: auto; 
+    flex-shrink: 0;
+}
+
+.menu-socials {
+    display: flex;
+    gap: 48px;
+}
+
+.menu-socials a {
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+.menu-footer-svg {
+    width: 85%;
+    max-width: 440px;
+    height: auto;
+    object-fit: contain;
+    overflow: visible; /* Allow characters to render fully */
+    opacity: 1;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 576px) {
+    .menu-footer-svg {
+        max-width: 320px;
     }
 }
 
@@ -154,34 +231,9 @@
         display: flex;
     }
 
-    /* Hide desktop nav links by default, show on mobile menu open */
-    .navLinks {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 280px;
-        height: 100vh;
-        height: 100dvh;
-        /* iOS Safari fix — nav must fill screen */
-        background-color: var(--background-dark);
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 32px;
-        padding: 100px 32px 32px;
-        transition: left 0.3s ease;
-        z-index: 1005;
-        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .navLinks.open {
-        left: 0;
-    }
-
-    .navLinks a {
-        color: var(--color-white);
-        font-size: 18px;
-        width: 100%;
-        padding: 8px 0;
+    /* Hide desktop nav links */
+    .navLinks-desktop {
+        display: none;
     }
 
     /* Adjust navbar grid for mobile layout */
