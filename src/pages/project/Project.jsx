@@ -151,6 +151,7 @@ const ProjectHero = ({ project }) => {
     });
 
     const [showButtons, setShowButtons] = useState(false);
+    const [showText, setShowText] = useState(false);
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
     useEffect(() => {
@@ -161,8 +162,12 @@ const ProjectHero = ({ project }) => {
 
     useEffect(() => {
         if (inView && isRevealed) {
-            const timer = setTimeout(() => setShowButtons(true), 2000);
-            return () => clearTimeout(timer);
+            const timer = setTimeout(() => setShowButtons(true), 1000);
+            const textTimer = setTimeout(() => setShowText(true), 1200);
+            return () => {
+                clearTimeout(timer);
+                clearTimeout(textTimer);
+            };
         }
     }, [inView, isRevealed]);
 
@@ -198,8 +203,8 @@ const ProjectHero = ({ project }) => {
             <motion.p
                 className="projectHeroText"
                 initial={{ opacity: 0, y: 30 }}
-                animate={inView && isRevealed ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                transition={{ duration: 0.8, delay: 1.5, ease: 'easeOut' }}
+                animate={showText ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
             >
                 {project.hero.heroText}
             </motion.p>

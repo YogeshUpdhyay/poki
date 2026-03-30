@@ -15,21 +15,21 @@ function AboutHero() {
 
   useEffect(() => {
     if (inView && isRevealed) {
-      const timer = setTimeout(() => setShowButton(true), 2000);
+      const timer = setTimeout(() => setShowButton(true), 1000);
       return () => clearTimeout(timer);
     }
   }, [inView, isRevealed]);
 
   return (
     <section className="aboutHero" data-navbar="dark" ref={ref}>
-        <AboutHeadline />
-        <div className="aboutHeroButton">
-            <Button 
-              text='the math checks out' 
-              color='green' 
-              className={showButton ? 'heroButtonPop' : ''}
-            />
-        </div>
+      <AboutHeadline />
+      <div className="aboutHeroButton">
+        <Button
+          text='the math checks out'
+          color='green'
+          className={showButton ? 'heroButtonPop' : ''}
+        />
+      </div>
     </section>
   )
 }

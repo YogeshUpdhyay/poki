@@ -80,7 +80,13 @@
     position: relative;
     margin-left: 26px;
     z-index: 30;
+    /* Custom cursor fix — cursor: url('/tooltip.svg'), pointer; */
+    cursor: url('/tooltip.svg'), pointer !important;
     /* ensure cards can overlap elements below */
+}
+
+.projectCard * {
+    cursor: inherit !important;
 }
 
 .projectCardImage {

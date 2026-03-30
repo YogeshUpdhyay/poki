@@ -39,7 +39,7 @@ export default function Team() {
   const lines = ['a crew of 6', 'dominating the', 'whole world']
   const highlight = 'dominating'
   const Separator = (
-    <svg style={{ margin: '0 3px 0 3px' }} width="2" height="10" viewBox="0 0 2 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg style={{ margin: '0 6px 0 6px' }} width="2" height="10" viewBox="0 0 2 10" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="1.5" width="10" height="1.5" rx="0.75" transform="rotate(90 1.5 0)" fill="#000000ff" />
     </svg>
   );
@@ -265,7 +265,7 @@ const Teammates = ({ teammates = {} }) => {
     Teammate6Svg,
   ]
 
-  const rOverrides = [0.3, 0.8, 0.55, 0.5, 0.3, 0.55]
+  const rOverrides = [0.3, 0.65, 0.55, 0.5, 0.3, 0.55]
 
   // Ensure we have exactly six items; read numeric keys 1..6 from the object
   const items = [1, 2, 3, 4, 5, 6].map(i => teammates[i] || { image: undefined, tooltip: '', borderRadius: undefined });
@@ -385,7 +385,7 @@ const TeammateCard = ({
         ref={cardRef}
       >
         <div className="teammateImageWrap">
-          <img src={imageSrc} alt="teammateImage" className="teammateCardImage" />
+          <img src={imageSrc} alt="teammateImage" className="teammateCardImage" loading="lazy" />
           <img
             src={svgSrc}
             alt="teammateSvg"
