@@ -385,7 +385,7 @@ const TeammateCard = ({
         ref={cardRef}
       >
         <div className="teammateImageWrap">
-          <img src={imageSrc} alt="teammateImage" className="teammateCardImage" />
+          <img src={imageSrc} alt="teammateImage" className="teammateCardImage" loading="lazy" />
           <img
             src={svgSrc}
             alt="teammateSvg"

@@ -1,6 +1,8 @@
 import './Hero.css'
 import heroBackgroundMedia from '../../assets/homepage_video.mp4'
+import heroBackground from '../../assets/imgs/heroBackground.png'
 import heroCartoon from '../../assets/imgs/heroCartoon.svg'
+import heroOverlay from '../../assets/hero_overlay.svg'
 import yellowStar from '../../assets/imgs/stars/yellow.svg'
 import AnimatedSvgLine from '../common/animatedSvgLine/animatedSvgLine'
 import HeroUnderline from "../../assets/underlines/heroUnderline.svg?react";
@@ -54,7 +56,8 @@ function Hero() {
           muted 
           loop 
           playsInline 
-          preload="auto"
+          preload="metadata"
+          poster={heroBackground}
           onLoadedData={(e) => {
             console.log('Hero Video Loaded Data');
             e.target.play().catch(err => console.error('Video Play Error:', err));
@@ -68,6 +71,7 @@ function Hero() {
           alt="heroBackgroundMedia" 
         />
       )}
+      <img src={heroOverlay} alt="" className="heroOverlay" />
       <div className='heroHeadline'>
         <HeroHeadline lines={lines} highlight={highlight}/>
       </div>

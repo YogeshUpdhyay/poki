@@ -127,7 +127,7 @@ function ProjectCard({ title, image, alt, slug }) {
 
   return (
     <NavLink to={`/work/${slug}`} className="projectCard" style={{ textDecoration: 'none' }}>
-      <img src={image} alt={alt || "projectCardImage"} className="projectCardImage" />
+      <img src={image} alt={alt || "projectCardImage"} className="projectCardImage" loading="lazy" />
       <div className="projectCardTitle">{title}</div>
     </NavLink>
   )
