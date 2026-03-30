@@ -294,8 +294,22 @@ const WebsiteAbout = ({ project }) => {
                 ))}
             </p>
             <div className="aboutImages">
-                {aboutImages[0] && <Card image={aboutImages[0]} style={{ width: '643px', height: '680px' }} />}
-                {aboutImages[1] && <Card image={aboutImages[1]} style={{ width: '643px', height: '680px' }} svgText='explorations' svgTop='-8%' svgRight='5%' svgFill='violet' />}
+                {aboutImages[0] && (
+                    <Card
+                        image={aboutImages[0]}
+                        style={{ width: '643px', height: '680px' }}
+                    />
+                )}
+                {aboutImages[1] && (
+                    <Card
+                        image={aboutImages[1]}
+                        style={{ width: '643px', height: '680px' }}
+                        svgText={about.svgText}
+                        svgTop={about.svgTop}
+                        svgRight={about.svgRight}
+                        svgFill={about.svgFill}
+                    />
+                )}
             </div>
             <svg
                 className="websiteAboutSvg"

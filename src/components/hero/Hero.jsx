@@ -1,11 +1,11 @@
 import './Hero.css'
-import heroBackgroundMedia from '../../assets/imgs/heroBackground.png'
+import heroBackgroundMedia from '../../assets/homepage_video.mp4'
 import heroCartoon from '../../assets/imgs/heroCartoon.svg'
 import yellowStar from '../../assets/imgs/stars/yellow.svg'
 import AnimatedSvgLine from '../common/animatedSvgLine/animatedSvgLine'
 import HeroUnderline from "../../assets/underlines/heroUnderline.svg?react";
 import { motion } from 'framer-motion';
-import { Headline, letterVariants, wordVariants } from '../common/headline/Headline';
+import { Headline, wordVariants } from '../common/headline/Headline';
 import { useCms } from '../../utils/context'
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from 'react'
@@ -38,15 +38,36 @@ function Hero() {
   
   const highlight = heroData.highlight || 'sharper'
   const backgroundSrc = heroData.backgroundMedia || heroBackgroundMedia
-  const countMeInUrl = heroData.countMeInUrl || '#'
+  // Robust check for various video formats and Vite-specific URL patterns
+  const isVideo = typeof backgroundSrc === 'string' && 
+                 (/\.(mp4|webm|ogg|mov)$/i.test(backgroundSrc.split('?')[0]) || 
+                  backgroundSrc.includes('video'));
 
   return (
     <div className="hero">
-      <img 
-        className="heroBackgroundMedia" 
-        src={backgroundSrc} 
-        alt="heroBackgroundMedia" 
-      />
+      {isVideo ? (
+        <video 
+          key={backgroundSrc}
+          className="heroBackgroundMedia" 
+          src={backgroundSrc} 
+          autoPlay 
+          muted 
+          loop 
+          playsInline 
+          preload="auto"
+          onLoadedData={(e) => {
+            console.log('Hero Video Loaded Data');
+            e.target.play().catch(err => console.error('Video Play Error:', err));
+          }}
+          onError={(e) => console.error('Hero Video Error:', e)}
+        />
+      ) : (
+        <img 
+          className="heroBackgroundMedia" 
+          src={backgroundSrc} 
+          alt="heroBackgroundMedia" 
+        />
+      )}
       <div className='heroHeadline'>
         <HeroHeadline lines={lines} highlight={highlight}/>
       </div>
@@ -58,7 +79,7 @@ function Hero() {
 
 function HeroHeadline({lines, highlight}) {
   const { isRevealed } = usePreloader();
-  const { ref, inView, entry } = useInView({
+  const { ref, inView } = useInView({
     /* Optional options */
     threshold: 0.1,
     triggerOnce: true,
@@ -106,4 +127,3 @@ function HeroHeadline({lines, highlight}) {
 }
 
 export default Hero
-

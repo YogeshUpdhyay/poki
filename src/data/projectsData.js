@@ -161,6 +161,132 @@ import amigoBuilt1Image from './amigo/built1image.svg';
 import amigoBuilt2Image from './amigo/built2image.svg';
 import amigoBuilt3Image from './amigo/built3image.svg';
 
+// ── Project template images (Briotech) ──────────────────────────────────────
+import briotechProjectCardImg from './briotech/projectcardimage.svg';
+import BriotechHeroCartoon from './briotech/herocartoon.svg?react';
+import briotechWebsiteImage from './briotech/websiteimage.svg';
+import briotechAbout1 from './briotech/about1.svg';
+import briotechAbout2 from './briotech/about2.svg';
+import briotechLogo1 from './briotech/logo1.svg';
+import briotechLogo2 from './briotech/logo2.svg';
+import briotechLogo3 from './briotech/logo3.svg';
+import briotechType1 from './briotech/type1.svg';
+import briotechType2 from './briotech/type2.svg';
+import briotechBIA1 from './briotech/bia1.svg';
+import briotechBIA2 from './briotech/bia2.svg';
+import briotechBIA3 from './briotech/bia3.svg';
+import briotechBIA4 from './briotech/bia4.svg';
+import briotechBIA5 from './briotech/bia5.svg';
+import briotechBIA6 from './briotech/bia6.svg';
+
+// ── Project template images (Biddle) ──────────────────────────────────────
+import biddleProjectCardImg from './biddle/projectcardimage.svg';
+import BiddleHeroCartoon from './biddle/herocartoon.svg?react';
+import biddleWebsiteImage from './biddle/websiteimage.svg';
+import biddleAbout1 from './biddle/about1.svg';
+import biddleAbout2 from './biddle/about2.svg';
+import biddleLogo1 from './biddle/logo1.svg';
+import biddleLogo2 from './biddle/logo2.svg';
+import biddleLogo3 from './biddle/logo3.svg';
+import biddleType1 from './biddle/type1.svg';
+import biddleType2 from './biddle/type2.svg';
+import biddleBIA1 from './biddle/bia1.svg';
+import biddleBIA2 from './biddle/bia2.svg';
+import biddleBIA3 from './biddle/bia3.svg';
+import biddleBIA4 from './biddle/bia4.svg';
+import biddleBIA5 from './biddle/bia5.svg';
+import biddleBIA6 from './biddle/bia6.svg';
+
+// ── Project template images (TAG Fundraising) ──────────────────────────────────────
+import tagProjectCardImg from './tag-fundraising-brand/projectcardimage.svg';
+import TagHeroCartoon from './tag-fundraising-brand/herocartoon.svg?react';
+import tagWebsiteImage from './tag-fundraising-brand/websiteimage.svg';
+import tagAbout1 from './tag-fundraising-brand/about1.svg';
+import tagAbout2 from './tag-fundraising-brand/about2.svg';
+import tagLogo1 from './tag-fundraising-brand/logo1.svg';
+import tagLogo2 from './tag-fundraising-brand/logo2.svg';
+import tagLogo3 from './tag-fundraising-brand/logo3.svg';
+import tagType1 from './tag-fundraising-brand/type1.svg';
+import tagType2 from './tag-fundraising-brand/type2.svg';
+import tagBIA1 from './tag-fundraising-brand/bia1.svg';
+import tagBIA2 from './tag-fundraising-brand/bia2.svg';
+import tagBIA3 from './tag-fundraising-brand/bia3.svg';
+import tagBIA4 from './tag-fundraising-brand/bia4.svg';
+import tagBIA5 from './tag-fundraising-brand/bia5.svg';
+import tagBIA6 from './tag-fundraising-brand/bia6.svg';
+
+// ── Project template images (Basemynt) ──────────────────────────────────────
+import basemyntProjectCardImg from './basemynt/projectcardimage.svg';
+import BasemyntHeroCartoon from './basemynt/herocartoon.svg?react';
+import basemyntWebsiteImage from './basemynt/websiteimage.svg';
+import basemyntAbout1 from './basemynt/about1.svg';
+import basemyntAbout2 from './basemynt/about2.svg';
+import basemyntLogo1 from './basemynt/logo1.svg';
+import basemyntLogo2 from './basemynt/logo2.svg';
+import basemyntLogo3 from './basemynt/logo3.svg';
+import basemyntType1 from './basemynt/type1.svg';
+import basemyntType2 from './basemynt/type2.svg';
+import basemyntBIA1 from './basemynt/bia1.svg';
+import basemyntBIA2 from './basemynt/bia2.svg';
+import basemyntBIA3 from './basemynt/bia3.svg';
+import basemyntBIA4 from './basemynt/bia4.svg';
+import basemyntBIA5 from './basemynt/bia5.svg';
+import basemyntBIA6 from './basemynt/bia6.svg';
+
+// ── Project template images (Howls) ──────────────────────────────────────
+import howlsProjectCardImg from './howls/projectcardimage.svg';
+import HowlsHeroCartoon from './howls/herocartoon.svg?react';
+import howlsWebsiteImage from './howls/websiteimage.svg';
+import howlsAbout1 from './howls/about1.svg';
+import howlsAbout2 from './howls/about2.svg';
+import howlsLogo1 from './howls/logo1.svg';
+import howlsLogo2 from './howls/logo2.svg';
+import howlsLogo3 from './howls/logo3.svg';
+import howlsType1 from './howls/type1.svg';
+import howlsType2 from './howls/type2.svg';
+import howlsBIA1 from './howls/bia1.svg';
+import howlsBIA2 from './howls/bia2.svg';
+import howlsBIA3 from './howls/bia3.svg';
+import howlsBIA4 from './howls/bia4.svg';
+import howlsBIA5 from './howls/bia5.svg';
+import howlsBIA6 from './howls/bia6.svg';
+
+// ── Project template images (Hellobody) ──────────────────────────────────────
+import hellobodyProjectCardImg from './hellobody/projectcardimage.svg';
+import HellobodyHeroCartoon from './hellobody/herocartoon.svg?react';
+import hellobodyWebsiteImage from './hellobody/websiteimage.svg';
+import hellobodyAbout1 from './hellobody/about1.svg';
+import hellobodyAbout2 from './hellobody/about2.svg';
+import hellobodyLogo1 from './hellobody/logo1.svg';
+import hellobodyLogo2 from './hellobody/logo2.svg';
+import hellobodyLogo3 from './hellobody/logo3.svg';
+import hellobodyType1 from './hellobody/type1.svg';
+import hellobodyType2 from './hellobody/type2.svg';
+import hellobodyBIA1 from './hellobody/bia1.svg';
+import hellobodyBIA2 from './hellobody/bia2.svg';
+import hellobodyBIA3 from './hellobody/bia3.svg';
+import hellobodyBIA4 from './hellobody/bia4.svg';
+import hellobodyBIA5 from './hellobody/bia5.svg';
+import hellobodyBIA6 from './hellobody/bia6.svg';
+
+// ── Project template images (Devita) ──────────────────────────────────────
+import devitaProjectCardImg from './devita/projectcardimage.svg';
+import DevitaHeroCartoon from './devita/herocartoon.svg?react';
+import devitaWebsiteImage from './devita/websiteimage.svg';
+import devitaAbout1 from './devita/about1.svg';
+import devitaAbout2 from './devita/about2.svg';
+import devitaLogo1 from './devita/logo1.svg';
+import devitaLogo2 from './devita/logo2.svg';
+import devitaLogo3 from './devita/logo3.svg';
+import devitaType1 from './devita/type1.svg';
+import devitaType2 from './devita/type2.svg';
+import devitaBIA1 from './devita/bia1.svg';
+import devitaBIA2 from './devita/bia2.svg';
+import devitaBIA3 from './devita/bia3.svg';
+import devitaBIA4 from './devita/bia4.svg';
+import devitaBIA5 from './devita/bia5.svg';
+import devitaBIA6 from './devita/bia6.svg';
+
 // ── Category constants ───────────────────────────────────────────────────
 export const CATEGORIES = {
   WEBSITES: 'websites',
@@ -228,8 +354,12 @@ const projects = [
 
     // About the project section
     about: {
-      text: `lorem ipsum dolor sit amet consectetur. est tempus egestas id id donec eget lacus tempus nibh. orci amet id praesent purus ultrices nisl. sit vulputate aliquam et egestas elementum in praesent. cursus in bibendum lacus quis morbi nisl leo. et mauris urna mauris arcu fusce tincidunt tellus in. enim ullamcorper fames morbi auctor suspendisse faucibus diam euismod arcu.\n\narcu vulputate elementum feugiat posuere gravida sit. arcu vitae vivamus dolor id arcu lacus. leo fermentum enim volutpat faucibus. consectetur neque mauris ultrices diam urna enim.`,
+      text: `We explored multiple directions to find the right balance between minimalism and distinctiveness, ensuring the brand feels premium yet approachable. While the foundation remains sleek and contemporary, subtle design decisions were introduced to give the logo its own personality, making it memorable and expressive without overcomplicating it.\n\n At the core of the brand is a sense of individuality and empowerment. The identity is designed to feel personal, something that resonates with the wearer and reflects the idea that the brand is built for ‘you’. The result is a logo that feels strong, adaptable, and rooted in both performance and self-expression.`,
       images: [about1, about2],
+      svgText: 'explorations',
+      svgTop: '-8%',
+      svgRight: '5%',
+      svgFill: 'violet',
       bgColor: '#EFB5D4',
     },
 
@@ -963,6 +1093,629 @@ const projects = [
     // Built to be seen section
     builtToBeSeen: {
       images: [amigoBuilt1Image, amigoBuilt2Image, amigoBuilt3Image],
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // BRIOTECH — Brand Identity (Website template)
+  // ─────────────────────────────────────────────────────────────────────────
+  {
+    id: 12,
+    slug: 'briotech',
+    title: 'briotech',
+    category: CATEGORIES.BRAND_IDENTITIES,
+    cardImage: briotechProjectCardImg,
+    featured: true,
+    template: 'website',
+    rotation: -4,
+
+    // Hero section
+    hero: {
+      headline: 'briotech',
+      heroText:
+        'a forward-thinking identity for a technology leader. we crafted a visual language that balances technical precision with human-centric design.',
+      buttonLink: '#',
+      tooltipItems: ['brand identity', 'technology'],
+      tooltipColor: 'blue',
+      marqueeItems: ['visual identity', 'brand strategy', 'technical precision', 'ui/ux'],
+      Cartoon: BriotechHeroCartoon,
+      cartoonStyle: {
+        right: '80%',
+        top: '-60%',
+        transform: 'translateY(-50%)',
+        width: '200px',
+      },
+      cartoonMobileStyle: {
+        right: '90%',
+        top: '20%',
+        width: '70.39px',
+        height:96,
+      },
+    },
+
+    // Full-width image below hero
+    websiteImage: briotechWebsiteImage,
+
+    // About the project section
+    about: {
+      text: `we explored a variety of directions to find the perfect synergy between innovation and reliability, ensuring the briotech brand feels both cutting-edge and trustworthy. the foundation is built on clean, geometric lines, but we introduced subtle details that give the identity a unique character and energy without being overly complex.\n\nat the heart of the brand is a commitment to clarity and progress. the identity is designed to be highly adaptable, scaling effortlessly across digital and physical platforms. the final result is a brand that feels strong, modern, and deeply rooted in the philosophy of simple yet powerful technology.`,
+      images: [briotechAbout1, briotechAbout2],
+      svgText: 'experimentation',
+      svgTop: '-8%',
+      svgRight: '5%',
+      svgFill: 'violet',
+      bgColor: '#B9DBE8', // Dummy color
+    },
+
+    // Logo variations section
+    logoVariations: {
+      tooltipItems: ['primary mark', 'icon mark', 'monotone'],
+      tooltipColor: 'blue',
+      images: [briotechLogo1, briotechLogo2, briotechLogo3],
+      text: 'a custom-built mark that embodies precision and connectivity. the logo system is designed to be flexible, with a primary mark that stands strong on its own and a set of variations that adapt to any environment.',
+    },
+
+    // Colors section — 5 boxes
+    colors: [
+      { title: 'tech blue', hex: '#2A5C82', bgColor: '#2A5C82', contentColor: 'white' },
+      { title: 'cloud white', hex: '#F0F4F8', bgColor: '#F0F4F8', contentColor: 'black' },
+      { title: 'cyber gray', hex: '#333333', bgColor: '#333333', contentColor: 'white' },
+      { title: 'electric cyan', hex: '#00D1FF', bgColor: '#00D1FF', contentColor: 'black' },
+      { title: 'deep space', hex: '#0A0E14', bgColor: '#0A0E14', contentColor: 'white' },
+    ],
+
+    // Fonts section
+    fonts: {
+      tooltipItems: ['primary font', 'supporting font'],
+      tooltipColor: 'orange',
+      images: [briotechType1, briotechType2],
+      imageLabels: ['primary', 'alternative'],
+    },
+
+    // Brand in action section
+    brandInAction: {
+      images: [
+        briotechBIA1,
+        briotechBIA2,
+        briotechBIA3,
+        briotechBIA4,
+        briotechBIA5,
+        briotechBIA6,
+      ],
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // BIDDLE — Brand Identity (Website template)
+  // ─────────────────────────────────────────────────────────────────────────
+  {
+    id: 13,
+    slug: 'biddle',
+    title: 'biddle',
+    category: CATEGORIES.BRAND_IDENTITIES,
+    cardImage: biddleProjectCardImg,
+    featured: true,
+    template: 'website',
+    rotation: 3,
+
+    // Hero section
+    hero: {
+      headline: 'biddle',
+      heroText:
+        'a visual identity for biddle, a brand focused on simplicity and impact. we designed a logo and visual language that feels modern and approachable.',
+      buttonLink: '#',
+      tooltipItems: ['brand identity', 'visual system'],
+      tooltipColor: 'blue',
+      marqueeItems: ['brand identity', 'logo design', 'visual system', 'packaging'],
+      Cartoon: BiddleHeroCartoon,
+      cartoonStyle: {
+        right: '80%',
+        top: '-60%',
+        transform: 'translateY(-50%)',
+        width: '200px',
+      },
+      cartoonMobileStyle: {
+        right: '90%',
+        top: '20%',
+        width: '70.39px',
+        height: 96,
+      },
+    },
+
+    // Full-width image below hero
+    websiteImage: biddleWebsiteImage,
+
+    // About the project section
+    about: {
+      text: `we explored various directions to find the right balance for the biddle brand, ensuring it feels both authentic and innovative. the final identity is a reflection of the brand's core values: clarity, quality, and a commitment to excellence.`,
+      images: [biddleAbout1, biddleAbout2],
+      svgText: 'explorations',
+      svgTop: '-8%',
+      svgRight: '5%',
+      svgFill: 'violet',
+      bgColor: '#E2E2E2', // Dummy color
+    },
+
+    // Logo variations section
+    logoVariations: {
+      tooltipItems: ['primary logo', 'icon mark', 'monochrome'],
+      tooltipColor: 'blue',
+      images: [biddleLogo1, biddleLogo2, biddleLogo3],
+      text: 'a clean, versatile logo system designed for maximum clarity and brand recognition across all platforms.',
+    },
+
+    // Colors section — 5 boxes
+    colors: [
+      { title: 'pure white', hex: '#FFFFFF', bgColor: '#FFFFFF', contentColor: 'black' },
+      { title: 'midnight', hex: '#121212', bgColor: '#121212', contentColor: 'white' },
+      { title: 'soft gray', hex: '#F5F5F5', bgColor: '#F5F5F5', contentColor: 'black' },
+      { title: 'accent violet', hex: '#8B5CF6', bgColor: '#8B5CF6', contentColor: 'white' },
+      { title: 'deep slate', hex: '#334155', bgColor: '#334155', contentColor: 'white' },
+    ],
+
+    // Fonts section
+    fonts: {
+      tooltipItems: ['primary font', 'supporting font'],
+      tooltipColor: 'orange',
+      images: [biddleType1, biddleType2],
+      imageLabels: ['primary', 'alternative'],
+    },
+
+    // Brand in action section
+    brandInAction: {
+      images: [
+        biddleBIA1,
+        biddleBIA2,
+        biddleBIA3,
+        biddleBIA4,
+        biddleBIA5,
+        biddleBIA6,
+      ],
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // TAG FUNDRAISING — Brand Identity (Website template)
+  // ─────────────────────────────────────────────────────────────────────────
+  {
+    id: 14,
+    slug: 'tag-fundraising',
+    title: 'tag fundraising',
+    category: CATEGORIES.BRAND_IDENTITIES,
+    cardImage: tagProjectCardImg,
+    featured: true,
+    template: 'website',
+    rotation: -2,
+
+    // Hero section
+    hero: {
+      headline: 'tag fundraising',
+      heroText:
+        'a visual identity for tag fundraising, a platform designed to simplify and amplify the impact of community giving.',
+      buttonLink: '#',
+      tooltipItems: ['brand identity', 'philanthropy'],
+      tooltipColor: 'blue',
+      marqueeItems: ['brand identity', 'fundraising', 'visual system', 'community'],
+      Cartoon: TagHeroCartoon,
+      cartoonStyle: {
+        right: '80%',
+        top: '-60%',
+        transform: 'translateY(-50%)',
+        width: '200px',
+      },
+      cartoonMobileStyle: {
+        right: '90%',
+        top: '20%',
+        width: '70.39px',
+        height: 96,
+      },
+    },
+
+    // Full-width image below hero
+    websiteImage: tagWebsiteImage,
+
+    // About the project section
+    about: {
+      text: `we designed a brand that reflects the energy and collective power of fundraising. the visual system is built to be both professional and highly engaging, ensuring that every touchpoint feels purposeful and impactful.`,
+      images: [tagAbout1, tagAbout2],
+      svgText: 'explorations',
+      svgTop: '-8%',
+      svgRight: '5%',
+      svgFill: 'violet',
+      bgColor: '#E2E2E2', // Dummy color
+    },
+
+    // Logo variations section
+    logoVariations: {
+      tooltipItems: ['primary mark', 'wordmark', 'icon'],
+      tooltipColor: 'blue',
+      images: [tagLogo1, tagLogo2, tagLogo3],
+      text: 'a logo system that is both bold and flexible, capturing the spirit of movement and collective contribution across all channels.',
+    },
+
+    // Colors section — 5 boxes
+    colors: [
+      { title: 'deep indigo', hex: '#2E2B5F', bgColor: '#2E2B5F', contentColor: 'white' },
+      { title: 'vibrant coral', hex: '#FF6F61', bgColor: '#FF6F61', contentColor: 'black' },
+      { title: 'soft peach', hex: '#FFE5D9', bgColor: '#FFE5D9', contentColor: 'black' },
+      { title: 'cloud', hex: '#F8F9FA', bgColor: '#F8F9FA', contentColor: 'black' },
+      { title: 'carbon', hex: '#1C1C1C', bgColor: '#1C1C1C', contentColor: 'white' },
+    ],
+
+    // Fonts section
+    fonts: {
+      tooltipItems: ['primary font', 'supporting font'],
+      tooltipColor: 'orange',
+      images: [tagType1, tagType2],
+      imageLabels: ['primary', 'alternative'],
+    },
+
+    // Brand in action section
+    brandInAction: {
+      images: [
+        tagBIA1,
+        tagBIA2,
+        tagBIA3,
+        tagBIA4,
+        tagBIA5,
+        tagBIA6,
+      ],
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // BASEMYNT — Brand Identity (Website template)
+  // ─────────────────────────────────────────────────────────────────────────
+  {
+    id: 15,
+    slug: 'basemynt',
+    title: 'basemynt',
+    category: CATEGORIES.BRAND_IDENTITIES,
+    cardImage: basemyntProjectCardImg,
+    featured: true,
+    template: 'website',
+    rotation: 4,
+
+    // Hero section
+    hero: {
+      headline: 'basemynt',
+      heroText:
+        'a visual identity for basemynt, a platform that simplifies real estate investing. we designed a brand that reflects trust, transparency, and the future of property ownership.',
+      buttonLink: '#',
+      tooltipItems: ['brand identity', 'real estate tech'],
+      tooltipColor: 'blue',
+      marqueeItems: ['brand identity', 'real estate tech', 'visual system', 'trust'],
+      Cartoon: BasemyntHeroCartoon,
+      cartoonStyle: {
+        right: '80%',
+        top: '-60%',
+        transform: 'translateY(-50%)',
+        width: '200px',
+      },
+      cartoonMobileStyle: {
+        right: '90%',
+        top: '20%',
+        width: '70.39px',
+        height: 96,
+      },
+    },
+
+    // Full-width image below hero
+    websiteImage: basemyntWebsiteImage,
+
+    // About the project section
+    about: {
+      text: `we designed a brand that reflects trust, transparency, and the future of property ownership. the visual system is built to be both professional and highly engaging, ensuring that every touchpoint feels purposeful and impactful.`,
+      images: [basemyntAbout1, basemyntAbout2],
+      svgText: 'explorations',
+      svgTop: '-8%',
+      svgRight: '5%',
+      svgFill: 'violet',
+      bgColor: '#E2E2E2', // Dummy color
+    },
+
+    // Logo variations section
+    logoVariations: {
+      tooltipItems: ['primary mark', 'wordmark', 'icon mark'],
+      tooltipColor: 'blue',
+      images: [basemyntLogo1, basemyntLogo2, basemyntLogo3],
+      text: 'a logo system that is both bold and flexible, capturing the spirit of movement and collective contribution across all channels.',
+    },
+
+    // Colors section — 5 boxes
+    colors: [
+      { title: 'deep slate', hex: '#1C1C1C', bgColor: '#1C1C1C', contentColor: 'white' },
+      { title: 'pure white', hex: '#FFFFFF', bgColor: '#FFFFFF', contentColor: 'black' },
+      { title: 'soft gray', hex: '#F5F5F5', bgColor: '#F5F5F5', contentColor: 'black' },
+      { title: 'accent lime', hex: '#A3E635', bgColor: '#A3E635', contentColor: 'black' },
+      { title: 'dark stone', hex: '#2D3748', bgColor: '#2D3748', contentColor: 'white' },
+    ],
+
+    // Fonts section
+    fonts: {
+      tooltipItems: ['primary font', 'supporting font'],
+      tooltipColor: 'orange',
+      images: [basemyntType1, basemyntType2],
+      imageLabels: ['primary', 'alternative'],
+    },
+
+    // Brand in action section
+    brandInAction: {
+      images: [
+        basemyntBIA1,
+        basemyntBIA2,
+        basemyntBIA3,
+        basemyntBIA4,
+        basemyntBIA5,
+        basemyntBIA6,
+      ],
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // HOWLS — Brand Identity (Website template)
+  // ─────────────────────────────────────────────────────────────────────────
+  {
+    id: 16,
+    slug: 'howls',
+    title: 'howls',
+    category: CATEGORIES.BRAND_IDENTITIES,
+    cardImage: howlsProjectCardImg,
+    featured: true,
+    template: 'website',
+    rotation: -3,
+
+    // Hero section
+    hero: {
+      headline: 'howls',
+      heroText:
+        'a bold and expressive identity for howls. we designed a brand system that captures the raw energy and unique character of the brand.',
+      buttonLink: '#',
+      tooltipItems: ['brand identity', 'creative studio'],
+      tooltipColor: 'blue',
+      marqueeItems: ['brand identity', 'creative studio', 'visual system', 'expression'],
+      Cartoon: HowlsHeroCartoon,
+      cartoonStyle: {
+        right: '80%',
+        top: '-60%',
+        transform: 'translateY(-50%)',
+        width: '200px',
+      },
+      cartoonMobileStyle: {
+        right: '90%',
+        top: '20%',
+        width: '70.39px',
+        height: 96,
+      },
+    },
+
+    // Full-width image below hero
+    websiteImage: howlsWebsiteImage,
+
+    // About the project section
+    about: {
+      text: `we explored various directions to find the perfect resonance for howls, ensuring the brand feels both powerful and authentic. the result is a visual system that stands out and connects with its audience on a visceral level.`,
+      images: [howlsAbout1, howlsAbout2],
+      svgText: 'explorations',
+      svgTop: '-8%',
+      svgRight: '5%',
+      svgFill: 'violet',
+      bgColor: '#E2E2E2', // Dummy color
+    },
+
+    // Logo variations section
+    logoVariations: {
+      tooltipItems: ['primary mark', 'wordmark', 'monotone'],
+      tooltipColor: 'blue',
+      images: [howlsLogo1, howlsLogo2, howlsLogo3],
+      text: 'a flexible logo system designed to adapt and thrive across all brand touchpoints, maintaining its character in every execution.',
+    },
+
+    // Colors section — 5 boxes
+    colors: [
+      { title: 'deep charcoal', hex: '#111111', bgColor: '#111111', contentColor: 'white' },
+      { title: 'vivid red', hex: '#E63946', bgColor: '#E63946', contentColor: 'white' },
+      { title: 'stark white', hex: '#F1FAEE', bgColor: '#F1FAEE', contentColor: 'black' },
+      { title: 'sky blue', hex: '#A8DADC', bgColor: '#A8DADC', contentColor: 'black' },
+      { title: 'navy blue', hex: '#1D3557', bgColor: '#1D3557', contentColor: 'white' },
+    ],
+
+    // Fonts section
+    fonts: {
+      tooltipItems: ['primary font', 'supporting font'],
+      tooltipColor: 'orange',
+      images: [howlsType1, howlsType2],
+      imageLabels: ['primary', 'alternative'],
+    },
+
+    // Brand in action section
+    brandInAction: {
+      images: [
+        howlsBIA1,
+        howlsBIA2,
+        howlsBIA3,
+        howlsBIA4,
+        howlsBIA5,
+        howlsBIA6,
+      ],
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // HELLOBODY — Brand Identity (Website template)
+  // ─────────────────────────────────────────────────────────────────────────
+  {
+    id: 17,
+    slug: 'hellobody',
+    title: 'hellobody',
+    category: CATEGORIES.BRAND_IDENTITIES,
+    cardImage: hellobodyProjectCardImg,
+    featured: true,
+    template: 'website',
+    rotation: 5,
+
+    // Hero section
+    hero: {
+      headline: 'hellobody',
+      heroText:
+        'a fresh and vibrant identity for hellobody. we designed a brand system that celebrates natural beauty and a healthy lifestyle.',
+      buttonLink: '#',
+      tooltipItems: ['brand identity', 'skincare'],
+      tooltipColor: 'blue',
+      marqueeItems: ['brand identity', 'skincare', 'visual system', 'wellness'],
+      Cartoon: HellobodyHeroCartoon,
+      cartoonStyle: {
+        right: '80%',
+        top: '-60%',
+        transform: 'translateY(-50%)',
+        width: '200px',
+      },
+      cartoonMobileStyle: {
+        right: '90%',
+        top: '20%',
+        width: '70.39px',
+        height: 96,
+      },
+    },
+
+    // Full-width image below hero
+    websiteImage: hellobodyWebsiteImage,
+
+    // About the project section
+    about: {
+      text: `we designed a brand that celebrates natural beauty and a healthy lifestyle. the visual system is built to be both fresh and highly engaging, ensuring that every touchpoint feels purposeful and impactful.`,
+      images: [hellobodyAbout1, hellobodyAbout2],
+      svgText: 'explorations',
+      svgTop: '-8%',
+      svgRight: '5%',
+      svgFill: 'violet',
+      bgColor: '#E2E2E2', // Dummy color
+    },
+
+    // Logo variations section
+    logoVariations: {
+      tooltipItems: ['primary mark', 'wordmark', 'icon mark'],
+      tooltipColor: 'blue',
+      images: [hellobodyLogo1, hellobodyLogo2, hellobodyLogo3],
+      text: 'a logo system that is both bold and flexible, capturing the spirit of celebration and natural wellness across all channels.',
+    },
+
+    // Colors section — 5 boxes
+    colors: [
+      { title: 'skin glow', hex: '#FFFAF0', bgColor: '#FFFAF0', contentColor: 'black' },
+      { title: 'soft rose', hex: '#FFC0CB', bgColor: '#FFC0CB', contentColor: 'black' },
+      { title: 'minty fresh', hex: '#E0FFF0', bgColor: '#E0FFF0', contentColor: 'black' },
+      { title: 'warm sand', hex: '#F5DEB3', bgColor: '#F5DEB3', contentColor: 'black' },
+      { title: 'earthy brown', hex: '#8B4513', bgColor: '#8B4513', contentColor: 'white' },
+    ],
+
+    // Fonts section
+    fonts: {
+      tooltipItems: ['primary font', 'supporting font'],
+      tooltipColor: 'orange',
+      images: [hellobodyType1, hellobodyType2],
+      imageLabels: ['primary', 'alternative'],
+    },
+
+    // Brand in action section
+    brandInAction: {
+      images: [
+        hellobodyBIA1,
+        hellobodyBIA2,
+        hellobodyBIA3,
+        hellobodyBIA4,
+        hellobodyBIA5,
+        hellobodyBIA6,
+      ],
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // DEVITA — Brand Identity (Website template)
+  // ─────────────────────────────────────────────────────────────────────────
+  {
+    id: 18,
+    slug: 'devita',
+    title: 'devita',
+    category: CATEGORIES.BRAND_IDENTITIES,
+    cardImage: devitaProjectCardImg,
+    featured: true,
+    template: 'website',
+    rotation: -2,
+
+    // Hero section
+    hero: {
+      headline: 'devita',
+      heroText:
+        'a sophisticated and modern identity for devita. we crafted a brand system that reflects elegance, quality, and a commitment to timeless design.',
+      buttonLink: '#',
+      tooltipItems: ['brand identity', 'lifestyle brand'],
+      tooltipColor: 'blue',
+      marqueeItems: ['brand identity', 'lifestyle', 'visual system', 'elegance'],
+      Cartoon: DevitaHeroCartoon,
+      cartoonStyle: {
+        right: '80%',
+        top: '-60%',
+        transform: 'translateY(-50%)',
+        width: '200px',
+      },
+      cartoonMobileStyle: {
+        right: '90%',
+        top: '20%',
+        width: '70.39px',
+        height: 96,
+      },
+    },
+
+    // Full-width image below hero
+    websiteImage: devitaWebsiteImage,
+
+    // About the project section
+    about: {
+      text: `we designed a brand that reflects elegance, quality, and a commitment to timeless design. the visual system is built to be both sophisticated and highly adaptable, ensuring that every touchpoint feels premium and impactful.`,
+      images: [devitaAbout1, devitaAbout2],
+      svgText: 'explorations',
+      svgTop: '-8%',
+      svgRight: '5%',
+      svgFill: 'violet',
+      bgColor: '#E2E2E2', // Dummy color
+    },
+
+    // Logo variations section
+    logoVariations: {
+      tooltipItems: ['primary mark', 'wordmark', 'icon mark'],
+      tooltipColor: 'blue',
+      images: [devitaLogo1, devitaLogo2, devitaLogo3],
+      text: 'a refined logo system designed for maximum impact and scalability across all digital and physical platforms.',
+    },
+
+    // Colors section — 5 boxes
+    colors: [
+      { title: 'ebony', hex: '#1A1A1A', bgColor: '#1A1A1A', contentColor: 'white' },
+      { title: 'gold leaf', hex: '#D4AF37', bgColor: '#D4AF37', contentColor: 'black' },
+      { title: 'parchment', hex: '#F5F5DC', bgColor: '#F5F5DC', contentColor: 'black' },
+      { title: 'slate', hex: '#708090', bgColor: '#708090', contentColor: 'white' },
+      { title: 'ivory', hex: '#FFFFF0', bgColor: '#FFFFF0', contentColor: 'black' },
+    ],
+
+    // Fonts section
+    fonts: {
+      tooltipItems: ['primary font', 'supporting font'],
+      tooltipColor: 'orange',
+      images: [devitaType1, devitaType2],
+      imageLabels: ['primary', 'alternative'],
+    },
+
+    // Brand in action section
+    brandInAction: {
+      images: [
+        devitaBIA1,
+        devitaBIA2,
+        devitaBIA3,
+        devitaBIA4,
+        devitaBIA5,
+        devitaBIA6,
+      ],
     },
   },
 ];

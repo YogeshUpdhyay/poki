@@ -44,8 +44,10 @@
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .reviewsCarousel {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 .reviewsCarouselInner {
@@ -57,16 +59,17 @@
     from {
         transform: scale(0);
     }
+
     to {
         transform: scale(1);
     }
 }
 
 .scaleInAnimation {
-  animation-name: scale-in;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
+    animation-name: scale-in;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
 }
 
 /* ========================================
@@ -114,10 +117,22 @@
 }
 
 @media (max-width: 768px) {
+    .reviews {
+        padding-top: 80px;
+    }
+
     .reviewsCartoon {
         right: 78%;
         bottom: 14%;
         transform: scale(0.6);
+    }
+
+    .reviewsCarousel {
+        padding-top: 80px;
+    }
+
+    .headlineWrapper {
+        padding: 25px;
     }
 
     .reviewUnderlinePosition {
@@ -134,14 +149,15 @@
 }
 
 @media (max-width: 576px) {
-
+    /* 
     .reviews{
         padding-top: 80px ;
-    }
+    } */
 
-    .headlineText{
+    .headlineText {
         padding-bottom: 0%;
     }
+
     .reviewsCartoon {
         right: 69%;
         bottom: 75%;

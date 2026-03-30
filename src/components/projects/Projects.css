@@ -27,8 +27,10 @@
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .projectCarousel {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 .projectCarouselInner {
@@ -86,7 +88,7 @@
     height: 100%;
     width: 100%;
     object-fit: none;
-    border-radius: 8px;
+    border-radius: 12px;
 }
 
 .projectCardTitle {
