@@ -149,6 +149,7 @@
 }
 
 @media (hover: hover) {
+
     /* Hover Effects - Sibling Push Animation */
     .phoneMockupCard:hover {
         z-index: 20;
@@ -199,7 +200,7 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 6px;
+    border-radius: 4px;
 }
 
 .phoneMockupLabel {
@@ -372,7 +373,7 @@
     }
 
     .phoneMockupLabel {
-        bottom: 15px;
+        bottom: 20px;
         font-size: 14px;
         padding: 10px;
     }

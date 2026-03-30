@@ -755,11 +755,15 @@
         right: 5%;
     }
 
+    #takeYourPick {
+        padding: 60px 60px;
+    }
+
     #takeYourPick .websiteText {
         width: 115%;
         padding-left: 0px;
         padding-right: 0px;
-        padding-bottom: 0px;
+        padding-bottom: 0px !important;
     }
 
     .versionFrame {
@@ -835,7 +839,8 @@
     }
 
     #builtToBeSeen {
-        padding: 120px 60px;
+        padding: 60px 60px;
+        padding-bottom: 120px;
     }
 
     .builtToBeSeenStar {
@@ -856,6 +861,7 @@
 
     .builtToBeSeenGrid {
         margin-left: 0px;
+        gap: 20px;
     }
 
     .builtBottom {

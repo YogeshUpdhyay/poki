@@ -311,7 +311,7 @@
 
     .aboutImage {
         width: auto;
-        height: 532px;
+        height: auto;
         overflow: hidden;
         margin: 0 auto;
         border-radius: 40px;
@@ -319,7 +319,7 @@
 
     .aboutHeroImg {
         width: 100%;
-        height: 532px;
+        height: 100%;
         object-fit: cover;
         object-position: center;
     }
@@ -340,8 +340,9 @@
 
     .pink-pill {
         position: absolute;
-        top: 58px;
-        left: 75%;
+        top: 58px !important;
+        left: 75% !important;
+        display: block;
     }
 
     .aboutFlex {
@@ -441,6 +442,8 @@
 
     .studioStar {
         width: 36px;
+        bottom: 20%;
+        left: 0%;
     }
 
     .companies {

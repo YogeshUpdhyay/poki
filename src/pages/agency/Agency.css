@@ -430,8 +430,8 @@
 @media (max-width: 768px) {
 
     .partnerWith .headlineWrapper {
-        padding-left: 60px;
-        padding-right: 60px;
+        padding-left: 55px;
+        padding-right: 55px;
     }
 
     .agencyHero {
@@ -475,14 +475,14 @@
     }
 
     .agencyHeroUnderline {
-        width: 115px;
-        top: 100%;
-        left: 21%;
+        width: 115px !important;
+        top: 82%;
+        left: 20%;
     }
 
     .agencyHeroStar {
-        top: -17%;
-        right: 77%;
+        top: 0%;
+        right: 75%;
         width: 36px;
         height: 36px;
     }
@@ -634,7 +634,8 @@
     }
 
     .partnerships {
-        padding: 100px 30px;
+        padding: 50px 30px;
+        padding-bottom: 100px;
     }
 
     .agencyPartnerStar {
@@ -659,11 +660,11 @@
     }
 
     .partnerReviewCard:nth-child(1) {
-        height: 410px;
+        height: 366px;
     }
 
     .partnerReviewCard:nth-child(2) {
-        height: 500px;
+        height: 449px;
     }
 
     /* Navbar styles moved to Navbar.css global overrides */
