@@ -32,33 +32,34 @@
 }
 
 .offerings {
-   display: flex;
-   justify-content: center;
-   gap: 32px;
-   padding-top: 140px;
-   padding-bottom: 70px;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    padding-top: 140px;
+    padding-bottom: 70px;
 }
 
 .offeringCard {
-   padding: 55px 28px 48px 28px;
-   display: flex;
-   flex-direction: column;
-   gap: 28px;
-   height: 390px;
-   width: 300px;
-   position: relative;
-   border-radius: 12px;
-   transform-origin: center center;
-   transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+    padding: 55px 28px 48px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    height: 390px;
+    width: 300px;
+    position: relative;
+    border-radius: 12px;
+    transform-origin: center center;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
 }
 
 .offeringCard.green {
-   background-color: #427665;
-   color: white;
-   transform: translate(10%, 7%) rotate(8deg);
+    background-color: #427665;
+    color: white;
+    transform: translate(10%, 7%) rotate(8deg);
 }
 
 @media (hover: hover) {
+
     /* Smoothly scale the card on hover while preserving its translate/rotate */
     .offeringCard.green:hover {
         transform: scale(1.1);
@@ -110,58 +111,78 @@
 }
 
 .offeringCardTitle {
-   font-size: 24px;
-   line-height: 99%;
+    font-size: 24px;
+    line-height: 99%;
 }
 
 .offeringDesc {
-   display: flex;
-   flex-direction: column;
-   gap: 16px;
-   margin-top: -18px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: -18px;
 }
 
 .offeringDescLine {
-   font-size: 16px;
-   font-weight: lighter;
-   display: flex;
-   align-items: center;
-   font-family: generalSansMedium;
-   gap: 10px
+    font-size: 16px;
+    font-weight: lighter;
+    display: flex;
+    align-items: center;
+    font-family: generalSansMedium;
+    gap: 10px
 }
 
 .offeringCardSvg {
-   position: absolute;
-   top: -35px;
-   left: 140px;
+    position: absolute;
+    top: -35px;
+    left: 140px;
 }
 
 .offeringCardSeprator {
-   width: 100%;
-   object-fit: contain;
-   color: inherit;
+    width: 100%;
+    object-fit: contain;
+    color: inherit;
 }
 
 /* Explicit per-card-color rules (set stroke color via currentColor) */
-.offeringCardSeprator.green { color: var(--color-white); }
-.offeringCardSeprator.pink  { color: var(--color-black); }
-.offeringCardSeprator.blue  { color: var(--color-black); }
+.offeringCardSeprator.green {
+    color: var(--color-white);
+}
+
+.offeringCardSeprator.pink {
+    color: var(--color-black);
+}
+
+.offeringCardSeprator.blue {
+    color: var(--color-black);
+}
 
 /* Ensure the inline path picks up the color and is visible */
 .offeringCardSeprator svg,
 .offeringCardSeprator svg * {
-  color: inherit;
+    color: inherit;
 }
+
 .offeringCardSeprator path {
-   stroke: currentColor !important;
-   fill: none !important;
+    stroke: currentColor !important;
+    fill: none !important;
 }
 
 /* Small bullet svg color in offeringDescLine: white for green card, black for pink/blue */
-.offeringCard.green .offeringDescLine svg { color: var(--color-white); }
-.offeringCard.pink  .offeringDescLine svg { color: var(--color-black); }
-.offeringCard.blue  .offeringDescLine svg { color: var(--color-black); }
-.offeringCard .offeringDescLine svg path { fill: currentColor !important; }
+.offeringCard.green .offeringDescLine svg {
+    color: var(--color-white);
+}
+
+.offeringCard.pink .offeringDescLine svg {
+    color: var(--color-black);
+}
+
+.offeringCard.blue .offeringDescLine svg {
+    color: var(--color-black);
+}
+
+.offeringCard .offeringDescLine svg path {
+    fill: currentColor !important;
+}
 
 /* ========================================
    DESKTOP DEFAULT - 2 LINE LAYOUT
@@ -186,7 +207,7 @@
 
     .offerings {
         padding-top: 100px;
-        padding-bottom: 70px;
+        padding-bottom: 40px;
         gap: 24px;
     }
 
@@ -270,56 +291,17 @@
         /* Transforms are preserved from desktop - no override */
     }
 
-    /* Keep the desktop rotation transforms on mobile */
+    /* Keep the rotation transforms on mobile, but remove translation */
     .offeringCard.green {
-        transform: translate(0%, 7%) rotate(8deg);
+        transform: rotate(8deg);
     }
 
     .offeringCard.pink {
-        transform: translate(0%, 3%) rotate(-3deg);
+        transform: rotate(-3deg);
     }
 
     .offeringCard.blue {
-        transform: translate(0%, 20%) rotate(15deg);
-    }
-
-    @media (hover: hover) {
-        /* Keep hover effects on tablet */
-        .offeringCard.green:hover {
-            transform: scale(1.1);
-        }
-
-        .offeringCard.pink:hover {
-            transform: scale(1.1);
-        }
-
-        .offeringCard.blue:hover {
-            transform: scale(1.1);
-        }
-
-        .offerings:has(.offeringCard.green:hover) .offeringCard.pink {
-            transform: translate(49%, 3%) rotate(-3deg);
-        }
-
-        .offerings:has(.offeringCard.green:hover) .offeringCard.blue {
-            transform: translate(10%, 20%) rotate(15deg);
-        }
-
-        .offerings:has(.offeringCard.pink:hover) .offeringCard.blue {
-            transform: translate(30%, 20%) rotate(15deg);
-        }
-
-        .offerings:has(.offeringCard.pink:hover) .offeringCard.green {
-            transform: translate(-35%, 7%) rotate(8deg);
-        }
-
-        .offerings:has(.offeringCard.blue:hover) .offeringCard.pink {
-            transform: translate(-51%, 3%) rotate(-3deg);
-        }
-
-        .offerings:has(.offeringCard.blue:hover) .offeringCard.green {
-            transform: translate(-15%, 7%) rotate(8deg);
-        }
+        transform: rotate(15deg);
     }
 
     .offeringCardSvg {
@@ -331,15 +313,18 @@
 
     .brandNeedsButton {
         margin-top: 48px;
+        padding-bottom: 70px;
     }
 }
 
 @media (max-width: 576px) {
+
     /* Scope headlineWrapper to brandNeeds section only */
     .brandNeeds .headlineWrapper {
         padding-bottom: 45px;
         font-size: 48px;
     }
+
     .brandNeeds {
         padding-top: 48px;
         padding-bottom: 48px;
@@ -363,7 +348,7 @@
 
     .offerings {
         padding-top: 40px;
-        gap: 32px;
+        gap: 0px;
     }
 
     /* Keep desktop sizing and transforms even on small mobile */
@@ -374,17 +359,17 @@
         gap: 28px;
     }
 
-    /* Desktop transforms preserved */
+    /* Desktop transforms preserved but removed translation */
     .offeringCard.green {
-        transform: translate(0%, 7%) rotate(0deg);
+        transform: rotate(0deg);
     }
 
     .offeringCard.pink {
-        transform: translate(1%, -2%) rotate(-6.52deg);
+        transform: rotate(-6.52deg);
     }
 
     .offeringCard.blue {
-        transform: translate(0%, -10%) rotate(6deg);
+        transform: rotate(6deg);
     }
 
     .offeringCardTitle {
@@ -402,7 +387,7 @@
         transform: rotate(7deg);
     }
 
-    
+
 
     .offeringDescLine {
         font-size: 16px;

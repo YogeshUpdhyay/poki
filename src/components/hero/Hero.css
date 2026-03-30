@@ -123,8 +123,8 @@
     }
 
     .heroUnderlinePosition {
-        left: 5%;
-        bottom: -20px;
+        left: 0%;
+        bottom: 0px;
         transform: scale(0.7);
     }
 }
@@ -159,8 +159,8 @@
     }
 
     .heroUnderlinePosition {
-        left: -10%;
-        bottom: -25px;
+        left: 0%;
+        bottom: 0%;
         transform: scale(0.6);
     }
 }

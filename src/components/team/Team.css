@@ -330,7 +330,7 @@
     .teamPill {
         display: inline-block;
         left: 34%;
-        top: 23%;
+        top: 30%;
         /* Adjust height as needed */
         transform: translateX(-50%);
         font-size: 14px;
@@ -429,8 +429,8 @@
 
     /* Control teamUnderline SVG size on mobile */
     .teamUnderline {
-        left: 53%;
-        top: 78%;
+        left: 49%;
+        top: 73%;
         width: 50%;
         /* Adjust this percentage to make underline bigger/smaller */
         max-width: 150px;
@@ -439,7 +439,7 @@
 
     .teamUnderline svg {
         width: 126px !important;
-        height: 7px !important;
+        height: 8px !important;
     }
 
     .teammates {
@@ -583,9 +583,9 @@
     /* CARD 3 (SHREYASI - Row 1, Pos 3) */
     .teamRow:nth-child(1) .teammateCard:nth-child(3) img[alt="teammateSvg"] {
         left: auto !important;
-        right: -10% !important;
+        right: -25% !important;
         top: auto !important;
-        bottom: -5% !important;
+        bottom: 25% !important;
         width: 100px !important;
     }
 
@@ -598,7 +598,7 @@
 
     /* CARD 6 (PRAJWAL - Row 2, Pos 3) */
     .teamRow:nth-child(2) .teammateCard:nth-child(3) img[alt="teammateSvg"] {
-        left: 12% !important;
+        left: 65% !important;
         right: auto !important;
         top: -38% !important;
         width: 80px !important;
