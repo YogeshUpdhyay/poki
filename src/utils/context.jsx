@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import OfferingText1 from '../assets/imgs/offeringText1.svg';
 import OfferingText2 from '../assets/imgs/offeringText2.svg';
 import OfferingText3 from '../assets/imgs/offeringText3.svg';
-import heroBackgroundMedia from '../assets/imgs/heroBackground.png';
+import heroBackgroundMedia from '../assets/homepage_video.mp4';
 
 const CmsContext = createContext(null);
 
